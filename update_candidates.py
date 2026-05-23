@@ -170,22 +170,22 @@ CANDIDATES = {
             { 
                 name: "Candidate A: Jalan Ampang (KLCC Corridor) (Primary)", 
                 lat: 3.1580, lng: 101.7120, 
-                note: "TOP PICK. Embassy Row / KLCC expat corridor. Ground-floor boutique on Jln Ampang near ING Tower / Wisma UOA. 25-min walk from all Bangsar alternatives — serves KL's highest-income diplomatic and corporate expat community. Rent MYR 6,000–10,000/mo.", 
-                rent: 2000, catchment: 55000, premiumTargetPct: 45, competitorCapacity: 8000,
+                note: "TOP PICK. Embassy Row / KLCC expat corridor. Ground-floor boutique on Jln Ampang near ING Tower / Wisma UOA. 25-min walk from all Bangsar alternatives — serves KL's highest-income diplomatic and corporate expat community. Rent MYR 12,000–18,000/mo.", 
+                rent: 3500, catchment: 55000, premiumTargetPct: 45, competitorCapacity: 8000,
                 airportTime: "45 mins from KUL"
             },
             { 
                 name: "Candidate B: Bukit Ceylon (Expat Hill)", 
                 lat: 3.1490, lng: 101.7080, 
-                note: "Established expat residential enclave. Jln Mesui / Jln Ceylon ground-floor shophouse. Walking distance from Pavilion KL and KLCC. Lower rent than Ampang corridor but excellent expat concentration.", 
-                rent: 1700, catchment: 42000, premiumTargetPct: 40, competitorCapacity: 7000,
+                note: "Established expat residential enclave. Jln Mesui / Jln Ceylon ground-floor shophouse. Walking distance from Pavilion KL and KLCC. Lower rent than Ampang corridor but excellent expat concentration. Rent MYR 9,000–14,000/mo.", 
+                rent: 2600, catchment: 42000, premiumTargetPct: 40, competitorCapacity: 7000,
                 airportTime: "45 mins from KUL"
             },
             { 
                 name: "Candidate C: Bangsar (Jalan Telawi Alt)", 
                 lat: 3.1310, lng: 101.6710, 
-                note: "Established premium zone where Number76 / Bottega / Aube all operate. Validates premium demand but highly saturated. Only viable as third-outlet expansion after KLCC flagship.", 
-                rent: 1500, catchment: 35000, premiumTargetPct: 38, competitorCapacity: 18000,
+                note: "Established premium zone where Number76 / Bottega / Aube all operate. Validates premium demand but highly saturated. Only viable as third-outlet expansion after KLCC flagship. Rent MYR 10,500–15,500/mo.", 
+                rent: 3000, catchment: 35000, premiumTargetPct: 38, competitorCapacity: 18000,
                 airportTime: "40 mins from KUL"
             }
         ]""",
@@ -292,22 +292,22 @@ CANDIDATES = {
             { 
                 name: "Candidate A: Da'an District - Yongkang St Laneway (Primary)", 
                 lat: 25.0330, lng: 121.5305, 
-                note: "TOP PICK. Da'an's premium lifestyle lane — Japan-quality boutique density. Ground-floor alleyway unit. Eddie Tham and SeeFu within 400m confirm premium demand. AIT (American Institute Taiwan) expat community nearby. Rent NTD 60,000–90,000/mo.", 
-                rent: 2200, catchment: 40000, premiumTargetPct: 32, competitorCapacity: 12000,
+                note: "TOP PICK. Da'an's premium lifestyle lane — Japan-quality boutique density. Ground-floor alleyway unit. Eddie Tham and SeeFu within 400m confirm premium demand. AIT (American Institute Taiwan) expat community nearby. Rent NTD 90,000–130,000/mo.", 
+                rent: 3400, catchment: 40000, premiumTargetPct: 32, competitorCapacity: 12000,
                 airportTime: "15 mins from TSA / 45 mins from TPE"
             },
             { 
                 name: "Candidate B: Xinyi District - Songshou Rd Commercial", 
                 lat: 25.0380, lng: 121.5645, 
-                note: "Taipei's financial and luxury retail hub. Near Taipei 101 and W Hotel. TSMC and tech company international executives cluster in Xinyi luxury condos. Premium pricing power strongest here.", 
-                rent: 2800, catchment: 35000, premiumTargetPct: 30, competitorCapacity: 10000,
+                note: "Taipei's financial and luxury retail hub. Near Taipei 101 and W Hotel. TSMC and tech company international executives cluster in Xinyi luxury condos. Premium pricing power strongest here. Rent NTD 120,000–180,000/mo.", 
+                rent: 4600, catchment: 35000, premiumTargetPct: 30, competitorCapacity: 10000,
                 airportTime: "15 mins from TSA"
             },
             { 
                 name: "Candidate C: Zhongshan - Chifeng St Design Quarter", 
                 lat: 25.0520, lng: 121.5205, 
-                note: "Creative design district with highest concentration of Taipei's fashion/art professional class. Japanese expat families cluster in Zhongshan near Minami Tokyo community areas. Lower rent than Xinyi.", 
-                rent: 1800, catchment: 32000, premiumTargetPct: 28, competitorCapacity: 9000,
+                note: "Creative design district with highest concentration of Taipei's fashion/art professional class. Japanese expat families cluster in Zhongshan near Minami Tokyo community areas. Lower rent than Xinyi. Rent NTD 70,000–100,000/mo.", 
+                rent: 2600, catchment: 32000, premiumTargetPct: 28, competitorCapacity: 9000,
                 airportTime: "10 mins from TSA"
             }
         ]""",
@@ -316,22 +316,22 @@ CANDIDATES = {
             { 
                 name: "Candidate A: Qi-qi Zone - Shizheng North Rd (Primary)", 
                 lat: 24.1610, lng: 120.6420, 
-                note: "TOP PICK. Taichung's most affluent zone (Qi-qi / 7th Redevelopment Zone). Ground-floor boutique on Shizheng North Rd near W Taichung and Kimpton hotels. Japanese business families from Advantech/Giant cluster in nearby luxury towers. Rent NTD 50,000–80,000/mo.", 
-                rent: 1800, catchment: 38000, premiumTargetPct: 35, competitorCapacity: 8000,
+                note: "TOP PICK. Taichung's most affluent zone (Qi-qi / 7th Redevelopment Zone). Ground-floor boutique on Shizheng North Rd near W Taichung and Kimpton hotels. Japanese business families from Advantech/Giant cluster in nearby luxury towers. Rent NTD 80,000–120,000/mo.", 
+                rent: 3000, catchment: 38000, premiumTargetPct: 35, competitorCapacity: 8000,
                 airportTime: "30 mins from RMQ"
             },
             { 
                 name: "Candidate B: Xitun - Taiwan Boulevard (ELF/VS area)", 
                 lat: 24.1520, lng: 120.6505, 
-                note: "Xitun district's commercial spine. ELF Salon and VS Hair present — confirms premium demand but also direct competition zone. Lower rent than Qi-qi but established premium foot traffic.", 
-                rent: 1400, catchment: 32000, premiumTargetPct: 28, competitorCapacity: 12000,
+                note: "Xitun district's commercial spine. ELF Salon and VS Hair present — confirms premium demand but also direct competition zone. Lower rent than Qi-qi but established premium foot traffic. Rent NTD 60,000–85,000/mo.", 
+                rent: 2200, catchment: 32000, premiumTargetPct: 28, competitorCapacity: 12000,
                 airportTime: "30 mins from RMQ"
             },
             { 
                 name: "Candidate C: Huludun - Wenxin Rd (Northern Expansion)", 
                 lat: 24.1850, lng: 120.6380, 
-                note: "Emerging premium residential corridor north of Qi-qi. Lower current competition, growing family demographic. Best for second-outlet once Qi-qi flagship is established.", 
-                rent: 1100, catchment: 25000, premiumTargetPct: 22, competitorCapacity: 4000,
+                note: "Emerging premium residential corridor north of Qi-qi. Lower current competition, growing family demographic. Best for second-outlet once Qi-qi flagship is established. Rent NTD 45,000–65,000/mo.", 
+                rent: 1700, catchment: 25000, premiumTargetPct: 22, competitorCapacity: 4000,
                 airportTime: "25 mins from RMQ"
             }
         ]""",
@@ -340,22 +340,22 @@ CANDIDATES = {
             { 
                 name: "Candidate A: Zuoying THSR Commercial Zone (Primary)", 
                 lat: 22.6860, lng: 120.2980, 
-                note: "TOP PICK. High-speed rail terminus commercial zone. First-mover position — zero premium salon in zone. THSR commuters from Taipei book appointments around train schedule. Japanese Foxconn/Innolux corporate housing in adjacent Zuoying towers. Rent NTD 35,000–55,000/mo.", 
-                rent: 1200, catchment: 30000, premiumTargetPct: 35, competitorCapacity: 2000,
+                note: "TOP PICK. High-speed rail terminus commercial zone. First-mover position — zero premium salon in zone. THSR commuters from Taipei book appointments around train schedule. Japanese Foxconn/Innolux corporate housing in adjacent Zuoying towers. Rent NTD 60,000–80,000/mo.", 
+                rent: 2000, catchment: 30000, premiumTargetPct: 35, competitorCapacity: 2000,
                 airportTime: "15 mins from KHH"
             },
             { 
                 name: "Candidate B: Lingya District - Sanduo Shopping (Round2 zone)", 
                 lat: 22.6140, lng: 120.3040, 
-                note: "Kaohsiung's premier shopping and lifestyle district. Round2 Hair Salon present — confirms premium demand. Higher competition but large total catchment. Best for capturing Kaohsiung's fashion-forward creative class.", 
-                rent: 1400, catchment: 42000, premiumTargetPct: 28, competitorCapacity: 15000,
+                note: "Kaohsiung's premier shopping and lifestyle district. Round2 Hair Salon present — confirms premium demand. Higher competition but large total catchment. Best for capturing Kaohsiung's fashion-forward creative class. Rent NTD 70,000–95,000/mo.", 
+                rent: 2500, catchment: 42000, premiumTargetPct: 28, competitorCapacity: 15000,
                 airportTime: "15 mins from KHH"
             },
             { 
                 name: "Candidate C: Xinyi District (Central Park Adjacent)", 
                 lat: 22.6250, lng: 120.3150, 
-                note: "Near Kaohsiung's Central Park MRT and cultural facilities. Growing premium residential catchment with access to Kaohsiung's Japanese business community. Lower competition than Lingya.", 
-                rent: 1100, catchment: 28000, premiumTargetPct: 26, competitorCapacity: 6000,
+                note: "Near Kaohsiung's Central Park MRT and cultural facilities. Growing premium residential catchment with access to Kaohsiung's Japanese business community. Lower competition than Lingya. Rent NTD 55,000–75,000/mo.", 
+                rent: 1800, catchment: 28000, premiumTargetPct: 26, competitorCapacity: 6000,
                 airportTime: "12 mins from KHH"
             }
         ]""",
@@ -364,22 +364,22 @@ CANDIDATES = {
             { 
                 name: "Candidate A: Sinshih District - TSMC Housing Cluster (Primary)", 
                 lat: 23.0750, lng: 120.3550, 
-                note: "TOP PICK. Adjacent to TSMC Fab 18 and STSP company housing. TSMC international engineers (Japanese, US, European) live within 1km. Zero premium salon competition within 10km. Ground-floor commercial in Sinshih new development zone. Rent NTD 25,000–40,000/mo.", 
-                rent: 900, catchment: 22000, premiumTargetPct: 55, competitorCapacity: 500,
+                note: "TOP PICK. Adjacent to TSMC Fab 18 and STSP company housing. TSMC international engineers (Japanese, US, European) live within 1km. Zero premium salon competition within 10km. Ground-floor commercial in Sinshih new development zone. Rent NTD 40,000–60,000/mo.", 
+                rent: 1500, catchment: 22000, premiumTargetPct: 55, competitorCapacity: 500,
                 airportTime: "35 mins from TNN / 50 mins from KHH"
             },
             { 
                 name: "Candidate B: East District (NCKU / Shu-Lin Corridor)", 
                 lat: 22.9940, lng: 120.2220, 
-                note: "NCKU university zone with growing premium professional catchment. Tainan's young professional and academic community. Better established commercial street — more foot traffic than Sinshih but lower TSMC expat density.", 
-                rent: 750, catchment: 35000, premiumTargetPct: 28, competitorCapacity: 4000,
+                note: "NCKU university zone with growing premium professional catchment. Tainan's young professional and academic community. Better established commercial street — more foot traffic than Sinshih but lower TSMC expat density. Rent NTD 32,000–48,000/mo.", 
+                rent: 1200, catchment: 35000, premiumTargetPct: 28, competitorCapacity: 4000,
                 airportTime: "15 mins from TNN"
             },
             { 
                 name: "Candidate C: West Central - Zhongzheng Rd (City Center)", 
                 lat: 22.9920, lng: 120.2025, 
-                note: "Historic Tainan city center. Higher general foot traffic but lower premium density. Best for capturing Tainan's broader professional and tourist market as second phase of expansion.", 
-                rent: 800, catchment: 40000, premiumTargetPct: 20, competitorCapacity: 6000,
+                note: "Historic Tainan city center. Higher general foot traffic but lower premium density. Best for capturing Tainan's broader professional and tourist market as second phase of expansion. Rent NTD 35,000–52,000/mo.", 
+                rent: 1300, catchment: 40000, premiumTargetPct: 20, competitorCapacity: 6000,
                 airportTime: "20 mins from TNN"
             }
         ]""",
@@ -692,10 +692,10 @@ for fname, new_candidates_block in CANDIDATES.items():
     new_content, count = re.subn(pattern, replacement, content, flags=re.DOTALL)
     
     if count == 0:
-        print(f"  ✗ NO MATCH: {fname}")
+        print(f"  [NO MATCH]: {fname}")
     else:
         with open(path, "w", encoding="utf-8") as f:
             f.write(new_content)
-        print(f"  ✓ Updated: {fname}")
+        print(f"  [Updated]: {fname}")
 
 print("\nDone.")

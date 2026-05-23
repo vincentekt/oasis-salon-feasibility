@@ -156,21 +156,21 @@ LOCATION_TABLES = {
 "kuala_lumpur.html": """<tbody>
                               <tr class="highlight-row">
                                   <td>Jalan Ampang (KLCC Corridor)</td>
-                                  <td>MYR 6,000 - 10,000</td>
+                                  <td>MYR 12,000 - 18,000</td>
                                   <td>Embassy Row / KLCC expat corridor. 25-min drive from all Bangsar alternatives — serves KL's highest-income diplomatic and corporate expat community (PETRONAS, Standard Chartered, Shell). Number76/Bottega are 25 min away — captive gap.</td>
                                   <td>High KLCC-zone rent; requires strong soft-water + Muslimah bay differentiation to justify premium over established Bangsar options</td>
                                   <td>4.9 / 5 (Recommended)</td>
                               </tr>
                               <tr>
                                   <td>Bukit Ceylon (Expat Hill)</td>
-                                  <td>MYR 5,000 - 8,000</td>
+                                  <td>MYR 9,000 - 14,000</td>
                                   <td>Established expat residential enclave. Walking distance from Pavilion KL and KLCC. Lower rent than Ampang corridor. High concentration of diplomatic, legal, and finance professionals.</td>
                                   <td>Slightly less accessible for Embassy Row / Ampang Hilir expat families; limited Muslimah private bay walk-in demand in this sub-zone</td>
                                   <td>4.5 / 5</td>
                               </tr>
                               <tr>
                                   <td>Bangsar (Jalan Telawi)</td>
-                                  <td>MYR 4,500 - 7,000</td>
+                                  <td>MYR 10,500 - 15,500</td>
                                   <td>Established premium zone with Number76, Bottega, Aube all operating — validates premium demand. Best as Phase 2 second outlet after KLCC flagship.</td>
                                   <td>Highly saturated premium zone — competing directly with 4 established premium salons; limited differentiation space</td>
                                   <td>3.5 / 5 (Phase 2 Only)</td>
@@ -276,21 +276,21 @@ LOCATION_TABLES = {
 "taipei.html": """<tbody>
                               <tr class="highlight-row">
                                   <td>Da'an - Yongkang St Laneway</td>
-                                  <td>NTD 60,000 - 90,000</td>
+                                  <td>NTD 90,000 - 130,000</td>
                                   <td>Japan-quality boutique density. Eddie Tham and SeeFu within 400m confirm premium demand. AIT (American Institute Taiwan) expat community in catchment. Ground-floor alleyway boutique positioning — highest Instagram appeal in Taipei.</td>
                                   <td>Competitive zone — must differentiate on bilingual service and no-wait booking vs. 6–9 hr wait competitors</td>
                                   <td>4.9 / 5 (Recommended)</td>
                               </tr>
                               <tr>
                                   <td>Xinyi - Songshou Rd</td>
-                                  <td>NTD 80,000 - 120,000</td>
+                                  <td>NTD 120,000 - 180,000</td>
                                   <td>Taipei's financial and luxury retail hub near Taipei 101. TSMC and tech international executives in Xinyi luxury condos. Highest per-client WTP of any Taipei zone.</td>
                                   <td>Very high rent; after-work appointments must compete with Xinyi's existing premium service density</td>
                                   <td>4.4 / 5</td>
                               </tr>
                               <tr>
                                   <td>Zhongshan - Chifeng St Design Quarter</td>
-                                  <td>NTD 45,000 - 70,000</td>
+                                  <td>NTD 70,000 - 100,000</td>
                                   <td>Creative design district. Japanese expat families cluster near Minami Tokyo community spaces. Fashion-forward creative class for vivid/fashion colour portfolio. Lower rent than Da'an.</td>
                                   <td>Lower premium density than Da'an; requires stronger creative colour portfolio to attract design-district clientele</td>
                                   <td>4.1 / 5</td>
@@ -300,21 +300,21 @@ LOCATION_TABLES = {
 "taichung.html": """<tbody>
                               <tr class="highlight-row">
                                   <td>Qi-qi Zone - Shizheng North Rd</td>
-                                  <td>NTD 50,000 - 80,000</td>
+                                  <td>NTD 80,000 - 120,000</td>
                                   <td>Taichung's most affluent zone. W Taichung and Kimpton Hotels anchors the area. Japanese business families from Advantech/Giant cluster in luxury towers. No boutique colour studio in this zone — first-mover opportunity.</td>
                                   <td>Premium rent; requires strong luxury positioning and differentiated bilingual service to justify premium over existing ELF/VS options</td>
                                   <td>4.9 / 5 (Recommended)</td>
                               </tr>
                               <tr>
                                   <td>Xitun - Taiwan Boulevard</td>
-                                  <td>NTD 35,000 - 55,000</td>
+                                  <td>NTD 60,000 - 85,000</td>
                                   <td>ELF Salon and VS Hair present — confirms premium demand and established foot traffic. Lower rent than Qi-qi. Good transit access.</td>
                                   <td>ELF and VS Hair direct competition on same boulevard; need clear differentiation on creative colour and bilingual service</td>
                                   <td>4.2 / 5</td>
                               </tr>
                               <tr>
                                   <td>Huludun - Wenxin Rd (North)</td>
-                                  <td>NTD 28,000 - 45,000</td>
+                                  <td>NTD 45,000 - 65,000</td>
                                   <td>Emerging premium residential corridor north of Qi-qi. Lower competition, growing family demographic. Best as second outlet once Qi-qi flagship is profitable.</td>
                                   <td>Lower current foot traffic; less established premium commercial environment; longer time to build awareness</td>
                                   <td>3.6 / 5 (Phase 2)</td>
@@ -324,21 +324,21 @@ LOCATION_TABLES = {
 "kaohsiung.html": """<tbody>
                               <tr class="highlight-row">
                                   <td>Zuoying THSR Commercial Zone</td>
-                                  <td>NTD 35,000 - 55,000</td>
+                                  <td>NTD 60,000 - 80,000</td>
                                   <td>High-speed rail terminus. First-mover position — zero premium salon in zone. THSR commuters from Taipei book appointments around train schedule. Japanese Foxconn/Innolux corporate housing adjacent. Highest underserved score in Kaohsiung.</td>
                                   <td>Lower current foot traffic than Lingya; relies on THSR commuter booking behavior; requires appointment-heavy model</td>
                                   <td>4.9 / 5 (Recommended)</td>
                               </tr>
                               <tr>
                                   <td>Lingya - Sanduo Shopping District</td>
-                                  <td>NTD 40,000 - 65,000</td>
+                                  <td>NTD 70,000 - 95,000</td>
                                   <td>Kaohsiung's premier shopping/lifestyle district. Round2 Hair Salon presence validates premium demand. Highest total catchment of three candidates. Best for fashion-forward creative class.</td>
                                   <td>Round2 is entrenched here; higher rent; must differentiate on Japanese-bilingual service and creative colour range</td>
                                   <td>4.3 / 5</td>
                               </tr>
                               <tr>
                                   <td>Xinyi - Central Park MRT</td>
-                                  <td>NTD 30,000 - 48,000</td>
+                                  <td>NTD 55,000 - 75,000</td>
                                   <td>Near Kaohsiung's Central Park and cultural institutions. Growing premium residential catchment. Lower competition than Lingya. Good for Japanese business community nearby.</td>
                                   <td>Less established premium retail environment than Lingya or Zuoying; lower total foot traffic</td>
                                   <td>4.0 / 5</td>
@@ -348,21 +348,21 @@ LOCATION_TABLES = {
 "tainan.html": """<tbody>
                               <tr class="highlight-row">
                                   <td>Sinshih District (TSMC Housing Zone)</td>
-                                  <td>NTD 25,000 - 40,000</td>
+                                  <td>NTD 40,000 - 60,000</td>
                                   <td>Adjacent to TSMC Fab 18 international staff housing. Japanese, US, European TSMC engineers live within 1km. Zero premium salon competition within 10km. Entirely captive high-income target market. Highest underserved % in Taiwan portfolio.</td>
                                   <td>New commercial zone — lower existing foot traffic; relies on TSMC expat community network discovery; requires proactive outreach to TSMC HR/community channels</td>
                                   <td>4.9 / 5 (Recommended)</td>
                               </tr>
                               <tr>
                                   <td>East District (NCKU Corridor)</td>
-                                  <td>NTD 20,000 - 35,000</td>
+                                  <td>NTD 32,000 - 48,000</td>
                                   <td>NCKU university zone with growing young professional catchment. More established commercial street. Better foot traffic than Sinshih. Captures younger, fashion-forward demographic.</td>
                                   <td>Lower TSMC expat density; less affluent demographic than Sinshih; more price-sensitive clientele</td>
                                   <td>4.1 / 5</td>
                               </tr>
                               <tr>
                                   <td>West Central - Zhongzheng Rd</td>
-                                  <td>NTD 22,000 - 38,000</td>
+                                  <td>NTD 35,000 - 52,000</td>
                                   <td>Historic Tainan city center. Higher general foot traffic. Best for capturing broader professional and tourist market as second phase.</td>
                                   <td>Lower premium density than Sinshih; higher local mid-tier salon competition; less TSMC-adjacent catchment</td>
                                   <td>3.6 / 5</td>
@@ -662,16 +662,16 @@ for fname, new_tbody in LOCATION_TABLES.items():
         content = f.read()
     
     # Match the location study section's table tbody only
-    pattern = r'(<section id="location-study".*?<tbody>)(.*?)(</tbody>)'
-    replacement = r'\g<1>' + new_tbody + r'\g<3>'
+    pattern = r'(<section id="location-study".*?)(<tbody>.*?</tbody>)'
+    replacement = r'\g<1>' + new_tbody
     new_content, count = re.subn(pattern, replacement, content, flags=re.DOTALL)
     
     if count == 0:
-        print(f"  ✗ NO TABLE MATCH: {fname}")
+        print(f"  [NO TABLE MATCH]: {fname}")
     else:
         with open(path, "w", encoding="utf-8") as f:
             f.write(new_content)
-        print(f"  ✓ Updated: {fname}")
+        print(f"  [Updated]: {fname}")
         updated += 1
 
 print(f"\nDone. {updated} files updated.")
