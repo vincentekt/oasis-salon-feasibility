@@ -1002,16 +1002,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Helper calculations
         const getColor = (payback) => {
-            if (payback <= 6) return "#10b981"; // Emerald green (5-6 months)
-            if (payback <= 8) return "#eab308"; // Amber yellow (7-8 months)
-            if (payback <= 10) return "#f97316"; // Orange (9-10 months)
-            return "#ef4444"; // Red (11-12 months)
+            if (payback <= 12) return "#10b981"; // Emerald green (<= 12 months)
+            if (payback <= 18) return "#eab308"; // Amber yellow (13-18 months)
+            if (payback <= 24) return "#f97316"; // Orange (19-24 months)
+            return "#ef4444"; // Red (25+ months)
         };
 
         const getOpacity = (capex) => {
             const minCapex = 30000;
             const maxCapex = 180000;
-            const minOpacity = 0.25;
+            const minOpacity = 0.45; // Enhanced visibility for high-capex markers (more opaque)
             const maxOpacity = 0.95;
             if (capex <= minCapex) return maxOpacity;
             if (capex >= maxCapex) return minOpacity;
@@ -1021,9 +1021,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const getRadius = (underservedStr) => {
             const pct = parseInt(underservedStr) || 0;
             const minPct = 20;
-            const maxPct = 70;
+            const maxPct = 75; // Matches the actual maximum underserved demand in the database
             const minRad = 6;
-            const maxRad = 16;
+            const maxRad = 18; // More pronounced size differences (diameter 12px to 36px)
             if (pct <= minPct) return minRad;
             if (pct >= maxPct) return maxRad;
             return minRad + ((pct - minPct) / (maxPct - minPct)) * (maxRad - minRad);
