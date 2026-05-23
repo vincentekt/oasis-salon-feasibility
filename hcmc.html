@@ -1,0 +1,1003 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ho Chi Minh City Hair Salon | Business Proposal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Leaflet JS & CSS for interactive maps -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <style>
+        .map-container {
+            height: 450px;
+            width: 100%;
+            border-radius: 12px;
+            margin-top: 1.5rem;
+            border: 1px solid var(--border-color);
+            z-index: 10;
+        }
+        .popup-content {
+            color: #333;
+        }
+        .popup-content h3 {
+            color: #111;
+            font-family: var(--font-body);
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+        .popup-content p {
+            margin: 0.2rem 0;
+            font-size: 0.85rem;
+            line-height: 1.4;
+        }
+        .leaflet-popup-content-wrapper {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 8px;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.25); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar">
+            <div class="sidebar-header">
+                <h2>Oasis Salon</h2>
+                <p>Feasibility Study</p>
+                <div class="lang-selector">
+                    <button class="lang-btn" data-lang="en">EN</button>
+                    <button class="lang-btn" data-lang="ja">JA</button>
+                    <button class="lang-btn" data-lang="vi">VI</button>
+                </div>
+                                                                <div class="city-selector">
+                    <a href="index.html" class="city-btn direct-link">Dashboard</a>
+                    <details class="city-group" open>
+                        <summary>Vietnam</summary>
+                        <div class="group-links">
+                            <a href="binhduong.html" class="city-btn">Binh Duong</a>
+                            <a href="danang.html" class="city-btn">Da Nang</a>
+                            <a href="dongnai.html" class="city-btn">Dong Nai</a>
+                            <a href="haiphong.html" class="city-btn">Hai Phong</a>
+                            <a href="hanoi.html" class="city-btn">Hanoi</a>
+                            <a href="hcmc.html" class="city-btn active">Ho Chi Minh</a>
+                        </div>
+                    </details>
+                    <details class="city-group">
+                        <summary>Malaysia</summary>
+                        <div class="group-links">
+                            <a href="johor.html" class="city-btn">Johor Bahru</a>
+                            <a href="kuala_lumpur.html" class="city-btn">Kuala Lumpur</a>
+                            <a href="penang.html" class="city-btn">Penang</a>
+                            <a href="sabah.html" class="city-btn">Sabah</a>
+                            <a href="sarawak.html" class="city-btn">Sarawak</a>
+                        </div>
+                    </details>
+                    <details class="city-group">
+                        <summary>Taiwan</summary>
+                        <div class="group-links">
+                            <a href="kaohsiung.html" class="city-btn">Kaohsiung</a>
+                            <a href="taichung.html" class="city-btn">Taichung</a>
+                            <a href="tainan.html" class="city-btn">Tainan</a>
+                            <a href="taipei.html" class="city-btn">Taipei</a>
+                        </div>
+                    </details>
+                    <details class="city-group">
+                        <summary>Australia</summary>
+                        <div class="group-links">
+                            <a href="brisbane.html" class="city-btn">Brisbane</a>
+                            <a href="melbourne.html" class="city-btn">Melbourne</a>
+                            <a href="perth.html" class="city-btn">Perth</a>
+                            <a href="sydney.html" class="city-btn">Sydney</a>
+                        </div>
+                    </details>
+                    <details class="city-group">
+                        <summary>Japan</summary>
+                        <div class="group-links">
+                            <a href="fukuoka.html" class="city-btn">Fukuoka</a>
+                            <a href="okinawa.html" class="city-btn">Okinawa</a>
+                        </div>
+                    </details>
+                    <details class="city-group">
+                        <summary>South Korea</summary>
+                        <div class="group-links">
+                            <a href="busan.html" class="city-btn">Busan</a>
+                        </div>
+                    </details>
+                    <details class="city-group">
+                        <summary>Middle East</summary>
+                        <div class="group-links">
+                            <a href="dubai.html" class="city-btn">Dubai</a>
+                        </div>
+                    </details>
+                    <details class="city-group">
+                        <summary>Other APAC</summary>
+                        <div class="group-links">
+                            <a href="bangkok.html" class="city-btn">Bangkok</a>
+                            <a href="hongkong.html" class="city-btn">Hong Kong</a>
+                            <a href="macau.html" class="city-btn">Macau</a>
+                            <a href="singapore.html" class="city-btn">Singapore</a>
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#executive-summary">1. Executive Summary</a></li>
+                <li><a href="#positioning">2. Business Positioning</a></li>
+                <li><a href="#market-context">3. Market Context</a></li>
+                <li><a href="#target-segments">4. Target Segments</a></li>
+                <li><a href="#location-study">5. Location Study</a></li>
+                <li><a href="#competitors">6. Competitor Study</a></li>
+                <li><a href="#unmet-needs">7. Unmet Needs & Gap</a></li>
+                <li><a href="#menu">8. Product Menu</a></li>
+                <li><a href="#packages">9. Packages & Memberships</a></li>
+                <li><a href="#customer-journey">10. Customer Journey</a></li>
+                <li><a href="#setup-layout">11. Setup & Layout</a></li>
+                <li><a href="#staffing">12. Staffing Model</a></li>
+                <li><a href="#opex">13. Monthly OPEX</a></li>
+                <li><a href="#capex">14. CAPEX</a></li>
+                <li><a href="#economics">15. Unit Economics</a></li>
+                <li><a href="#timeline">16. Setup Timeline</a></li>
+                <li><a href="#marketing">17. Marketing Strategy</a></li>
+                <li><a href="#risks">18. Risks & Controls</a></li>
+                <li><a href="#recommendation">19. Recommendation</a></li>
+                <li><a href="#next-steps">20. Next Steps</a></li>
+            </ul>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="hero">
+                <button class="download-report-btn" onclick="window.print()">
+                    <svg viewBox="0 0 24 24" style="width:16px; height:16px; fill:currentColor; vertical-align:middle; margin-right:6px;">
+                        <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/>
+                    </svg>
+                    Download Report
+                </button>
+                <div class="hero-glass">
+                    <h1>Oasis Hair Salon</h1>
+                    <p class="subtitle">Ho Chi Minh City Market Entry & Feasibility Study</p>
+                    <div class="hero-meta">
+                        <span>Target: District 2 (Thao Dien) / D1</span>
+                        <span>Model: Expat PoC / MVP</span>
+                        <span>Currency: USD ($)</span>
+                    </div>
+                </div>
+            </header>
+
+            <!-- 1. Executive Summary -->
+            <section id="executive-summary" class="card fade-in">
+                <h2>1. Executive Summary</h2>
+                <div class="grid-stats">
+                    <div class="stat-box">
+                        <span class="label">Recommendation</span>
+                        <span class="value success">Proceed (Expat PoC)</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="label">Setup Size</span>
+                        <span class="value">800 sq ft</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="label">Initial CAPEX</span>
+                        <span class="value">USD 30k - 40k</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="label">Monthly OPEX</span>
+                        <span class="value">USD 8,500 - 9,500</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="label">Breakeven Volume</span>
+                        <span class="value">8-9 Customers / Day</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="label">Average Ticket</span>
+                        <span class="value">USD 40</span>
+                    </div>
+                </div>
+                <p><strong>Main Success Condition:</strong> Establishing the PoC in Thao Dien (District 2) to capture Japanese/Korean/Western expat mothers and families close to their residences. The focus is to build a trust-based relationship with high-margin pre-paid packages rather than relying purely on walk-in tourist traffic.</p>
+            </section>
+
+            <!-- 2. Business Positioning -->
+            <section id="positioning" class="card fade-in">
+                <h2>2. Business Positioning</h2>
+                <div class="text-content">
+                    <p><strong>Positioned as:</strong> An expat-friendly, Japanese/Korean-inspired head spa in HCMC offering premium scalp care, steam treatment, oxygen mist, and sensory relaxation. It is a premium-feel wellness escape offering international service standards at accessible prices compared to Singapore or Tokyo.</p>
+                    <p><strong>Avoid being positioned as:</strong> A medical trichology clinic, a hair regrowth center, or a cheap local hair wash shop.</p>
+                    <blockquote class="positioning-statement">"Expat sanctuary. Rebalance your scalp, refresh your senses."</blockquote>
+                    <p><strong>Core Customer Promise:</strong> Japanese/Korean-standard scalp care and massage techniques, verified with micro-camera scanning, in a quiet, hygienic, and relaxing English-speaking environment.</p>
+                    <p><strong>Market Fit:</strong> Ho Chi Minh City has a vibrant expat community with high disposable income but limited access to specialized, clean, English-friendly scalp wellness salons. Local hair wash places are very cheap but lack high-end technique and privacy, while premium salons focus primarily on hair color/cuts rather than scalp care.</p>
+                </div>
+            </section>
+
+            <!-- 3. Market Context -->
+            <section id="market-context" class="card fade-in">
+                <h2>3. Market Context</h2>
+                <ul class="context-list">
+                    <li><strong>Demographics:</strong> Over 100,000 expats residing in HCMC, heavily concentrated in District 2 (Thao Dien) and District 7 (Phu My Hung). High concentration of Japanese/Korean expats.</li>
+                    <li><strong>Spending Power:</strong> Expats and high-income local Vietnamese earn USD 2,500+ monthly with significant allocation towards spa treatments, body wellness, and premium aesthetics.</li>
+                    <li><strong>Environmental Drivers:</strong> Severe air pollution, dust, and hot, humid tropical weather in HCMC trigger oily scalp, dandruff, and clogged follicles. Scalp detox is a health necessity here.</li>
+                    <li><strong>Water Quality:</strong> Municipal water is hard and often contains chemicals/heavy minerals that cause dry hair and scalp irritation. Hair spa detoxes resolve this.</li>
+                    <li><strong>Regulatory Context:</strong> Salons and head spas operate under standard salon licensing. Medical claims must be strictly avoided to bypass expensive and time-consuming medical clinic licenses.</li>
+                </ul>
+            </section>
+
+            <!-- 4. Target Customer Segments -->
+            <section id="target-segments" class="card fade-in">
+                <h2>4. Target Customer Segments</h2>
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Segment</th>
+                                <th>Attractiveness</th>
+                                <th>Needs & Pain Points</th>
+                                <th>WTP (USD)</th>
+                                <th>Best Channel</th>
+                                <th>Recommended Offer</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Expat Corporate Pros</td>
+                                <td><span class="badge high">High</span></td>
+                                <td>High stress, pollution fatigue, neck pain</td>
+                                <td>$45 - $60</td>
+                                <td>Google Maps, Expat groups</td>
+                                <td>"Deep Detox Scalp Spa" (75m)</td>
+                            </tr>
+                            <tr>
+                                <td>Expat Spouses & Mothers</td>
+                                <td><span class="badge high">High</span></td>
+                                <td>Hair care, social relaxation, daytime leisure</td>
+                                <td>$40 - $55</td>
+                                <td>Referrals, Whatsapp/LINE groups</td>
+                                <td>"Oxygen Mist Therapy" (75m)</td>
+                            </tr>
+                            <tr>
+                                <td>Affluent Locals</td>
+                                <td><span class="badge med">Medium</span></td>
+                                <td>Status, high-quality service, skin/scalp health</td>
+                                <td>$50+</td>
+                                <td>Instagram, TikTok, KOL reviews</td>
+                                <td>"Couple/Friends Retreat" (90m)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- 5. Location Study & Map -->
+            <section id="location-study" class="card fade-in">
+                <h2>5. Location Study</h2>
+                <p class="text-muted">Interactive map highlighting expat residential zones (purple circles), competitor clusters, major shopping malls, and candidate locations for the Oasis PoC storefront.</p>
+                
+                <!-- Leaflet Map Div -->
+                <div id="map" class="map-container"></div>
+
+                <div class="table-wrapper mt-4">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>District</th>
+                                <th>Rent Estimate (60-90 sqm)</th>
+                                <th>Pros</th>
+                                <th>Cons</th>
+                                <th>Overall Rating</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="highlight-row">
+                                <td>Thao Dien (District 2)</td>
+                                <td>USD 1,200 - 1,800</td>
+                                <td>Primary expat hub, high-income families, high footfall on main streets</td>
+                                <td>High rent competition for street-fronts</td>
+                                <td>4.9 / 5 (Recommended)</td>
+                            </tr>
+                            <tr>
+                                <td>District 1 (Japan Town)</td>
+                                <td>USD 1,800 - 2,500</td>
+                                <td>Direct access to Japanese expat community, active business hub</td>
+                                <td>Extremely high rent, parking difficulties</td>
+                                <td>4.2 / 5</td>
+                            </tr>
+                            <tr>
+                                <td>District 7 (Phu My Hung)</td>
+                                <td>USD 1,000 - 1,500</td>
+                                <td>Large Korean expat base, green environment</td>
+                                <td>Further away from central and D2 expat segments</td>
+                                <td>3.8 / 5</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="conclusion-box">
+                    <strong>Strategy:</strong> Establish the PoC in Thao Dien (District 2) on a side street or second floor near Xuan Thuy St. Rent target: USD 1,500/month for a 800 sq ft boutique space. This balances expat visibility with low fixed rent.
+                </div>
+            </section>
+
+            <!-- 6. Competitor Study -->
+            <section id="competitors" class="card fade-in">
+                <h2>6. Competitor Study</h2>
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Type</th>
+                                <th>Examples</th>
+                                <th>Price Range (USD)</th>
+                                <th>Strengths</th>
+                                <th>Weaknesses</th>
+                                <th>Our Differentiation</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Japanese Head Spas</td>
+                                <td>Birthree CHAMPACA (D1)</td>
+                                <td>$55 - $75</td>
+                                <td>Premium reputation, Japanese products</td>
+                                <td>Located in D1; far from D2 expat residential hubs</td>
+                                <td>D2 location, lower pricing structure ($40 avg)</td>
+                            </tr>
+                            <tr>
+                                <td>General Spas</td>
+                                <td>Sense Spa (D1)</td>
+                                <td>$30 - $70</td>
+                                <td>Good service, Japanese support</td>
+                                <td>Not specialized in head/scalp treatments</td>
+                                <td>100% focused on head spa technology and diagnostics</td>
+                            </tr>
+                            <tr>
+                                <td>Budget Hair Washes</td>
+                                <td>Moc Kim Spa, local shops</td>
+                                <td>$8 - $20</td>
+                                <td>Very cheap, widely available</td>
+                                <td>No privacy, loud, basic products</td>
+                                <td>Strict private suites, soundproofing, organic imports</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- 7. Unmet Needs & Market Gap -->
+            <section id="unmet-needs" class="card fade-in">
+                <h2>7. Unmet Needs & Market Gap</h2>
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Customer Need</th>
+                                <th>Current Solution</th>
+                                <th>The Gap</th>
+                                <th>Proposed Solution</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Anti-Pollution Scalp Care</td>
+                                <td>Standard shampoos</td>
+                                <td>Chemical products do not deep clean follicles</td>
+                                <td>Carbonated water therapy + scalp micro-camera scan verification</td>
+                            </tr>
+                            <tr>
+                                <td>Absolute Quiet Relaxation</td>
+                                <td>Open-concept hair salons</td>
+                                <td>Salons are loud, bright, and chemical-smelling</td>
+                                <td>Private, soundproofed rooms with starlight ceilings and warm lighting</td>
+                            </tr>
+                            <tr>
+                                <td>Expat Friendly Service</td>
+                                <td>Local hair wash shops</td>
+                                <td>Language barriers and lack of standard SOP hygiene</td>
+                                <td>Fully English-speaking consultants and stylists trained in Omotenashi</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- 8. Product / Service Menu -->
+            <section id="menu" class="card fade-in">
+                <h2>8. Product / Service Menu</h2>
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Service Name</th>
+                                <th>Duration</th>
+                                <th>Target Price (USD)</th>
+                                <th>Use Case</th>
+                                <th>COGS Est. (USD)</th>
+                                <th>Margin Logic</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Scalp Discovery Trial</td>
+                                <td>45m</td>
+                                <td>$14</td>
+                                <td>First visit, scalp analysis, basic wash</td>
+                                <td>$3</td>
+                                <td>82% - Customer acquisition</td>
+                            </tr>
+                            <tr>
+                                <td>Signature Scalp Balance</td>
+                                <td>60m</td>
+                                <td>$23</td>
+                                <td>Core maintenance, regular relaxation</td>
+                                <td>$3</td>
+                                <td>86% - Volume driver</td>
+                            </tr>
+                            <tr>
+                                <td>Deep Detox Scalp Spa</td>
+                                <td>75m</td>
+                                <td>$29</td>
+                                <td>Humid climate refresh, oily scalp treatment</td>
+                                <td>$4</td>
+                                <td>86% - High margin focus</td>
+                            </tr>
+                            <tr>
+                                <td>Oxygen Mist Therapy</td>
+                                <td>75m</td>
+                                <td>$36</td>
+                                <td>Premium scalp nourishment and anti-aging</td>
+                                <td>$5</td>
+                                <td>85% - High ticket upsell</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- 9. Packages & Memberships -->
+            <section id="packages" class="card fade-in">
+                <h2>9. Packages & Memberships</h2>
+                <div class="grid-stats">
+                    <div class="stat-box">
+                        <span class="label">Scalp Maintenance</span>
+                        <span class="value">$104</span>
+                        <span class="subtext">5x Signature sessions ($21/session, 3 mo)</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="label">Deep Cleanse Reset</span>
+                        <span class="value">$127</span>
+                        <span class="subtext">5x Deep Detox sessions ($25/session, 3 mo)</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="label">Oxygen Refresh Plan</span>
+                        <span class="value">$162</span>
+                        <span class="subtext">5x Oxygen Mist sessions ($32/session, 4 mo)</span>
+                    </div>
+                </div>
+                <p class="mt-4 text-muted"><em>Pre-paid packages generate immediate cash flow to offset setup costs and lock in repeat expat clients.</em></p>
+            </section>
+
+            <!-- 10. Customer Journey -->
+            <section id="customer-journey" class="card fade-in">
+                <h2>10. Customer Journey & Sales Flow</h2>
+                <ul class="timeline-list">
+                    <li><strong>Discovery:</strong> Expats find Oasis on Google Maps or via recommendations in local Facebook/WhatsApp groups.</li>
+                    <li><strong>Reception:</strong> Welcome with organic tea and warm towel in the lobby area.</li>
+                    <li><strong>Consultation:</strong> Scalp micro-scan shows oily build-up and clogged pores on tablet screen.</li>
+                    <li><strong>Service:</strong> Escorted to a private, soundproof pod. Flat-bed shampoo treatment with starlight ceiling, steam halo, and scalp massage.</li>
+                    <li><strong>Blow-dry:</strong> Dyson styling bar finishing. Second scan shows clear, healthy hair follicles.</li>
+                    <li><strong>Checkout:</strong> Stylist presents the pre-paid package offer based on the visible before/after scan results.</li>
+                </ul>
+            </section>
+
+            <!-- 11. Setup & Layout -->
+            <section id="setup-layout" class="card fade-in">
+                <h2>11. Outlet Setup & Layout (800 sq ft)</h2>
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Area / Zone</th>
+                                <th>Space (sqft)</th>
+                                <th>Setup & Equipment</th>
+                                <th>Purpose</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Lobby & Reception</td>
+                                <td>150</td>
+                                <td>Reception counter, product shelves, waiting sofa</td>
+                                <td>First impression & retail</td>
+                            </tr>
+                            <tr>
+                                <td>Consultation Station</td>
+                                <td>80</td>
+                                <td>Sofa, scalp camera, tablet display</td>
+                                <td>Educational sales</td>
+                            </tr>
+                            <tr>
+                                <td>Private Styling Station Bays (4)</td>
+                                <td>400</td>
+                                <td>4 comfortable treatment chairs, 2 styling chairs, steamers</td>
+                                <td>Core service delivery</td>
+                            </tr>
+                            <tr>
+                                <td>Styling Bar</td>
+                                <td>100</td>
+                                <td>2 styling chairs, Dyson hair dryers</td>
+                                <td>Finishing touch</td>
+                            </tr>
+                            <tr>
+                                <td>Utility & Staff Room</td>
+                                <td>70</td>
+                                <td>Washer/dryer, product storage</td>
+                                <td>Back of house</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- 12. Staffing Model -->
+            <section id="staffing" class="card fade-in">
+                <h2>12. Staffing Model (Lean PoC)</h2>
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Role</th>
+                                <th>Headcount</th>
+                                <th>Base Salary (USD)</th>
+                                <th>Incentive/Commission</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Salon Director / Master Stylist</td>
+                                <td>1</td>
+                                <td>$800</td>
+                                <td>3% of store monthly net revenue</td>
+                            </tr>
+                            <tr>
+                                <td>Scalp Consultant</td>
+                                <td>1</td>
+                                <td>$700</td>
+                                <td>5% on package sales</td>
+                            </tr>
+                            <tr>
+                                <td>Stylists</td>
+                                <td>4</td>
+                                <td>$550</td>
+                                <td>10% service commission</td>
+                            </tr>
+                            <tr>
+                                <td>Junior Washer / Assistant</td>
+                                <td>1</td>
+                                <td>$350</td>
+                                <td>Performance bonuses</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p><em>Total Base Payroll: USD 4,050/month (+Social Security & Insurance buffers = USD 5,000/mo)</em></p>
+            </section>
+
+            <!-- 13. Monthly OPEX Estimate -->
+            <section id="opex" class="card fade-in">
+                <h2>13. Monthly OPEX Estimate</h2>
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Item</th>
+                                <th>Estimated Cost (USD)</th>
+                                <th>Notes</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Rent</td>
+                                <td>$1,200</td>
+                                <td>Thao Dien boutique space, 800 sqft</td>
+                            </tr>
+                            <tr>
+                                <td>Payroll & Insurance</td>
+                                <td>$4,000</td>
+                                <td>7 headcount total</td>
+                            </tr>
+                            <tr>
+                                <td>Consumables (Oils, Shampoos)</td>
+                                <td>$800</td>
+                                <td>Malaysian OEM backbar products</td>
+                            </tr>
+                            <tr>
+                                <td>Utilities (Water/Power)</td>
+                                <td>$560</td>
+                                <td>Water heating & AC runs</td>
+                            </tr>
+                            <tr>
+                                <td>Marketing / Ads</td>
+                                <td>$320</td>
+                                <td>Local Facebook/Instagram targeting</td>
+                            </tr>
+                            <tr>
+                                <td>Software/POS/Misc</td>
+                                <td>$320</td>
+                                <td>Booking system, basic laundry</td>
+                            </tr>
+                            <tr class="highlight-row">
+                                <td><strong>Total Base OPEX</strong></td>
+                                <td><strong>$7,200</strong></td>
+                                <td><em>MVP target: $7,200</em></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- 14. Initial Investment / CAPEX -->
+            <section id="capex" class="card fade-in">
+                <h2>14. Initial Investment / CAPEX</h2>
+                <div class="grid-stats capex-grid">
+                    <div class="stat-box">
+                        <span class="label">Boutique Renovation</span>
+                        <span class="value">$6,000</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="label">Equipment (Chairs & Beds)</span>
+                        <span class="value">$3,000</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="label">Rent Deposit (2 months)</span>
+                        <span class="value">$1,800</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="label">Initial Inventory</span>
+                        <span class="value">$4,800</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="label">Working Capital</span>
+                        <span class="value">$5,400</span>
+                    </div>
+                </div>
+                <div class="conclusion-box">
+                    <strong>Total Estimate: USD 21,000</strong><br>
+                    <strong>Equipment Strategy:</strong> Procuring 4 high-quality Japanese-spec OEM styling chairs/chairs ($750/station, total $3,000) rather than importing brand-new $7k+ Takara Belmont units. This fits the MVP budget profile perfectly.
+                </div>
+            </section>
+
+            <!-- 15. Unit Economics & Breakeven -->
+            <section id="economics" class="card fade-in">
+                <h2>15. Unit Economics & Breakeven</h2>
+                <div class="text-content">
+                    <ul>
+                        <li><strong>Average Ticket:</strong> USD 40</li>
+                        <li><strong>Contribution Margin per Ticket:</strong> USD 35</li>
+                        <li><strong>Monthly Breakeven Volume:</strong> USD 9,000 (OPEX) / USD 35 = ~257 customers/month</li>
+                        <li><strong>Daily Breakeven:</strong> ~8.5 customers per day (Across 4 treatment chairs)</li>
+                    </ul>
+                </div>
+                <div class="table-wrapper mt-4">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Scenario</th>
+                                <th>Customers/Day</th>
+                                <th>Monthly Revenue</th>
+                                <th>Monthly OPEX</th>
+                                <th>Net Profit (USD)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Breakeven</td>
+                                <td>8.5</td>
+                                <td>$10,200</td>
+                                <td>$9,000</td>
+                                <td style="color: #00e676;">+$1,200</td>
+                            </tr>
+                            <tr class="highlight-row">
+                                <td>Base Case (15 Cust/Day)</td>
+                                <td>15</td>
+                                <td>$18,000</td>
+                                <td>$9,500</td>
+                                <td style="color: #00e676;">+$8,500</td>
+                            </tr>
+                            <tr>
+                                <td>High Case (25 Cust/Day)</td>
+                                <td>25</td>
+                                <td>$30,000</td>
+                                <td>$10,500</td>
+                                <td style="color: #00e676;">+$19,500</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            
+                <div class="conclusion-box" style="margin-top: 2rem; border-left-color: var(--success); background: rgba(16, 185, 129, 0.02);">
+                    <h3 style="color: var(--success); font-size: 1.2rem; margin-bottom: 0.5rem; font-family: var(--font-heading);">Post-Tax Financial Feasibility Analysis</h3>
+                    <p>All calculations in the table above represent pre-tax performance. Factoring in the local Corporate Income Tax (CIT) rate of <strong>20.0%</strong>, we arrive at the following post-tax projections for the Base Case:</p>
+                    <ul style="margin-top: 0.5rem; margin-left: 1.5rem; list-style-type: disc;">
+                        <li><strong>Base Case Pre-Tax Monthly Net Profit:</strong> USD 9,000</li>
+                        <li><strong>Estimated Monthly Corporate Income Tax:</strong> USD 1,800</li>
+                        <li><strong>Post-Tax Net Monthly Profit (PAT):</strong> USD 7,200</li>
+                        <li><strong>Post-Tax Profit to OPEX Ratio:</strong> <strong>80% (Post-Tax)</strong> (vs. 100% pre-tax)</li>
+                        <li><strong>Post-Tax CAPEX Payback Period:</strong> <strong>5 Months</strong> (vs. 3.9 months pre-tax)</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- 16. Setup Timeline -->
+            <section id="timeline" class="card fade-in">
+                <h2>16. Setup Timeline (12 Weeks)</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="date">Weeks 1-2</div>
+                        <div class="content">Concept lock, distributor sourcing setup, search for Thao Dien unit.</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="date">Weeks 3-4</div>
+                        <div class="content">Lease signing, plumbing/interior design approval, initial product orders.</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="date">Weeks 5-8</div>
+                        <div class="content">Renovation, starlight ceiling installation, setup of 4 treatment chairs.</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="date">Weeks 9-10</div>
+                        <div class="content">Staff recruitment and intensive Japanese scalp massage training.</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="date">Week 11</div>
+                        <div class="content">Soft launch (invite local expat community leaders for free trial scan + treatment).</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="date">Week 12</div>
+                        <div class="content">Official opening, push local Google Maps optimization and social media launch.</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 17. Marketing Strategy -->
+            <section id="marketing" class="card fade-in">
+                <h2>17. Marketing Strategy</h2>
+                <div class="text-content">
+                    <p><strong>Expat Communities:</strong> Partner with local expat Facebook groups and post organic, helpful scalp health guides. Offer a 20% discount code for group members.</p>
+                    <p><strong>Google Maps / Local SEO:</strong> Ensure Google Business Profile is fully set up, translations are accurate, and immediately encourage happy soft-launch customers to leave 5-star English reviews.</p>
+                    <p><strong>ASMR Content:</strong> Post high-quality, relaxing ASMR video reels of the head spa water-ring and steam treatments on Instagram and local expat groups.</p>
+                </div>
+            </section>
+
+            <!-- 18. Key Risks & Controls -->
+            <section id="risks" class="card fade-in">
+                <h2>18. Key Risks & Controls</h2>
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Risk Type</th>
+                                <th>Severity</th>
+                                <th>Mitigation / Control</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Wrong Positioning (Too Medical)</td>
+                                <td>Medium</td>
+                                <td>Position as salon service for relaxation/cleanse; avoid hair cure claims to bypass medical licenses.</td>
+                            </tr>
+                            <tr>
+                                <td>Overpaying Rent</td>
+                                <td>High</td>
+                                <td>Focus on side streets or upper floors in D2/D1; rent must remain under USD 2,000/month.</td>
+                            </tr>
+                            <tr>
+                                <td>Staff Inconsistency</td>
+                                <td>High</td>
+                                <td>Implement step-by-step SOP check sheets and conduct weekly service timing audits.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- 19. Final Recommendation -->
+            <section id="recommendation" class="card fade-in">
+                <h2>19. Final Recommendation</h2>
+                <div class="conclusion-box success-box">
+                    <h3>Decision: GO (Expat PoC)</h3>
+                    <ul>
+                        <li><strong>Location:</strong> District 2 (Thao Dien).</li>
+                        <li><strong>Setup:</strong> 4 chairs, 2 styling chairs, 800 sq ft.</li>
+                        <li><strong>Budget:</strong> USD 35k CAPEX, USD 9k OPEX.</li>
+                        <li><strong>Expansion Trigger:</strong> Once store hits USD 15k monthly revenue with 30%+ package conversions, begin planning a second branch in D7 (Phu My Hung).</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- 20. Next Steps -->
+            <section id="next-steps" class="card fade-in">
+                <h2>20. Immediate Next Steps</h2>
+                <ol class="action-list">
+                    <li>Create equipment list for China ordering (4 chairs, 2 beds, steamers, analyzers).</li>
+                    <li>Send RFQs to 3 Malaysian OEM manufacturer contacts for shampoo/scrub samples.</li>
+                    <li>Begin local viewing of 60-90 sqm units in Thao Dien (rent target <$1,500/mo).</li>
+                    <li>Draft the service standard script for the scalp consultation.</li>
+                </ol>
+            </section>
+
+            <footer>
+                <p>Prepared by Antigravity | For Ho Chi Minh City Head Spa Project</p>
+            </footer>
+        </main>
+    </div>
+    
+    <!-- Map Script -->
+    <script>
+        // Initialize map centered between District 1 and Thao Dien (District 2)
+        const map = L.map('map').setView([10.790, 106.720], 13);
+
+        // Add CartoDB Dark Matter tiles to fit our luxury dark aesthetic
+        L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+            subdomains: 'abcd',
+            maxZoom: 20
+        }).addTo(map);
+
+        // Function to calculate radius based on footfall (1-100)
+        const getRadius = (footfall) => {
+            return Math.sqrt(footfall) * 3; 
+        };
+
+        // Japanese Expat Residential Areas
+        const residential = [
+            { name: "Masteri Thao Dien Area", lat: 10.804, lng: 106.745, radius: 450, estPop: 3500 },
+            { name: "Japan Town (Le Thanh Ton / Thai Van Lung)", lat: 10.778, lng: 106.705, radius: 350, estPop: 2500 },
+            { name: "Vinhomes Golden River", lat: 10.785, lng: 106.708, radius: 400, estPop: 2000 }
+        ];
+
+        residential.forEach(res => {
+            L.circle([res.lat, res.lng], {
+                color: '#c6a87c',
+                fillColor: '#c6a87c',
+                fillOpacity: 0.15,
+                weight: 1.5,
+                radius: res.radius
+            }).addTo(map).bindPopup(`
+                <div class="popup-content">
+                    <h3 style="color: #c6a87c;">${res.name}</h3>
+                    <p><strong>Expat Residential Hub</strong></p>
+                    <p><strong>Est. Japanese/Expat Pop:</strong> ~${res.estPop.toLocaleString()} residents</p>
+                </div>
+            `);
+        });
+
+        // Shopping Malls (Footfall anchors)
+        const malls = [
+            { name: "Takashimaya / Saigon Centre", lat: 10.7731, lng: 106.7011, footfall: 100 },
+            { name: "Vincom Mega Mall Thao Dien", lat: 10.8033, lng: 106.7410, footfall: 90 },
+            { name: "Estella Place (D2)", lat: 10.8013, lng: 106.7470, footfall: 80 }
+        ];
+
+        malls.forEach(loc => {
+            L.circleMarker([loc.lat, loc.lng], {
+                radius: getRadius(loc.footfall),
+                fillColor: "#fff",
+                color: "#c6a87c",
+                weight: 1.5,
+                opacity: 1,
+                fillOpacity: 0.8
+            }).addTo(map).bindPopup(`
+                <div class="popup-content">
+                    <h3>🛍️ ${loc.name}</h3>
+                    <p><strong>Est. Relative Footfall:</strong> ${loc.footfall}/100</p>
+                </div>
+            `);
+        });
+
+        // Competitors
+        const competitors = [
+            { name: "Birthree CHAMPACA (Premium Japanese Head Spa)", lat: 10.774567, lng: 106.706176, price: "US$55–75", footfall: 45, comment: "High credibility, located in D1, far from D2 residential." },
+            { name: "Sense Spa (Expat-Friendly General Spa)", lat: 10.775317, lng: 106.704251, price: "US$30–70", footfall: 60, comment: "D1-based, general relaxation, lacks scalp focus." },
+            { name: "Moc Kim Spa (Budget Herbal Wash)", lat: 10.776530, lng: 106.698960, price: "US$8–20", footfall: 50, comment: "Cheap local, no privacy." }
+        ];
+
+        competitors.forEach(loc => {
+            L.circleMarker([loc.lat, loc.lng], {
+                radius: getRadius(loc.footfall),
+                fillColor: "#ef4444",
+                color: "#fff",
+                weight: 1.5,
+                opacity: 1,
+                fillOpacity: 0.9
+            }).addTo(map).bindPopup(`
+                <div class="popup-content">
+                    <h3 style="color: #ef4444;">🔴 ${loc.name}</h3>
+                    <p><strong>Price Level:</strong> ${loc.price}</p>
+                    <p><strong>Est. Footfall Traffic:</strong> ${loc.footfall}/100</p>
+                    <p><strong>Note:</strong> ${loc.comment}</p>
+                </div>
+            `);
+        });
+
+        // Shop Candidates
+        const candidates = [
+            { 
+                name: "Candidate A: Xuan Thuy St (Thao Dien)", 
+                lat: 10.8048, 
+                lng: 106.7360, 
+                note: "Top choice. High street-level expat traffic, excellent visibility.", 
+                rent: 1530,
+                catchment: 40000,
+                premiumTargetPct: 36, // 30% premium segment
+                competitorCapacity: 9000,
+                airportTime: "30 mins from SGN"
+            },
+            { 
+                name: "Candidate B: Quoc Huong St (Thao Dien)", 
+                lat: 10.8025, 
+                lng: 106.7350, 
+                note: "Near apartment towers & transit, quieter side road.", 
+                rent: 1105,
+                catchment: 30000,
+                premiumTargetPct: 30, // 25% premium segment
+                competitorCapacity: 6750,
+                airportTime: "32 mins from SGN"
+            },
+            { 
+                name: "Candidate C: Le Thanh Ton Alley (D1)", 
+                lat: 10.7785, 
+                lng: 106.7055, 
+                note: "Heart of Japan Town. High premium density, small space.", 
+                rent: 1870,
+                catchment: 25000,
+                premiumTargetPct: 34, // 28% premium segment
+                competitorCapacity: 9750,
+                airportTime: "25 mins from SGN"
+            }
+        ];
+
+        // Star Icon for Candidates
+        const starIcon = L.divIcon({
+            html: '<div style="font-size: 24px; filter: drop-shadow(0px 0px 4px rgba(0,0,0,0.5)); animation: pulse 2s infinite;">🌟</div>',
+            className: 'custom-div-icon',
+            iconSize: [30, 30],
+            iconAnchor: [15, 15]
+        });
+
+        candidates.forEach(loc => {
+            // Calculation logic
+            const targetDemand = Math.round(loc.catchment * (loc.premiumTargetPct / 100)); // monthly visits (assuming 1 visit/month)
+            const underservedDemand = Math.max(0, targetDemand - loc.competitorCapacity);
+            const underservedPct = Math.round((underservedDemand / targetDemand) * 100);
+            const ratio = (underservedDemand / loc.rent).toFixed(2);
+
+            L.marker([loc.lat, loc.lng], { icon: starIcon }).addTo(map).bindPopup(`
+                <div class="popup-content" style="min-width: 240px; color: #333;">
+                    <h3 style="color: var(--accent); font-weight: 600; font-size: 14px; margin-top: 0; margin-bottom: 6px; border-bottom: 1px solid #eee; padding-bottom: 4px;">✨ ${loc.name}</h3>
+                    <p style="margin: 4px 0; font-size: 12px; color: #666; line-height: 1.4;">${loc.note}</p>
+                    <hr style="margin: 6px 0; border: 0; border-top: 1px solid #eee;">
+                    <p style="margin: 3px 0; font-size: 11px; display: flex; justify-content: space-between;"><span>Monthly Catchment:</span> <strong style="color: #111;">${loc.catchment.toLocaleString()} pax</strong></p>
+                    <p style="margin: 3px 0; font-size: 11px; display: flex; justify-content: space-between;"><span>Premium Target Segment:</span> <strong style="color: #111;">${loc.premiumTargetPct}%</strong></p>
+                    <p style="margin: 3px 0; font-size: 11px; display: flex; justify-content: space-between;"><span>Monthly Premium Demand:</span> <strong style="color: #111;">${targetDemand.toLocaleString()} visits</strong></p>
+                    <p style="margin: 3px 0; font-size: 11px; display: flex; justify-content: space-between;"><span>Nearby Competitor Capacity:</span> <strong style="color: #111;">${loc.competitorCapacity.toLocaleString()} visits</strong></p>
+                    <p style="margin: 3px 0; font-size: 11px; display: flex; justify-content: space-between;"><span>Underserved Demand Gap:</span> <strong style="color: #e11d48;">${underservedDemand.toLocaleString()} visits (${underservedPct}%)</strong></p>
+                    <p style="margin: 3px 0; font-size: 11px; display: flex; justify-content: space-between;"><span>Airport Travel Time:</span> <strong style="color: #111;">${loc.airportTime}</strong></p>
+                    <p style="margin: 3px 0; font-size: 11px; display: flex; justify-content: space-between;"><span>Monthly Rent:</span> <strong style="color: #111;">USD ${loc.rent.toLocaleString()}</strong></p>
+                    <div style="background: rgba(198,168,124,0.15); padding: 8px; border-radius: 6px; border-left: 3px solid var(--accent); margin-top: 8px;">
+                        <strong style="color: var(--accent); font-size: 10px; text-transform: uppercase; letter-spacing: 0.5px; display: block; margin-bottom: 2px;">Potential Customer to Rent Ratio:</strong>
+                        <span style="font-size: 14px; font-weight: bold; color: #111;">${ratio} potential customers/USD 1 rent</span>
+                    </div>
+                </div>
+            `);
+        });
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>

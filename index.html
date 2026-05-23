@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APAC Hair Salon | Hair Salon Feasibility Study Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Leaflet Map Dependencies -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <style>
+        .map-container {
+            height: 550px;
+            width: 100%;
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), 0 0 15px rgba(198, 168, 124, 0.15);
+            margin-top: 1rem;
+            z-index: 10;
+        }
+        /* Custom Leaflet Dark/Gold Popups */
+        .leaflet-popup-content-wrapper {
+            background: rgba(11, 15, 20, 0.95) !important;
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            color: var(--text-main) !important;
+            padding: 5px;
+        }
+        .leaflet-popup-tip {
+            background: rgba(11, 15, 20, 0.95) !important;
+            border: 1px solid var(--border-color);
+        }
+        .popup-content {
+            color: var(--text-main);
+            min-width: 240px;
+            font-family: var(--font-body);
+        }
+        .popup-content h3 {
+            color: var(--accent) !important;
+            font-family: var(--font-heading);
+            font-size: 1.3rem;
+            margin-bottom: 0.4rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 0.3rem;
+        }
+        .popup-content p {
+            margin: 0.4rem 0;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            display: flex;
+            justify-content: space-between;
+        }
+        .popup-content p strong {
+            color: var(--text-main);
+            font-weight: 500;
+        }
+        .popup-btn {
+            display: block;
+            width: 100%;
+            padding: 0.7rem;
+            background: linear-gradient(135deg, var(--accent) 0%, #b39467 100%);
+            color: #0b0f14 !important;
+            text-align: center;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 6px;
+            margin-top: 0.8rem;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            box-shadow: 0 4px 10px rgba(198, 168, 124, 0.2);
+            transition: all 0.2s ease;
+        }
+        .popup-btn:hover {
+            filter: brightness(1.15);
+            transform: translateY(-1px);
+            box-shadow: 0 6px 15px rgba(198, 168, 124, 0.4);
+        }
+        @keyframes dynamic-pulse {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 var(--marker-color); }
+            70% { transform: scale(1.15); box-shadow: 0 0 0 8px rgba(255,255,255,0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255,255,255,0); }
+        }
+        .dynamic-marker {
+            border-radius: 50%;
+            border: 2px solid #fff;
+            box-shadow: 0 0 8px var(--marker-color);
+            animation: dynamic-pulse 2s infinite;
+        }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar">
+            <div class="sidebar-header">
+                <h2>Oasis Salon</h2>
+                <p>Feasibility Study</p>
+                <div class="lang-selector">
+                    <button class="lang-btn" data-lang="en">EN</button>
+                    <button class="lang-btn" data-lang="ja">JA</button>
+                    <button class="lang-btn" data-lang="vi">VI</button>
+                </div>
+                                                                <div class="city-selector">
+                    <a href="index.html" class="city-btn direct-link active">Dashboard</a>
+                    <details class="city-group">
+                        <summary>Vietnam</summary>
+                        <div class="group-links">
+                            <a href="binhduong.html" class="city-btn">Binh Duong</a>
+                            <a href="danang.html" class="city-btn">Da Nang</a>
+                            <a href="dongnai.html" class="city-btn">Dong Nai</a>
+                            <a href="haiphong.html" class="city-btn">Hai Phong</a>
+                            <a href="hanoi.html" class="city-btn">Hanoi</a>
+                            <a href="hcmc.html" class="city-btn">Ho Chi Minh</a>
+                        </div>
+                    </details>
+                    <details class="city-group">
+                        <summary>Malaysia</summary>
+                        <div class="group-links">
+                            <a href="johor.html" class="city-btn">Johor Bahru</a>
+                            <a href="kuala_lumpur.html" class="city-btn">Kuala Lumpur</a>
+                            <a href="penang.html" class="city-btn">Penang</a>
+                            <a href="sabah.html" class="city-btn">Sabah</a>
+                            <a href="sarawak.html" class="city-btn">Sarawak</a>
+                        </div>
+                    </details>
+                    <details class="city-group">
+                        <summary>Taiwan</summary>
+                        <div class="group-links">
+                            <a href="kaohsiung.html" class="city-btn">Kaohsiung</a>
+                            <a href="taichung.html" class="city-btn">Taichung</a>
+                            <a href="tainan.html" class="city-btn">Tainan</a>
+                            <a href="taipei.html" class="city-btn">Taipei</a>
+                        </div>
+                    </details>
+                    <details class="city-group">
+                        <summary>Australia</summary>
+                        <div class="group-links">
+                            <a href="brisbane.html" class="city-btn">Brisbane</a>
+                            <a href="melbourne.html" class="city-btn">Melbourne</a>
+                            <a href="perth.html" class="city-btn">Perth</a>
+                            <a href="sydney.html" class="city-btn">Sydney</a>
+                        </div>
+                    </details>
+                    <details class="city-group">
+                        <summary>Japan</summary>
+                        <div class="group-links">
+                            <a href="fukuoka.html" class="city-btn">Fukuoka</a>
+                            <a href="okinawa.html" class="city-btn">Okinawa</a>
+                        </div>
+                    </details>
+                    <details class="city-group">
+                        <summary>South Korea</summary>
+                        <div class="group-links">
+                            <a href="busan.html" class="city-btn">Busan</a>
+                        </div>
+                    </details>
+                    <details class="city-group">
+                        <summary>Middle East</summary>
+                        <div class="group-links">
+                            <a href="dubai.html" class="city-btn">Dubai</a>
+                        </div>
+                    </details>
+                    <details class="city-group">
+                        <summary>Other APAC</summary>
+                        <div class="group-links">
+                            <a href="bangkok.html" class="city-btn">Bangkok</a>
+                            <a href="hongkong.html" class="city-btn">Hong Kong</a>
+                            <a href="macau.html" class="city-btn">Macau</a>
+                            <a href="singapore.html" class="city-btn">Singapore</a>
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#comparisons">1. Market Comparisons</a></li>
+                <li><a href="#overview-table">2. Financial Overview</a></li>
+                <li><a href="#complexity">3. Operational Complexity</a></li>
+                <li><a href="#strategic-path">4. Strategic Recommendations</a></li>
+                <li><a href="#long-term-growth">5. Ecosystem & Long-Term Growth</a></li>
+            </ul>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="hero">
+                <button class="download-report-btn" onclick="window.print()">
+                    <svg viewBox="0 0 24 24" style="width:16px; height:16px; fill:currentColor; vertical-align:middle; margin-right:6px;">
+                        <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/>
+                    </svg>
+                    Download Report
+                </button>
+                <div class="hero-glass">
+                    <h1>Oasis Hair Salon</h1>
+                    <p class="subtitle">Global Market Entry & Feasibility Comparison Dashboard</p>
+                    <div class="hero-meta">
+                        <span>Scope: APAC Expansion</span>
+                        <span>Currency: USD ($)</span>
+                        <span>Version: 1.0</span>
+                    </div>
+                </div>
+            </header>
+
+            <!-- 1. Geographic Market Overview (Asia Map Navigation) -->
+            <section id="comparisons" class="card fade-in">
+                <h2>1. APAC Feasibility Map</h2>
+                <p class="text-muted" style="margin-bottom: 1.5rem;">Explore our proposed market entry locations across the Asia-Pacific region. Click any marker to view a high-level summary and access the detailed business proposal.</p>
+                <div id="map" class="map-container"></div>
+            </section>
+
+            <section id="overview-table" class="card fade-in">
+                <h2>2. Financial Overview Table</h2>
+                <p class="text-muted">A direct side-by-side comparison of core operational and structural parameters across the fifteen proposal models, factoring in local Corporate Income Taxes (CIT) and Underserved Market Demand.</p>
+                                                                <div class="table-controls">
+                    <div class="filter-tabs">
+                        <button class="tab-btn active" data-region="All" onclick="filterTable('All', 'overview')">All</button>
+                        <button class="tab-btn" data-region="Vietnam" onclick="filterTable('Vietnam', 'overview')">Vietnam</button>
+                        <button class="tab-btn" data-region="Malaysia" onclick="filterTable('Malaysia', 'overview')">Malaysia</button>
+                        <button class="tab-btn" data-region="Taiwan" onclick="filterTable('Taiwan', 'overview')">Taiwan</button>
+                        <button class="tab-btn" data-region="Australia" onclick="filterTable('Australia', 'overview')">Australia</button>
+                        <button class="tab-btn" data-region="Other APAC" onclick="filterTable('Other APAC', 'overview')">Other APAC</button>
+                        <button class="tab-btn" data-region="Middle East" onclick="filterTable('Middle East', 'overview')">Middle East</button>
+                        <button class="tab-btn" data-region="Japan" onclick="filterTable('Japan', 'overview')">Japan</button>
+                        <button class="tab-btn" data-region="South Korea" onclick="filterTable('South Korea', 'overview')">South Korea</button>
+                    </div>
+                    <div class="search-wrapper">
+                        <span class="search-icon">🔍</span>
+                        <input type="text" id="search-overview" class="search-input" placeholder="Search cities..." onkeyup="filterTableBySearch('overview')">
+                    </div>
+                </div>
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>City</th>
+                                <th>Outlet Format</th>
+                                <th>Target Size</th>
+                                <th>Initial CAPEX</th>
+                                <th>Monthly OPEX</th>
+                                <th>Average Ticket</th>
+                                <th>COGS per Session</th>
+                                <th>Gross Margin</th>
+                                <th>Monthly Breakeven</th>
+                                <th>Daily Breakeven</th>
+                                <th>Corporate Income Tax (CIT) Rate</th>
+                                <th>Post-Tax Profit to OPEX Ratio</th>
+                                <th>Time to Payback (Post-Tax CAPEX)</th>
+                                <th>Underserved Demand Gap (%)</th>
+                                <th>Time from Nearest Airport</th>
+                                <th>Key Strategic Risk</th>
+                            </tr>
+                        </thead>
+                        <tbody id="overview-table-body"></tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section id="complexity" class="card fade-in">
+                <h2>3. Operational Complexity Analysis (Man-Hours)</h2>
+                <p>The time investment required to establish the business successfully is calculated based on legal setups, property hunting, renovation timelines, recruitment, and distributor relationships.</p>
+                
+                                                                <div class="table-controls">
+                    <div class="filter-tabs">
+                        <button class="tab-btn active" data-region="All" onclick="filterTable('All', 'complexity')">All</button>
+                        <button class="tab-btn" data-region="Vietnam" onclick="filterTable('Vietnam', 'complexity')">Vietnam</button>
+                        <button class="tab-btn" data-region="Malaysia" onclick="filterTable('Malaysia', 'complexity')">Malaysia</button>
+                        <button class="tab-btn" data-region="Taiwan" onclick="filterTable('Taiwan', 'complexity')">Taiwan</button>
+                        <button class="tab-btn" data-region="Australia" onclick="filterTable('Australia', 'complexity')">Australia</button>
+                        <button class="tab-btn" data-region="Other APAC" onclick="filterTable('Other APAC', 'complexity')">Other APAC</button>
+                        <button class="tab-btn" data-region="Middle East" onclick="filterTable(\'Middle East\', \'complexity\')">Middle East</button>
+                        <button class="tab-btn" data-region="Middle East" onclick="filterTable('Middle East', 'overview')">Middle East</button>
+                        <button class="tab-btn" data-region="Japan" onclick="filterTable('Japan', 'overview')">Japan</button>
+                        <button class="tab-btn" data-region="South Korea" onclick="filterTable('South Korea', 'overview')">South Korea</button>
+                    </div>
+                    <div class="search-wrapper">
+                        <span class="search-icon">🔍</span>
+                        <input type="text" id="search-complexity" class="search-input" placeholder="Search cities..." onkeyup="filterTableBySearch('complexity')">
+                    </div>
+                </div>
+                <div class="table-wrapper" style="margin-top: 1rem;">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>City (Total Hours)</th>
+                                <th>Lease & Location Search</th>
+                                <th>Design & Renovation Management</th>
+                                <th>Staffing & SOP Training</th>
+                                <th>Distributor Sourcing</th>
+                            </tr>
+                        </thead>
+                        <tbody id="complexity-table-body"></tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- 4. Strategic Recommendations -->
+            <section id="strategic-path" class="card fade-in">
+                <h2>4. Strategic Recommendations</h2>
+                <div class="text-content">
+                    <p>Based on financial calculations, setup complexity, and market gaps, we recommend a phased cross-border entry strategy:</p>
+                    <blockquote class="positioning-statement">"Agile APAC Expansion: Capitalize on low-CAPEX salon entry points in HCMC, Johor, and Penang; deploy specialized boutique salons in Taipei, Kuala Lumpur, Tainan, Brisbane, Perth, and Macau; and scale to high-yielding premium styling hubs in Singapore, Taichung, Hong Kong, Sydney, and Melbourne."</blockquote>
+                    
+                    <div class="grid-stats" style="margin-top: 2rem;">
+                        <div class="stat-box success-box">
+                            <span class="label">Phase 1: Low-CAPEX Salon PoCs</span>
+                            <span class="value" style="font-size: 1.4rem;">Johor, HCMC, Penang, Hanoi, Da Nang, Binh Duong & Dong Nai</span>
+                            <span class="subtext">Launch the lowest investment entry points ($30k - $55k) to validate localized brand traction and expat/transit response with high rent-to-customer efficiencies.</span>
+                        </div>
+                        <div class="stat-box success-box">
+                            <span class="label">Phase 2: Boutique Salon Suites</span>
+                            <span class="value" style="font-size: 1.4rem;">Taipei, KL, Tainan, Bangkok, Hai Phong, Brisbane, Perth & Macau</span>
+                            <span class="subtext">Deploy boutique models ($65k - $105k) in cultural/business hubs using centralized logistics and operational playbooks established in Phase 1.</span>
+                        </div>
+                        <div class="stat-box success-box">
+                            <span class="label">Phase 3: Elite Salon Hubs</span>
+                            <span class="value" style="font-size: 1.4rem;">Singapore, Taichung, HK, Sydney & Melbourne</span>
+                            <span class="subtext">Scale to luxury VIP suites and high-ticket micro-spas ($135k - $180k) once the brand equity, supply chains, and staff training pipelines are fully solidified.</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 5. Ecosystem & Long-Term Growth -->
+            <section id="long-term-growth" class="card fade-in">
+                <h2>5. Ecosystem & Long-Term Growth Channels</h2>
+                <div class="text-content">
+                    <p>While our physical salons drive high localized popularity, customer trust, and organic brand advocacy, they represent only the first phase of the Oasis platform. The ultimate enterprise value is unlocked by scaling high-margin digital products and B2B expansion models:</p>
+                    
+                    <div class="grid-stats" style="margin-top: 2rem;">
+                        <div class="stat-box success-box" style="border-left: 4px solid var(--accent); background: rgba(198, 168, 124, 0.02);">
+                            <span class="label" style="color: var(--accent); text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.5px;">Channel 1</span>
+                            <span class="value" style="font-size: 1.4rem; color: var(--text-main); margin-top: 0.3rem; margin-bottom: 0.3rem;">Proprietary Salon Retail Lines</span>
+                            <span class="subtext">Leverage in-salon micro-camera diagnostics to formulate custom organic scalp serums, shampoos, and conditioners. These high-margin (75%+) retail items will be cross-sold during visits and scaled globally via direct-to-consumer (D2C) e-commerce platforms.</span>
+                        </div>
+                        <div class="stat-box success-box" style="border-left: 4px solid var(--accent); background: rgba(198, 168, 124, 0.02);">
+                            <span class="label" style="color: var(--accent); text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.5px;">Channel 2</span>
+                            <span class="value" style="font-size: 1.4rem; color: var(--text-main); margin-top: 0.3rem; margin-bottom: 0.3rem;">Oasis Hair Styling Academy</span>
+                            <span class="subtext">Establish centralized training centers in regional hubs (e.g., Taipei & Singapore). By standardizing certifications for scalp therapists, we create a proprietary B2B supply pipeline of qualified practitioners, supporting franchise expansion and regional licensing.</span>
+                        </div>
+                        <div class="stat-box success-box" style="border-left: 4px solid var(--accent); background: rgba(198, 168, 124, 0.02);">
+                            <span class="label" style="color: var(--accent); text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.5px;">Channel 3</span>
+                            <span class="value" style="font-size: 1.4rem; color: var(--text-main); margin-top: 0.3rem; margin-bottom: 0.3rem;">Salon Franchising & B2B Supply</span>
+                            <span class="subtext">Leverage centralized purchasing power for Japanese-spec carbonated water generators, treatment domes, and styling chairs. Provide turnkey setup supply packages and collect recurring franchise licensing royalties (e.g., 5-8% of gross revenue) from global operators.</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <footer>
+                <p>Prepared by Antigravity | Global Salon Feasibility Comparison</p>
+            </footer>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

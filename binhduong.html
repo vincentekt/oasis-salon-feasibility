@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Binh Duong Hair Salon | Business Proposal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Leaflet JS & CSS for interactive maps -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <style>
+        .map-container {
+            height: 450px;
+            width: 100%;
+            border-radius: 12px;
+            margin-top: 1.5rem;
+            border: 1px solid var(--border-color);
+            z-index: 10;
+        }
+        .popup-content {
+            color: #333;
+        }
+        .popup-content h3 {
+            color: #111;
+            font-family: var(--font-body);
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+        .popup-content p {
+            margin: 0.2rem 0;
+            font-size: 0.85rem;
+            line-height: 1.4;
+        }
+        .leaflet-popup-content-wrapper {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 8px;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.25); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar">
+            <div class="sidebar-header">
+                <h2>Oasis Salon</h2>
+                <p>Feasibility Study</p>
+                <div class="lang-selector">
+                    <button class="lang-btn" data-lang="en">EN</button>
+                    <button class="lang-btn" data-lang="ja">JA</button>
+                    <button class="lang-btn" data-lang="vi">VI</button>
+                </div>
+                                                                <div class="city-selector">
+                    <a href="index.html" class="city-btn direct-link">Dashboard</a>
+                    <details class="city-group" open>
+                        <summary>Vietnam</summary>
+                        <div class="group-links">
+                            <a href="binhduong.html" class="city-btn active">Binh Duong</a>
+                            <a href="danang.html" class="city-btn">Da Nang</a>
+                            <a href="dongnai.html" class="city-btn">Dong Nai</a>
+                            <a href="haiphong.html" class="city-btn">Hai Phong</a>
+                            <a href="hanoi.html" class="city-btn">Hanoi</a>
+                            <a href="hcmc.html" class="city-btn">Ho Chi Minh</a>
+                        </div>
+                    </details>
+                    <details class="city-group">
+                        <summary>Malaysia</summary>
+                        <div class="group-links">
+                            <a href="johor.html" class="city-btn">Johor Bahru</a>
+                            <a href="kuala_lumpur.html" class="city-btn">Kuala Lumpur</a>
+                            <a href="penang.html" class="city-btn">Penang</a>
+                            <a href="sabah.html" class="city-btn">Sabah</a>
+                            <a href="sarawak.html" class="city-btn">Sarawak</a>
+                        </div>
+                    </details>
+                    <details class="city-group">
+                        <summary>Taiwan</summary>
+                        <div class="group-links">
+                            <a href="kaohsiung.html" class="city-btn">Kaohsiung</a>
+                            <a href="taichung.html" class="city-btn">Taichung</a>
+                            <a href="tainan.html" class="city-btn">Tainan</a>
+                            <a href="taipei.html" class="city-btn">Taipei</a>
+                        </div>
+                    </details>
+                    <details class="city-group">
+                        <summary>Australia</summary>
+                        <div class="group-links">
+                            <a href="brisbane.html" class="city-btn">Brisbane</a>
+                            <a href="melbourne.html" class="city-btn">Melbourne</a>
+                            <a href="perth.html" class="city-btn">Perth</a>
+                            <a href="sydney.html" class="city-btn">Sydney</a>
+                        </div>
+                    </details>
+                    <details class="city-group">
+                        <summary>Japan</summary>
+                        <div class="group-links">
+                            <a href="fukuoka.html" class="city-btn">Fukuoka</a>
+                            <a href="okinawa.html" class="city-btn">Okinawa</a>
+                        </div>
+                    </details>
+                    <details class="city-group">
+                        <summary>South Korea</summary>
+                        <div class="group-links">
+                            <a href="busan.html" class="city-btn">Busan</a>
+                        </div>
+                    </details>
+                    <details class="city-group">
+                        <summary>Middle East</summary>
+                        <div class="group-links">
+                            <a href="dubai.html" class="city-btn">Dubai</a>
+                        </div>
+                    </details>
+                    <details class="city-group">
+                        <summary>Other APAC</summary>
+                        <div class="group-links">
+                            <a href="bangkok.html" class="city-btn">Bangkok</a>
+                            <a href="hongkong.html" class="city-btn">Hong Kong</a>
+                            <a href="macau.html" class="city-btn">Macau</a>
+                            <a href="singapore.html" class="city-btn">Singapore</a>
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#executive-summary">1. Executive Summary</a></li>
+                <li><a href="#positioning">2. Business Positioning</a></li>
+                <li><a href="#market-context">3. Market Context</a></li>
+                <li><a href="#target-segments">4. Target Segments</a></li>
+                <li><a href="#location-study">5. Location Study</a></li>
+                <li><a href="#competitors">6. Competitor Study</a></li>
+                <li><a href="#unmet-needs">7. Unmet Needs & Gap</a></li>
+                <li><a href="#menu">8. Product Menu</a></li>
+                <li><a href="#packages">9. Packages & Memberships</a></li>
+                <li><a href="#customer-journey">10. Customer Journey</a></li>
+                <li><a href="#setup-layout">11. Setup & Layout</a></li>
+                <li><a href="#staffing">12. Staffing Model</a></li>
+                <li><a href="#opex">13. Monthly OPEX</a></li>
+                <li><a href="#capex">14. CAPEX</a></li>
+                <li><a href="#economics">15. Unit Economics</a></li>
+                <li><a href="#timeline">16. Setup Timeline</a></li>
+                <li><a href="#marketing">17. Marketing Strategy</a></li>
+                <li><a href="#risks">18. Risks & Controls</a></li>
+                <li><a href="#recommendation">19. Recommendation</a></li>
+                <li><a href="#next-steps">20. Next Steps</a></li>
+            </ul>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="hero">
+                <button class="download-report-btn" onclick="window.print()">
+                    <svg viewBox="0 0 24 24" style="width:16px; height:16px; fill:currentColor; vertical-align:middle; margin-right:6px;">
+                        <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/>
+                    </svg>
+                    Download Report
+                </button>
+                <div class="hero-glass">
+                    <h1>Oasis Hair Salon</h1>
+                    <p class="subtitle">Binh Duong Market Entry & Feasibility Study</p>
+                    <div class="hero-meta">
+                        <span>Target: Thu Dau Mot / Thuan An</span>
+                        <span>Model: Industrial Corridor PoC (MVP)</span>
+                        <span>Currency: USD ($)</span>
+                    </div>
+                </div>
+            </header>
+
+            <!-- 1. Executive Summary -->
+            <section id="executive-summary" class="card fade-in">
+                <h2>1. Executive Summary</h2>
+                <div class="grid-stats">
+                    <div class="stat-box">
+                        <span class="label">Recommendation</span>
+                        <span class="value success">Proceed (Expat PoC)</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="label">Setup Size</span>
+                        <span class="value">800 sq ft</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="label">Initial CAPEX</span>
+                        <span class="value">USD 30k - 38k</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="label">Monthly OPEX</span>
+                        <span class="value">USD 6,200</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="label">Breakeven Volume</span>
+                        <span class="value">7 Customers / Day</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="label">Average Ticket</span>
+                        <span class="value">USD 32</span>
+                    </div>
+                </div>
+                <p><strong>Main Success Condition:</strong> Establishing an industrial corridor expat head spa in Binh Duong (Thu Dau Mot or Thuan An, near Aeon Mall / VSIP 1) to target foreign manufacturing management expats (primarily Taiwanese, Japanese, and Korean). High-quality Japanese-spec OEM equipment keeps setup CAPEX low.</p>
+            </section>
+
+            <!-- 2. Business Positioning -->
+            <section id="positioning" class="card fade-in">
+                <h2>2. Business Positioning</h2>
+                <div class="text-content">
+                    <p><strong>Positioned as:</strong> A premium, private scalp wellness spa utilizing Japanese carbonated mist systems, soundproofed styling stations, and micro-camera analytics. Focuses on premium service quality and deep sensory relaxation.</p>
+                    <p><strong>Avoid being positioned as:</strong> A local generic beauty shop, a budget massage center, or a noisy haircut salon.</p>
+                    <blockquote class="positioning-statement">"Industrial Oasis. Relax and recharge in Vietnam's manufacturing capital."</blockquote>
+                    <p><strong>Core Customer Promise:</strong> Visible improvement in scalp hygiene and deep physical relaxation using premium organic botanicals and Japanese technology.</p>
+                    <p><strong>Market Fit:</strong> Binh Duong is a massive industrial center bordering HCMC, home to thousands of expatriate managers and technicians. They live and work in the province under high-stress factory operating cycles, but lack dedicated scalp rejuvenation and relaxation sanctuaries. Our MVP fits this gap perfectly.</p>
+                </div>
+            </section>
+
+            <!-- 3. Market Context -->
+            <section id="market-context" class="card fade-in">
+                <h2>3. Market Context</h2>
+                <ul class="context-list">
+                    <li><strong>Demographics:</strong> Over 100,000 foreign workers in Binh Duong, with major enclaves in Thu Dau Mot and Thuan An.</li>
+                    <li><strong>Spending Power:</strong> High corporate expat allowances and expanding local industrial middle class.</li>
+                    <li><strong>Environmental Drivers:</strong> Heavy industrial dust, factory heat, and soot cause oily scalp and dandruff.</li>
+                    <li><strong>Competitive Environment:</strong> Low-cost local hair washes and standard beauty salons, but zero specialized acoustic Japanese head spas.</li>
+            </ul>
+            </section>
+
+            <!-- 4. Target Customer Segments -->
+            <section id="target-segments" class="card fade-in">
+                <h2>4. Target Customer Segments</h2>
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Segment</th>
+                                <th>Attractiveness</th>
+                                <th>Needs & Pain Points</th>
+                                <th>WTP (USD)</th>
+                                <th>Best Channel</th>
+                                <th>Recommended Offer</th>
+                            </tr>
+                        </thead>
+<tbody>
+                             <tr>
+                                <td>Taiwanese, Japanese & Korean Managers</td>
+                                <td><span class="badge high">High</span></td>
+                                <td>Scalp oiliness detox, deep quiet relaxation, English/Asian language care</td>
+                                <td>$30 - $45</td>
+                                <td>Expat social clubs, factory HR partnerships</td>
+                                <td>"VSIP Stylist Cut & Blowout" (75m)</td>
+                            </tr>
+                            <tr>
+                                <td>Local High-Income Families</td>
+                                <td><span class="badge high">High</span></td>
+                                <td>Luxury pampering, premium organic products</td>
+                                <td>$28 - $38</td>
+                                <td>Word of mouth, Becamex residential groups</td>
+                                <td>"Custom Color & Blowout" (60m)</td>
+                            </tr>
+            </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- 5. Location Study & Map -->
+            <section id="location-study" class="card fade-in">
+                <h2>5. Location Study</h2>
+                <p class="text-muted">Interactive map highlighting core premium residential hubs (purple circles), competitor salons, major malls, and proposed candidate commercial spots.</p>
+                <div id="map" class="map-container"></div>
+                <div class="table-wrapper mt-4">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>District</th>
+                                <th>Rent Estimate (60-90 sqm)</th>
+                                <th>Pros</th>
+                                <th>Cons</th>
+                                <th>Overall Rating</th>
+                            </tr>
+                        </thead>
+<tbody>
+                             <tr class="highlight-row">
+                                <td>Thuan An (near Aeon Mall / VSIP 1)</td>
+                                <td>USD 1,000 - 1,300</td>
+                                <td>High visibility, massive expat foot traffic, premium modern complexes</td>
+                                <td>Higher rent premium for main road frontage</td>
+                                <td>4.8 / 5 (Recommended)</td>
+                            </tr>
+                            <tr>
+                                <td>Thu Dau Mot City Core</td>
+                                <td>USD 800 - 1,100</td>
+                                <td>Stable local high-income demographic, steady year-round traffic</td>
+                                <td>Slightly further from VSIP industrial zones</td>
+                                <td>4.3 / 5</td>
+                            </tr>
+            </tbody>
+                    </table>
+                </div>
+                <div class="conclusion-box">
+                    <strong>Strategy:</strong> Lease an 800 sq ft ground-floor commercial unit in Thuan An near Aeon Mall/VSIP 1 to target the main expat traffic. Target rent: USD 1,100/month.
+                </div>
+            </section>
+
+            <!-- 6. Competitor Study -->
+            <section id="competitors" class="card fade-in">
+                <h2>6. Competitor Study</h2>
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Type</th>
+                                <th>Examples</th>
+                                <th>Price Range (USD)</th>
+                                <th>Strengths</th>
+                                <th>Weaknesses</th>
+                                <th>Our Differentiation</th>
+                            </tr>
+                        </thead>
+<tbody>
+                             <tr>
+                                <td>Local Hair Salons</td>
+                                <td>Binh Duong local hair shops</td>
+                                <td>$10 - $25</td>
+                                <td>Cheap cuts, local presence</td>
+                                <td>Crowded open layouts, lack specialized scalp care, standard styling lines</td>
+                                <td>Specialized scalp-hair fusion therapy, damage-free organic colorants, premium styling blowouts</td>
+                            </tr>
+            </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- 7. Unmet Needs & Market Gap -->
+            <section id="unmet-needs" class="card fade-in">
+                <h2>7. Unmet Needs & Market Gap</h2>
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Customer Need</th>
+                                <th>Current Solution</th>
+                                <th>The Gap</th>
+                                <th>Proposed Solution</th>
+                            </tr>
+                        </thead>
+<tbody>
+                             <tr>
+                                <td>Private Acoustic Peace</td>
+                                <td>Open layouts</td>
+                                <td>Dryer noise and conversations disrupt relaxation</td>
+                                <td>Soundproof styling stations with white noise</td>
+                            </tr>
+                            <tr>
+                                <td>Scalp Cleansing Verification</td>
+                                <td>Subjective wash</td>
+                                <td>No visible proof of scalp health improvement</td>
+                                <td>HD microscopic camera scanning before and after sessions</td>
+                            </tr>
+            </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- 8. Product / Service Menu -->
+            <section id="menu" class="card fade-in">
+                <h2>8. Product / Service Menu</h2>
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Service Name</th>
+                                <th>Duration</th>
+                                <th>Target Price (USD)</th>
+                                <th>Use Case</th>
+                                <th>COGS Est. (USD)</th>
+                                <th>Margin Logic</th>
+                            </tr>
+                        </thead>
+<tbody>
+                             <tr>
+                                <td>Oasis Reset Head Spa</td>
+                                <td>60 min</td>
+                                <td>$21</td>
+                                <td>Scalp detox & basic relaxation</td>
+                                <td>$2.20</td>
+                                <td>90% (Entry tier)</td>
+                            </tr>
+                            <tr class="highlight-row">
+                                <td>Premium Carbonated Mist</td>
+                                <td>75 min</td>
+                                <td>$27</td>
+                                <td>Deep scalp cleanse + anti-aging therapy</td>
+                                <td>$3.20</td>
+                                <td>90% (Primary offer)</td>
+                            </tr>
+                            <tr>
+                                <td>Deep Slumber Induction</td>
+                                <td>90 min</td>
+                                <td>$36</td>
+                                <td>Aromatherapy + extended head massage</td>
+                                <td>$3.50</td>
+                                <td>90% (Premium tier)</td>
+                            </tr>
+            </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- 9. Packages & Memberships -->
+            <section id="packages" class="card fade-in">
+                <h2>9. Packages & Memberships</h2>
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Tier Name</th>
+                                <th>Price (USD)</th>
+                                <th>Services Included</th>
+                                <th>Validity</th>
+                                <th>Target Conversion</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Expat Reset Pack (5 sessions)</td>
+                                <td>$101 (10% off)</td>
+                                <td>5x 60m Laneside Reset Spas</td>
+                                <td>6 Months</td>
+                                <td>25% of new clients</td>
+                            </tr>
+                            <tr class="highlight-row">
+                                <td>Oasis Annual Club (12 sessions)</td>
+                                <td>$298 (15% off)</td>
+                                <td>12x 75m Premium Carbonated Spas</td>
+                                <td>12 Months</td>
+                                <td>15% of repeat guests</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- 10. Customer Journey -->
+            <section id="customer-journey" class="card fade-in">
+                <h2>10. Customer Journey</h2>
+                <ol class="journey-list">
+                    <li><strong>Booking:</strong> Online via Instagram/Whatsapp with automated slot booking.</li>
+                    <li><strong>Welcome:</strong> Arrive in our cozy botanical lobby, served warm ginger tea.</li>
+                    <li><strong>Analysis:</strong> Microscope check displays scalp health to the customer.</li>
+                    <li><strong>Treatment:</strong> Transition to private starlight VIP pod for carbonated therapy.</li>
+                    <li><strong>Blowdry & Close:</strong> Post-treatment comparison scan, blowout styling, package promotion.</li>
+                </ol>
+            </section>
+
+            <!-- 11. Setup & Layout -->
+            <section id="setup-layout" class="card fade-in">
+                <h2>11. Setup & Layout</h2>
+                <div class="text-content">
+                    
+                     <p>The 800 sq ft space is optimized for visual privacy and client flow:</p>
+                    <ul>
+                        <li><strong>Lobby & Consultation (150 sqft):</strong> Botanical theme, organic product shelves.</li>
+                        <li><strong>4 Private VIP Pods (400 sqft):</strong> Soundproofed walls, starlight projection ceilings, Japanese styling chairs.</li>
+                        <li><strong>Blowdry Station (150 sqft):</strong> Compact styling chairs and professional vanity mirrors.</li>
+                        <li><strong>Storage & Utility (100 sqft):</strong> Carbonated water system generators, laundry, organic stock.</li>
+                    </ul>
+            
+                </div>
+            </section>
+
+            <!-- 12. Staffing Model -->
+            <section id="staffing" class="card fade-in">
+                <h2>12. Staffing Model</h2>
+                <div class="text-content">
+                    
+                     <p>Low local salaries in Binh Duong support an efficient operations budget:</p>
+                    <ul>
+                        <li><strong>1 Salon Director:</strong> USD 900/month (handles bookings, guest relations, accounting).</li>
+                        <li><strong>3 Stylist Assistants:</strong> USD 600/month base salary (Omotenashi hospitality trained).</li>
+                        <li><strong>1 Cleaning Assistant:</strong> USD 500/month (laundry, general cleaning).</li>
+                    </ul>
+                    <div class="conclusion-box">
+                        <strong>Incentive Model:</strong> 10% commission sharing on membership package sales to motivate stylists.
+                    </div>
+            
+                </div>
+            </section>
+
+            <!-- 13. Monthly OPEX -->
+            <section id="opex" class="card fade-in">
+                <h2>13. Monthly OPEX</h2>
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>OPEX Category</th>
+                                <th>Monthly Cost (USD)</th>
+                                <th>% of Total</th>
+                                <th>Notes</th>
+                            </tr>
+                        </thead>
+<tbody>
+                             <tr class="highlight-row">
+                                <td>Rent (Thuan An commercial unit)</td>
+                                <td>$880</td>
+                                <td>17.7%</td>
+                                <td>800 sq ft unit</td>
+                            </tr>
+                            <tr class="highlight-row">
+                                <td>Staff Salaries (5 total headcount)</td>
+                                <td>$2,560</td>
+                                <td>51.6%</td>
+                                <td>Manager, 3 stylists, assistant</td>
+                            </tr>
+                            <tr>
+                                <td>Marketing (Social/Expat ads)</td>
+                                <td>$320</td>
+                                <td>6.5%</td>
+                                <td>IG and Facebook target ads</td>
+                            </tr>
+                            <tr>
+                                <td>Utilities & Water Filtration</td>
+                                <td>$320</td>
+                                <td>6.5%</td>
+                                <td>AC usage & carbon filter swap-outs</td>
+                            </tr>
+                            <tr>
+                                <td>Inventory & Consumables</td>
+                                <td>$320</td>
+                                <td>6.5%</td>
+                                <td>Organic botanicals, oils</td>
+                            </tr>
+                            <tr class="total-row">
+                                <td><strong>Total Monthly OPEX (with buffers)</strong></td>
+                                <td><strong>$4,960</strong></td>
+                                <td><strong>100%</strong></td>
+                                <td><strong>Base operations budget</strong></td>
+                            </tr>
+            </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- 14. CAPEX -->
+            <section id="capex" class="card fade-in">
+                <h2>14. Initial CAPEX Estimate</h2>
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>CAPEX Item</th>
+                                <th>Estimated Cost (USD)</th>
+                                <th>Notes</th>
+                            </tr>
+                        </thead>
+<tbody>
+                             <tr class="highlight-row">
+                                <td>Renovation & Pod Soundproofing</td>
+                                <td>$6,000</td>
+                                <td>Drywall acoustics, starlight lighting setups</td>
+                            </tr>
+                            <tr class="highlight-row">
+                                <td>Equipment (4 Styling chairs & rinse stations)</td>
+                                <td>$3,000</td>
+                                <td>High-quality Japanese-spec OEM styling chairs</td>
+                            </tr>
+                            <tr>
+                                <td>Rental Deposit (3 Months)</td>
+                                <td>$1,980</td>
+                                <td>Refundable commercial deposit</td>
+                            </tr>
+                            <tr>
+                                <td>Legal & Company Registration</td>
+                                <td>$2,100</td>
+                                <td>Commercial setup files in Vietnam</td>
+                            </tr>
+                            <tr>
+                                <td>Initial Inventory & Launch Marketing</td>
+                                <td>$7,320</td>
+                                <td>Organic stock + opening campaigns</td>
+                            </tr>
+                            <tr class="total-row">
+                                <td><strong>Total Initial CAPEX</strong></td>
+                                <td><strong>$20,400</strong></td>
+                                <td><strong>Midpoint investment</strong></td>
+                            </tr>
+            </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- 15. Unit Economics -->
+            <section id="economics" class="card fade-in">
+                <h2>15. Unit Economics</h2>
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Scenario</th>
+                                <th>Monthly Customers</th>
+                                <th>Monthly Revenue (USD)</th>
+                                <th>COGS (10%)</th>
+                                <th>OPEX (USD)</th>
+                                <th>Net Monthly Profit (USD)</th>
+                            </tr>
+                        </thead>
+<tbody>
+                             <tr>
+                                <td>Breakeven Case</td>
+                                <td>215 customers</td>
+                                <td>$6,880</td>
+                                <td>$688</td>
+                                <td>$6,200</td>
+                                <td>$0 (Approx.)</td>
+                            </tr>
+                            <tr class="highlight-row">
+                                <td>Base Case</td>
+                                <td>440 customers</td>
+                                <td>$14,080</td>
+                                <td>$1,408</td>
+                                <td>$6,200</td>
+                                <td>$6,472</td>
+                            </tr>
+                            <tr>
+                                <td>High-Performance Case</td>
+                                <td>550 customers</td>
+                                <td>$17,600</td>
+                                <td>$1,760</td>
+                                <td>$6,200</td>
+                                <td>$9,640</td>
+                            </tr>
+            </tbody>
+                    </table>
+                </div>
+            
+                <div class="conclusion-box" style="margin-top: 2rem; border-left-color: var(--success); background: rgba(16, 185, 129, 0.02);">
+                    <h3 style="color: var(--success); font-size: 1.2rem; margin-bottom: 0.5rem; font-family: var(--font-heading);">Post-Tax Financial Feasibility Analysis</h3>
+                    <p>All calculations in the table above represent pre-tax performance. Factoring in the local Corporate Income Tax (CIT) rate of <strong>20.0%</strong>, we arrive at the following post-tax projections for the Base Case:</p>
+                    <ul style="margin-top: 0.5rem; margin-left: 1.5rem; list-style-type: disc;">
+                        <li><strong>Base Case Pre-Tax Monthly Net Profit:</strong> USD 6,472</li>
+                        <li><strong>Estimated Monthly Corporate Income Tax:</strong> USD 1,294</li>
+                        <li><strong>Post-Tax Net Monthly Profit (PAT):</strong> USD 5,178</li>
+                        <li><strong>Post-Tax Profit to OPEX Ratio:</strong> <strong>84% (Post-Tax)</strong> (vs. 104% pre-tax)</li>
+                        <li><strong>Post-Tax CAPEX Payback Period:</strong> <strong>7 Months</strong> (vs. 5.3 months pre-tax)</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- 16. Setup Timeline -->
+            <section id="timeline" class="card fade-in">
+                <h2>16. Setup Timeline</h2>
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Milestone Phase</th>
+                                <th>Duration</th>
+                                <th>Key Tasks</th>
+                            </tr>
+                        </thead>
+<tbody>
+                             <tr>
+                                <td>Phase 1: Legal & Property search</td>
+                                <td>Weeks 1 - 4</td>
+                                <td>Lease signed in Binh Duong, local corporate setup registered</td>
+                            </tr>
+                            <tr>
+                                <td>Phase 2: Construction</td>
+                                <td>Weeks 5 - 9</td>
+                                <td>VIP pod acoustics built, OEM styling chairs installed</td>
+                            </tr>
+                            <tr>
+                                <td>Phase 3: Hiring & SOP Training</td>
+                                <td>Weeks 10 - 11</td>
+                                <td>Hire stylists, Omotenashi service coaching</td>
+                            </tr>
+                            <tr>
+                                <td>Phase 4: Launch</td>
+                                <td>Week 12+</td>
+                                <td>Expat preview weekend, targeted opening campaigns</td>
+                            </tr>
+            </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- 17. Marketing Strategy -->
+            <section id="marketing" class="card fade-in">
+                <h2>17. Marketing Strategy</h2>
+                <div class="text-content">
+                    
+                     <p>To acquire clients in Binh Duong, we will prioritize localized channels:</p>
+                    <ul>
+                        <li><strong>Corporate HR Partnerships:</strong> Target manufacturing company HR divisions for corporate packages.</li>
+                        <li><strong>Expat Forums:</strong> Engage on local Taiwanese and Japanese expat Zalo/Line official groups.</li>
+                        <li><strong>Google Maps local search:</strong> Target business travelers visiting industrial zones.</li>
+                    </ul>
+            
+                </div>
+            </section>
+
+            <!-- 18. Risks & Controls -->
+            <section id="risks" class="card fade-in">
+                <h2>18. Risks & Controls</h2>
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Identified Risk</th>
+                                <th>Severity</th>
+                                <th>Control / Mitigation Strategy</th>
+                            </tr>
+                        </thead>
+<tbody>
+                             <tr>
+                                <td>Factory shift fluctuations</td>
+                                <td><span class="badge med">Medium</span></td>
+                                <td>Focus on membership packages to secure recurring weekend bookings.</td>
+                            </tr>
+            </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- 19. Recommendation -->
+            <section id="recommendation" class="card fade-in">
+                <h2>19. Final Recommendation</h2>
+                <div class="conclusion-box success-box">
+
+                     <h3>Decision: GO (Industrial Corridor PoC)</h3>
+                    <ul>
+                        <li><strong>Location:</strong> Thuan An shophouse near Aeon Mall.</li>
+                        <li><strong>Setup:</strong> 4 Styling Stations, 2 Backwash Beds, 800 sq ft.</li>
+                        <li><strong>Budget Ceiling:</strong> USD 38,000.</li>
+                        <li><strong>Expansion Trigger:</strong> Achieve USD 12k monthly revenue with 20%+ membership retention for 3 consecutive months before looking at Thu Dau Mot city center.</li>
+                    </ul>
+            
+                </div>
+            </section>
+
+            <!-- 20. Next Steps -->
+            <section id="next-steps" class="card fade-in">
+                <h2>20. Immediate Next Steps</h2>
+                <ol class="action-list">
+
+                     <li>Engage commercial agents in Thuan An for shop viewings.</li>
+                    <li>Secure quotes for carbonated hair rinse systems.</li>
+                    <li>Prepare foreign business registration files.</li>
+            
+                </ol>
+            </section>
+
+            <footer>
+                <p>Prepared by Antigravity | For BINHDUONG Hair Salon Project</p>
+            </footer>
+        </main>
+    </div>
+    <script>
+
+        // Initialize Map centered on Binh Duong
+        const map = L.map('map').setView([10.9805, 106.6515], 12);
+
+        // Add Positron (light) map tiles to make data pop
+        L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+            subdomains: 'abcd',
+            maxZoom: 20
+        }).addTo(map);
+
+        // Helper to calculate radius based on footfall (1-100)
+        const getRadius = (footfall) => {
+            return Math.sqrt(footfall) * 3;
+        };
+
+        // Premium Expat Residential Zones
+        const residential = [
+            { name: "Thuan An Expat Residential Core", lat: 10.9320, lng: 106.6980, radius: 450, estPop: 2500 },
+            { name: "Thu Dau Mot Corporate Residential Area", lat: 10.9800, lng: 106.6550, radius: 400, estPop: 1800 }
+        ];
+
+        residential.forEach(res => {
+            L.circle([res.lat, res.lng], {
+                color: '#a133ff',
+                fillColor: '#a133ff',
+                fillOpacity: 0.15,
+                weight: 1.5,
+                radius: res.radius
+            }).addTo(map).bindPopup(`
+                <div class="popup-content" style="min-width: 150px;">
+                    <h3 style="color: #a133ff; margin-bottom: 2px;">${res.name}</h3>
+                    <p><strong>Premium Residential Hub</strong></p>
+                    <hr style="margin: 5px 0; border: 0; border-top: 1px solid #eee;">
+                    <p style="margin-bottom: 0;"><strong>Est. Premium Residents:</strong></p>
+                    <p style="font-size: 14px; font-weight: bold; color: #333; margin-top: 2px;">~${res.estPop.toLocaleString()} households</p>
+                </div>
+            `);
+        });
+
+        // Malls
+        const malls = [
+            { name: "Aeon Mall Binh Duong Canary", type: "Major Commercial Hub", lat: 10.9315, lng: 106.6990, footfall: 95 },
+            { name: "Becamex Tower Mall", type: "Business District Retail Center", lat: 10.9790, lng: 106.6580, footfall: 75 }
+        ];
+
+        malls.forEach(loc => {
+            L.circleMarker([loc.lat, loc.lng], {
+                radius: getRadius(loc.footfall),
+                fillColor: "#333",
+                color: "#fff",
+                weight: 1,
+                opacity: 1,
+                fillOpacity: 0.7
+            }).addTo(map).bindPopup(`
+                <div class="popup-content">
+                    <h3>🛍️ ${loc.name}</h3>
+                    <p><strong>Type:</strong> ${loc.type}</p>
+                    <p><strong>Est. Footfall Traffic:</strong> ${loc.footfall}/100</p>
+                </div>
+            `);
+        });
+
+        // Competitors
+        const competitors = [
+            { name: "Binh Duong Local Hair Salon", price: "US$8-16", footfall: 60, lat: 10.9500, lng: 106.6800, comment: "Traditional hair salons. Lack specialized scalp care integration, crowded open layouts." }
+        ];
+
+        competitors.forEach(loc => {
+            L.circleMarker([loc.lat, loc.lng], {
+                radius: getRadius(loc.footfall),
+                fillColor: "#ef4444",
+                color: "#fff",
+                weight: 1.5,
+                opacity: 1,
+                fillOpacity: 0.9
+            }).addTo(map).bindPopup(`
+                <div class="popup-content">
+                    <h3 style="color: #ef4444;">🔴 ${loc.name}</h3>
+                    <p><strong>Price Level:</strong> ${loc.price}</p>
+                    <p><strong>Est. Footfall Traffic:</strong> ${loc.footfall}/100</p>
+                    <p><strong>Note:</strong> ${loc.comment}</p>
+                </div>
+            `);
+        });
+
+        // Shop Candidates
+        const candidates = [
+            { 
+                name: "Candidate A: Thuan An Shophouse Unit (near Aeon Mall)", 
+                lat: 10.9330, 
+                lng: 106.6970, 
+                note: "Top recommendation. Near Aeon Mall. Excellent visibility, parking, and premium expat access.", 
+                rent: 935,
+                catchment: 30000,
+                premiumTargetPct: 24,
+                competitorCapacity: 3000,
+                airportTime: "45 mins from SGN"
+            },
+            { 
+                name: "Candidate B: Thu Dau Mot City Shoplot", 
+                lat: 10.9780, 
+                lng: 106.6560, 
+                note: "Located in commercial center. Good corporate accessibility, parking challenges during business hours.", 
+                rent: 765,
+                catchment: 20000,
+                premiumTargetPct: 18,
+                competitorCapacity: 2250,
+                airportTime: "55 mins from SGN"
+            }
+        ];
+
+        // Star Icon for Candidates
+        const starIcon = L.divIcon({
+            html: '<div style="font-size: 24px; filter: drop-shadow(0px 0px 4px rgba(0,0,0,0.5)); animation: pulse 2s infinite;">🌟</div>',
+            className: 'custom-div-icon',
+            iconSize: [30, 30],
+            iconAnchor: [15, 15]
+        });
+
+        candidates.forEach(loc => {
+            const targetDemand = Math.round(loc.catchment * (loc.premiumTargetPct / 100));
+            const underservedDemand = Math.max(0, targetDemand - loc.competitorCapacity);
+            const underservedPct = Math.round((underservedDemand / targetDemand) * 100);
+            const ratio = (underservedDemand / loc.rent).toFixed(2);
+
+            L.marker([loc.lat, loc.lng], { icon: starIcon }).addTo(map).bindPopup(`
+                <div class="popup-content" style="min-width: 240px; color: #333;">
+                    <h3 style="color: var(--accent); font-weight: 600; font-size: 14px; margin-top: 0; margin-bottom: 6px; border-bottom: 1px solid #eee; padding-bottom: 4px;">✨ ${loc.name}</h3>
+                    <p style="margin: 4px 0; font-size: 12px; color: #666; line-height: 1.4;">${loc.note}</p>
+                    <hr style="margin: 6px 0; border: 0; border-top: 1px solid #eee;">
+                    <p style="margin: 3px 0; font-size: 11px; display: flex; justify-content: space-between;"><span>Monthly Catchment:</span> <strong style="color: #111;">${loc.catchment.toLocaleString()} pax</strong></p>
+                    <p style="margin: 3px 0; font-size: 11px; display: flex; justify-content: space-between;"><span>Premium Target Segment:</span> <strong style="color: #111;">${loc.premiumTargetPct}%</strong></p>
+                    <p style="margin: 3px 0; font-size: 11px; display: flex; justify-content: space-between;"><span>Monthly Premium Demand:</span> <strong style="color: #111;">${targetDemand.toLocaleString()} visits</strong></p>
+                    <p style="margin: 3px 0; font-size: 11px; display: flex; justify-content: space-between;"><span>Nearby Competitor Capacity:</span> <strong style="color: #111;">${loc.competitorCapacity.toLocaleString()} visits</strong></p>
+                    <p style="margin: 3px 0; font-size: 11px; display: flex; justify-content: space-between;"><span>Underserved Demand Gap:</span> <strong style="color: #e11d48;">${underservedDemand.toLocaleString()} visits (${underservedPct}%)</strong></p>
+                    <p style="margin: 3px 0; font-size: 11px; display: flex; justify-content: space-between;"><span>Airport Travel Time:</span> <strong style="color: #111;">${loc.airportTime}</strong></p>
+                    <p style="margin: 3px 0; font-size: 11px; display: flex; justify-content: space-between;"><span>Monthly Rent:</span> <strong style="color: #111;">USD ${loc.rent.toLocaleString()}</strong></p>
+                    <div style="background: rgba(198,168,124,0.15); padding: 8px; border-radius: 6px; border-left: 3px solid var(--accent); margin-top: 8px;">
+                        <strong style="color: var(--accent); font-size: 10px; text-transform: uppercase; letter-spacing: 0.5px; display: block; margin-bottom: 2px;">Potential Customer to Rent Ratio:</strong>
+                        <span style="font-size: 14px; font-weight: bold; color: #111;">${ratio} potential customers/USD 1 rent</span>
+                    </div>
+                </div>
+            `);
+        });
+            
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>

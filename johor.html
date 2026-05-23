@@ -1,0 +1,988 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Johor Bahru Hair Salon | Business Proposal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Leaflet JS & CSS for interactive maps -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <style>
+        .map-container {
+            height: 450px;
+            width: 100%;
+            border-radius: 12px;
+            margin-top: 1.5rem;
+            border: 1px solid var(--border-color);
+            z-index: 10;
+        }
+        .popup-content {
+            color: #333;
+        }
+        .popup-content h3 {
+            color: #111;
+            font-family: var(--font-body);
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+        .popup-content p {
+            margin: 0.2rem 0;
+            font-size: 0.85rem;
+            line-height: 1.4;
+        }
+        .leaflet-popup-content-wrapper {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 8px;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.25); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar">
+            <div class="sidebar-header">
+                <h2>Oasis Salon</h2>
+                <p>Feasibility Study</p>
+                <div class="lang-selector">
+                    <button class="lang-btn" data-lang="en">EN</button>
+                    <button class="lang-btn" data-lang="ja">JA</button>
+                    <button class="lang-btn" data-lang="vi">VI</button>
+                </div>
+                                                                <div class="city-selector">
+                    <a href="index.html" class="city-btn direct-link">Dashboard</a>
+                    <details class="city-group">
+                        <summary>Vietnam</summary>
+                        <div class="group-links">
+                            <a href="binhduong.html" class="city-btn">Binh Duong</a>
+                            <a href="danang.html" class="city-btn">Da Nang</a>
+                            <a href="dongnai.html" class="city-btn">Dong Nai</a>
+                            <a href="haiphong.html" class="city-btn">Hai Phong</a>
+                            <a href="hanoi.html" class="city-btn">Hanoi</a>
+                            <a href="hcmc.html" class="city-btn">Ho Chi Minh</a>
+                        </div>
+                    </details>
+                    <details class="city-group" open>
+                        <summary>Malaysia</summary>
+                        <div class="group-links">
+                            <a href="johor.html" class="city-btn active">Johor Bahru</a>
+                            <a href="kuala_lumpur.html" class="city-btn">Kuala Lumpur</a>
+                            <a href="penang.html" class="city-btn">Penang</a>
+                            <a href="sabah.html" class="city-btn">Sabah</a>
+                            <a href="sarawak.html" class="city-btn">Sarawak</a>
+                        </div>
+                    </details>
+                    <details class="city-group">
+                        <summary>Taiwan</summary>
+                        <div class="group-links">
+                            <a href="kaohsiung.html" class="city-btn">Kaohsiung</a>
+                            <a href="taichung.html" class="city-btn">Taichung</a>
+                            <a href="tainan.html" class="city-btn">Tainan</a>
+                            <a href="taipei.html" class="city-btn">Taipei</a>
+                        </div>
+                    </details>
+                    <details class="city-group">
+                        <summary>Australia</summary>
+                        <div class="group-links">
+                            <a href="brisbane.html" class="city-btn">Brisbane</a>
+                            <a href="melbourne.html" class="city-btn">Melbourne</a>
+                            <a href="perth.html" class="city-btn">Perth</a>
+                            <a href="sydney.html" class="city-btn">Sydney</a>
+                        </div>
+                    </details>
+                    <details class="city-group">
+                        <summary>Japan</summary>
+                        <div class="group-links">
+                            <a href="fukuoka.html" class="city-btn">Fukuoka</a>
+                            <a href="okinawa.html" class="city-btn">Okinawa</a>
+                        </div>
+                    </details>
+                    <details class="city-group">
+                        <summary>South Korea</summary>
+                        <div class="group-links">
+                            <a href="busan.html" class="city-btn">Busan</a>
+                        </div>
+                    </details>
+                    <details class="city-group">
+                        <summary>Middle East</summary>
+                        <div class="group-links">
+                            <a href="dubai.html" class="city-btn">Dubai</a>
+                        </div>
+                    </details>
+                    <details class="city-group">
+                        <summary>Other APAC</summary>
+                        <div class="group-links">
+                            <a href="bangkok.html" class="city-btn">Bangkok</a>
+                            <a href="hongkong.html" class="city-btn">Hong Kong</a>
+                            <a href="macau.html" class="city-btn">Macau</a>
+                            <a href="singapore.html" class="city-btn">Singapore</a>
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#executive-summary">1. Executive Summary</a></li>
+                <li><a href="#positioning">2. Business Positioning</a></li>
+                <li><a href="#market-context">3. Market Context</a></li>
+                <li><a href="#target-segments">4. Target Segments</a></li>
+                <li><a href="#location-study">5. Location Study</a></li>
+                <li><a href="#competitors">6. Competitor Study</a></li>
+                <li><a href="#unmet-needs">7. Unmet Needs & Gap</a></li>
+                <li><a href="#menu">8. Product Menu</a></li>
+                <li><a href="#packages">9. Packages & Memberships</a></li>
+                <li><a href="#customer-journey">10. Customer Journey</a></li>
+                <li><a href="#setup-layout">11. Setup & Layout</a></li>
+                <li><a href="#staffing">12. Staffing Model</a></li>
+                <li><a href="#opex">13. Monthly OPEX</a></li>
+                <li><a href="#capex">14. CAPEX</a></li>
+                <li><a href="#economics">15. Unit Economics</a></li>
+                <li><a href="#timeline">16. Setup Timeline</a></li>
+                <li><a href="#marketing">17. Marketing Strategy</a></li>
+                <li><a href="#risks">18. Risks & Controls</a></li>
+                <li><a href="#recommendation">19. Recommendation</a></li>
+                <li><a href="#next-steps">20. Next Steps</a></li>
+            </ul>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="hero">
+                <button class="download-report-btn" onclick="window.print()">
+                    <svg viewBox="0 0 24 24" style="width:16px; height:16px; fill:currentColor; vertical-align:middle; margin-right:6px;">
+                        <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/>
+                    </svg>
+                    Download Report
+                </button>
+                <div class="hero-glass">
+                    <h1>Oasis Hair Salon</h1>
+                    <p class="subtitle">Johor Bahru (RTS area) Market Entry & Feasibility Study</p>
+                    <div class="hero-meta">
+                        <span>Target: Bukit Chagar RTS Station / JB Sentral</span>
+                        <span>Model: Cross-Border PoC / MVP</span>
+                        <span>Currency: USD ($)</span>
+                    </div>
+                </div>
+            </header>
+
+            <!-- 1. Executive Summary -->
+            <section id="executive-summary" class="card fade-in">
+                <h2>1. Executive Summary</h2>
+                <div class="grid-stats">
+                    <div class="stat-box">
+                        <span class="label">Recommendation</span>
+                        <span class="value success">Proceed (Cross-Border PoC)</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="label">Setup Size</span>
+                        <span class="value">1,000 sq ft</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="label">Initial CAPEX</span>
+                        <span class="value">USD 70k - 85k</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="label">Monthly OPEX</span>
+                        <span class="value">USD 8,500</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="label">Breakeven Volume</span>
+                        <span class="value">7 Customers / Day</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="label">Average Ticket</span>
+                        <span class="value">USD 45</span>
+                    </div>
+                </div>
+                <p><strong>Main Success Condition:</strong> Establishing the PoC directly adjacent to the Bukit Chagar RTS terminal (e.g. R&F Mall or Zenith Mall) to tap into Singaporean weekend day-trippers seeking high-end Japanese relaxation services at a 70% discount compared to Singapore local prices.</p>
+            </section>
+
+            <!-- 2. Business Positioning -->
+            <section id="positioning" class="card fade-in">
+                <h2>2. Business Positioning</h2>
+                <div class="text-content">
+                    <p><strong>Positioned as:</strong> A premium, Japanese-standard scalp sanctuary offering top-tier carbonated water scalp therapy and deep relaxation. It is specifically designed to meet the high service quality standards expected by Singaporeans while offering pricing that is extremely competitive.</p>
+                    <p><strong>Avoid being positioned as:</strong> A low-cost local hair salon, an express haircut joint, or a general full-body massage parlor.</p>
+                    <blockquote class="positioning-statement">"Singaporean luxury, Malaysian prices. Reclaim your scalp wellness in 60 minutes."</blockquote>
+                    <p><strong>Core Customer Promise:</strong> Genuine Japanese-style "Omotenashi" service, imported professional products, and immediate, camera-proven scalp purification at a fraction of Singaporean retail rates.</p>
+                    <p><strong>Market Fit:</strong> With the upcoming Johor Bahru-Singapore Rapid Transit System (RTS Link), cross-border traffic will spike. Singaporeans already travel to Johor Bahru for food, dental care, and beauty treatments due to the favorable exchange rate. A specialized, luxurious head spa directly connected to the RTS terminal fills a major market gap.</p>
+                </div>
+            </section>
+
+            <!-- 3. Market Context -->
+            <section id="market-context" class="card fade-in">
+                <h2>3. Market Context</h2>
+                <ul class="context-list">
+                    <li><strong>Cross-Border Demographics:</strong> Massive daily flow of Malaysian commuters and weekend rush of Singaporean tourists. Over 300,000 people cross the border daily.</li>
+                    <li><strong>Exchange Rate Advantage:</strong> Singapore's high currency value makes Malaysian services incredibly cheap for Singaporeans (approx. 1:3.4 SGD to MYR).</li>
+                    <li><strong>Market Gap:</strong> JB has plenty of massage parlors (foot/body) and standard hair salons, but lacks premium, specialized head spas focusing on starlight quiet sensory relaxation.</li>
+                    <li><strong>Travel Convenience:</strong> Locations directly connected to the RTS Link allow Singaporeans to visit, receive a premium treatment, shop, and return to Singapore without needing a car or stuck in causeway traffic.</li>
+                    <li><strong>Regulatory Context:</strong> Favorable commercial environment in Malaysia. Easy company setup, lower payroll costs, and standard beauty salon licensing apply.</li>
+                </ul>
+            </section>
+
+            <!-- 4. Target Customer Segments -->
+            <section id="target-segments" class="card fade-in">
+                <h2>4. Target Customer Segments</h2>
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Segment</th>
+                                <th>Attractiveness</th>
+                                <th>Needs & Pain Points</th>
+                                <th>WTP (USD)</th>
+                                <th>Best Channel</th>
+                                <th>Recommended Offer</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Singaporean Weekend Tourists</td>
+                                <td><span class="badge high">High</span></td>
+                                <td>Stress relief, shopping day out, luxury lifestyle at discount</td>
+                                <td>$50 - $65</td>
+                                <td>Xiaohongshu, Instagram, SG Blogs</td>
+                                <td>"RTS Transit Revitalizer" (75m)</td>
+                            </tr>
+                            <tr>
+                                <td>Cross-Border Commuters</td>
+                                <td><span class="badge med">Medium</span></td>
+                                <td>Fatigue, hard-water scalp dryness, quick recharge</td>
+                                <td>$35 - $45</td>
+                                <td>Facebook groups, local transit ads</td>
+                                <td>"Express Scalp Balance" (60m)</td>
+                            </tr>
+                            <tr>
+                                <td>Affluent JB Locals</td>
+                                <td><span class="badge med">Medium</span></td>
+                                <td>High-end pampering, Japanese beauty trends</td>
+                                <td>$40+</td>
+                                <td>Word of mouth, local IG influencers</td>
+                                <td>"Precision Cut & Scalp Treatment" (60m)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- 5. Location Study & Map -->
+            <section id="location-study" class="card fade-in">
+                <h2>5. Location Study</h2>
+                <p class="text-muted">Interactive map highlighting the Bukit Chagar RTS terminal, transit malls, major competitors, and candidate spots for the Oasis Johor Bahru PoC.</p>
+                
+                <!-- Leaflet Map Div -->
+                <div id="map" class="map-container"></div>
+
+                <div class="table-wrapper mt-4">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>District</th>
+                                <th>Rent Estimate (1,000 sqft)</th>
+                                <th>Pros</th>
+                                <th>Cons</th>
+                                <th>Overall Rating</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="highlight-row">
+                                <td>R&F Mall / Marina Place</td>
+                                <td>USD 1,600 - 2,000</td>
+                                <td>Directly connected to RTS station via covered skybridge, high premium footfall</td>
+                                <td>Mall management compliance fees</td>
+                                <td>4.8 / 5 (Recommended)</td>
+                            </tr>
+                            <tr>
+                                <td>Komtar JBCC / City Square</td>
+                                <td>USD 2,000 - 2,500</td>
+                                <td>Directly adjacent to JB Sentral CIQ, extremely high pedestrian traffic</td>
+                                <td>Higher rent rates, limited lease flexibility</td>
+                                <td>4.4 / 5</td>
+                            </tr>
+                            <tr>
+                                <td>Zenith Mall / Town Centre</td>
+                                <td>USD 1,400 - 1,800</td>
+                                <td>Walkable from RTS, near luxury hotels (Amari), active dining/nightlife zone</td>
+                                <td>Slightly off the direct transit path</td>
+                                <td>4.0 / 5</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="conclusion-box">
+                    <strong>Strategy:</strong> Lease a 1,000 sq ft retail space in R&F Mall or a high-end storefront in Zenith Mall. Target rent: USD 1,800/month (approx. MYR 8,500/mo). The RTS connection is the critical success factor to attract Singaporean pedestrians.
+                </div>
+            </section>
+
+            <!-- 6. Competitor Study -->
+            <section id="competitors" class="card fade-in">
+                <h2>6. Competitor Study</h2>
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Type</th>
+                                <th>Examples</th>
+                                <th>Price Range (USD)</th>
+                                <th>Strengths</th>
+                                <th>Weaknesses</th>
+                                <th>Our Differentiation</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Premium Massage</td>
+                                <td>Thai Odyssey (City Square)</td>
+                                <td>$25 - $45</td>
+                                <td>Highly trusted brand, excellent footfall</td>
+                                <td>General massage only; no specialized hair/scalp care</td>
+                                <td>Dedicated Japanese head spa beds and diagnostics</td>
+                            </tr>
+                            <tr>
+                                <td>Boutique Head Spas</td>
+                                <td>Breathe Head Spa (Mid Valley)</td>
+                                <td>$30 - $50</td>
+                                <td>Good scalp focus, premium styling</td>
+                                <td>Located in Mid Valley; requires driving/Grab through traffic</td>
+                                <td>Direct RTS transit connection; no car needed</td>
+                            </tr>
+                            <tr>
+                                <td>Local Hair Salons</td>
+                                <td>Thomas & Guys (City Square)</td>
+                                <td>$15 - $30</td>
+                                <td>Convenient for hair cuts/styling</td>
+                                <td>Loud, bright environment, lacks spa privacy</td>
+                                <td>Soundproof styling stations, completely quiet relaxation</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- 7. Unmet Needs & Market Gap -->
+            <section id="unmet-needs" class="card fade-in">
+                <h2>7. Unmet Needs & Market Gap</h2>
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Customer Need</th>
+                                <th>Current Solution</th>
+                                <th>The Gap</th>
+                                <th>Proposed Solution</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Singaporean Convenience</td>
+                                <td>Drive-in JB malls</td>
+                                <td>Causeway traffic jams ruin the spa relaxation</td>
+                                <td>RTS walkway location (walk-in and walk-out to SG in 5 mins)</td>
+                            </tr>
+                            <tr>
+                                <td>Luxury Privacy</td>
+                                <td>Standard beauty salons</td>
+                                <td>Open-concept washing beds with zero privacy</td>
+                                <td>Soundproofed wash pods with starlight ceilings</td>
+                            </tr>
+                            <tr>
+                                <td>Scientific Scalp Care</td>
+                                <td>Local herbal wash shops</td>
+                                <td>Basic massage, no micro-camera analysis or imported products</td>
+                                <td>Japanese Carbonated Water Therapy and scalp scanning</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- 8. Product / Service Menu -->
+            <section id="menu" class="card fade-in">
+                <h2>8. Product / Service Menu</h2>
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Service Name</th>
+                                <th>Duration</th>
+                                <th>Target Price (USD)</th>
+                                <th>Use Case</th>
+                                <th>COGS Est. (USD)</th>
+                                <th>Margin Logic</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>RTS Transit Revitalizer</td>
+                                <td>45m</td>
+                                <td>$20</td>
+                                <td>Express scalp refresh, transit recharge</td>
+                                <td>$2.50</td>
+                                <td>88% - Speed-focused</td>
+                            </tr>
+                            <tr>
+                                <td>Precision Cut & Scalp Treatment</td>
+                                <td>60m</td>
+                                <td>$29</td>
+                                <td>Core relaxation and scalp balance</td>
+                                <td>$3.50</td>
+                                <td>90% - Core service</td>
+                            </tr>
+                            <tr>
+                                <td>Deep Detox Scalp Spa</td>
+                                <td>75m</td>
+                                <td>$36</td>
+                                <td>Tackles humidity, oily scalp, dandruff</td>
+                                <td>$3.50</td>
+                                <td>90% - High-margin upsell</td>
+                            </tr>
+                            <tr>
+                                <td>Omotenashi Royal</td>
+                                <td>90m</td>
+                                <td>$49</td>
+                                <td>Premium relaxation, complete pampering</td>
+                                <td>$5.50</td>
+                                <td>90% - Top tier service</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- 9. Packages & Memberships -->
+            <section id="packages" class="card fade-in">
+                <h2>9. Packages & Memberships</h2>
+                <div class="grid-stats">
+                    <div class="stat-box">
+                        <span class="label">Transit Package</span>
+                        <span class="value">$88</span>
+                        <span class="subtext">5x Express sessions ($18/session, 3 mo)</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="label">Signature Bundle</span>
+                        <span class="value">$130</span>
+                        <span class="subtext">5x Signature sessions ($26/session, 4 mo)</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="label">Royal Card</span>
+                        <span class="value">$221</span>
+                        <span class="subtext">5x Royal sessions ($44/session, 6 mo)</span>
+                    </div>
+                </div>
+                <p class="mt-4 text-muted"><em>Particularly attractive for Singaporean regular commuters who cross the border multiple times a month.</em></p>
+            </section>
+
+            <!-- 10. Customer Journey -->
+            <section id="customer-journey" class="card fade-in">
+                <h2>10. Customer Journey & Sales Flow</h2>
+                <ul class="timeline-list">
+                    <li><strong>Booking:</strong> Seamless booking via Whatsapp or online website (synced with Singapore timezone).</li>
+                    <li><strong>Arrival:</strong> Cross the RTS link, walk 2 minutes to the shop. Greeted with cold hojicha tea.</li>
+                    <li><strong>Consultation:</strong> Macro scalp camera scan identifies dry/oily zones.</li>
+                    <li><strong>Treatment:</strong> Escorted to the private dark room. flat-bed wash, carbonated waterfall ring, heated head massage.</li>
+                    <li><strong>Styling:</strong> Premium styling and blow-dry bar.</li>
+                    <li><strong>Review & Checkout:</strong> Re-scan scalp to verify results. Suggest the 5-session package card.</li>
+                </ul>
+            </section>
+
+            <!-- 11. Setup & Layout -->
+            <section id="setup-layout" class="card fade-in">
+                <h2>11. Outlet Setup & Layout (1,000 sq ft)</h2>
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Area / Zone</th>
+                                <th>Space (sqft)</th>
+                                <th>Setup & Equipment</th>
+                                <th>Purpose</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Lobby & Reception</td>
+                                <td>200</td>
+                                <td>Reception counter, product shelves, luxury waiting lounge</td>
+                                <td>First impression</td>
+                            </tr>
+                            <tr>
+                                <td>Consultation Room</td>
+                                <td>100</td>
+                                <td>Comfortable seating, scalp camera, tablet screen</td>
+                                <td>Trust & Education</td>
+                            </tr>
+                            <tr>
+                                <td>Treatment Pods (4)</td>
+                                <td>450</td>
+                                <td>4 Japanese Takara Belmont styling chairs, starlight ceiling</td>
+                                <td>Core service</td>
+                            </tr>
+                            <tr>
+                                <td>Styling Bar</td>
+                                <td>150</td>
+                                <td>3 styling chairs, Dyson hair dryers</td>
+                                <td>Finishing touch</td>
+                            </tr>
+                            <tr>
+                                <td>BOH & Utilities</td>
+                                <td>100</td>
+                                <td>Washer/dryer, product storage</td>
+                                <td>Back office</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- 12. Staffing Model -->
+            <section id="staffing" class="card fade-in">
+                <h2>12. Staffing Model (Base operations)</h2>
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Role</th>
+                                <th>Headcount</th>
+                                <th>Base Salary (USD)</th>
+                                <th>Incentive/Commission</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Salon Director</td>
+                                <td>1</td>
+                                <td>$950</td>
+                                <td>4% of store monthly net revenue</td>
+                            </tr>
+                            <tr>
+                                <td>Senior Hair Stylists</td>
+                                <td>3</td>
+                                <td>$630</td>
+                                <td>10% service commission</td>
+                            </tr>
+                            <tr>
+                                <td>Junior Washer / Receptionist</td>
+                                <td>1</td>
+                                <td>$460</td>
+                                <td>Bonus based on card sales</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p><em>Total Base Payroll: USD 3,300/month (+EPF & SOCSO buffers = USD 4,200/mo)</em></p>
+            </section>
+
+            <!-- 13. Monthly OPEX Estimate -->
+            <section id="opex" class="card fade-in">
+                <h2>13. Monthly OPEX Estimate</h2>
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Item</th>
+                                <th>Estimated Cost (USD)</th>
+                                <th>Notes</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Rent</td>
+                                <td>$1,440</td>
+                                <td>R&F Mall premium unit, 1,000 sqft</td>
+                            </tr>
+                            <tr>
+                                <td>Payroll & EPF</td>
+                                <td>$3,360</td>
+                                <td>5 headcount total</td>
+                            </tr>
+                            <tr>
+                                <td>Consumables (Shampoos, Oils)</td>
+                                <td>$640</td>
+                                <td>Imported organic hair/scalp products</td>
+                            </tr>
+                            <tr>
+                                <td>Utilities (Water/Power)</td>
+                                <td>$400</td>
+                                <td>Water heating & AC runs</td>
+                            </tr>
+                            <tr>
+                                <td>Marketing / Ads</td>
+                                <td>$640</td>
+                                <td>Targeting Singaporean travelers and commuters</td>
+                            </tr>
+                            <tr>
+                                <td>Software/POS/Misc</td>
+                                <td>$320</td>
+                                <td>Booking system, laundry service</td>
+                            </tr>
+                            <tr class="highlight-row">
+                                <td><strong>Total Base OPEX</strong></td>
+                                <td><strong>$6,800</strong></td>
+                                <td><em>MVP target: $6,800</em></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- 14. Initial Investment / CAPEX -->
+            <section id="capex" class="card fade-in">
+                <h2>14. Initial Investment / CAPEX</h2>
+                <div class="grid-stats capex-grid">
+                    <div class="stat-box">
+                        <span class="label">Boutique Renovation</span>
+                        <span class="value">$21,000</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="label">Equipment (4 Styling Chairs)</span>
+                        <span class="value">$12,000</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="label">Rent Deposit (3 months)</span>
+                        <span class="value">$3,240</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="label">Furniture & Branding</span>
+                        <span class="value">$3,000</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="label">Working Capital</span>
+                        <span class="value">$8,760</span>
+                    </div>
+                </div>
+                <div class="conclusion-box">
+                    <strong>Total Estimate: USD 48,000</strong>
+                </div>
+            </section>
+
+            <!-- 15. Unit Economics & Breakeven -->
+            <section id="economics" class="card fade-in">
+                <h2>15. Unit Economics & Breakeven</h2>
+                <div class="text-content">
+                    <ul>
+                        <li><strong>Average Ticket:</strong> USD 45</li>
+                        <li><strong>Contribution Margin per Ticket:</strong> USD 40.50</li>
+                        <li><strong>Monthly Breakeven Volume:</strong> USD 8,500 (OPEX) / USD 40.50 = ~210 customers/month</li>
+                        <li><strong>Daily Breakeven:</strong> ~7 customers per day (Across 4 styling chairs)</li>
+                    </ul>
+                </div>
+                <div class="table-wrapper mt-4">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Scenario</th>
+                                <th>Customers/Day</th>
+                                <th>Monthly Revenue</th>
+                                <th>Monthly OPEX</th>
+                                <th>Net Profit (USD)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Breakeven</td>
+                                <td>7.0</td>
+                                <td>$9,450</td>
+                                <td>$8,500</td>
+                                <td style="color: #00e676;">+$950</td>
+                            </tr>
+                            <tr class="highlight-row">
+                                <td>Base Case (15 Cust/Day)</td>
+                                <td>15</td>
+                                <td>$20,250</td>
+                                <td>$9,500</td>
+                                <td style="color: #00e676;">+$10,750</td>
+                            </tr>
+                            <tr>
+                                <td>High Case (25 Cust/Day)</td>
+                                <td>25</td>
+                                <td>$33,750</td>
+                                <td>$11,000</td>
+                                <td style="color: #00e676;">+$22,750</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            
+                <div class="conclusion-box" style="margin-top: 2rem; border-left-color: var(--success); background: rgba(16, 185, 129, 0.02);">
+                    <h3 style="color: var(--success); font-size: 1.2rem; margin-bottom: 0.5rem; font-family: var(--font-heading);">Post-Tax Financial Feasibility Analysis</h3>
+                    <p>All calculations in the table above represent pre-tax performance. Factoring in the local Corporate Income Tax (CIT) rate of <strong>24.0%</strong>, we arrive at the following post-tax projections for the Base Case:</p>
+                    <ul style="margin-top: 0.5rem; margin-left: 1.5rem; list-style-type: disc;">
+                        <li><strong>Base Case Pre-Tax Monthly Net Profit:</strong> USD 9,600</li>
+                        <li><strong>Estimated Monthly Corporate Income Tax:</strong> USD 2,304</li>
+                        <li><strong>Post-Tax Net Monthly Profit (PAT):</strong> USD 7,296</li>
+                        <li><strong>Post-Tax Profit to OPEX Ratio:</strong> <strong>86% (Post-Tax)</strong> (vs. 113% pre-tax)</li>
+                        <li><strong>Post-Tax CAPEX Payback Period:</strong> <strong>11 Months</strong> (vs. 8.1 months pre-tax)</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- 16. Setup Timeline -->
+            <section id="timeline" class="card fade-in">
+                <h2>16. Setup Timeline (12 Weeks)</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="date">Weeks 1-2</div>
+                        <div class="content">Concept lock, Supplier contacts established, lease negotiations for R&F Mall unit.</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="date">Weeks 3-4</div>
+                        <div class="content">Lease signed, plumbing layout approved, imported equipment ordered from China/Japan.</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="date">Weeks 5-8</div>
+                        <div class="content">Renovation, installation of starlight ceiling and 4 washing beds.</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="date">Weeks 9-10</div>
+                        <div class="content">Hiring and intensive service/massage training.</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="date">Week 11</div>
+                        <div class="content">Soft launch (invite local Malaysian and Singaporean frequent commuters for trials).</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="date">Week 12</div>
+                        <div class="content">Official opening, launch target ads in Singapore.</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 17. Marketing Strategy -->
+            <section id="marketing" class="card fade-in">
+                <h2>17. Marketing Strategy</h2>
+                <div class="text-content">
+                    <p><strong>Singapore Targeting:</strong> Target Meta/Instagram ads at users in Singapore (Woodlands, Yishun) who frequently visit Johor Bahru. Focus on "Singapore quality at 1/3 of the price".</p>
+                    <p><strong>Xiaohongshu (Red Book):</strong> Leverage travel influencers who review "JB day trips" to feature the head spa as the ultimate relaxation stop before returning to Singapore.</p>
+                    <p><strong>Walk-In Transit Signage:</strong> Place prominent signboards at the RTS Link exit walkway pointing to the spa. Offer "RTS Transit Trials" to capture footfall.</p>
+                </div>
+            </section>
+
+            <!-- 18. Key Risks & Controls -->
+            <section id="risks" class="card fade-in">
+                <h2>18. Key Risks & Controls</h2>
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Risk Type</th>
+                                <th>Severity</th>
+                                <th>Mitigation / Control</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>RTS Completion Delays</td>
+                                <td>Medium</td>
+                                <td>Rely on existing CIQ causeway traffic and local JB professionals during the bridge completion phase.</td>
+                            </tr>
+                            <tr>
+                                <td>Currency Exchange Fluctuations</td>
+                                <td>Low</td>
+                                <td>Maintain operating reserves in MYR and SG credit processors to manage exchange spreads.</td>
+                            </tr>
+                            <tr>
+                                <td>Staff Commute / Resignations</td>
+                                <td>High</td>
+                                <td>Pay above-market rates in JB (MYR 3,000+ base for stylists) to prevent staff from leaving for Singapore jobs.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- 19. Final Recommendation -->
+            <section id="recommendation" class="card fade-in">
+                <h2>19. Final Recommendation</h2>
+                <div class="conclusion-box success-box">
+                    <h3>Decision: GO (Cross-Border PoC)</h3>
+                    <ul>
+                        <li><strong>Location:</strong> Johor Bahru (RTS adjacent).</li>
+                        <li><strong>Setup:</strong> 4 styling chairs, 1,000 sq ft.</li>
+                        <li><strong>Budget:</strong> USD 80k CAPEX, USD 8.5k OPEX.</li>
+                        <li><strong>Expansion Trigger:</strong> If monthly revenues exceed USD 20k for 4 consecutive months, plan a second outlet in Mid Valley Southkey or Bukit Indah.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- 20. Next Steps -->
+            <section id="next-steps" class="card fade-in">
+                <h2>20. Immediate Next Steps</h2>
+                <ol class="action-list">
+                    <li>Contact R&F Mall leasing office for 1,000 sq ft retail spaces near the skybridge.</li>
+                    <li>Secure quotes for 4 flat-beds and styling equipment.</li>
+                    <li>Begin local recruitment advertising for stylists in JB.</li>
+                    <li>Set up Singapore Dollar payment gateway processing capability.</li>
+                </ol>
+            </section>
+
+            <footer>
+                <p>Prepared by Antigravity | For Johor Bahru RTS Head Spa Project</p>
+            </footer>
+        </main>
+    </div>
+    
+    <!-- Map Script -->
+    <script>
+        // Initialize map centered near Bukit Chagar RTS Station, Johor Bahru
+        const map = L.map('map').setView([1.464, 103.768], 15);
+
+        // Add CartoDB Dark Matter tiles to fit our luxury dark aesthetic
+        L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+            subdomains: 'abcd',
+            maxZoom: 20
+        }).addTo(map);
+
+        // Function to calculate radius based on footfall (1-100)
+        const getRadius = (footfall) => {
+            return Math.sqrt(footfall) * 3; 
+        };
+
+        // RTS Transit Corridor (Highlighting Singapore-JB transit area)
+        L.circle([1.464, 103.768], {
+            color: '#c6a87c',
+            fillColor: '#c6a87c',
+            fillOpacity: 0.15,
+            weight: 1.5,
+            radius: 350
+        }).addTo(map).bindPopup(`
+            <div class="popup-content">
+                <h3 style="color: #c6a87c;">RTS Bukit Chagar Terminal Area</h3>
+                <p><strong>Primary Transit Hub</strong></p>
+                <p>Over 10,000 hourly commuters expected upon RTS completion. High Singaporean day-tripper density.</p>
+            </div>
+        `);
+
+        // Shopping Malls (Footfall anchors)
+        const malls = [
+            { name: "Johor Bahru City Square", lat: 1.4619, lng: 103.7641, footfall: 95 },
+            { name: "Komtar JBCC", lat: 1.4628, lng: 103.7645, footfall: 80 },
+            { name: "R&F Mall", lat: 1.4608, lng: 103.7711, footfall: 75 }
+        ];
+
+        malls.forEach(loc => {
+            L.circleMarker([loc.lat, loc.lng], {
+                radius: getRadius(loc.footfall),
+                fillColor: "#fff",
+                color: "#c6a87c",
+                weight: 1.5,
+                opacity: 1,
+                fillOpacity: 0.8
+            }).addTo(map).bindPopup(`
+                <div class="popup-content">
+                    <h3>🛍️ ${loc.name}</h3>
+                    <p><strong>Est. Relative Footfall:</strong> ${loc.footfall}/100</p>
+                </div>
+            `);
+        });
+
+        // Competitors
+        const competitors = [
+            { name: "Thai Odyssey (Komtar JBCC)", lat: 1.4628, lng: 103.7645, price: "US$25–45", footfall: 85, comment: "Premium massage franchise. Extremely popular with Singaporeans." },
+            { name: "KSL Mall Hair Salons (Local Washes)", lat: 1.4860, lng: 103.7620, price: "US$8–15", footfall: 90, comment: "Located 5 mins away, cheap local wash, no privacy." },
+            { name: "Breathe Head Spa (Mid Valley Southkey)", lat: 1.4980, lng: 103.7770, price: "US$30–50", footfall: 65, comment: "Good quality, but located further north, requires driving." }
+        ];
+
+        competitors.forEach(loc => {
+            L.circleMarker([loc.lat, loc.lng], {
+                radius: getRadius(loc.footfall),
+                fillColor: "#ef4444",
+                color: "#fff",
+                weight: 1.5,
+                opacity: 1,
+                fillOpacity: 0.9
+            }).addTo(map).bindPopup(`
+                <div class="popup-content">
+                    <h3 style="color: #ef4444;">🔴 ${loc.name}</h3>
+                    <p><strong>Price Level:</strong> ${loc.price}</p>
+                    <p><strong>Est. Footfall Traffic:</strong> ${loc.footfall}/100</p>
+                    <p><strong>Note:</strong> ${loc.comment}</p>
+                </div>
+            `);
+        });
+
+        // Shop Candidates
+        const candidates = [
+            { 
+                name: "Candidate A: R&F Mall Skybridge Unit", 
+                lat: 1.4608, 
+                lng: 103.7711, 
+                note: "Top recommendation. Directly connected to the RTS Link via covered bridge. Captures pedestrians instantly.", 
+                rent: 1530,
+                catchment: 150000,
+                premiumTargetPct: 18,
+                competitorCapacity: 15000,
+                airportTime: "30 mins from JHB / 50 mins from SIN"
+            },
+            { 
+                name: "Candidate B: Komtar JBCC Ground Retail", 
+                lat: 1.4628, 
+                lng: 103.7645, 
+                note: "Excellent brand visibility but high rent pressure and rigid lease terms.", 
+                rent: 1870,
+                catchment: 170000,
+                premiumTargetPct: 14,
+                competitorCapacity: 22500,
+                airportTime: "30 mins from JHB / 55 mins from SIN"
+            },
+            { 
+                name: "Candidate C: Zenith Mall Shoplot", 
+                lat: 1.4612, 
+                lng: 103.7630, 
+                note: "Near Amari Hotel and main dining/entertainment block. High spending power.", 
+                rent: 1360,
+                catchment: 110000,
+                premiumTargetPct: 22,
+                competitorCapacity: 16500,
+                airportTime: "32 mins from JHB / 55 mins from SIN"
+            }
+        ];
+
+        // Star Icon for Candidates
+        const starIcon = L.divIcon({
+            html: '<div style="font-size: 24px; filter: drop-shadow(0px 0px 4px rgba(0,0,0,0.5)); animation: pulse 2s infinite;">🌟</div>',
+            className: 'custom-div-icon',
+            iconSize: [30, 30],
+            iconAnchor: [15, 15]
+        });
+
+        candidates.forEach(loc => {
+            // Calculation logic
+            const targetDemand = Math.round(loc.catchment * (loc.premiumTargetPct / 100)); // monthly visits (1 visit/mo)
+            const underservedDemand = Math.max(0, targetDemand - loc.competitorCapacity);
+            const underservedPct = Math.round((underservedDemand / targetDemand) * 100);
+            const ratio = (underservedDemand / loc.rent).toFixed(2);
+
+            L.marker([loc.lat, loc.lng], { icon: starIcon }).addTo(map).bindPopup(`
+                <div class="popup-content" style="min-width: 240px; color: #333;">
+                    <h3 style="color: var(--accent); font-weight: 600; font-size: 14px; margin-top: 0; margin-bottom: 6px; border-bottom: 1px solid #eee; padding-bottom: 4px;">✨ ${loc.name}</h3>
+                    <p style="margin: 4px 0; font-size: 12px; color: #666; line-height: 1.4;">${loc.note}</p>
+                    <hr style="margin: 6px 0; border: 0; border-top: 1px solid #eee;">
+                    <p style="margin: 3px 0; font-size: 11px; display: flex; justify-content: space-between;"><span>Monthly Catchment:</span> <strong style="color: #111;">${loc.catchment.toLocaleString()} pax</strong></p>
+                    <p style="margin: 3px 0; font-size: 11px; display: flex; justify-content: space-between;"><span>Premium Target Segment:</span> <strong style="color: #111;">${loc.premiumTargetPct}%</strong></p>
+                    <p style="margin: 3px 0; font-size: 11px; display: flex; justify-content: space-between;"><span>Monthly Premium Demand:</span> <strong style="color: #111;">${targetDemand.toLocaleString()} visits</strong></p>
+                    <p style="margin: 3px 0; font-size: 11px; display: flex; justify-content: space-between;"><span>Nearby Competitor Capacity:</span> <strong style="color: #111;">${loc.competitorCapacity.toLocaleString()} visits</strong></p>
+                    <p style="margin: 3px 0; font-size: 11px; display: flex; justify-content: space-between;"><span>Underserved Demand Gap:</span> <strong style="color: #e11d48;">${underservedDemand.toLocaleString()} visits (${underservedPct}%)</strong></p>
+                    <p style="margin: 3px 0; font-size: 11px; display: flex; justify-content: space-between;"><span>Airport Travel Time:</span> <strong style="color: #111;">${loc.airportTime}</strong></p>
+                    <p style="margin: 3px 0; font-size: 11px; display: flex; justify-content: space-between;"><span>Monthly Rent:</span> <strong style="color: #111;">USD ${loc.rent.toLocaleString()}</strong></p>
+                    <div style="background: rgba(198,168,124,0.15); padding: 8px; border-radius: 6px; border-left: 3px solid var(--accent); margin-top: 8px;">
+                        <strong style="color: var(--accent); font-size: 10px; text-transform: uppercase; letter-spacing: 0.5px; display: block; margin-bottom: 2px;">Potential Customer to Rent Ratio:</strong>
+                        <span style="font-size: 14px; font-weight: bold; color: #111;">${ratio} potential customers/USD 1 rent</span>
+                    </div>
+                </div>
+            `);
+        });
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>

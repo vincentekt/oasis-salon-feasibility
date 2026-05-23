@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Singapore Hair Salon | Business Proposal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Leaflet JS & CSS for interactive maps -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <style>
+        .map-container {
+            height: 450px;
+            width: 100%;
+            border-radius: 12px;
+            margin-top: 1.5rem;
+            border: 1px solid var(--border-color);
+            z-index: 10;
+        }
+        .popup-content {
+            color: #333;
+        }
+        .popup-content h3 {
+            color: #111;
+            font-family: var(--font-body);
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+        .popup-content p {
+            margin: 0.2rem 0;
+            font-size: 0.85rem;
+            line-height: 1.4;
+        }
+        .leaflet-popup-content-wrapper {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 8px;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.25); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar">
+            <div class="sidebar-header">
+                <h2>Oasis Salon</h2>
+                <p>Feasibility Study</p>
+                <div class="lang-selector">
+                    <button class="lang-btn" data-lang="en">EN</button>
+                    <button class="lang-btn" data-lang="ja">JA</button>
+                    <button class="lang-btn" data-lang="vi">VI</button>
+                </div>
+                                                                <div class="city-selector">
+                    <a href="index.html" class="city-btn direct-link">Dashboard</a>
+                    <details class="city-group">
+                        <summary>Vietnam</summary>
+                        <div class="group-links">
+                            <a href="binhduong.html" class="city-btn">Binh Duong</a>
+                            <a href="danang.html" class="city-btn">Da Nang</a>
+                            <a href="dongnai.html" class="city-btn">Dong Nai</a>
+                            <a href="haiphong.html" class="city-btn">Hai Phong</a>
+                            <a href="hanoi.html" class="city-btn">Hanoi</a>
+                            <a href="hcmc.html" class="city-btn">Ho Chi Minh</a>
+                        </div>
+                    </details>
+                    <details class="city-group">
+                        <summary>Malaysia</summary>
+                        <div class="group-links">
+                            <a href="johor.html" class="city-btn">Johor Bahru</a>
+                            <a href="kuala_lumpur.html" class="city-btn">Kuala Lumpur</a>
+                            <a href="penang.html" class="city-btn">Penang</a>
+                            <a href="sabah.html" class="city-btn">Sabah</a>
+                            <a href="sarawak.html" class="city-btn">Sarawak</a>
+                        </div>
+                    </details>
+                    <details class="city-group">
+                        <summary>Taiwan</summary>
+                        <div class="group-links">
+                            <a href="kaohsiung.html" class="city-btn">Kaohsiung</a>
+                            <a href="taichung.html" class="city-btn">Taichung</a>
+                            <a href="tainan.html" class="city-btn">Tainan</a>
+                            <a href="taipei.html" class="city-btn">Taipei</a>
+                        </div>
+                    </details>
+                    <details class="city-group">
+                        <summary>Australia</summary>
+                        <div class="group-links">
+                            <a href="brisbane.html" class="city-btn">Brisbane</a>
+                            <a href="melbourne.html" class="city-btn">Melbourne</a>
+                            <a href="perth.html" class="city-btn">Perth</a>
+                            <a href="sydney.html" class="city-btn">Sydney</a>
+                        </div>
+                    </details>
+                    <details class="city-group" open>
+                        <summary>Other APAC</summary>
+                        <div class="group-links">
+                            <a href="bangkok.html" class="city-btn">Bangkok</a>
+                            <a href="hongkong.html" class="city-btn">Hong Kong</a>
+                            <a href="macau.html" class="city-btn">Macau</a>
+                            <a href="singapore.html" class="city-btn active">Singapore</a>
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#executive-summary">1. Executive Summary</a></li>
+                <li><a href="#positioning">2. Business Positioning</a></li>
+                <li><a href="#market-context">3. Market Context</a></li>
+                <li><a href="#target-segments">4. Target Segments</a></li>
+                <li><a href="#location-study">5. Location Study</a></li>
+                <li><a href="#competitors">6. Competitor Study</a></li>
+                <li><a href="#unmet-needs">7. Unmet Needs & Gap</a></li>
+                <li><a href="#menu">8. Product Menu</a></li>
+                <li><a href="#packages">9. Packages & Memberships</a></li>
+                <li><a href="#customer-journey">10. Customer Journey</a></li>
+                <li><a href="#setup-layout">11. Setup & Layout</a></li>
+                <li><a href="#staffing">12. Staffing Model</a></li>
+                <li><a href="#opex">13. Monthly OPEX</a></li>
+                <li><a href="#capex">14. CAPEX</a></li>
+                <li><a href="#economics">15. Unit Economics</a></li>
+                <li><a href="#timeline">16. Setup Timeline</a></li>
+                <li><a href="#marketing">17. Marketing Strategy</a></li>
+                <li><a href="#risks">18. Risks & Controls</a></li>
+                <li><a href="#recommendation">19. Recommendation</a></li>
+                <li><a href="#next-steps">20. Next Steps</a></li>
+            </ul>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="hero">
+                <button class="download-report-btn" onclick="window.print()">
+                    <svg viewBox="0 0 24 24" style="width:16px; height:16px; fill:currentColor; vertical-align:middle; margin-right:6px;">
+                        <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/>
+                    </svg>
+                    Download Report
+                </button>
+                <div class="hero-glass">
+                    <h1>Oasis Hair Salon</h1>
+                    <p class="subtitle">Singapore Market Entry & Feasibility Study</p>
+                    <div class="hero-meta">
+                        <span>Target: Orchard / Tanjong Pagar</span>
+                        <span>Model: Luxury Micro-Spa / PoC</span>
+                        <span>Currency: USD ($)</span>
+                    </div>
+                </div>
+            </header>
+
+            <!-- 1. Executive Summary -->
+            <section id="executive-summary" class="card fade-in">
+                <h2>1. Executive Summary</h2>
+                <div class="grid-stats">
+                    <div class="stat-box">
+                        <span class="label">Recommendation</span>
+                        <span class="value success">Proceed (Luxury Micro-Spa)</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="label">Setup Size</span>
+                        <span class="value">650 sq ft</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="label">Initial CAPEX</span>
+                        <span class="value">USD 140k - 165k</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="label">Monthly OPEX</span>
+                        <span class="value">USD 22,000</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="label">Breakeven Volume</span>
+                        <span class="value">5-6 Customers / Day</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="label">Average Ticket</span>
+                        <span class="value">USD 140</span>
+                    </div>
+                </div>
+                <p><strong>Main Success Condition:</strong> Positioning the spa as an <strong>"Upstairs Luxury Suite / Ginza-style Hideaway"</strong> in an older complex or high-rise office tower (e.g. Far East Plaza, Orchard Plaza) to fit the USD 7,000/mo rent budget (approx. S$10 - S$15 psf) while targeting high-net-worth local professionals and expats. Ground-floor Orchard mall spaces are cost-prohibitive (exceeding S$30 psf). Seamless digital booking and flawless Japanese service standards are critical.</p>
+            </section>
+
+            <!-- 2. Business Positioning -->
+            <section id="positioning" class="card fade-in">
+                <h2>2. Business Positioning</h2>
+                <div class="text-content">
+                    <p><strong>Positioned as:</strong> An ultra-exclusive, private scalp wellness sanctuary utilizing Japanese carbonated mist systems, soundproofed styling stations, and high-definition scalp microscopic analytics. Operated as a Ginza-style upstairs suite to ensure absolute privacy, quiet luxury, and commercial rent efficiency. Focuses on premium luxury hospitality and deep mental relaxation.</p>
+                    <p><strong>Avoid being positioned as:</strong> A local mass-market salon, a generic foot massage shop, or a clinical hair restoration clinic.</p>
+                    <blockquote class="positioning-statement">"Quiet Luxury. Reclaim your stillness in Singapore's core."</blockquote>
+                    <p><strong>Core Customer Promise:</strong> Visible scalp restoration and deep sensory relaxation using certified organic botanicals and premium Japanese equipment.</p>
+                    <p><strong>Market Fit:</strong> Singapore's elite professionals and expat executives face high-stress schedules, tropical humidity, and scalp oiliness. They are highly willing to pay for premium wellness. While Singapore has high-end hair salons, they prioritize cutting and coloring. We fill the gap for dedicated private head spa luxury.</p>
+                </div>
+            </section>
+
+            <!-- 3. Market Context -->
+            <section id="market-context" class="card fade-in">
+                <h2>3. Market Context</h2>
+                <ul class="context-list">
+                    <li><strong>Demographics:</strong> Over 1.5M high-net-worth individuals and multinational expats. High density of premium wellness consumers.</li>
+                    <li><strong>Spending Power:</strong> Elite global spending bracket. High willingness-to-pay for premium personal care, hygiene, and mental wellness.</li>
+                    <li><strong>Environmental Drivers:</strong> Constant year-round heat and humidity trigger scalp sweating, clogging, and sebum buildup.</li>
+                    <li><strong>Competitive Environment:</strong> Saturated with premium hair salons and luxury hotel spas, but lacks dedicated private acoustic head spa pods.</li>
+                    <li><strong>Licensing:</strong> Operates under standard salon guidelines, ensuring quick business setup.</li>
+                </ul>
+            </section>
+
+            <!-- 4. Target Customer Segments -->
+            <section id="target-segments" class="card fade-in">
+                <h2>4. Target Customer Segments</h2>
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Segment</th>
+                                <th>Attractiveness</th>
+                                <th>Needs & Pain Points</th>
+                                <th>WTP (USD)</th>
+                                <th>Best Channel</th>
+                                <th>Recommended Offer</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Corporate & Expat Executives</td>
+                                <td><span class="badge high">High</span></td>
+                                <td>Stress relief, scalp hygiene, quiet privacy, English/Japanese service</td>
+                                <td>$140 - $200</td>
+                                <td>LinkedIn targeted ads, corporate partnerships</td>
+                                <td>"Orchard Premium Reset" (75m)</td>
+                            </tr>
+                            <tr>
+                                <td>High-Net-Worth Locals</td>
+                                <td><span class="badge high">High</span></td>
+                                <td>Quiet luxury, personalized attention, premium organic products</td>
+                                <td>$150 - $220</td>
+                                <td>Word of mouth referrals, luxury lifestyle media</td>
+                                <td>"Oxygen Mist Rejuvenation" (60m)</td>
+                            </tr>
+                            <tr>
+                                <td>High-Spending Tourists</td>
+                                <td><span class="badge med">Medium</span></td>
+                                <td>Jetlag relief, holiday pampering</td>
+                                <td>$130 - $180</td>
+                                <td>Hotel concierge partnerships, travel directories</td>
+                                <td>"Executive Sleep Induction" (90m)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- 5. Location Study & Map -->
+            <section id="location-study" class="card fade-in">
+                <h2>5. Location Study</h2>
+                <p class="text-muted">Interactive map highlighting core premium residential hubs (purple circles), competitor salons, major malls, and proposed candidate commercial spots.</p>
+                <div id="map" class="map-container"></div>
+                <div class="table-wrapper mt-4">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>District</th>
+                                <th>Rent Estimate (60-90 sqm)</th>
+                                <th>Pros</th>
+                                <th>Cons</th>
+                                <th>Overall Rating</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="highlight-row">
+                                <td>Orchard Road (Upstairs Luxury Suite)</td>
+                                <td>USD 6,500 - 8,000</td>
+                                <td>High wealth density, walking distance to MRT, prestigious retail address, S$10-15 psf pricing</td>
+                                <td>Very high rental deposit, strict tower guidelines</td>
+                                <td>4.7 / 5 (Recommended)</td>
+                            </tr>
+                            <tr>
+                                <td>Tanjong Pagar (Shophouse)</td>
+                                <td>USD 7,500 - 9,500</td>
+                                <td>Trendy heritage shophouse vibe, close to CBD financial professionals</td>
+                                <td>Renovation restrictions, parking limitations</td>
+                                <td>4.4 / 5</td>
+                            </tr>
+                            <tr>
+                                <td>River Valley / Great World Area</td>
+                                <td>USD 6,000 - 7,500</td>
+                                <td>Dense concentration of affluent families, quiet lanes</td>
+                                <td>Lower drop-in pedestrian traffic</td>
+                                <td>4.1 / 5</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="conclusion-box">
+                    <strong>Strategy:</strong> Lease a compact 650 sq ft upstairs commercial suite or retail unit in a Ginza-style layout (e.g., Far East Plaza, Orchard Plaza, or commercial tower suites) on Orchard Road. Target rent: USD 7,000/month (approx. S$10–S$15 psf). This positions the brand in the premium heart of Singapore, utilizing an exclusive "hideaway" vibe, while successfully avoiding prime ground-floor retail rents (S$30+ psf).
+                </div>
+            </section>
+
+            <!-- 6. Competitor Study -->
+            <section id="competitors" class="card fade-in">
+                <h2>6. Competitor Study</h2>
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Type</th>
+                                <th>Examples</th>
+                                <th>Price Range (USD)</th>
+                                <th>Strengths</th>
+                                <th>Weaknesses</th>
+                                <th>Our Differentiation</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Japanese & Korean Salons</td>
+                                <td>Leekaja (Orchard)</td>
+                                <td>$120 - $250</td>
+                                <td>Strong coloring/cuts, large premium expat clientele</td>
+                                <td>Open-concept layouts, noisy styling stations, scalp is secondary</td>
+                                <td>Dedicated soundproofed styling stations, starlight ceilings, deep scalp detox focus</td>
+                            </tr>
+                            <tr>
+                                <td>Luxury Hotel Spas</td>
+                                <td>Raffles Spa (Downtown)</td>
+                                <td>$180 - $350</td>
+                                <td>Highly prestigious brand, full amenities</td>
+                                <td>Primarily body/facial focus, lacks specialized scalp equipment</td>
+                                <td>Acoustic isolation, microscopic scanning, dedicated scalp water systems</td>
+                            </tr>
+                            <tr>
+                                <td>Traditional Hair Washes</td>
+                                <td>Neighborhood salons</td>
+                                <td>$30 - $60</td>
+                                <td>Lower price points</td>
+                                <td>Basic styling chairs, open layout, lack of luxury styling environment</td>
+                                <td>Scientific scalp analytics + premium blowout finish</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- 7. Unmet Needs & Market Gap -->
+            <section id="unmet-needs" class="card fade-in">
+                <h2>7. Unmet Needs & Market Gap</h2>
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Customer Need</th>
+                                <th>Current Solution</th>
+                                <th>The Gap</th>
+                                <th>Proposed Solution</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Absolute Privacy & Acoustic Peace</td>
+                                <td>Open layout salons</td>
+                                <td>Hairdryer noise, chatter, and phone alerts disrupt relaxation</td>
+                                <td>Acoustically isolated private pods with customized soft white noise</td>
+                            </tr>
+                            <tr>
+                                <td>Scalp Health Verification</td>
+                                <td>Basic shampooing</td>
+                                <td>No way to evaluate if treatments actually resolve scalp dryness/oiliness</td>
+                                <td>HD microscopic camera scanning before and after sessions</td>
+                            </tr>
+                            <tr>
+                                <td>Premium Organic Care</td>
+                                <td>Standard chemicals</td>
+                                <td>Common salon shampoos contain silicones that clog pores</td>
+                                <td>Imported organic hair cosmetics and botanical essential oils</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- 8. Product / Service Menu -->
+            <section id="menu" class="card fade-in">
+                <h2>8. Product / Service Menu</h2>
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Service Name</th>
+                                <th>Duration</th>
+                                <th>Target Price (USD)</th>
+                                <th>Use Case</th>
+                                <th>COGS Est. (USD)</th>
+                                <th>Margin Logic</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Oasis Reset Head Spa</td>
+                                <td>60 min</td>
+                                <td>$91</td>
+                                <td>Scalp detox & basic relaxation</td>
+                                <td>$9.00</td>
+                                <td>90% (Entry tier)</td>
+                            </tr>
+                            <tr class="highlight-row">
+                                <td>Premium Carbonated Mist</td>
+                                <td>75 min</td>
+                                <td>$110</td>
+                                <td>Deep scalp cleanse + anti-aging therapy</td>
+                                <td>$11.00</td>
+                                <td>90% (Primary offer)</td>
+                            </tr>
+                            <tr>
+                                <td>Deep Slumber Induction</td>
+                                <td>90 min</td>
+                                <td>$136</td>
+                                <td>Aromatherapy + extended head massage</td>
+                                <td>$14.00</td>
+                                <td>90% (Premium tier)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- 9. Packages & Memberships -->
+            <section id="packages" class="card fade-in">
+                <h2>9. Packages & Memberships</h2>
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Tier Name</th>
+                                <th>Price (USD)</th>
+                                <th>Services Included</th>
+                                <th>Validity</th>
+                                <th>Target Conversion</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Wellness Starter (5 sessions)</td>
+                                <td>$410 (10% off)</td>
+                                <td>5x 60m Oasis Reset Spas</td>
+                                <td>6 Months</td>
+                                <td>25% of new clients</td>
+                            </tr>
+                            <tr class="highlight-row">
+                                <td>Oasis Annual Sanctuary (12 sessions)</td>
+                                <td>$1,127 (15% off)</td>
+                                <td>12x 75m Premium Carbonated Spas</td>
+                                <td>12 Months</td>
+                                <td>15% of repeat guests</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- 10. Customer Journey -->
+            <section id="customer-journey" class="card fade-in">
+                <h2>10. Customer Journey</h2>
+                <ol class="journey-list">
+                    <li><strong>Booking:</strong> Online via custom mobile app with instant schedule confirmation.</li>
+                    <li><strong>Arrival:</strong> Welcomed in a luxury botanical lobby, served warm green tea.</li>
+                    <li><strong>Scalp Analysis:</strong> Microscope scanner checks scalp health.</li>
+                    <li><strong>Treatment:</strong> Transition to private starlight VIP pod, treated with carbonated water.</li>
+                    <li><strong>Blowdry & Close:</strong> Post-treatment comparison scan, styling blowout, repeat booking prompt.</li>
+                </ol>
+            </section>
+
+            <!-- 11. Setup & Layout -->
+            <section id="setup-layout" class="card fade-in">
+                <h2>11. Setup & Layout</h2>
+                <div class="text-content">
+                    <p>The 650 sq ft space is optimized for visual privacy and client flow:</p>
+                    <ul>
+                        <li><strong>Lobby & Consultation (150 sqft):</strong> Botanical theme, organic product shelves.</li>
+                        <li><strong>3 Private VIP Pods (350 sqft):</strong> Soundproofed walls, starlight projection ceilings, Japanese styling chairs.</li>
+                        <li><strong>Blowdry Station (100 sqft):</strong> Compact styling chairs and professional vanity mirrors.</li>
+                        <li><strong>Storage & Utility (50 sqft):</strong> Carbonated water system generators, laundry, organic stock.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- 12. Staffing Model -->
+            <section id="staffing" class="card fade-in">
+                <h2>12. Staffing Model</h2>
+                <div class="text-content">
+                    <p>Singapore's high labor costs require a highly efficient operations budget:</p>
+                    <ul>
+                        <li><strong>1 Salon Director:</strong> USD 3,500/month (handles bookings, guest relations, accounting).</li>
+                        <li><strong>3 Stylist Assistants:</strong> USD 2,800/month base salary (Omotenashi hospitality trained).</li>
+                        <li><strong>1 Assistant:</strong> USD 1,800/month (handles laundry, cleaning).</li>
+                    </ul>
+                    <div class="conclusion-box">
+                        <strong>Incentive Model:</strong> 10% commission sharing on membership package sales to motivate stylists and maximize retention.
+                    </div>
+                </div>
+            </section>
+
+            <!-- 13. Monthly OPEX -->
+            <section id="opex" class="card fade-in">
+                <h2>13. Monthly OPEX</h2>
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>OPEX Category</th>
+                                <th>Monthly Cost (USD)</th>
+                                <th>% of Total</th>
+                                <th>Notes</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="highlight-row">
+                                <td>Rent (Orchard road tower)</td>
+                                <td>$5,600</td>
+                                <td>31.8%</td>
+                                <td>650 sq ft unit</td>
+                            </tr>
+                            <tr class="highlight-row">
+                                <td>Staff Salaries (5 total headcount)</td>
+                                <td>$10,960</td>
+                                <td>62.3%</td>
+                                <td>Manager, 3 stylists, assistant</td>
+                            </tr>
+                            <tr>
+                                <td>Marketing (Social/Google ads)</td>
+                                <td>$480</td>
+                                <td>2.7%</td>
+                                <td>IG and Facebook target ads</td>
+                            </tr>
+                            <tr>
+                                <td>Utilities & Water Filtration</td>
+                                <td>$320</td>
+                                <td>1.8%</td>
+                                <td>AC usage & carbon filter swap-outs</td>
+                            </tr>
+                            <tr>
+                                <td>Inventory & Consumables</td>
+                                <td>$240</td>
+                                <td>1.4%</td>
+                                <td>Organic botanicals, oils</td>
+                            </tr>
+                            <tr class="total-row">
+                                <td><strong>Total Monthly OPEX</strong></td>
+                                <td><strong>$17,600</strong></td>
+                                <td><strong>100%</strong></td>
+                                <td><strong>Base operations budget</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- 14. CAPEX -->
+            <section id="capex" class="card fade-in">
+                <h2>14. Initial CAPEX Estimate</h2>
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>CAPEX Item</th>
+                                <th>Estimated Cost (USD)</th>
+                                <th>Notes</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="highlight-row">
+                                <td>Renovation & Pod Soundproofing</td>
+                                <td>$33,000</td>
+                                <td>Drywall acoustics, starlight lighting setups</td>
+                            </tr>
+                            <tr class="highlight-row">
+                                <td>Equipment (4 Styling chairs, 2 wash beds & filtration units)</td>
+                                <td>$16,800</td>
+                                <td>Imported specialized massage beds</td>
+                            </tr>
+                            <tr>
+                                <td>Rental Deposit (3 Months)</td>
+                                <td>$12,600</td>
+                                <td>Refundable commercial deposit</td>
+                            </tr>
+                            <tr>
+                                <td>Legal & Company Registration</td>
+                                <td>$2,400</td>
+                                <td>Commercial setup files in Singapore</td>
+                            </tr>
+                            <tr>
+                                <td>Initial Inventory & Launch Marketing</td>
+                                <td>$19,200</td>
+                                <td>Organic stock + opening campaigns</td>
+                            </tr>
+                            <tr class="total-row">
+                                <td><strong>Total Initial CAPEX</strong></td>
+                                <td><strong>$84,000</strong></td>
+                                <td><strong>Midpoint investment</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- 15. Unit Economics -->
+            <section id="economics" class="card fade-in">
+                <h2>15. Unit Economics</h2>
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Scenario</th>
+                                <th>Monthly Customers</th>
+                                <th>Monthly Revenue (USD)</th>
+                                <th>COGS (10%)</th>
+                                <th>OPEX (USD)</th>
+                                <th>Net Monthly Profit (USD)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Breakeven Case</td>
+                                <td>175 customers</td>
+                                <td>$24,500</td>
+                                <td>$2,450</td>
+                                <td>$22,000</td>
+                                <td>$50 (Approx.)</td>
+                            </tr>
+                            <tr class="highlight-row">
+                                <td>Base Case</td>
+                                <td>380 customers</td>
+                                <td>$53,200</td>
+                                <td>$5,320</td>
+                                <td>$22,000</td>
+                                <td>$25,880</td>
+                            </tr>
+                            <tr>
+                                <td>High-Performance Case</td>
+                                <td>480 customers</td>
+                                <td>$67,200</td>
+                                <td>$6,720</td>
+                                <td>$22,000</td>
+                                <td>$38,480</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            
+                <div class="conclusion-box" style="margin-top: 2rem; border-left-color: var(--success); background: rgba(16, 185, 129, 0.02);">
+                    <h3 style="color: var(--success); font-size: 1.2rem; margin-bottom: 0.5rem; font-family: var(--font-heading);">Post-Tax Financial Feasibility Analysis</h3>
+                    <p>All calculations in the table above represent pre-tax performance. Factoring in the local Corporate Income Tax (CIT) rate of <strong>17.0%</strong>, we arrive at the following post-tax projections for the Base Case:</p>
+                    <ul style="margin-top: 0.5rem; margin-left: 1.5rem; list-style-type: disc;">
+                        <li><strong>Base Case Pre-Tax Monthly Net Profit:</strong> USD 25,880</li>
+                        <li><strong>Estimated Monthly Corporate Income Tax:</strong> USD 4,400</li>
+                        <li><strong>Post-Tax Net Monthly Profit (PAT):</strong> USD 21,480</li>
+                        <li><strong>Post-Tax Profit to OPEX Ratio:</strong> <strong>98% (Post-Tax)</strong> (vs. 118% pre-tax)</li>
+                        <li><strong>Post-Tax CAPEX Payback Period:</strong> <strong>7 Months</strong> (vs. 5.9 months pre-tax)</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- 16. Setup Timeline -->
+            <section id="timeline" class="card fade-in">
+                <h2>16. Setup Timeline</h2>
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Milestone Phase</th>
+                                <th>Duration</th>
+                                <th>Key Tasks</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Phase 1: Legal & Property search</td>
+                                <td>Weeks 1 - 4</td>
+                                <td>Lease signed in Orchard Road, local corporate setup registered</td>
+                            </tr>
+                            <tr>
+                                <td>Phase 2: Construction</td>
+                                <td>Weeks 5 - 9</td>
+                                <td>VIP pod acoustics built, Takara beds imported</td>
+                            </tr>
+                            <tr>
+                                <td>Phase 3: Hiring & SOP Training</td>
+                                <td>Weeks 10 - 11</td>
+                                <td>Hire stylists, Omotenashi service coaching</td>
+                            </tr>
+                            <tr>
+                                <td>Phase 4: Launch</td>
+                                <td>Week 12+</td>
+                                <td>Expat preview weekend, targeted opening campaigns</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- 17. Marketing Strategy -->
+            <section id="marketing" class="card fade-in">
+                <h2>17. Marketing Strategy</h2>
+                <div class="text-content">
+                    <p>To acquire clients in Singapore, we will prioritize localized channels:</p>
+                    <ul>
+                        <li><strong>Expat Club partnerships:</strong> Target MM2H groups and international schools.</li>
+                        <li><strong>Google Maps reviews:</strong> Proactive campaign targeting digital nomads looking for workspace relaxation.</li>
+                        <li><strong>Hotel cross-marketing:</strong> Place brochures in premium boutique hotels in Tanjong Pagar.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- 18. Risks & Controls -->
+            <section id="risks" class="card fade-in">
+                <h2>18. Risks & Controls</h2>
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Identified Risk</th>
+                                <th>Severity</th>
+                                <th>Control / Mitigation Strategy</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Very high rent overheads</td>
+                                <td><span class="badge high">High</span></td>
+                                <td>Target small square footage and utilize vertical space. Build recurring annual membership plans.</td>
+                            </tr>
+                            <tr>
+                                <td>Labor supply quota limits</td>
+                                <td><span class="badge med">Medium</span></td>
+                                <td>Hire local Singaporean/PR staff primarily to maintain compliance with labor quota regulations.</td>
+                            </tr>
+                            <tr>
+                                <td>Stylist retention</td>
+                                <td><span class="badge high">High</span></td>
+                                <td>Provide the 10% commission sharing structure and clear career roadmap.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- 19. Recommendation -->
+            <section id="recommendation" class="card fade-in">
+                <h2>19. Final Recommendation</h2>
+                <div class="conclusion-box success-box">
+                    <h3>Decision: GO (Luxury Micro-Spa)</h3>
+                    <ul>
+                        <li><strong>Location:</strong> Orchard Road Upstairs unit.</li>
+                        <li><strong>Setup:</strong> 3 VIP Beds, 650 sq ft.</li>
+                        <li><strong>Budget Ceiling:</strong> USD 165,000.</li>
+                        <li><strong>Expansion Trigger:</strong> Achieve USD 45k monthly revenue with 20%+ membership retention for 3 consecutive months before looking at Tanjong Pagar expansion.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- 20. Next Steps -->
+            <section id="next-steps" class="card fade-in">
+                <h2>20. Next Steps</h2>
+                <ol class="action-list">
+                    <li>Engage commercial agents in Orchard for shop viewings.</li>
+                    <li>Conduct mystery shopping at hotel spas in Sentosa.</li>
+                    <li>Secure quotes for carbonated hair rinse systems.</li>
+                    <li>Prepare foreign business registration files.</li>
+                    <li>Headhunt a bilingual Salon Director.</li>
+                </ol>
+            </section>
+
+            <footer>
+                <p>Prepared by Antigravity | For Singapore Hair Salon Project</p>
+            </footer>
+        </main>
+    </div>
+    <script>
+        // Initialize Map centered on Singapore Orchard
+        const map = L.map('map').setView([1.2930, 103.8380], 13);
+
+        // Add Positron (light) map tiles to make data pop
+        L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+            subdomains: 'abcd',
+            maxZoom: 20
+        }).addTo(map);
+
+        // Helper to calculate radius based on footfall (1-100)
+        const getRadius = (footfall) => {
+            return Math.sqrt(footfall) * 3;
+        };
+
+        // Premium Residential Zones
+        const residential = [
+            { name: "Orchard Luxury Enclave", lat: 1.3050, lng: 103.8320, radius: 450, estPop: 3000 },
+            { name: "Tanjong Pagar / CBD Shophouses", lat: 1.2770, lng: 103.8440, radius: 350, estPop: 2000 },
+            { name: "River Valley Affluent Hub", lat: 1.2950, lng: 103.8300, radius: 400, estPop: 2500 }
+        ];
+
+        residential.forEach(res => {
+            L.circle([res.lat, res.lng], {
+                color: '#a133ff',
+                fillColor: '#a133ff',
+                fillOpacity: 0.15,
+                weight: 1.5,
+                radius: res.radius
+            }).addTo(map).bindPopup(`
+                <div class="popup-content" style="min-width: 150px;">
+                    <h3 style="color: #a133ff; margin-bottom: 2px;">${res.name}</h3>
+                    <p><strong>Premium Residential Hub</strong></p>
+                    <hr style="margin: 5px 0; border: 0; border-top: 1px solid #eee;">
+                    <p style="margin-bottom: 0;"><strong>Est. Premium Residents:</strong></p>
+                    <p style="font-size: 14px; font-weight: bold; color: #333; margin-top: 2px;">~${res.estPop.toLocaleString()} households</p>
+                </div>
+            `);
+        });
+
+        // Shopping Malls / High Footfall Anchors
+        const malls = [
+            { name: "ION Orchard", type: "Major Luxury Mall", lat: 1.3040, lng: 103.8318, footfall: 100 },
+            { name: "Great World City", type: "Premium Family Mall", lat: 1.2935, lng: 103.8318, footfall: 85 },
+            { name: "Marina Bay Sands Shoppes", type: "Elite Luxury Mall", lat: 1.2840, lng: 103.8590, footfall: 95 }
+        ];
+
+        malls.forEach(loc => {
+            L.circleMarker([loc.lat, loc.lng], {
+                radius: getRadius(loc.footfall),
+                fillColor: "#333",
+                color: "#fff",
+                weight: 1,
+                opacity: 1,
+                fillOpacity: 0.7
+            }).addTo(map).bindPopup(`
+                <div class="popup-content">
+                    <h3>🛍️ ${loc.name}</h3>
+                    <p><strong>Type:</strong> ${loc.type}</p>
+                    <p><strong>Est. Footfall Traffic:</strong> ${loc.footfall}/100</p>
+                </div>
+            `);
+        });
+
+        // Competitors
+        const competitors = [
+            { name: "Leekaja Beauty Salon (Orchard)", price: "US$96-200", footfall: 85, lat: 1.3015, lng: 103.8380, comment: "High-end Japanese/Korean salon chain. Premium styling focus, open layouts." },
+            { name: "Raffles Spa (Downtown)", price: "US$144-280", footfall: 55, lat: 1.2948, lng: 103.8540, comment: "Ultra-luxury hotel wellness spa. Focused on body/facial, lacking specialized scalp devices." }
+        ];
+
+        competitors.forEach(loc => {
+            L.circleMarker([loc.lat, loc.lng], {
+                radius: getRadius(loc.footfall),
+                fillColor: "#ef4444",
+                color: "#fff",
+                weight: 1.5,
+                opacity: 1,
+                fillOpacity: 0.9
+            }).addTo(map).bindPopup(`
+                <div class="popup-content">
+                    <h3 style="color: #ef4444;">🔴 ${loc.name}</h3>
+                    <p><strong>Price Level:</strong> ${loc.price}</p>
+                    <p><strong>Est. Footfall Traffic:</strong> ${loc.footfall}/100</p>
+                    <p><strong>Note:</strong> ${loc.comment}</p>
+                </div>
+            `);
+        });
+
+        // Shop Candidates
+        const candidates = [
+            { 
+                name: "Candidate A: Orchard Road Upstairs Unit", 
+                lat: 1.3025, 
+                lng: 103.8360, 
+                note: "Top recommendation. High wealth density, close to MRT. Elite Orchard address.", 
+                rent: 5950,
+                catchment: 120000,
+                premiumTargetPct: 42,
+                competitorCapacity: 45000,
+                airportTime: "25 mins from SIN"
+            },
+            { 
+                name: "Candidate B: Tanjong Pagar Shophouse", 
+                lat: 1.2785, 
+                lng: 103.8430, 
+                note: "Tanjong Pagar heritage core. Targets financial professionals, trendy shophouse vibe.", 
+                rent: 7225,
+                catchment: 90000,
+                premiumTargetPct: 48,
+                competitorCapacity: 37500,
+                airportTime: "25 mins from SIN"
+            },
+            { 
+                name: "Candidate C: River Valley Ground Retail", 
+                lat: 1.2930, 
+                lng: 103.8320, 
+                note: "Affluent residential focus. Lower drop-in footfall but loyal local residential base.", 
+                rent: 5525,
+                catchment: 80000,
+                premiumTargetPct: 38,
+                competitorCapacity: 27000,
+                airportTime: "30 mins from SIN"
+            }
+        ];
+
+        // Star Icon for Candidates
+        const starIcon = L.divIcon({
+            html: '<div style="font-size: 24px; filter: drop-shadow(0px 0px 4px rgba(0,0,0,0.5)); animation: pulse 2s infinite;">🌟</div>',
+            className: 'custom-div-icon',
+            iconSize: [30, 30],
+            iconAnchor: [15, 15]
+        });
+
+        candidates.forEach(loc => {
+            // Calculation logic
+            const targetDemand = Math.round(loc.catchment * (loc.premiumTargetPct / 100)); // monthly visits
+            const underservedDemand = Math.max(0, targetDemand - loc.competitorCapacity);
+            const underservedPct = Math.round((underservedDemand / targetDemand) * 100);
+            const ratio = (underservedDemand / loc.rent).toFixed(2);
+
+            L.marker([loc.lat, loc.lng], { icon: starIcon }).addTo(map).bindPopup(`
+                <div class="popup-content" style="min-width: 240px; color: #333;">
+                    <h3 style="color: var(--accent); font-weight: 600; font-size: 14px; margin-top: 0; margin-bottom: 6px; border-bottom: 1px solid #eee; padding-bottom: 4px;">✨ ${loc.name}</h3>
+                    <p style="margin: 4px 0; font-size: 12px; color: #666; line-height: 1.4;">${loc.note}</p>
+                    <hr style="margin: 6px 0; border: 0; border-top: 1px solid #eee;">
+                    <p style="margin: 3px 0; font-size: 11px; display: flex; justify-content: space-between;"><span>Monthly Catchment:</span> <strong style="color: #111;">${loc.catchment.toLocaleString()} pax</strong></p>
+                    <p style="margin: 3px 0; font-size: 11px; display: flex; justify-content: space-between;"><span>Premium Target Segment:</span> <strong style="color: #111;">${loc.premiumTargetPct}%</strong></p>
+                    <p style="margin: 3px 0; font-size: 11px; display: flex; justify-content: space-between;"><span>Monthly Premium Demand:</span> <strong style="color: #111;">${targetDemand.toLocaleString()} visits</strong></p>
+                    <p style="margin: 3px 0; font-size: 11px; display: flex; justify-content: space-between;"><span>Nearby Competitor Capacity:</span> <strong style="color: #111;">${loc.competitorCapacity.toLocaleString()} visits</strong></p>
+                    <p style="margin: 3px 0; font-size: 11px; display: flex; justify-content: space-between;"><span>Underserved Demand Gap:</span> <strong style="color: #e11d48;">${underservedDemand.toLocaleString()} visits (${underservedPct}%)</strong></p>
+                    <p style="margin: 3px 0; font-size: 11px; display: flex; justify-content: space-between;"><span>Airport Travel Time:</span> <strong style="color: #111;">${loc.airportTime}</strong></p>
+                    <p style="margin: 3px 0; font-size: 11px; display: flex; justify-content: space-between;"><span>Monthly Rent:</span> <strong style="color: #111;">USD ${loc.rent.toLocaleString()}</strong></p>
+                    <div style="background: rgba(198,168,124,0.15); padding: 8px; border-radius: 6px; border-left: 3px solid var(--accent); margin-top: 8px;">
+                        <strong style="color: var(--accent); font-size: 10px; text-transform: uppercase; letter-spacing: 0.5px; display: block; margin-bottom: 2px;">Potential Customer to Rent Ratio:</strong>
+                        <span style="font-size: 14px; font-weight: bold; color: #111;">${ratio} potential customers/USD 1 rent</span>
+                    </div>
+                </div>
+            `);
+        });
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
