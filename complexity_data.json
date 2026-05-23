@@ -1,0 +1,191 @@
+{
+  "Bangkok": {
+    "total": 355,
+    "loc": "90 hrs (Thonglor search)",
+    "design": "65 hrs (Boutique styling layout)",
+    "staff": "120 hrs (4 total headcount)",
+    "logistics": "80 hrs (Filtration & imports)"
+  },
+  "Binh Duong": {
+    "total": 425,
+    "loc": "110 hrs (Factory corridor search)",
+    "design": "75 hrs (Styling stations layout)",
+    "staff": "130 hrs (5 total headcount)",
+    "logistics": "110 hrs (HCMC customs)"
+  },
+  "Brisbane": {
+    "total": 440,
+    "loc": "100 hrs (Fortitude Valley search)",
+    "design": "140 hrs (Subtropical garden & plumbing)",
+    "staff": "110 hrs (5 total headcount)",
+    "logistics": "90 hrs (Premium styling tools)"
+  },
+  "Da Nang": {
+    "total": 380,
+    "loc": "80 hrs (Hai Chau/An Thuong search)",
+    "design": "120 hrs (4 premium styling stations)",
+    "staff": "110 hrs (5 total headcount)",
+    "logistics": "70 hrs (Da Nang port access)"
+  },
+  "Dong Nai": {
+    "total": 520,
+    "loc": "110 hrs (Bien Hoa city search)",
+    "design": "160 hrs (Semi-private styling layout)",
+    "staff": "130 hrs (5 total headcount)",
+    "logistics": "120 hrs (HCMC customs/shipping)"
+  },
+  "Hai Phong": {
+    "total": 480,
+    "loc": "100 hrs (Vinhomes Imperia search)",
+    "design": "140 hrs (Semi-private styling layout)",
+    "staff": "120 hrs (5 total headcount)",
+    "logistics": "120 hrs (Cat Bi port customs)"
+  },
+  "Hanoi": {
+    "total": 520,
+    "loc": "110 hrs (Tay Ho lakefront search)",
+    "design": "150 hrs (Quiet styling layout)",
+    "staff": "140 hrs (6 total headcount)",
+    "logistics": "120 hrs (Customs clearance from HK/MY)"
+  },
+  "Ho Chi Minh": {
+    "total": 550,
+    "loc": "120 hrs (Thao Dien expat search)",
+    "design": "160 hrs (Semi-private styling partitions)",
+    "staff": "150 hrs (7 total headcount)",
+    "logistics": "120 hrs (Malaysian OEM import customs)"
+  },
+  "Hong Kong": {
+    "total": 350,
+    "loc": "80 hrs (Causeway Bay search)",
+    "design": "120 hrs (Compact 3-bed layout)",
+    "staff": "100 hrs (3 total headcount)",
+    "logistics": "50 hrs (Standard shipping hubs)"
+  },
+  "Johor Bahru (RTS)": {
+    "total": 380,
+    "loc": "90 hrs (RTS skybridge connection)",
+    "design": "130 hrs (1,000 sq ft layout)",
+    "staff": "110 hrs (5 total headcount)",
+    "logistics": "50 hrs (Local MY supplier access)"
+  },
+  "Kuala Lumpur": {
+    "total": 440,
+    "loc": "90 hrs (Mont Kiara search)",
+    "design": "130 hrs (Luxurious boutique interior)",
+    "staff": "130 hrs (6 total headcount)",
+    "logistics": "90 hrs (Premium styling products)"
+  },
+  "Macau": {
+    "total": 420,
+    "loc": "100 hrs (Taipa Central search)",
+    "design": "140 hrs (Boutique layout & drainage path)",
+    "staff": "110 hrs (5 total headcount)",
+    "logistics": "70 hrs (Hong Kong border ports)"
+  },
+  "Melbourne": {
+    "total": 460,
+    "loc": "110 hrs (South Yarra/Fitzroy)",
+    "design": "150 hrs (Acoustic design & plumbing)",
+    "staff": "110 hrs (5 total headcount)",
+    "logistics": "90 hrs (Premium styling tools)"
+  },
+  "Penang": {
+    "total": 360,
+    "loc": "80 hrs (Gurney Drive shophouses)",
+    "design": "110 hrs (Compact 4-bed style)",
+    "staff": "110 hrs (6 total headcount)",
+    "logistics": "60 hrs (Local organic supplier)"
+  },
+  "Sabah": {
+    "total": 490,
+    "loc": "80 hrs (KK prime retail search)",
+    "design": "130 hrs (Waterfront coastal layout)",
+    "staff": "110 hrs (5 total headcount)",
+    "logistics": "80 hrs (Shipments from West Malaysia)"
+  },
+  "Sarawak": {
+    "total": 460,
+    "loc": "80 hrs (Waterfront heritage hunting)",
+    "design": "120 hrs (Wabi-sabi boutique layout)",
+    "staff": "110 hrs (5 total headcount)",
+    "logistics": "70 hrs (East Malaysia shipping paths)"
+  },
+  "Perth": {
+    "total": 420,
+    "loc": "90 hrs (Subiaco/Cottesloe)",
+    "design": "140 hrs (Coastal design & plumbing)",
+    "staff": "110 hrs (5 total headcount)",
+    "logistics": "80 hrs (Imported cosmetics)"
+  },
+  "Singapore": {
+    "total": 310,
+    "loc": "85 hrs (Orchard boutique search)",
+    "design": "60 hrs (Semi-private layout)",
+    "staff": "110 hrs (4 total headcount)",
+    "logistics": "55 hrs (Imported salon systems)"
+  },
+  "Sydney": {
+    "total": 480,
+    "loc": "120 hrs (Paddington/Double Bay)",
+    "design": "160 hrs (Heritage DA acoustics & plumbing)",
+    "staff": "120 hrs (5 total headcount)",
+    "logistics": "80 hrs (Imported cosmetics)"
+  },
+  "Kaohsiung": {
+    "total": 170,
+    "loc": "60 hrs (Zuoying storefront search)",
+    "design": "30 hrs (Styling stations layout)",
+    "staff": "80 hrs (Stylist hiring & training)",
+    "logistics": "40 hrs (Styling equipment delivery)"
+  },
+  "Taichung": {
+    "total": 510,
+    "loc": "130 hrs (Xitun storefront search)",
+    "design": "110 hrs (4 styling suites & lobby)",
+    "staff": "180 hrs (8 total headcount)",
+    "logistics": "90 hrs (High-end styling tools)"
+  },
+  "Tainan": {
+    "total": 355,
+    "loc": "90 hrs (East District location search)",
+    "design": "65 hrs (Premium styling layout)",
+    "staff": "120 hrs (Hiring & styling training)",
+    "logistics": "80 hrs (Organic salon imports)"
+  },
+  "Taipei": {
+    "total": 405,
+    "loc": "100 hrs (Da'an alleyway search)",
+    "design": "75 hrs (Wabi-sabi aesthetics)",
+    "staff": "130 hrs (4 total headcount)",
+    "logistics": "100 hrs (Organic imports)"
+  },
+  "Fukuoka": {
+    "total": 490,
+    "loc": "80 hrs (Tenjin prime storefront search)",
+    "design": "130 hrs (Premium luxury salon layout)",
+    "staff": "120 hrs (Staff licensing compliance)",
+    "logistics": "160 hrs (Local premium product distribution)"
+  },
+  "Okinawa": {
+    "total": 480,
+    "loc": "80 hrs (Naha tourist hub search)",
+    "design": "120 hrs (Seaside resort salon layout)",
+    "staff": "110 hrs (5 total headcount)",
+    "logistics": "70 hrs (Ocean freight shipping lines)"
+  },
+  "Busan": {
+    "total": 403,
+    "loc": "90 hrs (Haeundae ground-floor location search)",
+    "design": "33 hrs (Ground-floor styling stations layout)",
+    "staff": "130 hrs (Local service culture coaching)",
+    "logistics": "150 hrs (Korean organic cosmetic distribution)"
+  },
+  "Dubai": {
+    "total": 640,
+    "loc": "120 hrs (Mainland freezone setup)",
+    "design": "180 hrs (Deluxe premium suite fitout)",
+    "staff": "140 hrs (Talent visa & high training)",
+    "logistics": "100 hrs (Gulf customs clearance)"
+  }
+}

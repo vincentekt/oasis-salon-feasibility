@@ -21,8 +21,16 @@ WORKDIR   = r"c:\Users\vince\Projects\HairSpa\Oasis_Salon_Web"
 XLSX_FILE = os.path.join(WORKDIR, "salon_data.xlsx")
 JSON_FILE = os.path.join(WORKDIR, "city_data.json")
 JS_FILE   = os.path.join(WORKDIR, "script.js")
+COMPLEXITY_FILE = os.path.join(WORKDIR, "complexity_data.json")
 
 DRY_RUN = "--dry-run" in sys.argv
+
+# ── LOAD COMPLEXITY DATA ──────────────────────────────────────────────────────
+print(f"Reading {COMPLEXITY_FILE}...")
+with open(COMPLEXITY_FILE, "r", encoding="utf-8") as f:
+    complexities = json.load(f)
+print(f"  Loaded {len(complexities)} complexity profiles")
+
 
 # ── LOAD EXCEL ────────────────────────────────────────────────────────────────
 print(f"Reading {XLSX_FILE}...")
@@ -398,6 +406,8 @@ for city in city_inputs:
         "risk":         ex.get("risk", ""),
         "viable":       r["viable"],
         "country":      city["country"],
+        # Complexity (dynamic map)
+        "complexity":   complexities.get(name),
     }
     cities_json.append(entry)
 

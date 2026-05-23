@@ -79,7 +79,14 @@
     "underserved_raw": 65,
     "risk": "Foreign ownership license compliance (IRC/ERC process 2-4 months)",
     "viable": true,
-    "country": "VN"
+    "country": "VN",
+    "complexity": {
+      "total": 550,
+      "loc": "120 hrs (Thao Dien expat search)",
+      "design": "160 hrs (Semi-private styling partitions)",
+      "staff": "150 hrs (7 total headcount)",
+      "logistics": "120 hrs (Malaysian OEM import customs)"
+    }
   },
   {
     "name": "Hanoi",
@@ -161,7 +168,14 @@
     "underserved_raw": 55,
     "risk": "Hard water (TDS 400+ ppm) requires RO filtration investment; foreign license compliance",
     "viable": true,
-    "country": "VN"
+    "country": "VN",
+    "complexity": {
+      "total": 520,
+      "loc": "110 hrs (Tay Ho lakefront search)",
+      "design": "150 hrs (Quiet styling layout)",
+      "staff": "140 hrs (6 total headcount)",
+      "logistics": "120 hrs (Customs clearance from HK/MY)"
+    }
   },
   {
     "name": "Da Nang",
@@ -243,7 +257,14 @@
     "underserved_raw": 70,
     "risk": "Seasonal tourism slump (Nov-Feb monsoon); nomad base fluctuates with global remote-work trends",
     "viable": true,
-    "country": "VN"
+    "country": "VN",
+    "complexity": {
+      "total": 380,
+      "loc": "80 hrs (Hai Chau/An Thuong search)",
+      "design": "120 hrs (4 premium styling stations)",
+      "staff": "110 hrs (5 total headcount)",
+      "logistics": "70 hrs (Da Nang port access)"
+    }
   },
   {
     "name": "Hai Phong",
@@ -325,7 +346,14 @@
     "underserved_raw": 72,
     "risk": "Dependency on Deep C / VSIP Korean industrial rotation cycles",
     "viable": true,
-    "country": "VN"
+    "country": "VN",
+    "complexity": {
+      "total": 480,
+      "loc": "100 hrs (Vinhomes Imperia search)",
+      "design": "140 hrs (Semi-private styling layout)",
+      "staff": "120 hrs (5 total headcount)",
+      "logistics": "120 hrs (Cat Bi port customs)"
+    }
   },
   {
     "name": "Binh Duong",
@@ -407,7 +435,14 @@
     "underserved_raw": 75,
     "risk": "Korean factory shift rotation cycles; premium product supply chain from HCMC (60 min)",
     "viable": true,
-    "country": "VN"
+    "country": "VN",
+    "complexity": {
+      "total": 425,
+      "loc": "110 hrs (Factory corridor search)",
+      "design": "75 hrs (Styling stations layout)",
+      "staff": "130 hrs (5 total headcount)",
+      "logistics": "110 hrs (HCMC customs)"
+    }
   },
   {
     "name": "Dong Nai",
@@ -489,7 +524,14 @@
     "underserved_raw": 73,
     "risk": "Zero local competition but small total expat population; 60-min SGN logistics chain",
     "viable": true,
-    "country": "VN"
+    "country": "VN",
+    "complexity": {
+      "total": 520,
+      "loc": "110 hrs (Bien Hoa city search)",
+      "design": "160 hrs (Semi-private styling layout)",
+      "staff": "130 hrs (5 total headcount)",
+      "logistics": "120 hrs (HCMC customs/shipping)"
+    }
   },
   {
     "name": "Kuala Lumpur",
@@ -571,7 +613,14 @@
     "underserved_raw": 40,
     "risk": "KLCC/Ampang corridor gap vs. 4 established competitors in Bangsar; Muslimah bay planning needed",
     "viable": true,
-    "country": "MY"
+    "country": "MY",
+    "complexity": {
+      "total": 440,
+      "loc": "90 hrs (Mont Kiara search)",
+      "design": "130 hrs (Luxurious boutique interior)",
+      "staff": "130 hrs (6 total headcount)",
+      "logistics": "90 hrs (Premium styling products)"
+    }
   },
   {
     "name": "Johor Bahru (RTS)",
@@ -653,7 +702,14 @@
     "underserved_raw": 55,
     "risk": "RTS operational delays; SG cross-border demand tied to MYR/SGD exchange rate sensitivity",
     "viable": true,
-    "country": "MY"
+    "country": "MY",
+    "complexity": {
+      "total": 380,
+      "loc": "90 hrs (RTS skybridge connection)",
+      "design": "130 hrs (1,000 sq ft layout)",
+      "staff": "110 hrs (5 total headcount)",
+      "logistics": "50 hrs (Local MY supplier access)"
+    }
   },
   {
     "name": "Penang",
@@ -735,7 +791,14 @@
     "underserved_raw": 50,
     "risk": "Georgetown heritage DA restrictions on fit-out signage; limited premium residential density vs KL",
     "viable": true,
-    "country": "MY"
+    "country": "MY",
+    "complexity": {
+      "total": 360,
+      "loc": "80 hrs (Gurney Drive shophouses)",
+      "design": "110 hrs (Compact 4-bed style)",
+      "staff": "110 hrs (6 total headcount)",
+      "logistics": "60 hrs (Local organic supplier)"
+    }
   },
   {
     "name": "Sabah",
@@ -817,7 +880,14 @@
     "underserved_raw": 68,
     "risk": "Small total expat base; East Malaysia logistics surcharge for premium colour product supply",
     "viable": true,
-    "country": "MY"
+    "country": "MY",
+    "complexity": {
+      "total": 490,
+      "loc": "80 hrs (KK prime retail search)",
+      "design": "130 hrs (Waterfront coastal layout)",
+      "staff": "110 hrs (5 total headcount)",
+      "logistics": "80 hrs (Shipments from West Malaysia)"
+    }
   },
   {
     "name": "Sarawak",
@@ -899,7 +969,14 @@
     "underserved_raw": 65,
     "risk": "Shell/Petronas rotation cycles; East Malaysia freight costs for salon products",
     "viable": true,
-    "country": "MY"
+    "country": "MY",
+    "complexity": {
+      "total": 460,
+      "loc": "80 hrs (Waterfront heritage hunting)",
+      "design": "120 hrs (Wabi-sabi boutique layout)",
+      "staff": "110 hrs (5 total headcount)",
+      "logistics": "70 hrs (East Malaysia shipping paths)"
+    }
   },
   {
     "name": "Singapore",
@@ -981,7 +1058,14 @@
     "underserved_raw": 25,
     "risk": "Ultra-high rent; Holland V HDB commercial leases require SCDF & BCA approvals; F&B landlord competition",
     "viable": true,
-    "country": "SG"
+    "country": "SG",
+    "complexity": {
+      "total": 310,
+      "loc": "85 hrs (Orchard boutique search)",
+      "design": "60 hrs (Semi-private layout)",
+      "staff": "110 hrs (4 total headcount)",
+      "logistics": "55 hrs (Imported salon systems)"
+    }
   },
   {
     "name": "Hong Kong",
@@ -1063,7 +1147,14 @@
     "underserved_raw": 22,
     "risk": "Ultra-high commercial rent; Causeway Bay lease scarcity and key money demands",
     "viable": true,
-    "country": "HK"
+    "country": "HK",
+    "complexity": {
+      "total": 350,
+      "loc": "80 hrs (Causeway Bay search)",
+      "design": "120 hrs (Compact 3-bed layout)",
+      "staff": "100 hrs (3 total headcount)",
+      "logistics": "50 hrs (Standard shipping hubs)"
+    }
   },
   {
     "name": "Bangkok",
@@ -1145,7 +1236,14 @@
     "underserved_raw": 45,
     "risk": "Hard water (TDS 300-500 ppm) — RO filtration essential; very high Thonglor rent premium",
     "viable": true,
-    "country": "TH"
+    "country": "TH",
+    "complexity": {
+      "total": 355,
+      "loc": "90 hrs (Thonglor search)",
+      "design": "65 hrs (Boutique styling layout)",
+      "staff": "120 hrs (4 total headcount)",
+      "logistics": "80 hrs (Filtration & imports)"
+    }
   },
   {
     "name": "Macau",
@@ -1227,7 +1325,14 @@
     "underserved_raw": 38,
     "risk": "Casino industry cyclicality; 12% Macau profit tax but gaming downturn risk",
     "viable": true,
-    "country": "MC"
+    "country": "MC",
+    "complexity": {
+      "total": 420,
+      "loc": "100 hrs (Taipa Central search)",
+      "design": "140 hrs (Boutique layout & drainage path)",
+      "staff": "110 hrs (5 total headcount)",
+      "logistics": "70 hrs (Hong Kong border ports)"
+    }
   },
   {
     "name": "Dubai",
@@ -1309,7 +1414,14 @@
     "underserved_raw": 30,
     "risk": "Extreme hard water (TDS 500-1200 ppm) — heavy RO investment; annual lease pre-payment UAE norm",
     "viable": true,
-    "country": "AE"
+    "country": "AE",
+    "complexity": {
+      "total": 640,
+      "loc": "120 hrs (Mainland freezone setup)",
+      "design": "180 hrs (Deluxe premium suite fitout)",
+      "staff": "140 hrs (Talent visa & high training)",
+      "logistics": "100 hrs (Gulf customs clearance)"
+    }
   },
   {
     "name": "Taipei",
@@ -1391,7 +1503,14 @@
     "underserved_raw": 35,
     "risk": "Intense local competition; 6-9 hr wait at top competitors — booking system must prevent same bottleneck",
     "viable": true,
-    "country": "TW"
+    "country": "TW",
+    "complexity": {
+      "total": 405,
+      "loc": "100 hrs (Da'an alleyway search)",
+      "design": "75 hrs (Wabi-sabi aesthetics)",
+      "staff": "130 hrs (4 total headcount)",
+      "logistics": "100 hrs (Organic imports)"
+    }
   },
   {
     "name": "Taichung",
@@ -1473,7 +1592,14 @@
     "underserved_raw": 42,
     "risk": "Qi-qi premium rent inflation; experienced colour stylist scarcity vs. local Taiwanese market",
     "viable": true,
-    "country": "TW"
+    "country": "TW",
+    "complexity": {
+      "total": 510,
+      "loc": "130 hrs (Xitun storefront search)",
+      "design": "110 hrs (4 styling suites & lobby)",
+      "staff": "180 hrs (8 total headcount)",
+      "logistics": "90 hrs (High-end styling tools)"
+    }
   },
   {
     "name": "Kaohsiung",
@@ -1555,7 +1681,14 @@
     "underserved_raw": 48,
     "risk": "THSR Zuoying first-mover reliant on commuter appointment behavior; Round2/UCA Lingya competition",
     "viable": true,
-    "country": "TW"
+    "country": "TW",
+    "complexity": {
+      "total": 170,
+      "loc": "60 hrs (Zuoying storefront search)",
+      "design": "30 hrs (Styling stations layout)",
+      "staff": "80 hrs (Stylist hiring & training)",
+      "logistics": "40 hrs (Styling equipment delivery)"
+    }
   },
   {
     "name": "Tainan",
@@ -1637,7 +1770,14 @@
     "underserved_raw": 55,
     "risk": "TSMC Sinshih expat base still ramping — 2025-2027 TSMC Fab 18 construction dependency",
     "viable": true,
-    "country": "TW"
+    "country": "TW",
+    "complexity": {
+      "total": 355,
+      "loc": "90 hrs (East District location search)",
+      "design": "65 hrs (Premium styling layout)",
+      "staff": "120 hrs (Hiring & styling training)",
+      "logistics": "80 hrs (Organic salon imports)"
+    }
   },
   {
     "name": "Fukuoka",
@@ -1719,7 +1859,14 @@
     "underserved_raw": 38,
     "risk": "30% JP corporate tax; Daimyo boutique lease scarcity; TONI&GUY/saco japan direct competition on same block",
     "viable": true,
-    "country": "JP"
+    "country": "JP",
+    "complexity": {
+      "total": 490,
+      "loc": "80 hrs (Tenjin prime storefront search)",
+      "design": "130 hrs (Premium luxury salon layout)",
+      "staff": "120 hrs (Staff licensing compliance)",
+      "logistics": "160 hrs (Local premium product distribution)"
+    }
   },
   {
     "name": "Okinawa",
@@ -1801,7 +1948,14 @@
     "underserved_raw": 52,
     "risk": "Bilingual (English/Korean) stylist recruitment extremely difficult in Okinawa; 30% JP tax burden",
     "viable": true,
-    "country": "JP"
+    "country": "JP",
+    "complexity": {
+      "total": 480,
+      "loc": "80 hrs (Naha tourist hub search)",
+      "design": "120 hrs (Seaside resort salon layout)",
+      "staff": "110 hrs (5 total headcount)",
+      "logistics": "70 hrs (Ocean freight shipping lines)"
+    }
   },
   {
     "name": "Busan",
@@ -1883,7 +2037,14 @@
     "underserved_raw": 45,
     "risk": "K-franchise dominance (Juno Hair 200+ outlets); Marine City appointment-only requires strong pre-booking system",
     "viable": true,
-    "country": "KR"
+    "country": "KR",
+    "complexity": {
+      "total": 403,
+      "loc": "90 hrs (Haeundae ground-floor location search)",
+      "design": "33 hrs (Ground-floor styling stations layout)",
+      "staff": "130 hrs (Local service culture coaching)",
+      "logistics": "150 hrs (Korean organic cosmetic distribution)"
+    }
   },
   {
     "name": "Sydney",
@@ -1965,7 +2126,14 @@
     "underserved_raw": 30,
     "risk": "High AU labour Award rates + 11.5% superannuation; inner-west DA heritage restrictions on fit-out",
     "viable": true,
-    "country": "AU"
+    "country": "AU",
+    "complexity": {
+      "total": 480,
+      "loc": "120 hrs (Paddington/Double Bay)",
+      "design": "160 hrs (Heritage DA acoustics & plumbing)",
+      "staff": "120 hrs (5 total headcount)",
+      "logistics": "80 hrs (Imported cosmetics)"
+    }
   },
   {
     "name": "Melbourne",
@@ -2047,7 +2215,14 @@
     "underserved_raw": 32,
     "risk": "High AU labour + superannuation; Chapel St rent inflation; F&B competition for prime ground-floor leases",
     "viable": true,
-    "country": "AU"
+    "country": "AU",
+    "complexity": {
+      "total": 460,
+      "loc": "110 hrs (South Yarra/Fitzroy)",
+      "design": "150 hrs (Acoustic design & plumbing)",
+      "staff": "110 hrs (5 total headcount)",
+      "logistics": "90 hrs (Premium styling tools)"
+    }
   },
   {
     "name": "Brisbane",
@@ -2129,7 +2304,14 @@
     "underserved_raw": 36,
     "risk": "High AU labour costs and superannuation; UV-damaged colour turnover requires more frequent client visits",
     "viable": true,
-    "country": "AU"
+    "country": "AU",
+    "complexity": {
+      "total": 440,
+      "loc": "100 hrs (Fortitude Valley search)",
+      "design": "140 hrs (Subtropical garden & plumbing)",
+      "staff": "110 hrs (5 total headcount)",
+      "logistics": "90 hrs (Premium styling tools)"
+    }
   },
   {
     "name": "Perth",
@@ -2211,6 +2393,13 @@
     "underserved_raw": 38,
     "risk": "FIFO schedule volatility; isolation from east-coast premium product supply chain",
     "viable": true,
-    "country": "AU"
+    "country": "AU",
+    "complexity": {
+      "total": 420,
+      "loc": "90 hrs (Subiaco/Cottesloe)",
+      "design": "140 hrs (Coastal design & plumbing)",
+      "staff": "110 hrs (5 total headcount)",
+      "logistics": "80 hrs (Imported cosmetics)"
+    }
   }
 ]
