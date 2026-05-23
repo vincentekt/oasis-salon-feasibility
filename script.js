@@ -1002,10 +1002,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Helper calculations
         const getColor = (payback) => {
-            if (payback <= 12) return "#10b981"; // Emerald green (<= 12 months)
-            if (payback <= 18) return "#eab308"; // Amber yellow (13-18 months)
-            if (payback <= 24) return "#f97316"; // Orange (19-24 months)
-            return "#ef4444"; // Red (25+ months)
+            if (payback <= 6) return "#047857";  // Deep Emerald (absolute fastest, <= 6 months)
+            if (payback <= 12) return "#84cc16"; // Light Lime Green (fast, 7-12 months)
+            if (payback <= 18) return "#eab308"; // Amber Yellow (moderate, 13-18 months)
+            if (payback <= 24) return "#f97316"; // Orange (slower, 19-24 months)
+            return "#ef4444";                    // Red (slow, 25+ months)
         };
 
         const getOpacity = (capex) => {
