@@ -145,11 +145,11 @@ LOCATION_TABLES = {
                                   <td>4.4 / 5</td>
                               </tr>
                               <tr>
-                                  <td>Bien Hoa City Center (Buu Long)</td>
-                                  <td>USD 450 - 700</td>
-                                  <td>Urban center. More general foot traffic. Better brand visibility for future Vietnamese professional market expansion phase.</td>
-                                  <td>Lower Korean expat density; 15-min drive from AMATA gate; more local competition from mid-tier Vietnamese salons</td>
-                                  <td>3.5 / 5</td>
+                                  <td>Vo Thi Sau Commercial Corridor (Thong Nhat)</td>
+                                  <td>USD 500 - 800</td>
+                                  <td>Biên Hòa's premier high-street dining & lifestyle corridor. Highest concentration of upscale cafes, Korean restaurants, and premium local consumer spending. Best visibility for a flagship brand.</td>
+                                  <td>Higher rental rates; parking can be highly constrained during evening dining peaks; slightly further from AMATA/Loteco industrial parks (10-12 mins) compared to gate-side options.</td>
+                                  <td>4.1 / 5</td>
                               </tr>
              </tbody>""",
 
@@ -313,7 +313,7 @@ LOCATION_TABLES = {
                                   <td>4.2 / 5</td>
                               </tr>
                               <tr>
-                                  <td>Huludun - Wenxin Rd (North)</td>
+                                  <td>Beitun - Wenxin Rd (North)</td>
                                   <td>NTD 45,000 - 65,000</td>
                                   <td>Emerging premium residential corridor north of Qi-qi. Lower competition, growing family demographic. Best as second outlet once Qi-qi flagship is profitable.</td>
                                   <td>Lower current foot traffic; less established premium commercial environment; longer time to build awareness</td>
@@ -337,7 +337,7 @@ LOCATION_TABLES = {
                                   <td>4.3 / 5</td>
                               </tr>
                               <tr>
-                                  <td>Xinyi - Central Park MRT</td>
+                                  <td>Xinxing - Central Park MRT</td>
                                   <td>NTD 55,000 - 75,000</td>
                                   <td>Near Kaohsiung's Central Park and cultural institutions. Growing premium residential catchment. Lower competition than Lingya. Good for Japanese business community nearby.</td>
                                   <td>Less established premium retail environment than Lingya or Zuoying; lower total foot traffic</td>

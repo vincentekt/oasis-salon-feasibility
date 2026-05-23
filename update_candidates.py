@@ -156,11 +156,11 @@ CANDIDATES = {
                 airportTime: "60 mins from SGN"
             },
             { 
-                name: "Candidate C: Bien Hoa City Center (Buu Long)", 
-                lat: 10.9600, lng: 106.8250, 
-                note: "Urban center fallback. More foot traffic from general public but lower Korean expat density. Better brand visibility for future Vietnamese professional market expansion.", 
-                rent: 550, catchment: 40000, premiumTargetPct: 28, competitorCapacity: 3000,
-                airportTime: "58 mins from SGN"
+                name: "Candidate C: Vo Thi Sau Commercial Corridor (Thong Nhat)", 
+                lat: 10.9488, lng: 106.8333, 
+                note: "Biên Hòa's premier lifestyle and dining high-street. High local wealthy foot traffic and Korean restaurant clusters, but higher rent and active local salon competition.", 
+                rent: 700, catchment: 45000, premiumTargetPct: 35, competitorCapacity: 2500,
+                airportTime: "55 mins from SGN"
             }
         ]""",
 
@@ -328,7 +328,7 @@ CANDIDATES = {
                 airportTime: "30 mins from RMQ"
             },
             { 
-                name: "Candidate C: Huludun - Wenxin Rd (Northern Expansion)", 
+                name: "Candidate C: Beitun - Wenxin Rd (Northern Expansion)", 
                 lat: 24.1850, lng: 120.6380, 
                 note: "Emerging premium residential corridor north of Qi-qi. Lower current competition, growing family demographic. Best for second-outlet once Qi-qi flagship is established. Rent NTD 45,000–65,000/mo.", 
                 rent: 1700, catchment: 25000, premiumTargetPct: 22, competitorCapacity: 4000,
@@ -352,7 +352,7 @@ CANDIDATES = {
                 airportTime: "15 mins from KHH"
             },
             { 
-                name: "Candidate C: Xinyi District (Central Park Adjacent)", 
+                name: "Candidate C: Xinxing District (Central Park Adjacent)", 
                 lat: 22.6250, lng: 120.3150, 
                 note: "Near Kaohsiung's Central Park MRT and cultural facilities. Growing premium residential catchment with access to Kaohsiung's Japanese business community. Lower competition than Lingya. Rent NTD 55,000–75,000/mo.", 
                 rent: 1800, catchment: 28000, premiumTargetPct: 26, competitorCapacity: 6000,
