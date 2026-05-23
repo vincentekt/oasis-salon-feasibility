@@ -294,29 +294,29 @@
                                 <th>Overall Rating</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr class="highlight-row">
-                                <td>R&F Mall / Marina Place</td>
-                                <td>USD 1,360 - 1,700</td>
-                                <td>Directly connected to RTS station via covered skybridge, high premium footfall</td>
-                                <td>Mall management compliance fees</td>
-                                <td>4.8 / 5 (Recommended)</td>
-                            </tr>
-                            <tr>
-                                <td>Komtar JBCC / City Square</td>
-                                <td>USD 1,700 - 2,125</td>
-                                <td>Directly adjacent to JB Sentral CIQ, extremely high pedestrian traffic</td>
-                                <td>Higher rent rates, limited lease flexibility</td>
-                                <td>4.4 / 5</td>
-                            </tr>
-                            <tr>
-                                <td>Zenith Mall / Town Centre</td>
-                                <td>USD 1,190 - 1,530</td>
-                                <td>Walkable from RTS, near luxury hotels (Amari), active dining/nightlife zone</td>
-                                <td>Slightly off the direct transit path</td>
-                                <td>4.0 / 5</td>
-                            </tr>
-                        </tbody>
+                        <tbody><tbody>
+                              <tr class="highlight-row">
+                                  <td>R&F Mall Skybridge Unit</td>
+                                  <td>MYR 5,000 - 8,000</td>
+                                  <td>Direct RTS Link skybridge — Singapore cross-border clients enter without street-level commute. Premium mall positioning. Singapore clients budget SGD pricing (USD 65–120+). REDS Hair Salon confirms premium hair demand in RTS zone.</td>
+                                  <td>Mall hours constrain operating schedule; RTS operational delays still possible; requires premium mall fit-out</td>
+                                  <td>4.9 / 5 (Recommended)</td>
+                              </tr>
+                              <tr>
+                                  <td>Komtar JBCC (JB City Centre)</td>
+                                  <td>MYR 4,000 - 6,500</td>
+                                  <td>Largest mall in JB. High foot traffic from Singapore day-trippers and JB residents. Direct CIQ connection. REDS and Stay B proximity confirms demand.</td>
+                                  <td>Older mall — less premium brand environment; competition from established JB salons in same building</td>
+                                  <td>4.3 / 5</td>
+                              </tr>
+                              <tr>
+                                  <td>Medini Iskandar (Legoland Zone)</td>
+                                  <td>MYR 3,000 - 5,000</td>
+                                  <td>Fast-growing business district. International School cluster. IHH Healthcare and Pinewood Studios expat families. Lower competition, high growth trajectory.</td>
+                                  <td>Currently low foot traffic; 20-min from CIQ checkpoint; relies on Iskandar Medini development pace</td>
+                                  <td>3.8 / 5</td>
+                              </tr>
+             </tbody></tbody>
                     </table>
                 </div>
                 <div class="conclusion-box">
@@ -937,37 +937,25 @@
         // Shop Candidates
         const candidates = [
             { 
-                name: "Candidate A: R&F Mall Skybridge Unit", 
-                lat: 1.4608, 
-                lng: 103.7711, 
-                note: "Top recommendation. Directly connected to the RTS Link via covered bridge. Captures pedestrians instantly.", 
-                rent: 1300,
-                catchment: 150000,
-                premiumTargetPct: 21.6,
-                competitorCapacity: 22500,
+                name: "Candidate A: R&F Mall Skybridge Commercial (Primary)", 
+                lat: 1.4608, lng: 103.7711, 
+                note: "TOP PICK. Direct RTS Link skybridge connection. Singapore cross-border clients enter without street commute. Premium mall positioning. Rent MYR 5,000–8,000/mo. Singapore commuters budget SGD pricing (USD 65–120 range).", 
+                rent: 1700, catchment: 50000, premiumTargetPct: 40, competitorCapacity: 6000,
                 airportTime: "30 mins from JHB / 50 mins from SIN"
             },
             { 
-                name: "Candidate B: Komtar JBCC Ground Retail", 
-                lat: 1.4628, 
-                lng: 103.7645, 
-                note: "Excellent brand visibility but high rent pressure and rigid lease terms.", 
-                rent: 1590,
-                catchment: 170000,
-                premiumTargetPct: 16.8,
-                competitorCapacity: 33750,
-                airportTime: "30 mins from JHB / 55 mins from SIN"
+                name: "Candidate B: Komtar JBCC (JB City Centre)", 
+                lat: 1.4628, lng: 103.7645, 
+                note: "Largest mall in JB city center. High foot traffic from Singapore day-trippers and JB residents. REDS Hair Salon confirmed presence validates premium hair demand. Ground floor with direct CIQ access.", 
+                rent: 1400, catchment: 45000, premiumTargetPct: 35, competitorCapacity: 8000,
+                airportTime: "30 mins from JHB"
             },
             { 
-                name: "Candidate C: Zenith Mall Shoplot", 
-                lat: 1.4612, 
-                lng: 103.7630, 
-                note: "Near Amari Hotel and main dining/entertainment block. High spending power.", 
-                rent: 1160,
-                catchment: 110000,
-                premiumTargetPct: 26.4,
-                competitorCapacity: 24750,
-                airportTime: "32 mins from JHB / 55 mins from SIN"
+                name: "Candidate C: Medini Iskandar (Legoland / APAC Zone)", 
+                lat: 1.4250, lng: 103.6290, 
+                note: "Fast-growing business district with International School cluster. Expat families from IHH Healthcare, Pinewood Studios Malaysia cluster here. Lower current density but rapid growth trajectory.", 
+                rent: 1100, catchment: 28000, premiumTargetPct: 30, competitorCapacity: 2000,
+                airportTime: "35 mins from JHB"
             }
         ];
 

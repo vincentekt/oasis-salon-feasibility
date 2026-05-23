@@ -272,29 +272,29 @@
                                 <th>Overall Rating</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr class="highlight-row">
-                                <td>Taipa Central (Boutique Shophouse)</td>
-                                <td>USD 3,000 - 4,000</td>
-                                <td>Dense high-income expat and local families, high local retail traffic, lower ground floor rent</td>
-                                <td>Strict commercial licensing under DSSOPT, limited parking</td>
-                                <td>4.8 / 5 (Recommended)</td>
-                            </tr>
-                            <tr>
-                                <td>Macau Peninsula (NAPE Commercial Suite)</td>
-                                <td>USD 3,500 - 4,800</td>
-                                <td>Commercial heart, premium lifestyle hub, high corporate and casino management traffic</td>
-                                <td>High noise/ventilation controls near residential towers, high competition</td>
-                                <td>4.5 / 5</td>
-                            </tr>
-                            <tr>
-                                <td>Fai Chi Kei (Residential Lane Shop)</td>
-                                <td>USD 2,000 - 2,800</td>
-                                <td>High domestic density, lower rental base</td>
-                                <td>Lower premium target segment percentage, local local clientele</td>
-                                <td>3.9 / 5</td>
-                            </tr>
-                        </tbody>
+                        <tbody><tbody>
+                              <tr class="highlight-row">
+                                  <td>Taipa Village Commercial Row</td>
+                                  <td>MOP 12,000 - 20,000</td>
+                                  <td>Macau's preferred residential zone for casino management expats. Hair Cloud (competitor) presence confirms premium demand. Consistent non-gaming clientele unlike Cotai Strip. Taipa Village has the most stable year-round foot traffic from expat residents vs. tourist-only zones.</td>
+                                  <td>Taipa Village is small — catchment limited to expat management community; growth ceiling lower than Cotai but more reliable baseline</td>
+                                  <td>4.8 / 5 (Recommended)</td>
+                              </tr>
+                              <tr>
+                                  <td>NAPE Commercial District</td>
+                                  <td>MOP 10,000 - 18,000</td>
+                                  <td>Macau Peninsula modern commercial zone. Higher mixed resident/business foot traffic. Easier logistics from Macau-Zhuhai border — important for Mainland Chinese premium clients visiting Macau. Waxmeup nearby validates demand.</td>
+                                  <td>More tourist-mixed than Taipa; harder to sustain premium positioning in NAPE's mid-market commercial mix</td>
+                                  <td>4.2 / 5</td>
+                              </tr>
+                              <tr>
+                                  <td>Cotai Strip Hotel Retail (Casino Zone)</td>
+                                  <td>MOP 30,000 - 60,000</td>
+                                  <td>Le SPA'tique and Wynn Salon confirm ultra-premium demand in casino zone. Wynn-level pricing possible (USD 200+/session). Hotel foot traffic is built-in.</td>
+                                  <td>Extreme casino hotel rent; gaming downturn exposure; unpredictable foot traffic; best as Phase 2 hotel partnership (revenue-share) not standalone lease</td>
+                                  <td>3.5 / 5 (Hotel Partnership Only)</td>
+                              </tr>
+             </tbody></tbody>
                     </table>
                 </div>
                 <div class="conclusion-box">
@@ -894,11 +894,27 @@
 
         // Shop Candidates
         const candidates = [
-            
-            { name: "Candidate A: Taipa Central Shophouse (Rua de Seng Tou)", lat: 22.1580, lng: 113.5580, note: "Prime Taipa street level unit, high visibility, local expat community.", rent: 2975, catchment: 60000, premiumTargetPct: 30, competitorCapacity: 13500, airportTime: "10 mins" },
-            { name: "Candidate B: Macau NAPE Commercial Suite", lat: 22.1885, lng: 113.5510, note: "Elite commercial suite near One Central, high-net-worth local clientele.", rent: 3825, catchment: 40000, premiumTargetPct: 36, competitorCapacity: 12000, airportTime: "15 mins" },
-            { name: "Candidate C: Fai Chi Kei Lane Shop", lat: 22.2075, lng: 113.5415, note: "Local residential lane shop, high domestic density, lower rent base.", rent: 2125, catchment: 50000, premiumTargetPct: 18, competitorCapacity: 9000, airportTime: "18 mins" }
-        
+            { 
+                name: "Candidate A: Taipa Village Commercial Row (Primary)", 
+                lat: 22.1580, lng: 113.5580, 
+                note: "TOP PICK. Taipa is Macau's preferred residential zone for casino management expats. Ground-floor shophouse in Taipa Village commercial area. Hair Cloud (competitor) presence confirms premium demand. Consistent non-gaming clientele unlike Cotai Strip. Rent MOP 12,000–20,000/mo.", 
+                rent: 1800, catchment: 25000, premiumTargetPct: 42, competitorCapacity: 5000,
+                airportTime: "15 mins from MFM"
+            },
+            { 
+                name: "Candidate B: NAPE Commercial District", 
+                lat: 22.1885, lng: 113.5510, 
+                note: "Macau Peninsula's modern commercial zone. Higher foot traffic from mixed resident/business crowd. Waxmeup operates nearby. Easier logistics from Macau-Zhuhai border crossing — important for Mainland Chinese premium clients visiting Macau.", 
+                rent: 1500, catchment: 30000, premiumTargetPct: 32, competitorCapacity: 6000,
+                airportTime: "15 mins from MFM"
+            },
+            { 
+                name: "Candidate C: Cotai Strip Hotel Retail (Casino Zone)", 
+                lat: 22.1450, lng: 113.5700, 
+                note: "Le SPA'tique / Wynn Salon confirm demand in casino zone. Wynn-level pricing possible (USD 200+). However, casino retail rent is extreme and client flow unpredictable during gaming downturns. Viable as Phase 2 hotel partnership rather than standalone lease.", 
+                rent: 4500, catchment: 20000, premiumTargetPct: 35, competitorCapacity: 12000,
+                airportTime: "15 mins from MFM"
+            }
         ];
 
         // Star Icon for Candidates

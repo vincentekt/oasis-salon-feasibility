@@ -291,29 +291,29 @@
                                 <th>Overall Rating</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr>
-                                <td>West Central District</td>
-                                <td>USD 680 - 1,020</td>
-                                <td>Cultural hub, high footfall, wealthy generational residential area</td>
-                                <td>Older structures require more initial renovation</td>
-                                <td>4.5 / 5</td>
-                            </tr>
-                            <tr class="highlight-row">
-                                <td>East District (near NCKU)</td>
-                                <td>USD 765 - 1,105</td>
-                                <td>High-income academic community, modern retail units, excellent access</td>
-                                <td>High rental demand, competitive negotiations required</td>
-                                <td>4.8 / 5 (Recommended)</td>
-                            </tr>
-                            <tr>
-                                <td>Anping District</td>
-                                <td>USD 850 - 1,275</td>
-                                <td>Newer developments, spacious units, excellent parking</td>
-                                <td>Lower day-to-day pedestrian density</td>
-                                <td>3.9 / 5</td>
-                            </tr>
-                        </tbody>
+                        <tbody><tbody>
+                              <tr class="highlight-row">
+                                  <td>Sinshih District (TSMC Housing Zone)</td>
+                                  <td>NTD 25,000 - 40,000</td>
+                                  <td>Adjacent to TSMC Fab 18 international staff housing. Japanese, US, European TSMC engineers live within 1km. Zero premium salon competition within 10km. Entirely captive high-income target market. Highest underserved % in Taiwan portfolio.</td>
+                                  <td>New commercial zone — lower existing foot traffic; relies on TSMC expat community network discovery; requires proactive outreach to TSMC HR/community channels</td>
+                                  <td>4.9 / 5 (Recommended)</td>
+                              </tr>
+                              <tr>
+                                  <td>East District (NCKU Corridor)</td>
+                                  <td>NTD 20,000 - 35,000</td>
+                                  <td>NCKU university zone with growing young professional catchment. More established commercial street. Better foot traffic than Sinshih. Captures younger, fashion-forward demographic.</td>
+                                  <td>Lower TSMC expat density; less affluent demographic than Sinshih; more price-sensitive clientele</td>
+                                  <td>4.1 / 5</td>
+                              </tr>
+                              <tr>
+                                  <td>West Central - Zhongzheng Rd</td>
+                                  <td>NTD 22,000 - 38,000</td>
+                                  <td>Historic Tainan city center. Higher general foot traffic. Best for capturing broader professional and tourist market as second phase.</td>
+                                  <td>Lower premium density than Sinshih; higher local mid-tier salon competition; less TSMC-adjacent catchment</td>
+                                  <td>3.6 / 5</td>
+                              </tr>
+             </tbody></tbody>
                     </table>
                 </div>
                 <div class="conclusion-box">
@@ -902,37 +902,25 @@
         // Shop Candidates
         const candidates = [
             { 
-                name: "Candidate A: West Central Lane Storefront", 
-                lat: 22.9920, 
-                lng: 120.2025, 
-                note: "Ground-floor space in cultural lane near Hayashi. Good character, but historical plumbing requires upgrading for high-flow central water softening.", 
-                rent: 850,
-                catchment: 25000,
-                premiumTargetPct: 18.0,
-                competitorCapacity: 4500,
-                airportTime: "15 mins from TNN / 45 mins from KHH"
+                name: "Candidate A: Sinshih District - TSMC Housing Cluster (Primary)", 
+                lat: 23.0750, lng: 120.3550, 
+                note: "TOP PICK. Adjacent to TSMC Fab 18 and STSP company housing. TSMC international engineers (Japanese, US, European) live within 1km. Zero premium salon competition within 10km. Ground-floor commercial in Sinshih new development zone. Rent NTD 25,000–40,000/mo.", 
+                rent: 900, catchment: 22000, premiumTargetPct: 55, competitorCapacity: 500,
+                airportTime: "35 mins from TNN / 50 mins from KHH"
             },
             { 
-                name: "Candidate B: East District (near NCKU)", 
-                lat: 22.9940, 
-                lng: 120.2220, 
-                note: "Recommended candidate. Ground-floor shophouse in NCKU residential and commercial hub. Modern structure allows direct plumbing for central water softeners and CO2 generators.", 
-                rent: 765,
-                catchment: 30000,
-                premiumTargetPct: 14.4,
-                competitorCapacity: 3750,
-                airportTime: "20 mins from TNN / 50 mins from KHH"
+                name: "Candidate B: East District (NCKU / Shu-Lin Corridor)", 
+                lat: 22.9940, lng: 120.2220, 
+                note: "NCKU university zone with growing premium professional catchment. Tainan's young professional and academic community. Better established commercial street — more foot traffic than Sinshih but lower TSMC expat density.", 
+                rent: 750, catchment: 35000, premiumTargetPct: 28, competitorCapacity: 4000,
+                airportTime: "15 mins from TNN"
             },
             { 
-                name: "Candidate C: Anping Canal Storefront", 
-                lat: 22.9960, 
-                lng: 120.1650, 
-                note: "Modern ground-floor unit with canal views. Spacious layout for styling stations, but lower daily walk-in density.", 
-                rent: 1020,
-                catchment: 20000,
-                premiumTargetPct: 21.6,
-                competitorCapacity: 3000,
-                airportTime: "25 mins from TNN / 55 mins from KHH"
+                name: "Candidate C: West Central - Zhongzheng Rd (City Center)", 
+                lat: 22.9920, lng: 120.2025, 
+                note: "Historic Tainan city center. Higher general foot traffic but lower premium density. Best for capturing Tainan's broader professional and tourist market as second phase of expansion.", 
+                rent: 800, catchment: 40000, premiumTargetPct: 20, competitorCapacity: 6000,
+                airportTime: "20 mins from TNN"
             }
         ];
 

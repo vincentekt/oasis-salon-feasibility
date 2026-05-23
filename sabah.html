@@ -291,29 +291,29 @@
                                 <th>Overall Rating</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr class="highlight-row">
-                                <td>Jesselton Quay Waterfront</td>
-                                <td>USD 1,000 - 1,400</td>
-                                <td>Ground-floor waterfront visibility, tourist footfall, luxury condo catchment</td>
-                                <td>Moderate parking limitations</td>
-                                <td>4.8 / 5 (Recommended)</td>
-                            </tr>
-                            <tr>
-                                <td>Imago Shopping Mall Suite</td>
-                                <td>USD 1,800 - 2,500</td>
-                                <td>Premium retail traffic, high visibility, high-income visitors</td>
-                                <td>High rental overhead</td>
-                                <td>4.4 / 5</td>
-                            </tr>
-                            <tr>
-                                <td>Damai Commercial Centre</td>
-                                <td>USD 600 - 900</td>
-                                <td>Established high-income local residential hub, ample parking</td>
-                                <td>Lower tourist traffic</td>
-                                <td>4.1 / 5</td>
-                            </tr>
-                        </tbody>
+                        <tbody><tbody>
+                              <tr class="highlight-row">
+                                  <td>Jesselton Point Waterfront Retail</td>
+                                  <td>MYR 3,000 - 5,000</td>
+                                  <td>KK's premier waterfront. Ground-floor retail facing Jesselton Point Ferry Terminal — maximum tourist and expat visibility. Oil &amp; gas executives from Menara TH and Sabah Energy cluster nearby. No premium colour studio in this corridor.</td>
+                                  <td>Ferry terminal proximity means tourist-heavy crowd — need clear positioning to attract resident premium clients vs day-trippers</td>
+                                  <td>4.8 / 5 (Recommended)</td>
+                              </tr>
+                              <tr>
+                                  <td>Jalan Gaya (City Center)</td>
+                                  <td>MYR 2,500 - 4,000</td>
+                                  <td>KK's main commercial street. Within walking distance of Suria Sabah and Oceanus Mall. Michael &amp; Guys nearby confirms premium hair demand. Best balance of rent vs established foot traffic.</td>
+                                  <td>Michael &amp; Guys direct competition on same commercial strip; ground-floor availability limited</td>
+                                  <td>4.4 / 5</td>
+                              </tr>
+                              <tr>
+                                  <td>Sutera Harbour Boulevard</td>
+                                  <td>MYR 5,000 - 9,000</td>
+                                  <td>5-star resort corridor. Guaranteed HNWI clientele from Shell, Murphy Oil, resort management. Highest average ticket potential of three candidates.</td>
+                                  <td>Very high rent; very low walk-in; appointment-only model requires strong advance booking system; limited Muslimah privacy options in resort-facing boutiques</td>
+                                  <td>4.0 / 5</td>
+                              </tr>
+             </tbody></tbody>
                     </table>
                 </div>
                 <div class="conclusion-box">
@@ -901,37 +901,25 @@
         // Shop Candidates in Sabah
         const candidates = [
             { 
-                name: "Candidate A: Jesselton Quay Waterfront Retail", 
-                lat: 5.9925, 
-                lng: 116.0800, 
-                note: "Top recommendation. Ground floor in Jesselton Quay waterfront. High tourist footfall.", 
-                rent: 1020,
-                catchment: 65000,
-                premiumTargetPct: 34,
-                competitorCapacity: 6750,
-                airportTime: "15 mins from BKI"
-            },
-            { 
-                name: "Candidate B: Imago Shopping Mall Suite", 
-                lat: 5.9710, 
-                lng: 116.0620, 
-                note: "Premium retail suite in Imago mall. High visibility but higher rental cost.", 
-                rent: 1870,
-                catchment: 75000,
-                premiumTargetPct: 38,
-                competitorCapacity: 6000,
-                airportTime: "15 mins from BKI"
-            },
-            { 
-                name: "Candidate C: Likas Bay Commercial Centre", 
-                lat: 6.0020, 
-                lng: 116.0900, 
-                note: "Likas Bay business centre. Good local resident density but lower walk-in traffic.", 
-                rent: 680,
-                catchment: 40000,
-                premiumTargetPct: 26,
-                competitorCapacity: 6000,
+                name: "Candidate A: Jesselton Point Waterfront Retail (Primary)", 
+                lat: 5.9925, lng: 116.0800, 
+                note: "TOP PICK. KK's premier waterfront commercial zone. Ground-floor retail facing Jesselton Point Ferry Terminal — maximum tourist and expat visibility. Oil & gas executives from nearby Menara TH clusters here. Rent MYR 3,000–5,000/mo.", 
+                rent: 900, catchment: 25000, premiumTargetPct: 40, competitorCapacity: 3000,
                 airportTime: "20 mins from BKI"
+            },
+            { 
+                name: "Candidate B: Jalan Gaya Commercial (City Center)", 
+                lat: 5.9890, lng: 116.0745, 
+                note: "KK's main commercial street. Ground-floor unit within walking distance of Suria Sabah and Oceanus Mall. Michael & Guys nearby confirms premium hair demand. Best balance of rent vs foot traffic.", 
+                rent: 800, catchment: 22000, premiumTargetPct: 35, competitorCapacity: 4000,
+                airportTime: "20 mins from BKI"
+            },
+            { 
+                name: "Candidate C: Sutera Harbour Boulevard", 
+                lat: 5.9820, lng: 116.0650, 
+                note: "5-star resort corridor. Expat families from Shell, Murphy Oil, and resort management cluster in Sutera Harbour. Guaranteed HNWI clientele but lower total foot traffic and very high rent.", 
+                rent: 1500, catchment: 15000, premiumTargetPct: 50, competitorCapacity: 1500,
+                airportTime: "18 mins from BKI"
             }
         ];
 

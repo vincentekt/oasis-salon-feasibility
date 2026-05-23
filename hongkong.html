@@ -281,32 +281,22 @@
                                 <th>Recommendation</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr>
-                                <td>Central / Mid-Levels</td>
-                                <td>$120-$160 / sqft</td>
-                                <td>Excellent (Corporate/Wealthy)</td>
-                                <td>High (Premium Salons)</td>
-                                <td>4.3 / 5</td>
-                                <td>Excellent flagship option; high initial rent overhead.</td>
-                            </tr>
-                            <tr class="highlight-row">
-                                <td>Causeway Bay</td>
-                                <td>$100-$130 / sqft</td>
-                                <td>Very High (Retail/Locals/Tourists)</td>
-                                <td>Medium</td>
-                                <td>4.8 / 5</td>
-                                <td>Recommended for First PoC (approx. HK$120 psf for ground/1st floor)</td>
-                            </tr>
-                            <tr>
-                                <td>Tsim Sha Tsui (TST)</td>
-                                <td>$110-$140 / sqft</td>
-                                <td>High (Tourists)</td>
-                                <td>Very High</td>
-                                <td>3.7 / 5</td>
-                                <td>Secondary expansion option; tourism dependent.</td>
-                            </tr>
-                        </tbody>
+                        <tbody><tbody>
+                              <tr class="highlight-row">
+                                  <td>Causeway Bay - Lockhart Rd Ground Floor</td>
+                                  <td>HKD 60,000 - 100,000</td>
+                                  <td>HK's most accessible premium retail zone. Bruneblonde and Love Hair both operate in district — high premium colour demand confirmed. Soft-water filtration is a genuine USP vs all Causeway Bay competitors on same tap water (TDS 50–100 ppm, high chloramine). MTR Causeway Bay station at doorstep.</td>
+                                  <td>Extremely high HK commercial rent; Lockhart Rd premium ground-floor units have limited availability and short lease terms; must secure multi-year lease upfront</td>
+                                  <td>4.9 / 5 (Recommended)</td>
+                              </tr>
+                              <tr>
+                                  <td>Central - Wyndham St / SOHO</td>
+                                  <td>HKD 80,000 - 130,000</td>
+                                  <td>HK's financial and expat social hub. Kimrobinson flagship validates ultra-premium demand. Ground-floor on Wyndham or Peel St. After-work and lunch appointments from IFC/Chater House financial professionals. Highest average ticket potential in HK portfolio.</td>
+                                  <td>Ultra-high rent; Central after-hours quiet means evening appointments only; Kimrobinson is an entrenched luxury competitor requiring strong differentiation on product quality</td>
+                                  <td>4.5 / 5</td>
+                              </tr>
+             </tbody></tbody>
                     </table>
                 </div>
                 <div class="conclusion-box">
@@ -943,28 +933,22 @@
         });
 
         // Shop Candidates
-        const candidates = [{ 
-                name: "Candidate A: Causeway Bay Ground-Floor Storefront (Lockhart Rd)", 
-                lat: 22.2808, 
-                lng: 114.1839, 
-                note: "Top recommendation. High-visibility ground floor retail storefront. Excellent footfall, strong expat and high-income local density, demineralized water setup ready.", 
-                rent: 4675,
-                catchment: 30000,
-                premiumTargetPct: 28.8,
-                competitorCapacity: 4500,
+        const candidates = [
+            { 
+                name: "Candidate A: Causeway Bay - Lockhart Rd Ground Floor (Primary)", 
+                lat: 22.2808, lng: 114.1839, 
+                note: "TOP PICK. Causeway Bay is HK's most accessible premium retail zone. Ground-floor unit on Lockhart Rd. Bruneblonde and Love Hair both operate in the district — high premium colour demand confirmed. HKD 60,000–100,000/mo rent. Soft-water filtration is a genuine USP vs all Causeway Bay competitors on same tap water.", 
+                rent: 8500, catchment: 50000, premiumTargetPct: 40, competitorCapacity: 18000,
                 airportTime: "40 mins from HKG"
             },
             { 
-                name: "Candidate B: Central Ground-Floor Boutique (Wyndham St)", 
-                lat: 22.2815, 
-                lng: 114.1555, 
-                note: "Wyndham Street prime storefront. Outstanding corporate/expat density, high-visibility, premium retail neighboring brands.", 
-                rent: 4080,
-                catchment: 20000,
-                premiumTargetPct: 21.6,
-                competitorCapacity: 3375,
-                airportTime: "38 mins from HKG"
-            }];
+                name: "Candidate B: Central - Wyndham St / SOHO", 
+                lat: 22.2815, lng: 114.1555, 
+                note: "HK's financial and expat social hub. Kimrobinson flagship nearby — validates ultra-premium demand. Ground-floor on Wyndham or Peel St. After-work and lunch appointments from IFC/Chater House financial professionals. Highest average ticket potential.", 
+                rent: 11000, catchment: 42000, premiumTargetPct: 45, competitorCapacity: 20000,
+                airportTime: "40 mins from HKG"
+            }
+        ];
 
         // Star Icon for Candidates
         const starIcon = L.divIcon({

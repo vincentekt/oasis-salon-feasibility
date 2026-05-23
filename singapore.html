@@ -272,29 +272,29 @@
                                 <th>Overall Rating</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr class="highlight-row">
-                                <td>Orchard Road (Ground Floor Boutique)</td>
-                                <td>USD 4,675 - 5,950</td>
-                                <td>High wealth density, ground-floor exposure, walking distance to MRT, S$9-12 psf pricing</td>
-                                <td>High competition, strict commercial guidelines</td>
-                                <td>4.7 / 5 (Recommended)</td>
-                            </tr>
-                            <tr>
-                                <td>Tanjong Pagar (Ground Floor Shophouse)</td>
-                                <td>USD 5,525 - 7,225</td>
-                                <td>Street-front shophouse charm, high density of financial professionals and expats</td>
-                                <td>Renovation restrictions for heritage facades</td>
-                                <td>4.4 / 5</td>
-                            </tr>
-                            <tr>
-                                <td>River Valley / Great World Area (Ground Retail)</td>
-                                <td>USD 4,250 - 5,525</td>
-                                <td>Dense concentration of affluent residential families, loyal recurring clientele</td>
-                                <td>Lower drop-in footfall compared to Orchard</td>
-                                <td>4.1 / 5</td>
-                            </tr>
-                        </tbody>
+                        <tbody><tbody>
+                              <tr class="highlight-row">
+                                  <td>Holland Village - Jalan Merah Saga</td>
+                                  <td>SGD 7,000 - 11,000</td>
+                                  <td>Singapore's expat residential core. Chez Vous HideAway is in Scotts (2km away). Love Hair is in Jiak Chuan (3km). Holland V is a whitespace for premium colour. Ground-floor shophouse on the pedestrianised Lorong Mambong or Merah Saga strip — maximum expat community visibility.</td>
+                                  <td>High Singapore rent; Holland V commercial leases from HDB have standard terms requiring SCDF fire safety and BCA fit-out approval</td>
+                                  <td>4.9 / 5 (Recommended)</td>
+                              </tr>
+                              <tr>
+                                  <td>Tanglin - Cluny Rd / Dempsey Hill Adjacent</td>
+                                  <td>SGD 8,000 - 13,000</td>
+                                  <td>Dempsey Hill boutique zone. Blonde Boudoir here validates demand. Tanglin corridor has highest per-household income in Singapore. American Club proximity — captive HNWI community.</td>
+                                  <td>Very high rent; Dempsey conservation bungalows have URA heritage restrictions on shopfront signage; smaller total catchment than Holland V</td>
+                                  <td>4.5 / 5</td>
+                              </tr>
+                              <tr>
+                                  <td>Tanjong Pagar Shophouse</td>
+                                  <td>SGD 8,500 - 14,000</td>
+                                  <td>Growing CBD-adjacent expat zone. Love Hair confirms premium demand. Best for after-work appointments from CBD financial professionals. Corporate membership program potential is highest here.</td>
+                                  <td>Higher corporate-skew means weekend volume drop; Love Hair is direct competition; CBD proximity means primarily after-work appointments only (not daytime)</td>
+                                  <td>4.2 / 5</td>
+                              </tr>
+             </tbody></tbody>
                     </table>
                 </div>
                 <div class="conclusion-box">
@@ -898,37 +898,25 @@
         // Shop Candidates
         const candidates = [
             { 
-                name: "Candidate A: Orchard Road Ground Floor Unit", 
-                lat: 1.3025, 
-                lng: 103.8360, 
-                note: "Top recommendation. Ground-floor premium boutique space, high wealth density, close to MRT.", 
-                rent: 5058,
-                catchment: 120000,
-                premiumTargetPct: 50.4,
-                competitorCapacity: 67500,
+                name: "Candidate A: Holland Village - Jalan Merah Saga (Primary)", 
+                lat: 1.3110, lng: 103.7960, 
+                note: "TOP PICK. Holland Village's expat residential core — unserved by a premium colour boutique at this price level. Chez Vous HideAway is in Scotts (2km), Love Hair in Jiak Chuan (3km). Ground-floor shophouse at Holland V fringe. Rent SGD 7,000–11,000/mo.", 
+                rent: 5500, catchment: 45000, premiumTargetPct: 42, competitorCapacity: 8000,
                 airportTime: "25 mins from SIN"
             },
             { 
-                name: "Candidate B: Tanjong Pagar Ground Floor Shophouse", 
-                lat: 1.2785, 
-                lng: 103.8430, 
-                note: "Tanjong Pagar heritage core. Ground-floor shophouse targeting financial professionals.", 
-                rent: 6141,
-                catchment: 90000,
-                premiumTargetPct: 57.6,
-                competitorCapacity: 56250,
-                airportTime: "25 mins from SIN"
+                name: "Candidate B: Tanglin - Cluny Rd / Dempsey Hill Adjacent", 
+                lat: 1.3080, lng: 103.8180, 
+                note: "Dempsey Hill boutique zone. Blonde Boudoir operates here — validates premium demand. Tanglin corridor has highest per-household income in Singapore. Ground-floor shophouse near American Club. Premium positioning strongest here but smaller total catchment.", 
+                rent: 6500, catchment: 30000, premiumTargetPct: 48, competitorCapacity: 6000,
+                airportTime: "22 mins from SIN"
             },
             { 
-                name: "Candidate C: River Valley Ground Retail", 
-                lat: 1.2930, 
-                lng: 103.8320, 
-                note: "Affluent residential ground retail. Lower drop-in footfall but loyal local residential base.", 
-                rent: 4696,
-                catchment: 80000,
-                premiumTargetPct: 45.6,
-                competitorCapacity: 40500,
-                airportTime: "30 mins from SIN"
+                name: "Candidate C: Tanjong Pagar (CBD-Adjacent Alt)", 
+                lat: 1.2785, lng: 103.8430, 
+                note: "Growing CBD-adjacent expat zone. Luxury condo density (Altez, The Pinnacle@Duxton vicinity). Love Hair nearby validates demand. Best for after-work appointments from CBD professionals. Higher corporate membership potential.", 
+                rent: 7000, catchment: 40000, premiumTargetPct: 35, competitorCapacity: 12000,
+                airportTime: "20 mins from SIN"
             }
         ];
 

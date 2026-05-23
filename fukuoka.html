@@ -292,32 +292,29 @@
                                 <th>Recommendation</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr class="highlight-row">
-                                <td>Daimyo (Side-streets)</td>
-                                <td>USD 1,800 - 2,500</td>
-                                <td>Excellent (Trendy, Style-conscious)</td>
-                                <td>High</td>
-                                <td>4.8/5</td>
-                                <td>Top choice for Boutique MVP</td>
-                            </tr>
-                            <tr>
-                                <td>Tenjin (Main Road / Nishi-dori)</td>
-                                <td>USD 2,800 - 4,000</td>
-                                <td>Very High (Retail/Commercial)</td>
-                                <td>High</td>
-                                <td>4.3/5</td>
-                                <td>High visibility but rent pressure is high</td>
-                            </tr>
-                            <tr>
-                                <td>Imaizumi</td>
-                                <td>USD 1,500 - 2,200</td>
-                                <td>Good (Younger, Hipster)</td>
-                                <td>Medium</td>
-                                <td>4.4/5</td>
-                                <td>Strong alternative for boutique layout</td>
-                            </tr>
-                        </tbody>
+                        <tbody><tbody>
+                              <tr class="highlight-row">
+                                  <td>Daimyo - Central Lane</td>
+                                  <td>JPY 150,000 - 250,000</td>
+                                  <td>Fukuoka's most fashionable boutique district. saco japan flagship and TONI&amp;GUY Tenjin within 600m confirm premium demand. Korean expat community (8,000+) in Hakata/Tenjin nearby. Creative colour + Korean-bilingual service differentiates from Japanese natural-tone dominant competitors.</td>
+                                  <td>Boutique lane ground-floor availability is limited; premium creative colour requires extensive staff training investment vs natural-tone consensus competitors</td>
+                                  <td>4.9 / 5 (Recommended)</td>
+                              </tr>
+                              <tr>
+                                  <td>Tenjin - Watanabe-dori</td>
+                                  <td>JPY 200,000 - 350,000</td>
+                                  <td>Main commercial boulevard. TONI&amp;GUY directly here — validates premium demand. Maximum visibility to Fukuoka's widest catchment. Highest foot traffic of three candidates.</td>
+                                  <td>Direct TONI&amp;GUY competition on same boulevard; highest rent; open plan vs boutique positioning tension</td>
+                                  <td>4.2 / 5</td>
+                              </tr>
+                              <tr>
+                                  <td>Imaizumi - Boutique Alleyway</td>
+                                  <td>JPY 100,000 - 180,000</td>
+                                  <td>Trendy alleyway boutique zone. Creative/art professional demographic. High Instagram potential for vivid fashion colour portfolio. Korean expat community adjacent in Sumiyoshi. Lowest rent of three candidates.</td>
+                                  <td>Lower total catchment; alleyway requires strong signage/digital marketing; less natural foot traffic than Daimyo main lane</td>
+                                  <td>4.0 / 5</td>
+                              </tr>
+             </tbody></tbody>
                     </table>
                 </div>
                 <div class="conclusion-box">
@@ -930,37 +927,25 @@
         // Shop Candidates
         const candidates = [
             { 
-                name: "Candidate A: Daimyo Central Lane Shoplot", 
-                lat: 33.5875, 
-                lng: 130.3955, 
-                note: "Top choice. A ground-floor boutique space on a quiet side-street in Daimyo, steps away from Tenjin-Minami. High concentration of style-conscious foot traffic.", 
-                rent: 2125,
-                catchment: 50000,
-                premiumTargetPct: 30,
-                competitorCapacity: 10500,
-                airportTime: "15 mins from Fukuoka Airport (FUK)"
+                name: "Candidate A: Daimyo - Central Lane (Primary)", 
+                lat: 33.5875, lng: 130.3955, 
+                note: "TOP PICK. Fukuoka's most fashionable boutique district. Ground-floor commercial unit on Daimyo's main shopping lane. saco japan flagship and TONI&GUY Tenjin within 600m — confirms premium demand. Korean expat community of 8,000+ nearby in Hakata/Tenjin. Rent JPY 150,000–250,000/mo.", 
+                rent: 1600, catchment: 35000, premiumTargetPct: 28, competitorCapacity: 12000,
+                airportTime: "15 mins from FUK"
             },
             { 
-                name: "Candidate B: Tenjin Main-Dori Shoplot", 
-                lat: 33.5898, 
-                lng: 130.3985, 
-                note: "Upper-floor space in a modern building directly on Tenjin Nishi-dori. Excellent visibility, but higher rent pressure.", 
-                rent: 2975,
-                catchment: 65000,
-                premiumTargetPct: 26,
-                competitorCapacity: 14250,
-                airportTime: "15 mins from Fukuoka Airport (FUK)"
+                name: "Candidate B: Tenjin - Watanabe-dori", 
+                lat: 33.5898, lng: 130.3985, 
+                note: "Tenjin's main commercial boulevard. TONI&GUY and Shiki Hair immediately adjacent — highest premium footfall in Fukuoka. Entry here requires differentiation on vivid/creative colour vs. Japanese natural-tone consensus. High rent but maximum visibility.", 
+                rent: 2200, catchment: 50000, premiumTargetPct: 25, competitorCapacity: 20000,
+                airportTime: "15 mins from FUK"
             },
             { 
-                name: "Candidate C: Imaizumi Alleyway Space", 
-                lat: 33.5855, 
-                lng: 130.3995, 
-                note: "Charming ground-floor space in Imaizumi. Trendy vibe with high density of cafes and apparel stores, though slightly lower footfall than Daimyo.", 
-                rent: 2125,
-                catchment: 55000,
-                premiumTargetPct: 19,
-                competitorCapacity: 11250,
-                airportTime: "18 mins from Fukuoka Airport (FUK)"
+                name: "Candidate C: Imaizumi - Boutique Alleyway", 
+                lat: 33.5855, lng: 130.3995, 
+                note: "Trendy alleyway boutique zone between Tenjin and Daimyo. Lower rent, creative/art professional demographic, high Instagram potential for fashion colour portfolio. Korean expat community adjacent in Sumiyoshi.", 
+                rent: 1100, catchment: 22000, premiumTargetPct: 22, competitorCapacity: 6000,
+                airportTime: "15 mins from FUK"
             }
         ];
 

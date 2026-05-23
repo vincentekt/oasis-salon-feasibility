@@ -294,29 +294,29 @@
                                 <th>Overall Rating</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr class="highlight-row">
-                                <td>District 3 (Vo Thi Sau / Turtle Lake)</td>
-                                <td>USD 1,190 - 1,870</td>
-                                <td>Leafy boutique villa zone, quiet artistic feel, spacious layouts, easier parking</td>
-                                <td>Lower street-level footfall, destination-driven booking</td>
-                                <td>4.9 / 5 (Recommended)</td>
-                            </tr>
-                            <tr>
-                                <td>District 1 (Dong Khoi / Ben Nghe)</td>
-                                <td>USD 1,870 - 2,975</td>
-                                <td>Ultra-luxury retail street, high expat corporate executive & tourist traffic</td>
-                                <td>Extremely high rent, parking and utility limits</td>
-                                <td>4.8 / 5</td>
-                            </tr>
-                            <tr>
-                                <td>Thao Dien (District 2)</td>
-                                <td>USD 1,020 - 1,530</td>
-                                <td>Expat residential enclave, high-income families</td>
-                                <td>Highly competitive, further away from central corporate core</td>
-                                <td>4.5 / 5</td>
-                            </tr>
-                        </tbody>
+                        <tbody><tbody>
+                              <tr class="highlight-row">
+                                  <td>Thao Dien - Xuan Thuy St (D2)</td>
+                                  <td>USD 2,500 - 3,500</td>
+                                  <td>Heart of Japanese/Korean/Western expat cluster. Concept Coiffure &amp; J-First within 500m confirm premium demand. Ground-floor shophouse on main expat street.</td>
+                                  <td>High rent premium for Thao Dien address; weekday parking can be congested</td>
+                                  <td>4.9 / 5 (Recommended)</td>
+                              </tr>
+                              <tr>
+                                  <td>Thao Dien - Quoc Huong St (D2)</td>
+                                  <td>USD 2,000 - 2,800</td>
+                                  <td>Parallel street, quieter lane, lower rent. Same expat density. Better parking for school-run appointment timing.</td>
+                                  <td>Slightly less main-road visibility; needs signage investment</td>
+                                  <td>4.5 / 5</td>
+                              </tr>
+                              <tr>
+                                  <td>Le Thanh Ton Alley (D1)</td>
+                                  <td>USD 3,500 - 5,000</td>
+                                  <td>Central D1 expat corridor. Vampire Hair (competitor) validates premium demand. Captures business-traveler and hotel-guest walk-in market.</td>
+                                  <td>High D1 rent; lower residential density than Thao Dien; more tourist-mix than expat-resident</td>
+                                  <td>3.8 / 5</td>
+                              </tr>
+             </tbody></tbody>
                     </table>
                 </div>
                 <div class="conclusion-box">
@@ -927,37 +927,25 @@
         // Shop Candidates
         const candidates = [
             { 
-                name: "Candidate A: Xuan Thuy St (Thao Dien)", 
-                lat: 10.8048, 
-                lng: 106.7360, 
-                note: "Top choice. High street-level expat traffic, excellent visibility.", 
-                rent: 1300,
-                catchment: 40000,
-                premiumTargetPct: 43.2,
-                competitorCapacity: 13500,
+                name: "Candidate A: Thao Dien - Xuan Thuy St (Primary)", 
+                lat: 10.8048, lng: 106.7360, 
+                note: "TOP PICK. Heart of Japanese/Korean/Western expat cluster. Ground-floor shophouse. Concept Coiffure and J-First within 500m — confirms premium demand. Rent USD 2,500–3,500/mo for 70 sqm.", 
+                rent: 3000, catchment: 45000, premiumTargetPct: 38, competitorCapacity: 14000,
                 airportTime: "30 mins from SGN"
             },
             { 
-                name: "Candidate B: Quoc Huong St (Thao Dien)", 
-                lat: 10.8025, 
-                lng: 106.7350, 
-                note: "Near apartment towers & transit, quieter side road.", 
-                rent: 939,
-                catchment: 30000,
-                premiumTargetPct: 36,
-                competitorCapacity: 10125,
-                airportTime: "32 mins from SGN"
+                name: "Candidate B: Thao Dien - Quoc Huong St", 
+                lat: 10.8025, lng: 106.7350, 
+                note: "Parallel to Xuan Thuy, slightly quieter lane with lower rent. Still within 300m of Thao Dien Square. Better parking. Same expat density.", 
+                rent: 2400, catchment: 40000, premiumTargetPct: 35, competitorCapacity: 12000,
+                airportTime: "30 mins from SGN"
             },
             { 
-                name: "Candidate C: Le Thanh Ton Alley (D1)", 
-                lat: 10.7785, 
-                lng: 106.7055, 
-                note: "Heart of Japan Town. High premium density, small space.", 
-                rent: 1590,
-                catchment: 25000,
-                premiumTargetPct: 40.8,
-                competitorCapacity: 14625,
-                airportTime: "25 mins from SGN"
+                name: "Candidate C: District 1 - Le Thanh Ton (Alt)", 
+                lat: 10.7785, lng: 106.7055, 
+                note: "Central D1 expat corridor near Sheraton/Caravelle. Vampire Hair (competitor) within 200m — validates premium demand. Higher rent, lower residential density than Thao Dien.", 
+                rent: 4000, catchment: 30000, premiumTargetPct: 28, competitorCapacity: 18000,
+                airportTime: "30 mins from SGN"
             }
         ];
 

@@ -291,29 +291,29 @@
                                 <th>Overall Rating</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr class="highlight-row">
-                                <td>Mont Kiara</td>
-                                <td>USD 1,084 - 1,445</td>
-                                <td>Dense concentration of Japanese, Korean, and Western expats, high walkability</td>
-                                <td>High rental demand for ground floor retail</td>
-                                <td>4.8 / 5 (Recommended)</td>
-                            </tr>
-                            <tr>
-                                <td>Bangsar Baru</td>
-                                <td>USD 1,301 - 1,734</td>
-                                <td>Elite local residential area, trendy shopping and dining culture</td>
-                                <td>Congested parking during peak dining hours</td>
-                                <td>4.4 / 5</td>
-                            </tr>
-                            <tr>
-                                <td>KLCC / Ampang Core</td>
-                                <td>USD 1,734 - 2,312</td>
-                                <td>High visibility, office professional traffic</td>
-                                <td>Extremely expensive rents, heavy rush hour traffic</td>
-                                <td>4.0 / 5</td>
-                            </tr>
-                        </tbody>
+                        <tbody><tbody>
+                              <tr class="highlight-row">
+                                  <td>Jalan Ampang (KLCC Corridor)</td>
+                                  <td>MYR 6,000 - 10,000</td>
+                                  <td>Embassy Row / KLCC expat corridor. 25-min drive from all Bangsar alternatives — serves KL's highest-income diplomatic and corporate expat community (PETRONAS, Standard Chartered, Shell). Number76/Bottega are 25 min away — captive gap.</td>
+                                  <td>High KLCC-zone rent; requires strong soft-water + Muslimah bay differentiation to justify premium over established Bangsar options</td>
+                                  <td>4.9 / 5 (Recommended)</td>
+                              </tr>
+                              <tr>
+                                  <td>Bukit Ceylon (Expat Hill)</td>
+                                  <td>MYR 5,000 - 8,000</td>
+                                  <td>Established expat residential enclave. Walking distance from Pavilion KL and KLCC. Lower rent than Ampang corridor. High concentration of diplomatic, legal, and finance professionals.</td>
+                                  <td>Slightly less accessible for Embassy Row / Ampang Hilir expat families; limited Muslimah private bay walk-in demand in this sub-zone</td>
+                                  <td>4.5 / 5</td>
+                              </tr>
+                              <tr>
+                                  <td>Bangsar (Jalan Telawi)</td>
+                                  <td>MYR 4,500 - 7,000</td>
+                                  <td>Established premium zone with Number76, Bottega, Aube all operating — validates premium demand. Best as Phase 2 second outlet after KLCC flagship.</td>
+                                  <td>Highly saturated premium zone — competing directly with 4 established premium salons; limited differentiation space</td>
+                                  <td>3.5 / 5 (Phase 2 Only)</td>
+                              </tr>
+             </tbody></tbody>
                     </table>
                 </div>
                 <div class="conclusion-box">
@@ -919,36 +919,24 @@
         // Shop Candidates
         const candidates = [
             { 
-                name: "Candidate A: Mont Kiara Shoplot", 
-                lat: 3.1670, 
-                lng: 101.6530, 
-                note: "Top recommendation. Heart of expat community. Excellent visibility and foot traffic.", 
-                rent: 1228,
-                catchment: 60000,
-                premiumTargetPct: 49,
-                competitorCapacity: 40500,
+                name: "Candidate A: Jalan Ampang (KLCC Corridor) (Primary)", 
+                lat: 3.1580, lng: 101.7120, 
+                note: "TOP PICK. Embassy Row / KLCC expat corridor. Ground-floor boutique on Jln Ampang near ING Tower / Wisma UOA. 25-min walk from all Bangsar alternatives — serves KL's highest-income diplomatic and corporate expat community. Rent MYR 6,000–10,000/mo.", 
+                rent: 2000, catchment: 55000, premiumTargetPct: 45, competitorCapacity: 8000,
                 airportTime: "45 mins from KUL"
             },
             { 
-                name: "Candidate B: Bangsar Baru (Jalan Telawi)", 
-                lat: 3.1310, 
-                lng: 101.6710, 
-                note: "Elite local hub. Trendy shopping district, high WTP, moderate parking challenges.", 
-                rent: 1535,
-                catchment: 50000,
-                premiumTargetPct: 43.2,
-                competitorCapacity: 33750,
+                name: "Candidate B: Bukit Ceylon (Expat Hill)", 
+                lat: 3.1490, lng: 101.7080, 
+                note: "Established expat residential enclave. Jln Mesui / Jln Ceylon ground-floor shophouse. Walking distance from Pavilion KL and KLCC. Lower rent than Ampang corridor but excellent expat concentration.", 
+                rent: 1700, catchment: 42000, premiumTargetPct: 40, competitorCapacity: 7000,
                 airportTime: "45 mins from KUL"
             },
             { 
-                name: "Candidate C: KLCC Ampang Lane", 
-                lat: 3.1580, 
-                lng: 101.7120, 
-                note: "Central corporate zone. Direct professional demand, high rent pressure.", 
-                rent: 1965,
-                catchment: 80000,
-                premiumTargetPct: 41.8,
-                competitorCapacity: 50625,
+                name: "Candidate C: Bangsar (Jalan Telawi Alt)", 
+                lat: 3.1310, lng: 101.6710, 
+                note: "Established premium zone where Number76 / Bottega / Aube all operate. Validates premium demand but highly saturated. Only viable as third-outlet expansion after KLCC flagship.", 
+                rent: 1500, catchment: 35000, premiumTargetPct: 38, competitorCapacity: 18000,
                 airportTime: "40 mins from KUL"
             }
         ];

@@ -283,15 +283,29 @@
                                 <th>Overall Rating</th>
                             </tr>
                         </thead>
-<tbody>
-                             <tr class="highlight-row">
-                                <td>Bien Hoa City Core (near Amata)</td>
-                                <td>USD 800 - 1,100</td>
-                                <td>High density of expat residential complexes, convenient parking</td>
-                                <td>Higher rent premium for main road frontage</td>
-                                <td>4.7 / 5 (Recommended)</td>
-                            </tr>
-            </tbody>
+<tbody><tbody>
+                              <tr class="highlight-row">
+                                  <td>AMATA City Gate Commercial Row (Bien Hoa)</td>
+                                  <td>USD 400 - 650</td>
+                                  <td>AMATA Industrial City main gate road. 40,000+ Korean/Japanese workers within 2km. Currently ZERO premium salon competition in entire zone. Factory family residential compounds within 3km. Highest underserved demand in entire 27-city portfolio.</td>
+                                  <td>Requires heavy marketing investment to bootstrap awareness; no existing premium salon precedent to piggyback on</td>
+                                  <td>4.9 / 5 (Recommended)</td>
+                              </tr>
+                              <tr>
+                                  <td>Loteco Zone Commercial Strip</td>
+                                  <td>USD 380 - 600</td>
+                                  <td>Captures Loteco 1 &amp; 2 and Nhon Trach overflow. Korean restaurant cluster confirms expat demand. Slightly lower density than AMATA gate but lower rent.</td>
+                                  <td>Smaller total Korean catchment than AMATA zone; less established commercial strip</td>
+                                  <td>4.4 / 5</td>
+                              </tr>
+                              <tr>
+                                  <td>Bien Hoa City Center (Buu Long)</td>
+                                  <td>USD 450 - 700</td>
+                                  <td>Urban center. More general foot traffic. Better brand visibility for future Vietnamese professional market expansion phase.</td>
+                                  <td>Lower Korean expat density; 15-min drive from AMATA gate; more local competition from mid-tier Vietnamese salons</td>
+                                  <td>3.5 / 5</td>
+                              </tr>
+             </tbody></tbody>
                     </table>
                 </div>
                 <div class="conclusion-box">
@@ -875,15 +889,25 @@
         // Shop Candidates
         const candidates = [
             { 
-                name: "Candidate A: Bien Hoa City Shophouse (near Amata)", 
-                lat: 10.9530, 
-                lng: 106.8400, 
-                note: "Top recommendation. Near Amata. Excellent visibility, parking, and premium expat access.", 
-                rent: 765,
-                catchment: 25000,
-                premiumTargetPct: 22,
-                competitorCapacity: 2250,
+                name: "Candidate A: AMATA City Gate Commercial Row (Primary)", 
+                lat: 10.9530, lng: 106.8400, 
+                note: "TOP PICK. AMATA Industrial City main gate road. 40,000+ Korean/Japanese workers within 2km. Currently ZERO premium salon competition in entire zone. Rent USD 400–650/mo for 70 sqm.", 
+                rent: 550, catchment: 48000, premiumTargetPct: 52, competitorCapacity: 500,
                 airportTime: "60 mins from SGN"
+            },
+            { 
+                name: "Candidate B: Loteco Zone Commercial Strip (Bien Hoa)", 
+                lat: 10.9620, lng: 106.8520, 
+                note: "Second major industrial zone in Bien Hoa. Captures Korean factory managers from Loteco 1 & 2 and Nhon Trach overflow. Korean restaurant cluster confirms expat demand exists.", 
+                rent: 480, catchment: 35000, premiumTargetPct: 48, competitorCapacity: 500,
+                airportTime: "60 mins from SGN"
+            },
+            { 
+                name: "Candidate C: Bien Hoa City Center (Buu Long)", 
+                lat: 10.9600, lng: 106.8250, 
+                note: "Urban center fallback. More foot traffic from general public but lower Korean expat density. Better brand visibility for future Vietnamese professional market expansion.", 
+                rent: 550, catchment: 40000, premiumTargetPct: 28, competitorCapacity: 3000,
+                airportTime: "58 mins from SGN"
             }
         ];
 

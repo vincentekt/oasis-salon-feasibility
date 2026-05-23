@@ -292,32 +292,29 @@
                                 <th>Recommendation</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr class="highlight-row">
-                                <td>Da'an (Zhongxiao Dunhua/Fuxing)</td>
-                                <td>USD 1,530 - 2,550</td>
-                                <td>Excellent (Trendy, Wealthy)</td>
-                                <td>High</td>
-                                <td>4.8/5</td>
-                                <td>Top choice for Boutique PoC</td>
-                            </tr>
-                            <tr>
-                                <td>Xinyi District</td>
-                                <td>USD 2,550 - 3,825</td>
-                                <td>Very High (Corporate/Rich)</td>
-                                <td>Medium</td>
-                                <td>4/5</td>
-                                <td>Good but rent pressure is higher</td>
-                            </tr>
-                            <tr>
-                                <td>Zhongshan District</td>
-                                <td>USD 1,275 - 2,125</td>
-                                <td>Good (Younger, Hipster)</td>
-                                <td>High</td>
-                                <td>4.2/5</td>
-                                <td>Strong alternative if Da'an fails</td>
-                            </tr>
-                        </tbody>
+                        <tbody><tbody>
+                              <tr class="highlight-row">
+                                  <td>Da'an - Yongkang St Laneway</td>
+                                  <td>NTD 60,000 - 90,000</td>
+                                  <td>Japan-quality boutique density. Eddie Tham and SeeFu within 400m confirm premium demand. AIT (American Institute Taiwan) expat community in catchment. Ground-floor alleyway boutique positioning — highest Instagram appeal in Taipei.</td>
+                                  <td>Competitive zone — must differentiate on bilingual service and no-wait booking vs. 6–9 hr wait competitors</td>
+                                  <td>4.9 / 5 (Recommended)</td>
+                              </tr>
+                              <tr>
+                                  <td>Xinyi - Songshou Rd</td>
+                                  <td>NTD 80,000 - 120,000</td>
+                                  <td>Taipei's financial and luxury retail hub near Taipei 101. TSMC and tech international executives in Xinyi luxury condos. Highest per-client WTP of any Taipei zone.</td>
+                                  <td>Very high rent; after-work appointments must compete with Xinyi's existing premium service density</td>
+                                  <td>4.4 / 5</td>
+                              </tr>
+                              <tr>
+                                  <td>Zhongshan - Chifeng St Design Quarter</td>
+                                  <td>NTD 45,000 - 70,000</td>
+                                  <td>Creative design district. Japanese expat families cluster near Minami Tokyo community spaces. Fashion-forward creative class for vivid/fashion colour portfolio. Lower rent than Da'an.</td>
+                                  <td>Lower premium density than Da'an; requires stronger creative colour portfolio to attract design-district clientele</td>
+                                  <td>4.1 / 5</td>
+                              </tr>
+             </tbody></tbody>
                     </table>
                 </div>
                 <div class="conclusion-box">
@@ -953,37 +950,25 @@
         // Shop Candidates
         const candidates = [
             { 
-                name: "Candidate A: Da'an Lane Shoplot", 
-                lat: 25.0415, 
-                lng: 121.5510, 
-                note: "Top recommendation. Ground floor in a quiet Da'an alley near MRT. High concentration of target customers.", 
-                rent: 1806,
-                catchment: 50000,
-                premiumTargetPct: 36,
-                competitorCapacity: 15750,
+                name: "Candidate A: Da'an District - Yongkang St Laneway (Primary)", 
+                lat: 25.0330, lng: 121.5305, 
+                note: "TOP PICK. Da'an's premium lifestyle lane — Japan-quality boutique density. Ground-floor alleyway unit. Eddie Tham and SeeFu within 400m confirm premium demand. AIT (American Institute Taiwan) expat community nearby. Rent NTD 60,000–90,000/mo.", 
+                rent: 2200, catchment: 40000, premiumTargetPct: 32, competitorCapacity: 12000,
                 airportTime: "15 mins from TSA / 45 mins from TPE"
             },
             { 
-                name: "Candidate B: Xinyi Lane Shop", 
-                lat: 25.0340, 
-                lng: 121.5645, 
-                note: "Located in high-wealth Xinyi area targeting professionals. High rent pressure.", 
-                rent: 2529,
-                catchment: 65000,
-                premiumTargetPct: 31.2,
-                competitorCapacity: 21375,
-                airportTime: "20 mins from TSA / 40 mins from TPE"
+                name: "Candidate B: Xinyi District - Songshou Rd Commercial", 
+                lat: 25.0380, lng: 121.5645, 
+                note: "Taipei's financial and luxury retail hub. Near Taipei 101 and W Hotel. TSMC and tech company international executives cluster in Xinyi luxury condos. Premium pricing power strongest here.", 
+                rent: 2800, catchment: 35000, premiumTargetPct: 30, competitorCapacity: 10000,
+                airportTime: "15 mins from TSA"
             },
             { 
-                name: "Candidate C: Zhongshan Commercial Block", 
-                lat: 25.0520, 
-                lng: 121.5205, 
-                note: "High footfall commercial block. Trendy younger crowd with lower premium wellness conversions.", 
-                rent: 2023,
-                catchment: 55000,
-                premiumTargetPct: 22.8,
-                competitorCapacity: 16875,
-                airportTime: "15 mins from TSA / 45 mins from TPE"
+                name: "Candidate C: Zhongshan - Chifeng St Design Quarter", 
+                lat: 25.0520, lng: 121.5205, 
+                note: "Creative design district with highest concentration of Taipei's fashion/art professional class. Japanese expat families cluster in Zhongshan near Minami Tokyo community areas. Lower rent than Xinyi.", 
+                rent: 1800, catchment: 32000, premiumTargetPct: 28, competitorCapacity: 9000,
+                airportTime: "10 mins from TSA"
             }
         ];
 

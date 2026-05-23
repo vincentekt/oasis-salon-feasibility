@@ -291,22 +291,29 @@
                                 <th>Overall Rating</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr class="highlight-row">
-                                <td>South Yarra (Chapel St)</td>
-                                <td>USD 3,468 - 4,335</td>
-                                <td>Affluent fashion/lifestyle district, solid pedestrian volumes</td>
-                                <td>Intense competition for prime ground-floor retail</td>
-                                <td>4.8 / 5 (Recommended)</td>
-                            </tr>
-                            <tr>
-                                <td>Fitzroy (Brunswick St)</td>
-                                <td>USD 3,035 - 3,974</td>
-                                <td>Vibrant artistic community, strong focus on organic wellness</td>
-                                <td>Parking limits for commuting guests</td>
-                                <td>4.5 / 5</td>
-                            </tr>
-                        </tbody>
+                        <tbody><tbody>
+                              <tr class="highlight-row">
+                                  <td>South Yarra - Chapel St Ground Floor</td>
+                                  <td>AUD 4,500 - 7,000</td>
+                                  <td>Melbourne's premier lifestyle corridor. Highest per-capita luxury spend in Melbourne. Japanese expat community in surrounding Prahran/Toorak. Ground-floor boutique between Toorak Rd and Commercial Rd — maximum premium visibility.</td>
+                                  <td>High Chapel St rent; competition from established premium salons (Rokk Ebony, Kerluxe) on same strip; DA/lease negotiations can be complex</td>
+                                  <td>4.8 / 5 (Recommended)</td>
+                              </tr>
+                              <tr>
+                                  <td>Fitzroy - Brunswick St Boutique</td>
+                                  <td>AUD 3,200 - 5,500</td>
+                                  <td>Creative professional zone. Fashion-forward demographic with high WTP for specialist creative colour. Growing Korean community in Carlton. Lower rent than Chapel St. Creative colour portfolio strongest competitive angle here.</td>
+                                  <td>Less affluent than South Yarra; WTP ceiling lower for balayage vs vivid creative services; higher turnover retail environment</td>
+                                  <td>4.3 / 5</td>
+                              </tr>
+                              <tr>
+                                  <td>Collins St CBD - Ground Floor</td>
+                                  <td>AUD 6,000 - 10,000</td>
+                                  <td>Melbourne's corporate financial spine. After-work appointments from CBD professionals. Largest total catchment. Lunchtime/after-work appointment density best for corporate membership program.</td>
+                                  <td>Highest rent; after-work only model limits daily capacity utilisation; CBD weekend foot traffic low</td>
+                                  <td>4.0 / 5</td>
+                              </tr>
+             </tbody></tbody>
                     </table>
                 </div>
                 <div class="conclusion-box">
@@ -897,9 +904,27 @@
 
         // Shop Candidates
         const candidates = [
-            { name: "Candidate A: South Yarra (Chapel St Ground Floor)", lat: -37.8385, lng: 144.9925, note: "Ground floor shoplot on high-traffic Chapel St. High-end storefront with excellent footfall.", rent: 2948, catchment: 90000, premiumTargetPct: 49.0, competitorCapacity: 57375, airportTime: "28 mins" },
-            { name: "Candidate B: Fitzroy Brunswick St Shoplot", lat: -37.8015, lng: 144.9795, note: "Ground floor retail space on Brunswick St. Great branding exposure and high creative-class traffic.", rent: 2579, catchment: 70000, premiumTargetPct: 43.2, competitorCapacity: 43875, airportTime: "26 mins" },
-            { name: "Candidate C: Melbourne CBD Flinders Lane Ground Floor", lat: -37.8145, lng: 144.9635, note: "Ground floor laneway studio with large character windows. Quiet premium pocket, high corporate foot traffic.", rent: 3193, catchment: 85000, premiumTargetPct: 34.6, competitorCapacity: 50625, airportTime: "22 mins" }
+            { 
+                name: "Candidate A: South Yarra - Chapel St Ground Floor (Primary)", 
+                lat: -37.8385, lng: 144.9925, 
+                note: "TOP PICK. Melbourne's premier lifestyle corridor. Ground-floor boutique on Chapel St between Toorak Rd and Commercial Rd. Highest per-capita luxury spend in Melbourne. Japanese expat community concentrated in surrounding Prahran/Toorak. Rent AUD 4,500–7,000/mo.", 
+                rent: 3500, catchment: 45000, premiumTargetPct: 35, competitorCapacity: 12000,
+                airportTime: "30 mins from MEL"
+            },
+            { 
+                name: "Candidate B: Fitzroy - Brunswick St Boutique", 
+                lat: -37.8015, lng: 144.9795, 
+                note: "Melbourne's creative professional zone. Fashion-forward demographic with high WTP for specialist creative colour (balayage, vivid, copper). Lower rent than Chapel St. Growing Korean community in surrounding Carlton.", 
+                rent: 2800, catchment: 38000, premiumTargetPct: 30, competitorCapacity: 8000,
+                airportTime: "30 mins from MEL"
+            },
+            { 
+                name: "Candidate C: CBD - Collins St Ground Floor", 
+                lat: -37.8145, lng: 144.9635, 
+                note: "Melbourne's corporate financial spine. After-work appointments from CBD professionals. Access to largest total catchment. Highest rent but strongest lunchtime/after-work booking density. Best for corporate membership program.", 
+                rent: 5500, catchment: 60000, premiumTargetPct: 28, competitorCapacity: 18000,
+                airportTime: "30 mins from MEL"
+            }
         ];
 
         // Star Icon for Candidates

@@ -291,22 +291,29 @@
                                 <th>Overall Rating</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr class="highlight-row">
-                                <td>Fortitude Valley</td>
-                                <td>USD 2,340 - 2,720</td>
-                                <td>High density lifestyle hub, solid footfall from shopping lanes</td>
-                                <td>Noise from late-night dining venues</td>
-                                <td>4.8 / 5 (Recommended)</td>
-                            </tr>
-                            <tr>
-                                <td>New Farm (Brunswick St)</td>
-                                <td>USD 2,550 - 2,975</td>
-                                <td>Elite residential pocket, high disposable income families</td>
-                                <td>Smaller retail spaces available</td>
-                                <td>4.5 / 5</td>
-                            </tr>
-                        </tbody>
+                        <tbody><tbody>
+                              <tr class="highlight-row">
+                                  <td>New Farm - Brunswick St</td>
+                                  <td>AUD 3,500 - 5,500</td>
+                                  <td>Brisbane's highest-income inner-east residential corridor (median house AUD 2.1M+). Zero premium colour boutique within 15-min walk. UV-damage + Asian hair specialist gap confirmed by research. All Sol Hair / Beau Gordon clients are in Paddington — 20+ min drive away.</td>
+                                  <td>Heritage terrace buildings may require council DA for fit-out; premium rent demands high average ticket discipline</td>
+                                  <td>4.9 / 5 (Recommended)</td>
+                              </tr>
+                              <tr>
+                                  <td>Fortitude Valley - James St Precinct</td>
+                                  <td>AUD 3,800 - 6,500</td>
+                                  <td>Adjacent to James St luxury retail (Camilla, Zimmermann). Growing Korean/Japanese community. Lower boutique colour studio density than Paddington — white space for premium colour.</td>
+                                  <td>James St retail is fashion-retail heavy — needs positioning to separate from fashion brands; higher commercial rent</td>
+                                  <td>4.4 / 5</td>
+                              </tr>
+                              <tr>
+                                  <td>Paddington - Given Tce (Sol Hair zone)</td>
+                                  <td>AUD 2,800 - 4,500</td>
+                                  <td>Sol Hair confirms premium demand. Strong foot traffic on Given Tce. Established premium residential catchment (Paddington, Bardon, Ashgrove).</td>
+                                  <td>Sol Hair is an entrenched local brand — entering here means direct competition on their home turf; must differentiate on Asian hair expertise and UV protection angle</td>
+                                  <td>3.8 / 5</td>
+                              </tr>
+             </tbody></tbody>
                     </table>
                 </div>
                 <div class="conclusion-box">
@@ -906,8 +913,27 @@
 
         // Shop Candidates
         const candidates = [
-            { name: "Candidate A: Fortitude Valley Shophouse", lat: -27.4585, lng: 153.0365, note: "Beautiful shophouse near James St. High aesthetic appeal, great parking.", rent: 2334, catchment: 65000, premiumTargetPct: 44.4, competitorCapacity: 37125, airportTime: "20 mins" },
-            { name: "Candidate B: New Farm Brunswick St Shop", lat: -27.4605, lng: 153.0405, note: "Ground floor shophouse in residential avenue. Solid local crowd.", rent: 2580, catchment: 45000, premiumTargetPct: 49.2, competitorCapacity: 32063, airportTime: "24 mins" }
+            { 
+                name: "Candidate A: New Farm - Brunswick St (Primary)", 
+                lat: -27.4605, lng: 153.0405, 
+                note: "TOP PICK. Brisbane's highest-income inner-east residential corridor (median house AUD 2.1M+). Ground-floor boutique on Brunswick St New Farm. Zero premium colour boutique within 15-min walk. UV-damage + Asian hair specialist gap confirmed by research. Rent AUD 3,500–5,500/mo.", 
+                rent: 2800, catchment: 35000, premiumTargetPct: 38, competitorCapacity: 5000,
+                airportTime: "20 mins from BNE"
+            },
+            { 
+                name: "Candidate B: Fortitude Valley - James St Precinct", 
+                lat: -27.4585, lng: 153.0365, 
+                note: "Adjacent to James St luxury retail (Camilla, Zimmermann). Growing Korean/Japanese community in Valley. Boutique hair studio density lower than Paddington — white space for premium colour.", 
+                rent: 3200, catchment: 40000, premiumTargetPct: 32, competitorCapacity: 4000,
+                airportTime: "20 mins from BNE"
+            },
+            { 
+                name: "Candidate C: Paddington - Given Tce (Sol Hair Zone)", 
+                lat: -27.4620, lng: 152.9990, 
+                note: "Sol Hair (main competitor) at Given Tce confirms premium demand. Entry here means direct competition with entrenched local brand — only viable if Asian hair specialisation clearly differentiates. High foot traffic, moderate rent.", 
+                rent: 2600, catchment: 30000, premiumTargetPct: 30, competitorCapacity: 14000,
+                airportTime: "22 mins from BNE"
+            }
         ];
 
         // Star Icon for Candidates

@@ -291,22 +291,29 @@
                                 <th>Overall Rating</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr class="highlight-row">
-                                <td>Paddington / Woollahra</td>
-                                <td>USD 4,675 / Mo (approx. AUD 7,000)</td>
-                                <td>Affluent demographic, high pedestrian visibility on Oxford Street</td>
-                                <td>Council heritage guidelines can slow DA approvals</td>
-                                <td>4.8 / 5 (Recommended)</td>
-                            </tr>
-                            <tr>
-                                <td>Double Bay</td>
-                                <td>USD 5,525 / Mo (approx. AUD 8,300)</td>
-                                <td>Elite retail hub, target high-wealth customer base</td>
-                                <td>Extremely high rent base and low vacancy rates</td>
-                                <td>4.5 / 5</td>
-                            </tr>
-                        </tbody>
+                        <tbody><tbody>
+                              <tr class="highlight-row">
+                                  <td>Newtown - King St Ground Floor</td>
+                                  <td>AUD 4,000 - 6,500</td>
+                                  <td>Sydney's most underserved premium corridor. Young professional dual-income households. Nearest premium boutique is 15-min commute to Surry Hills. Zero premium colour boutique on King St. All-inclusive transparent pricing is specifically what this demographic demands vs Surry Hills add-on fee model.</td>
+                                  <td>Heritage shopfront footprints may limit salon layout; parking requires clear direction to nearby stations (Newtown/Macdonaldtown)</td>
+                                  <td>4.9 / 5 (Recommended)</td>
+                              </tr>
+                              <tr>
+                                  <td>Glebe - Glebe Point Rd</td>
+                                  <td>AUD 3,200 - 5,500</td>
+                                  <td>Adjacent to Newtown. University of Sydney proximity creates young professional catchment. Same demographic profile as Newtown with slightly lower foot traffic and rent.</td>
+                                  <td>Lower foot traffic than King St; requires stronger appointment-driven model vs walk-in reliance</td>
+                                  <td>4.4 / 5</td>
+                              </tr>
+                              <tr>
+                                  <td>Surry Hills - Crown St (Competition Zone)</td>
+                                  <td>AUD 5,500 - 9,000</td>
+                                  <td>RAW Anthony Nader, Flock, Wakefields within 300m confirm premium demand and premium client density. Highest total premium catchment of three candidates.</td>
+                                  <td>4 entrenched premium competitors within 300m; very high rent; must have extremely clear differentiation (transparent pricing, Asian hair, UV-adaptive) to compete</td>
+                                  <td>3.6 / 5 (Requires strong differentiation)</td>
+                              </tr>
+             </tbody></tbody>
                     </table>
                 </div>
                 <div class="conclusion-box">
@@ -906,11 +913,27 @@
 
         // Shop Candidates
         const candidates = [
-            
-            { name: "Candidate A: Paddington Terrace (Oxford St)", lat: -33.8820, lng: 151.2250, note: "Prime shophouse with historic charm, excellent local visibility.", rent: 4675, catchment: 80000, premiumTargetPct: 36, competitorCapacity: 27000, airportTime: "22 mins" },
-            { name: "Candidate B: Double Bay Suite", lat: -33.8775, lng: 151.2435, note: "Arcade suite in elite pocket. Quiet setting, premium rent.", rent: 5525, catchment: 50000, premiumTargetPct: 48, competitorCapacity: 22500, airportTime: "25 mins" },
-            { name: "Candidate C: Surry Hills Shophouse (Crown St)", lat: -33.8865, lng: 151.2115, note: "Creative lane setup. Vibrant crowd, lower rent base.", rent: 3825, catchment: 6000, premiumTargetPct: 30, competitorCapacity: 19500, airportTime: "18 mins" }
-        
+            { 
+                name: "Candidate A: Newtown - King St Ground Floor (Primary)", 
+                lat: -33.8965, lng: 151.1785, 
+                note: "TOP PICK. Sydney's most underserved premium corridor. Young professional dual-income households (25–45). Nearest premium boutique is 15-min commute to Surry Hills. Zero premium colour boutique on King St. UV + transparent pricing gap. Rent AUD 4,000–6,500/mo.", 
+                rent: 3200, catchment: 42000, premiumTargetPct: 35, competitorCapacity: 3000,
+                airportTime: "22 mins from SYD"
+            },
+            { 
+                name: "Candidate B: Glebe - Glebe Point Rd", 
+                lat: -33.8765, lng: 151.1870, 
+                note: "Adjacent to Newtown but with higher residential density and less foot traffic competition. University of Sydney proximity creates young professional catchment. Same income profile as Newtown, slightly lower rent.", 
+                rent: 2800, catchment: 35000, premiumTargetPct: 32, competitorCapacity: 2500,
+                airportTime: "22 mins from SYD"
+            },
+            { 
+                name: "Candidate C: Surry Hills - Crown St (Competition Zone)", 
+                lat: -33.8865, lng: 151.2115, 
+                note: "RAW Anthony Nader, Flock, Wakefields within 300m — confirms premium demand but highly competitive. Only viable if transparent all-inclusive pricing model creates clear differentiation from add-on fee competitors.", 
+                rent: 4500, catchment: 50000, premiumTargetPct: 38, competitorCapacity: 22000,
+                airportTime: "20 mins from SYD"
+            }
         ];
 
         // Star Icon for Candidates

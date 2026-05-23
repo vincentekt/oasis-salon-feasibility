@@ -291,29 +291,29 @@
                                 <th>Overall Rating</th>
                             </tr>
                         </thead>
-                        <tbody>
-                             <tr class="highlight-row">
-                                <td>Hai Chau City Center</td>
-                                <td>USD 600 - 1,000</td>
-                                <td>Prime business district, high-income locals, steady year-round traffic</td>
-                                <td>Traffic congestion during peak hours</td>
-                                <td>4.7 / 5 (Recommended)</td>
-                             </tr>
-                             <tr>
-                                <td>An Thuong Expat Ward</td>
-                                <td>USD 500 - 900</td>
-                                <td>High density of Western expats and tourists, walkable streets</td>
-                                <td>Seasonal tourist fluctuations</td>
-                                <td>4.4 / 5</td>
-                             </tr>
-                             <tr>
-                                <td>Son Tra Coastal District</td>
-                                <td>USD 700 - 1,100</td>
-                                <td>Beautiful beachfront views, tourist traffic</td>
-                                <td>Low density of permanent expat residents</td>
-                                <td>3.8 / 5</td>
-                             </tr>
-                        </tbody>
+                        <tbody><tbody>
+                              <tr class="highlight-row">
+                                  <td>An Thuong Beach Area</td>
+                                  <td>USD 600 - 1,000</td>
+                                  <td>Digital nomad + Korean expat residential cluster. Highest per-capita expat density in Da Nang. Ground-floor shophouse within walking distance of beach cafes and co-working spaces.</td>
+                                  <td>Seasonal volume variance (Nov–Mar monsoon slows tourism); smaller total catchment than city center</td>
+                                  <td>4.8 / 5 (Recommended)</td>
+                              </tr>
+                              <tr>
+                                  <td>My Khe Beach Rd</td>
+                                  <td>USD 500 - 850</td>
+                                  <td>Adjacent to resort strip. Strong tourist walk-in potential and resort-staff clientele. Growing year-round Korean permanent resident base.</td>
+                                  <td>Slightly lower Korean residential density than An Thuong; more resort-tourist than professional-expat</td>
+                                  <td>4.2 / 5</td>
+                              </tr>
+                              <tr>
+                                  <td>Hai Chau City Center</td>
+                                  <td>USD 700 - 1,100</td>
+                                  <td>City-center anchor. Captures Vietnamese professional market. Access to larger commercial retail space with better loading/logistics.</td>
+                                  <td>Lower expat density; more mid-tier local competition; less "destination boutique" feel</td>
+                                  <td>3.5 / 5</td>
+                              </tr>
+             </tbody></tbody>
                     </table>
                 </div>
                 <div class="conclusion-box">
@@ -913,26 +913,25 @@
         // Shop Candidates
         const candidates = [
             { 
-                name: "Candidate A: Hai Chau City Center Lane Shophouse", 
-                lat: 16.0580, 
-                lng: 108.2210, 
-                note: "Top recommendation. Ground floor in a quiet lane off city core. Low rent, steady premium residential access.", 
-                rent: 800,
-                catchment: 35000,
-                premiumTargetPct: 18,
-                competitorCapacity: 4500,
-                airportTime: "10 mins from DAD"
+                name: "Candidate A: An Thuong Beach Area (Primary)", 
+                lat: 16.0490, lng: 108.2450, 
+                note: "TOP PICK. Digital nomad + Korean expat residential cluster. Ground-floor shophouse on An Thuong 1-6 network. Highest per-capita expat density in Da Nang. Rent USD 600–1,000/mo for 60 sqm.", 
+                rent: 800, catchment: 18000, premiumTargetPct: 35, competitorCapacity: 4000,
+                airportTime: "12 mins from DAD"
             },
             { 
-                name: "Candidate B: An Thuong Commercial Ward Unit", 
-                lat: 16.0490, 
-                lng: 108.2450, 
-                note: "Walkable tourist block near beach. Great expat density, lower rent.", 
-                rent: 700,
-                catchment: 30000,
-                premiumTargetPct: 22,
-                competitorCapacity: 3750,
-                airportTime: "12 mins from DAD"
+                name: "Candidate B: My Khe Beach Rd (Non Nuoc Zone)", 
+                lat: 16.0390, lng: 108.2500, 
+                note: "Adjacent to resort strip. Strong tourist walk-in potential and resort-worker clientele. Lower Korean residential density than An Thuong but growing fast.", 
+                rent: 650, catchment: 14000, premiumTargetPct: 28, competitorCapacity: 3000,
+                airportTime: "15 mins from DAD"
+            },
+            { 
+                name: "Candidate C: Hai Chau City Center", 
+                lat: 16.0580, lng: 108.2210, 
+                note: "City-center anchor. Lower expat density but captures business traveler and Vietnamese professional market. Access to larger commercial retail space.", 
+                rent: 900, catchment: 25000, premiumTargetPct: 18, competitorCapacity: 6000,
+                airportTime: "10 mins from DAD"
             }
         ];
 

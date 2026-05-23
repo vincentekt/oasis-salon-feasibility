@@ -291,29 +291,29 @@
                                 <th>Overall Rating</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr class="highlight-row">
-                                <td>Zuoying (near Hanshin Arena)</td>
-                                <td>USD 1,300 - 1,900</td>
-                                <td>Elite consumer density, high footfall, wealthy resident base, excellent transport links</td>
-                                <td>Intense styling competitor concentration</td>
-                                <td>4.8 / 5 (Recommended)</td>
-                            </tr>
-                            <tr>
-                                <td>Lingya (near Sanduo Shopping District)</td>
-                                <td>USD 1,500 - 2,100</td>
-                                <td>Commercial center, corporate offices, high branding visibility</td>
-                                <td>High rental deposits, traffic congestion</td>
-                                <td>4.4 / 5</td>
-                            </tr>
-                            <tr>
-                                <td>Lingya (near Cultural Center)</td>
-                                <td>USD 950 - 1,400</td>
-                                <td>Artistic community, stable high-income residential base, loyal repeat clients</td>
-                                <td>Lower natural walk-in foot traffic</td>
-                                <td>4.1 / 5</td>
-                            </tr>
-                        </tbody>
+                        <tbody><tbody>
+                              <tr class="highlight-row">
+                                  <td>Zuoying THSR Commercial Zone</td>
+                                  <td>NTD 35,000 - 55,000</td>
+                                  <td>High-speed rail terminus. First-mover position — zero premium salon in zone. THSR commuters from Taipei book appointments around train schedule. Japanese Foxconn/Innolux corporate housing adjacent. Highest underserved score in Kaohsiung.</td>
+                                  <td>Lower current foot traffic than Lingya; relies on THSR commuter booking behavior; requires appointment-heavy model</td>
+                                  <td>4.9 / 5 (Recommended)</td>
+                              </tr>
+                              <tr>
+                                  <td>Lingya - Sanduo Shopping District</td>
+                                  <td>NTD 40,000 - 65,000</td>
+                                  <td>Kaohsiung's premier shopping/lifestyle district. Round2 Hair Salon presence validates premium demand. Highest total catchment of three candidates. Best for fashion-forward creative class.</td>
+                                  <td>Round2 is entrenched here; higher rent; must differentiate on Japanese-bilingual service and creative colour range</td>
+                                  <td>4.3 / 5</td>
+                              </tr>
+                              <tr>
+                                  <td>Xinyi - Central Park MRT</td>
+                                  <td>NTD 30,000 - 48,000</td>
+                                  <td>Near Kaohsiung's Central Park and cultural institutions. Growing premium residential catchment. Lower competition than Lingya. Good for Japanese business community nearby.</td>
+                                  <td>Less established premium retail environment than Lingya or Zuoying; lower total foot traffic</td>
+                                  <td>4.0 / 5</td>
+                              </tr>
+             </tbody></tbody>
                     </table>
                 </div>
                 <div class="conclusion-box">
@@ -955,37 +955,25 @@
         // Shop Candidates
         const candidates = [
             { 
-                name: "Candidate A: Ruifeng Night Market Plaza", 
-                lat: 22.6620, 
-                lng: 120.3015, 
-                note: "Top recommendation. Modern design storefront near Hanshin Arena. High premium local residential density & footfall.", 
-                rent: 1352,
-                catchment: 65000,
-                premiumTargetPct: 35,
-                competitorCapacity: 27000,
+                name: "Candidate A: Zuoying THSR Commercial Zone (Primary)", 
+                lat: 22.6860, lng: 120.2980, 
+                note: "TOP PICK. High-speed rail terminus commercial zone. First-mover position — zero premium salon in zone. THSR commuters from Taipei book appointments around train schedule. Japanese Foxconn/Innolux corporate housing in adjacent Zuoying towers. Rent NTD 35,000–55,000/mo.", 
+                rent: 1200, catchment: 30000, premiumTargetPct: 35, competitorCapacity: 2000,
                 airportTime: "15 mins from KHH"
             },
             { 
-                name: "Candidate B: Sanduo Shopping District", 
-                lat: 22.6140, 
-                lng: 120.3040, 
-                note: "High-density retail block. Exceptional visibility, slightly higher rent overheads.", 
-                rent: 1717,
-                catchment: 75000,
-                premiumTargetPct: 31,
-                competitorCapacity: 37125,
-                airportTime: "10 mins from KHH"
+                name: "Candidate B: Lingya District - Sanduo Shopping (Round2 zone)", 
+                lat: 22.6140, lng: 120.3040, 
+                note: "Kaohsiung's premier shopping and lifestyle district. Round2 Hair Salon present — confirms premium demand. Higher competition but large total catchment. Best for capturing Kaohsiung's fashion-forward creative class.", 
+                rent: 1400, catchment: 42000, premiumTargetPct: 28, competitorCapacity: 15000,
+                airportTime: "15 mins from KHH"
             },
             { 
-                name: "Candidate C: Cultural Center Boutique Suite", 
-                lat: 22.6250, 
-                lng: 120.3150, 
-                note: "Quiet residential lane nearby the Cultural Center. Low rent, cozy wabi-sabi setting.", 
-                rent: 986,
-                catchment: 55000,
-                premiumTargetPct: 26,
-                competitorCapacity: 21938,
-                airportTime: "15 mins from KHH"
+                name: "Candidate C: Xinyi District (Central Park Adjacent)", 
+                lat: 22.6250, lng: 120.3150, 
+                note: "Near Kaohsiung's Central Park MRT and cultural facilities. Growing premium residential catchment with access to Kaohsiung's Japanese business community. Lower competition than Lingya.", 
+                rent: 1100, catchment: 28000, premiumTargetPct: 26, competitorCapacity: 6000,
+                airportTime: "12 mins from KHH"
             }
         ];
 

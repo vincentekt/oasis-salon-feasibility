@@ -289,22 +289,29 @@
                                 <th>Overall Rating</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr class="highlight-row">
-                                <td>Subiaco (Rokeby Rd)</td>
-                                <td>USD 2,150 / Mo (approx. AUD 3,200)</td>
-                                <td>Established boutique retail strip, high-income executive families, high pedestrian flows</td>
-                                <td>Quieter evening pedestrian traffic</td>
-                                <td>4.8 / 5 (Recommended)</td>
-                            </tr>
-                            <tr>
-                                <td>Cottesloe</td>
-                                <td>USD 2,457 / Mo (approx. AUD 3,700)</td>
-                                <td>Coastal wealth, solid weekend footfall, premium lifestyle focus</td>
-                                <td>Seasonal visitor fluctuations, limited winter evening footfall</td>
-                                <td>4.5 / 5</td>
-                            </tr>
-                        </tbody>
+                        <tbody><tbody>
+                              <tr class="highlight-row">
+                                  <td>Subiaco - Rokeby Rd</td>
+                                  <td>AUD 2,500 - 4,000</td>
+                                  <td>Perth's premium inner-western suburb. High FIFO mining/resources executive family density (2-weeks-on/off rotation creates regular appointment windows). Ground-floor on Rokeby Rd retail strip. UV-protection angle strongest in Perth (UV 11+ summer). No premium colour boutique in zone.</td>
+                                  <td>FIFO rotation cycles create appointment volatility; Rokeby Rd parking can be congested on market days</td>
+                                  <td>4.8 / 5 (Recommended)</td>
+                              </tr>
+                              <tr>
+                                  <td>Claremont - St Quentin Ave</td>
+                                  <td>AUD 2,200 - 3,800</td>
+                                  <td>Old-money western suburbs. Highest household income in Perth metro. Premium boutique aesthetic fits heritage streetscape. HNWI appointment-only clientele — matches premium model.</td>
+                                  <td>Small total catchment; very appointment-dependent model; limited organic foot traffic</td>
+                                  <td>4.3 / 5</td>
+                              </tr>
+                              <tr>
+                                  <td>Cottesloe - Marine Pde Coastal</td>
+                                  <td>AUD 2,000 - 3,500</td>
+                                  <td>Coastal boutique positioning. Beach lifestyle + UV damage angle strongest here. Summer tourist season (Oct–Apr) boosts volume significantly. Beach aesthetic aligns with UV-protect brand narrative.</td>
+                                  <td>Significant seasonality risk (May–Sep winter slump); smaller permanent resident catchment; tourist clients rarely repeat</td>
+                                  <td>3.8 / 5</td>
+                              </tr>
+             </tbody></tbody>
                     </table>
                 </div>
                 <div class="text-content" style="margin-top: 1rem;">
@@ -900,10 +907,27 @@
 
         // Shop Candidates
         const candidates = [
-            
-            { name: "Candidate A: Subiaco (Rokeby Rd Side Lane)", lat: -31.9475, lng: 115.8265, note: "Charming side-lane storefront. Quiet, low rent, excellent parking.", rent: 2150, catchment: 55000, premiumTargetPct: 41.76, competitorCapacity: 27000, airportTime: "22 mins" },
-            { name: "Candidate B: Cottesloe Coastal Shoplot", lat: -31.9965, lng: 115.7595, note: "Beachfront lane unit. High visual appeal, premium positioning.", rent: 2457, catchment: 45000, premiumTargetPct: 48.96, competitorCapacity: 30375, airportTime: "28 mins" }
-        
+            { 
+                name: "Candidate A: Subiaco - Rokeby Rd (Primary)", 
+                lat: -31.9475, lng: 115.8265, 
+                note: "TOP PICK. Perth's premium inner-western suburb. High FIFO worker family density (mining/resources executives on 2-weeks-on/off cycles). Ground-floor shophouse on Rokeby Rd retail strip. UV-protection angle strong given Perth's extreme UV index (UV 11+ in summer). Rent AUD 2,500–4,000/mo.", 
+                rent: 2000, catchment: 28000, premiumTargetPct: 32, competitorCapacity: 6000,
+                airportTime: "22 mins from PER"
+            },
+            { 
+                name: "Candidate B: Claremont - St Quentin Ave", 
+                lat: -31.9805, lng: 115.7830, 
+                note: "Old-money western suburbs. Highest household income in Perth metro. Premium boutique aesthetic fits heritage streetscape. Less foot traffic than Subiaco but HNWI appointment-only clientele — matches premium model.", 
+                rent: 1800, catchment: 18000, premiumTargetPct: 40, competitorCapacity: 4000,
+                airportTime: "25 mins from PER"
+            },
+            { 
+                name: "Candidate C: Cottesloe - Marine Pde Coastal", 
+                lat: -31.9965, lng: 115.7595, 
+                note: "Coastal boutique positioning. Beach lifestyle + UV damage angle is strongest here. Tourist season (Oct–Apr) boosts volume. Lowest year-round footfall consistency of three candidates.", 
+                rent: 1600, catchment: 15000, premiumTargetPct: 35, competitorCapacity: 2500,
+                airportTime: "30 mins from PER"
+            }
         ];
 
         // Star Icon for Candidates
