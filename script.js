@@ -569,6 +569,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // DYNAMIC CITIES DATABASE
     // ==========================================
     let citiesDb = [];  // Populated from city_data.json at runtime
+    let currentSortCol = null;  // Property name to sort by
+    let currentSortDir = 'asc'; // 'asc' or 'desc'
 
     // ==========================================
     // ASYNC CITY DATA LOADER
@@ -851,6 +853,30 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Render city list initial state
         renderCityList(initialRegion);
+
+        // Setup overview table headers sort click listeners
+        const headers = document.querySelectorAll('#overview-table th[data-sort]');
+        headers.forEach(th => {
+            th.addEventListener('click', () => {
+                const sortKey = th.dataset.sort;
+                if (currentSortCol === sortKey) {
+                    currentSortDir = currentSortDir === 'asc' ? 'desc' : 'asc';
+                } else {
+                    currentSortCol = sortKey;
+                    currentSortDir = 'asc';
+                }
+                
+                // Update header active sort classes
+                headers.forEach(h => {
+                    h.classList.remove('sort-asc', 'sort-desc');
+                });
+                th.classList.add(currentSortDir === 'asc' ? 'sort-asc' : 'sort-desc');
+                
+                // Re-render dashboard tables
+                const state = getActiveState();
+                populateDashboardTables(state.model);
+            });
+        });
     }
 
     // ==========================================
@@ -893,7 +919,99 @@ document.addEventListener('DOMContentLoaded', () => {
         overviewTbody.innerHTML = '';
         complexityTbody.innerHTML = '';
 
-        citiesDb.forEach(city => {
+        function convertHrsToDays(str) {
+            if (!str) return '';
+            return str.replace(/(\d+)\s*hrs?/gi, (match, p1) => {
+                const hrs = parseInt(p1, 10);
+                const days = hrs / 8;
+                let formatted = days.toFixed(1);
+                if (formatted.endsWith('.0')) {
+                    formatted = formatted.slice(0, -2);
+                }
+                return `${formatted} ${formatted === '1' ? 'day' : 'days'}`;
+            });
+        }
+
+        function getSortValue(city, key) {
+            const ticketVal = city.ticketVal || 0;
+            const opexVal = city.opexVal || 0;
+            const capexVal = city.capexVal || 0;
+            const volumeBase = city.volume || 300;
+            const taxRate = city.taxVal || 0;
+
+            const cogsVal = ticketVal * 0.10;
+            const contribMargin = ticketVal - cogsVal;
+            const monthlyBreakeven = contribMargin > 0 ? Math.round(opexVal / contribMargin) : 0;
+            const dailyBreakeven = parseFloat((monthlyBreakeven / 30).toFixed(1));
+
+            const preTaxPAT = (volumeBase * contribMargin) - opexVal;
+            const taxVal = preTaxPAT > 0 ? preTaxPAT * taxRate : 0;
+            const pat = preTaxPAT - taxVal;
+            const ratio = opexVal > 0 ? Math.round((pat / opexVal) * 100) : 0;
+            const payback = pat > 0 ? Math.round(capexVal / pat) : 0;
+
+            switch (key) {
+                case 'name':
+                    return city.name || '';
+                case 'format':
+                    return getModelFormat(city.format || '', model);
+                case 'size_num':
+                    return parseInt(city.size) || 0;
+                case 'capex_mid':
+                    return capexVal;
+                case 'opex_raw':
+                    return opexVal;
+                case 'ticket_raw':
+                    return ticketVal;
+                case 'cogs_session_raw':
+                    return cogsVal;
+                case 'margin':
+                    return 0.90;
+                case 'breakeven_raw':
+                    return monthlyBreakeven;
+                case 'be_daily':
+                    return dailyBreakeven;
+                case 'tax_raw':
+                    return taxRate;
+                case 'pat_ratio_raw':
+                    return ratio;
+                case 'payback_raw':
+                    return payback;
+                case 'underserved_raw':
+                    return city.underserved_raw || parseInt(city.underserved) || 0;
+                case 'airport_num':
+                    return parseInt(city.airport) || 0;
+                case 'risk':
+                    return city.risk || '';
+                default:
+                    return '';
+            }
+        }
+
+        let displayCities = [...citiesDb];
+        if (currentSortCol) {
+            displayCities.sort((a, b) => {
+                let valA = getSortValue(a, currentSortCol);
+                let valB = getSortValue(b, currentSortCol);
+
+                if (typeof valA === 'string' && typeof valB === 'string') {
+                    return currentSortDir === 'asc' 
+                        ? valA.localeCompare(valB) 
+                        : valB.localeCompare(valA);
+                } else {
+                    const numA = Number(valA);
+                    const numB = Number(valB);
+                    if (!isNaN(numA) && !isNaN(numB)) {
+                        return currentSortDir === 'asc' ? numA - numB : numB - numA;
+                    }
+                    return currentSortDir === 'asc'
+                        ? String(valA).localeCompare(String(valB))
+                        : String(valB).localeCompare(String(valA));
+                }
+            });
+        }
+
+        displayCities.forEach(city => {
             const sizeStr = city.size;
             const capexStr = city.capex;
             const opexStr = city.opex;
@@ -953,16 +1071,20 @@ document.addEventListener('DOMContentLoaded', () => {
             // Row 2: Complexity
             const comp = getModelComplexity(city.complexity, model);
             if (comp) {
+                const totalDays = (comp.total / 8).toFixed(1);
+                const totalDaysStr = totalDays.endsWith('.0') ? totalDays.slice(0, -2) : totalDays;
+                const totalDaysDisplay = `${totalDaysStr} ${totalDaysStr === '1' ? 'day' : 'days'}`;
+
                 const trComp = document.createElement('tr');
                 trComp.setAttribute('data-region', city.region);
                 trComp.setAttribute('data-city', city.name);
                 trComp.setAttribute('data-capex', capexVal);
                 trComp.innerHTML = `
-                    <td><strong><a href="${city.url}" style="color: var(--accent); font-weight: 600; text-decoration: none; border-bottom: 1px dashed rgba(198,168,124,0.4);">${city.name}</a> (${comp.total} hrs)</strong></td>
-                    <td>${comp.loc}</td>
-                    <td>${comp.design}</td>
-                    <td>${comp.staff}</td>
-                    <td>${comp.logistics}</td>
+                    <td><strong><a href="${city.url}" style="color: var(--accent); font-weight: 600; text-decoration: none; border-bottom: 1px dashed rgba(198,168,124,0.4);">${city.name}</a> (${totalDaysDisplay})</strong></td>
+                    <td>${convertHrsToDays(comp.loc)}</td>
+                    <td>${convertHrsToDays(comp.design)}</td>
+                    <td>${convertHrsToDays(comp.staff)}</td>
+                    <td>${convertHrsToDays(comp.logistics)}</td>
                 `;
                 complexityTbody.appendChild(trComp);
             }
