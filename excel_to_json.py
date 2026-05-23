@@ -13,6 +13,8 @@ Usage:
 """
 
 import os, re, json, sys, math
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8")
 import openpyxl
 
 WORKDIR   = r"c:\Users\vince\Projects\HairSpa\Oasis_Salon_Web"
@@ -51,7 +53,7 @@ for row in ws_c.iter_rows(min_row=4, max_row=20, values_only=True):
     }
 print(f"  Loaded {len(country_params)} country records: {list(country_params.keys())}")
 
-# ── CITY INPUTS (Cities sheet, rows 5+, cols A-P) ────────────────────────────
+# ── CITY INPUTS (Cities sheet, rows 5+, cols A-U) ────────────────────────────
 ws_i = wb["Cities"]
 city_inputs = []
 for row in ws_i.iter_rows(min_row=5, max_row=50, values_only=True):
@@ -78,6 +80,9 @@ for row in ws_i.iter_rows(min_row=5, max_row=50, values_only=True):
         "lat":         float(row[16]) if len(row) > 16 and row[16] is not None else 0.0,
         "lon":         float(row[17]) if len(row) > 17 and row[17] is not None else 0.0,
         "underserved": int(row[18])   if len(row) > 18 and row[18] is not None else 40,
+        # Business Fees & Admin (cols T=19, U=20)
+        "biz_reg":     float(row[19]) if len(row) > 19 and row[19] is not None else 1500,
+        "admin_sw":    float(row[20]) if len(row) > 20 and row[20] is not None else 200,
     })
 print(f"  Loaded {len(city_inputs)} cities")
 
@@ -96,6 +101,8 @@ def compute_model(city, cp):
     dep_mo  = city["dep_mo"]
     util_y1 = city["util_y1"]
     util_y2 = city["util_y2"]
+    biz_reg = city["biz_reg"]
+    admin_sw= city["admin_sw"]
     
     # Country rates
     tax     = cp["tax"]
@@ -104,7 +111,7 @@ def compute_model(city, cp):
     asst    = cp["asst"]
     manager = cp["manager"]
     
-    # === SPACE → STAFF ===
+    # === SPACE → STATIONS & SEATS ===
     # Stations = IF(sqft<=750,3, IF(sqft<=850,4, 5))
     if sqft <= 750:
         stations = 3
@@ -112,6 +119,10 @@ def compute_model(city, cp):
         stations = 4
     else:
         stations = 5
+    
+    # Color Bar Seats = stations - 1
+    color_bar_seats = stations - 1
+    total_seats = stations + color_bar_seats
     
     # Wash basins
     wash_basins = 2 if stations <= 4 else 3
@@ -128,14 +139,15 @@ def compute_model(city, cp):
     # Total Staff = seniors + juniors + assistants + 1 (manager)
     total_staff = seniors + juniors + assistants + 1
     
-    # === COUNTRY LOOKUP ===
-    # Staff cost = seniors×senior + juniors×junior + assistants×asst + manager
+    # === STAFF COST ===
     staff_cost = seniors * senior + juniors * junior + assistants * asst + manager
     
     # === OPEX ===
     utilities  = 200 + stations * 80
     mktg_misc  = 350 + stations * 50 + 300 + stations * 30  # = 650 + stations*80
-    total_opex = rent + staff_cost + utilities + mktg_misc
+    depreciation = equip / 60  # 5-year straight line on equipment
+    total_cash_opex = rent + staff_cost + utilities + mktg_misc + admin_sw
+    total_opex = total_cash_opex + depreciation  # for display/bookkeeping
     
     # === CAPACITY ===
     max_cap = stations * sess * wd
@@ -146,74 +158,100 @@ def compute_model(city, cp):
     cogs_per_session = ticket * cogs_p
     gm_per_session   = ticket - cogs_per_session
     
-    # Breakeven = CEILING(opex / gm_per_session, 1)
-    breakeven = math.ceil(total_opex / gm_per_session)
+    # Breakeven Accounting (covering depreciation too!)
+    breakeven = math.ceil((total_cash_opex + depreciation) / gm_per_session)
     breakeven_daily = round(breakeven / wd, 1)
     
-    # Y2 Monthly PAT = (y2_clients × ticket × (1-cogs%) - opex) × (1-tax)
-    y2_ebit = y2_clients * ticket * (1 - cogs_p) - total_opex
-    y2_pat  = y2_ebit * (1 - tax)
-    pat_ratio = round(y2_pat / total_opex * 100) if total_opex > 0 else 0
+    # Y1 & Y2 PAT
+    y1_ebit = y1_clients * ticket * (1 - cogs_p) - total_cash_opex - depreciation
+    y1_tax  = y1_ebit * tax if y1_ebit > 0 else 0.0
+    y1_pat  = y1_ebit - y1_tax
+    
+    y2_ebit = y2_clients * ticket * (1 - cogs_p) - total_cash_opex - depreciation
+    y2_tax  = y2_ebit * tax if y2_ebit > 0 else 0.0
+    y2_pat  = y2_ebit - y2_tax
+    
+    # Cash flows (PAT + Depreciation)
+    y1_cf = y1_pat + depreciation
+    y2_cf = y2_pat + depreciation
+    
+    pat_ratio = round(y2_pat / total_cash_opex * 100) if total_cash_opex > 0 else 0
     
     # === CAPEX ===
-    capex_base = fitout + equip + other + rent * dep_mo
+    capex_base = fitout + equip + other + biz_reg + rent * dep_mo
     capex_low  = math.floor(capex_base * 0.92 / 5000) * 5000
     capex_high = math.ceil( capex_base * 1.08 / 5000) * 5000
     capex_mid  = (capex_low + capex_high) / 2
     
-    # Payback = CEILING(capex_mid / y2_pat, 1) — or 999 if unprofitable
-    payback = math.ceil(capex_mid / y2_pat) if y2_pat > 0 else 999
+    # Payback using cumulative cash flow
+    if y1_cf * 12 >= capex_mid:
+        payback = math.ceil(capex_mid / y1_cf) if y1_cf > 0 else 999
+    else:
+        rem = capex_mid - y1_cf * 12
+        if y2_cf > 0:
+            payback = 12 + math.ceil(rem / y2_cf)
+        else:
+            payback = 999
     
     # Viable? = breakeven < 80% of max capacity
     viable = breakeven < max_cap * 0.8
     
     return {
-        # Staff
-        "stations":      stations,
-        "wash_basins":   wash_basins,
-        "seniors":       seniors,
-        "juniors":       juniors,
-        "assistants":    assistants,
-        "total_staff":   total_staff,
+        # Staff & Seats
+        "stations":        stations,
+        "color_bar_seats": color_bar_seats,
+        "total_seats":     total_seats,
+        "wash_basins":     wash_basins,
+        "seniors":         seniors,
+        "juniors":         juniors,
+        "assistants":      assistants,
+        "total_staff":     total_staff,
         # Rates
-        "tax":           round(tax, 4),
+        "tax":             round(tax, 4),
         # Costs
-        "rent":          round(rent),
-        "staff_cost":    round(staff_cost),
-        "utilities":     round(utilities),
-        "mktg_misc":     round(mktg_misc),
-        "total_opex":    round(total_opex),
+        "rent":            round(rent),
+        "staff_cost":      round(staff_cost),
+        "utilities":       round(utilities),
+        "mktg_misc":       round(mktg_misc),
+        "admin_sw":        round(admin_sw),
+        "depreciation":    round(depreciation),
+        "total_cash_opex": round(total_cash_opex),
+        "total_opex":      round(total_opex),
         # Capacity
-        "max_cap":       max_cap,
-        "y1_clients":    y1_clients,
-        "y2_clients":    y2_clients,
+        "max_cap":         max_cap,
+        "y1_clients":      y1_clients,
+        "y2_clients":      y2_clients,
         # Economics
-        "ticket":        round(ticket, 2),
-        "cogs_pct":      round(cogs_p, 4),
-        "cogs_session":  round(cogs_per_session, 2),
-        "gm_session":    round(gm_per_session, 2),
-        "breakeven":     breakeven,
-        "be_daily":      breakeven_daily,
-        "y2_pat":        round(y2_pat, 2),
-        "pat_ratio":     pat_ratio,
+        "ticket":          round(ticket, 2),
+        "cogs_pct":        round(cogs_p, 4),
+        "cogs_session":    round(cogs_per_session, 2),
+        "gm_session":      round(gm_per_session, 2),
+        "breakeven":       breakeven,
+        "be_daily":        breakeven_daily,
+        "y1_pat":          round(y1_pat, 2),
+        "y2_pat":          round(y2_pat, 2),
+        "y1_cf":           round(y1_cf, 2),
+        "y2_cf":           round(y2_cf, 2),
+        "pat_ratio":       pat_ratio,
         # CAPEX
-        "capex_low":     int(capex_low),
-        "capex_high":    int(capex_high),
-        "capex_mid":     int(capex_mid),
-        "payback_mo":    payback,
+        "biz_reg":         biz_reg,
+        "capex_low":       int(capex_low),
+        "capex_high":      int(capex_high),
+        "capex_mid":       int(capex_mid),
+        "payback_mo":      payback,
         # Status
-        "viable":        viable,
-        "size":          f"{sqft} sq ft",
-        "util_y1":       util_y1,
-        "util_y2":       util_y2,
-        "sess_per_day":  sess,
-        "working_days":  wd,
+        "viable":          viable,
+        "size":            f"{sqft} sq ft",
+        "util_y1":         util_y1,
+        "util_y2":         util_y2,
+        "sess_per_day":    sess,
+        "working_days":    wd,
     }
 
 # ── RUN MODEL FOR ALL CITIES ──────────────────────────────────────────────────
 print("\nComputing model for all cities:")
-print(f"{'City':<22} {'Sta':>4} {'Staff':>6} {'OPEX':>9} {'MaxCap':>7} {'BE':>6} {'Y2 PAT':>9} {'PAT%':>6} {'CAPEX':>14} {'Payback':>8} {'OK?':>6}")
-print("-" * 100)
+print(f"{'City':<22} {'Sta':>4} {'Seats':>5} {'Staff':>6} {'OPEX':>9} {'MaxCap':>7} {'BE':>6} {'Y2 PAT':>9} {'PAT%':>6} {'CAPEX':>14} {'Payback':>8} {'OK?':>6}")
+print("-" * 110)
 
 results = {}
 for city in city_inputs:
@@ -224,7 +262,7 @@ for city in city_inputs:
         continue
     m = compute_model(city, cp)
     results[name] = {**city, **m}
-    print(f"{name:<22} {m['stations']:>4} {m['total_staff']:>6} ${m['total_opex']:>8,} "
+    print(f"{name:<22} {m['stations']:>4} {m['total_seats']:>5} {m['total_staff']:>6} ${m['total_cash_opex']:>8,} "
           f"{m['max_cap']:>7} {m['breakeven']:>6} ${m['y2_pat']:>8,.0f} {m['pat_ratio']:>5}% "
           f"USD{m['capex_low']//1000:>4}k-{m['capex_high']//1000}k {m['payback_mo']:>6}mo "
           f"{'✓' if m['viable'] else '⚠':>6}")
@@ -288,8 +326,10 @@ for city in city_inputs:
         "margin":       "90%",
         "rent_raw":     int(r["rent"]),
         "rent_mo":      fmt_usd(r["rent"]),
-        # Staff
+        # Staff & Seats
         "stations":     r["stations"],
+        "color_bar_seats": r["color_bar_seats"],
+        "total_seats":  r["total_seats"],
         "wash_basins":  r["wash_basins"],
         "seniors":      r["seniors"],
         "juniors":      r["juniors"],
@@ -308,10 +348,16 @@ for city in city_inputs:
         "sess_per_day": city["sess"],
         "working_days": city["wd"],
         # OPEX breakdown (raw numbers for UI)
-        "opex":         fmt_usd(r["total_opex"]),
-        "opex_raw":     r["total_opex"],
+        "opex":         fmt_usd(r["total_cash_opex"]),
+        "opex_raw":     r["total_cash_opex"],
         "utilities_raw":r["utilities"],
         "mktg_misc_raw":r["mktg_misc"],
+        "admin_sw_raw": r["admin_sw"],
+        "admin_sw_mo":  fmt_usd(r["admin_sw"]),
+        "depreciation_raw": r["depreciation"],
+        "depreciation_mo":  fmt_usd(r["depreciation"]),
+        "total_opex_raw": r["total_opex"],
+        "total_opex_mo":  fmt_usd(r["total_opex"]),
         # Economics
         "breakeven":    f"~{r['breakeven']} customers/mo",
         "breakeven_raw":r["breakeven"],
@@ -320,8 +366,12 @@ for city in city_inputs:
         "tax_raw":      r["tax"],
         "pat_ratio":    f"{r['pat_ratio']}% (Post-Tax, at 75% util.)",
         "pat_ratio_raw":r["pat_ratio"],
+        "y1_pat_raw":   round(r["y1_pat"], 2),
+        "y1_pat_mo":    fmt_usd(r["y1_pat"]),
         "y2_pat":       fmt_usd(r["y2_pat"]),
         "y2_pat_raw":   round(r["y2_pat"], 2),
+        "y1_cf_raw":    round(r["y1_cf"], 2),
+        "y2_cf_raw":    round(r["y2_cf"], 2),
         "cogs_session_raw": r["cogs_session"],
         "gm_session_raw":   r["gm_session"],
         # CAPEX — range + line items (all from Excel inputs, no hardcoding)
@@ -332,14 +382,16 @@ for city in city_inputs:
         "fitout_usd":   int(city["fitout"]),
         "equip_usd":    int(city["equip"]),
         "other_usd":    int(city["other"]),
+        "biz_reg_usd":  fmt_usd(r["biz_reg"]),
+        "biz_reg_raw":  int(r["biz_reg"]),
         "deposit_usd":  deposit_usd,
         "dep_months":   city["dep_mo"],
-        "payback":      f"{r['payback_mo']} Months (at 75% util.)",
+        "payback":      f"{r['payback_mo']} Months (cumulative CF)",
         "payback_raw":  r["payback_mo"],
-        # Geography — from Excel cols Q/R/S (editable in Cities sheet)
+        # Geography
         "lat":          city["lat"],
         "lon":          city["lon"],
-        "coords":       [city["lat"], city["lon"]],   # Leaflet format [lat, lon]
+        "coords":       [city["lat"], city["lon"]],
         "underserved":  f"{city['underserved']}%",
         "underserved_raw": city["underserved"],
         # Risk & flags

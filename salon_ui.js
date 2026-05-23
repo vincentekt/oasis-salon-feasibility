@@ -63,36 +63,44 @@
 
         const rows = [
             // Space & Capacity
-            { label: 'Space',                  value: c.size || '—',           section: 'capacity' },
-            { label: 'Styling Stations',       value: `${c.stations || '—'} stations + ${c.wash_basins || 2} wash basins`, section: 'capacity' },
+            { label: 'Space Size',             value: c.size || '—',           section: 'capacity' },
+            { label: 'Styling Stations',       value: `${c.stations || '—'} active styling chairs`, section: 'capacity' },
+            { label: 'Color Bar Seats',        value: `${c.color_bar_seats || '—'} seats (for concurrent color processing)`, section: 'capacity' },
+            { label: 'Total Physical Seats',   value: `${c.total_seats || '—'} seats`, section: 'capacity' },
+            { label: 'Wash Basins',            value: `${c.wash_basins || 2} filtration basins`, section: 'capacity' },
             { label: 'Team Size',              value: `${c.total_staff || '—'} (${c.staff_label || '—'})`, section: 'capacity' },
             { label: 'Session Capacity',       value: c.max_capacity || '—',   section: 'capacity' },
-            { label: `Operating Clients (Year 1 — ${util_y1})`, value: `${c.y1_clients || '—'} clients/month`, section: 'capacity' },
-            { label: `Operating Clients (Year 2 — ${util_y2})`, value: `${c.y2_clients || '—'} clients/month`, section: 'capacity' },
+            { label: `Operating Clients (Year 1 — ${util_y1})`, value: `${c.y1_clients || '—'} sessions/month`, section: 'capacity' },
+            { label: `Operating Clients (Year 2 — ${util_y2})`, value: `${c.y2_clients || '—'} sessions/month`, section: 'capacity' },
             // Pricing
             { label: 'Average Ticket',         value: c.ticket || '—',         section: 'pricing' },
             { label: 'COGS per Session (10%)', value: c.cogs || '—',           section: 'pricing' },
-            { label: 'Gross Margin per Session', value: c.margin ? `${c.ticket} × 90% = ${c.cogs ? 'USD ' + (parseInt(c.ticket.replace(/\D/g,'')) * 0.9).toFixed(2) : '—'}` : '—', section: 'pricing' },
+            { label: 'Gross Margin per Session', value: c.margin ? `${c.ticket} × 90% = USD ${(parseInt(c.ticket.replace(/\D/g,'')) * 0.9).toFixed(2)}` : '—', section: 'pricing' },
             // Breakeven
-            { label: 'Break-Even Volume',      value: c.breakeven || '—',      section: 'breakeven' },
+            { label: 'Break-Even Volume (Accounting)', value: c.breakeven || '—',      section: 'breakeven' },
             { label: 'Daily Break-Even',       value: c.daily_breakeven || '—', section: 'breakeven' },
             // OPEX breakdown
-            { label: 'Monthly OPEX (Total)',   value: c.opex || '—',           section: 'opex' },
+            { label: 'Monthly Cash OPEX (Total)', value: c.rent_mo && c.staff_cost_mo ? 'USD ' + (c.opex_raw).toLocaleString('en-US') : '—', section: 'opex' },
             { label: '  → Rent',               value: c.rent_mo || '—',        section: 'opex', sub: true },
             { label: '  → Staff & Payroll',    value: c.staff_cost_mo || '—',  section: 'opex', sub: true },
+            { label: '  → Admin, Software & Insur.', value: c.admin_sw_mo || '—', section: 'opex', sub: true },
             { label: '  → Utilities + Marketing + Misc', value: (() => {
-                if (!c.opex_raw || !c.staff_cost_mo || !c.rent_mo) return '—';
+                if (!c.opex_raw || !c.staff_cost_mo || !c.rent_mo || !c.admin_sw_raw) return '—';
                 const opex = c.opex_raw;
                 const rent = parseInt(c.rent_mo.replace(/\D/g,''));
                 const staff = parseInt(c.staff_cost_mo.replace(/\D/g,''));
-                return 'USD ' + (opex - rent - staff).toLocaleString('en-US');
+                const admin = c.admin_sw_raw;
+                return 'USD ' + (opex - rent - staff - admin).toLocaleString('en-US');
             })(), section: 'opex', sub: true },
+            { label: 'Monthly Non-Cash Depreciation', value: c.depreciation_mo || '—', section: 'opex' },
+            { label: 'Monthly Total Accounting OPEX', value: c.total_opex_mo || '—', section: 'opex' },
             // Profit
-            { label: `Monthly PAT at ${util_y2} Utilization (After Tax)`, value: c.y2_pat || '—', section: 'profit' },
-            { label: 'PAT / OPEX Ratio',       value: c.pat_ratio || '—',      section: 'profit' },
+            { label: `Monthly PAT at ${util_y2} Utilization`, value: c.y2_pat || '—', section: 'profit' },
+            { label: 'PAT / Cash OPEX Ratio',  value: c.pat_ratio || '—',      section: 'profit' },
             { label: 'Corporate Tax Rate',     value: c.tax || '—',            section: 'profit' },
             // CAPEX
             { label: 'Estimated CAPEX',        value: c.capex || '—',          section: 'capex' },
+            { label: '  → Biz Registration Fee', value: c.biz_reg_usd || '—',  section: 'capex', sub: true },
             { label: 'Payback Period',         value: c.payback || '—',        section: 'capex' },
         ];
         return rows;
@@ -127,10 +135,11 @@
 
         // CAPEX items derived from city_data.json fields set in excel_to_json.py
         const items = [
-            { label: 'Fit-Out & Interior',    value: city.fitout_usd || null,  pct: '~52%', icon: '🏗️' },
-            { label: 'Equipment & Chairs',    value: city.equip_usd || null,   pct: '~25%', icon: '✂️' },
-            { label: 'Other (Legal/Stock)',   value: city.other_usd || null,   pct: '~15%', icon: '📦' },
-            { label: 'Lease Deposit',         value: city.deposit_usd || null, pct: '~8%',  icon: '🔑' },
+            { label: 'Fit-Out & Interior',    value: city.fitout_usd || null,  pct: `${Math.round(city.fitout_usd/capexMid*100)}%`, icon: '🏗️' },
+            { label: 'Equipment & Chairs',    value: city.equip_usd || null,   pct: `${Math.round(city.equip_usd/capexMid*100)}%`, icon: '✂️' },
+            { label: 'Biz Registration Fee',  value: city.biz_reg_raw || null, pct: `${Math.round(city.biz_reg_raw/capexMid*100)}%`, icon: '📄' },
+            { label: 'Other Setup (Stock/PR)',value: city.other_usd || null,   pct: `${Math.round(city.other_usd/capexMid*100)}%`, icon: '📦' },
+            { label: 'Lease Deposit',         value: city.deposit_usd || null, pct: `${Math.round(city.deposit_usd/capexMid*100)}%`,  icon: '🔑' },
         ];
 
         grids.forEach(grid => {
@@ -164,11 +173,13 @@
             const opexRaw = city.opex_raw || 0;
             const rent  = city.rent_mo  ? parseInt(city.rent_mo.replace(/\D/g,''))  : 0;
             const staff = city.staff_cost_mo ? parseInt(city.staff_cost_mo.replace(/\D/g,'')) : 0;
-            const other = opexRaw - rent - staff;
+            const admin = city.admin_sw_raw || 0;
+            const other = opexRaw - rent - staff - admin;
 
             const items = [
                 { label: 'Rent',                  value: rent,   icon: '🏠', color: '#e74c3c' },
                 { label: 'Staff & Payroll',        value: staff,  icon: '👥', color: '#3498db' },
+                { label: 'Admin & Booking SW',    value: admin,  icon: '🛡️', color: '#9b59b6' },
                 { label: 'Utilities + Mktg + Misc',value: other,  icon: '💡', color: '#2ecc71' },
             ];
 
