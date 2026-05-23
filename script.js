@@ -928,6 +928,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const trOverview = document.createElement('tr');
             trOverview.setAttribute('data-region', city.region);
             trOverview.setAttribute('data-city', city.name);
+            trOverview.setAttribute('data-capex', capexVal);
             
             trOverview.innerHTML = `
                 <td><strong><a href="${city.url}" style="color: var(--accent); font-weight: 600; text-decoration: none; border-bottom: 1px dashed rgba(198,168,124,0.4);">${city.name}</a></strong></td>
@@ -955,6 +956,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const trComp = document.createElement('tr');
                 trComp.setAttribute('data-region', city.region);
                 trComp.setAttribute('data-city', city.name);
+                trComp.setAttribute('data-capex', capexVal);
                 trComp.innerHTML = `
                     <td><strong><a href="${city.url}" style="color: var(--accent); font-weight: 600; text-decoration: none; border-bottom: 1px dashed rgba(198,168,124,0.4);">${city.name}</a> (${comp.total} hrs)</strong></td>
                     <td>${comp.loc}</td>
@@ -976,6 +978,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // MAP RENDERING LOGIC ON DASHBOARD
     function renderMapMarkers(model) {
         if (typeof L === 'undefined' || !document.getElementById('map')) return;
+
+        const capexSlider = document.getElementById('capex-range');
+        const maxCapex = capexSlider ? parseInt(capexSlider.value) : 180000;
 
         // Create Leaflet map if not initialized
         if (!mapInstance) {
@@ -1032,6 +1037,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Render markers — all values from city_data.json (Excel-driven, no recomputation)
         citiesDb.forEach(city => {
+            if (city.capexVal > maxCapex) return;
             // Use pre-computed values from Excel model (via city_data.json)
             const payback = city.payback_raw   || 0;   // months at 75% util
             const ratio   = city.pat_ratio_raw || 0;   // % PAT/OPEX
@@ -1575,20 +1581,42 @@ window.filterTableBySearch = function(type) {
     applyFilters(type);
 };
 
+window.filterByCapex = function(value) {
+    const labelSpan = document.getElementById('capex-val');
+    if (labelSpan) {
+        if (parseInt(value) >= 180000) {
+            labelSpan.textContent = 'Any';
+        } else {
+            labelSpan.textContent = '$' + parseInt(value).toLocaleString();
+        }
+    }
+    
+    applyFilters('overview');
+    applyFilters('complexity');
+    
+    const state = getActiveState();
+    renderMapMarkers(state.model);
+};
+
 function applyFilters(type) {
     const tableId = type === 'overview' ? 'overview-table' : 'complexity';
     const activeTab = document.querySelector(`#${tableId} .tab-btn.active`).dataset.region;
     const query = document.querySelector(`#${tableId} .search-input`).value.toLowerCase();
     
+    const capexSlider = document.getElementById('capex-range');
+    const maxCapex = capexSlider ? parseInt(capexSlider.value) : 180000;
+    
     const rows = document.querySelectorAll(`#${tableId} table tbody tr`);
     rows.forEach(row => {
         const region = row.dataset.region;
         const city = row.dataset.city.toLowerCase();
+        const capex = parseInt(row.getAttribute('data-capex')) || 0;
         
         const matchTab = (activeTab === 'All' || region === activeTab);
         const matchQuery = city.includes(query);
+        const matchCapex = (capex <= maxCapex);
         
-        if (matchTab && matchQuery) {
+        if (matchTab && matchQuery && matchCapex) {
             row.style.display = '';
         } else {
             row.style.display = 'none';

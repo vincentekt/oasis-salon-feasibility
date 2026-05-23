@@ -92,6 +92,36 @@
             box-shadow: 0 0 8px var(--marker-color);
             animation: dynamic-pulse 2s infinite;
         }
+        .capex-slider-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            background: rgba(0, 0, 0, 0.2);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 0.45rem 1.2rem;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            min-width: 280px;
+        }
+        .capex-slider-wrapper label {
+            white-space: nowrap;
+            display: flex;
+            gap: 0.3rem;
+        }
+        .capex-slider-wrapper label span {
+            color: var(--accent);
+            font-weight: 600;
+        }
+        .capex-slider-wrapper input[type="range"] {
+            flex-grow: 1;
+            accent-color: var(--accent);
+            cursor: pointer;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 2px;
+            outline: none;
+        }
     </style>
 </head>
 <body>
@@ -232,6 +262,10 @@
                         <span class="search-icon">🔍</span>
                         <input type="text" id="search-overview" class="search-input" placeholder="Search cities..." onkeyup="filterTableBySearch('overview')">
                     </div>
+                    <div class="capex-slider-wrapper">
+                        <label for="capex-range">Max CAPEX: <span id="capex-val">Any</span></label>
+                        <input type="range" id="capex-range" min="25000" max="180000" step="5000" value="180000" oninput="filterByCapex(this.value)">
+                    </div>
                 </div>
                 <div class="table-wrapper">
                     <table>
@@ -345,7 +379,7 @@
                         <div class="stat-box success-box" style="border-left: 4px solid var(--accent); background: rgba(198, 168, 124, 0.02);">
                             <span class="label" style="color: var(--accent); text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.5px;">Channel 3</span>
                             <span class="value" style="font-size: 1.4rem; color: var(--text-main); margin-top: 0.3rem; margin-bottom: 0.3rem;">Salon Franchising & B2B Supply</span>
-                            <span class="subtext">Leverage centralized purchasing power for Japanese-spec carbonated water generators, treatment domes, and styling chairs. Provide turnkey setup supply packages and collect recurring franchise licensing royalties (e.g., 5-8% of gross revenue) from global operators.</span>
+                            <span class="subtext">Leverage centralized purchasing power for commercial water softening and filtration systems, premium styling stations, and styling chairs. Provide turnkey setup supply packages and collect recurring franchise licensing royalties (e.g., 5-8% of gross revenue) from global operators.</span>
                         </div>
                     </div>
                 </div>
