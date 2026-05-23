@@ -302,7 +302,7 @@ def process_file(path):
                 radius: res.radius
             }}).addTo(map).bindPopup(`
                 <div class="popup-content">
-                    <h3 style="color: {color};"><a href="${{mapsUrl}}" target="_blank" style="color: inherit; text-decoration: none;" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">${{res.name}}</a></h3>
+                    <h3 style="color: {color};">${{res.name}}</h3>
                     <p><strong>Expat Residential Hub</strong></p>
                     ${{natText}}
                     <p><strong>Est. Population:</strong> ~${{res.estPop.toLocaleString()}} residents</p>
@@ -334,7 +334,7 @@ def process_file(path):
                 fillOpacity: 0.8
             }}).addTo(map).bindPopup(`
                 <div class="popup-content">
-                    <h3><a href="${{mapsUrl}}" target="_blank" style="color: inherit; text-decoration: none;" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">🛍️ ${{loc.name}}</a></h3>
+                    <h3>🛍️ ${{loc.name}}</h3>
                     <p><strong>Est. Relative Footfall:</strong> ${{loc.footfall}}/100</p>
                     <p style="margin-top: 8px;"><a href="${{mapsUrl}}" target="_blank" style="color: {color}; text-decoration: underline; font-weight: bold;">📍 View on Google Maps</a></p>
                 </div>
@@ -364,7 +364,7 @@ def process_file(path):
                 fillOpacity: 0.9
             }}).addTo(map).bindPopup(`
                 <div class="popup-content">
-                    <h3 style="color: {fillColor};"><a href="${{mapsUrl}}" target="_blank" style="color: inherit; text-decoration: none;" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">🔴 ${{loc.name}}</a></h3>
+                    <h3 style="color: {fillColor};">🔴 ${{loc.name}}</h3>
                     <p><strong>Price Level:</strong> ${{loc.price}}</p>
                     <p><strong>Est. Footfall Traffic:</strong> ${{loc.footfall}}/100</p>
                     <p><strong>Note:</strong> ${{loc.comment}}</p>
@@ -386,7 +386,7 @@ def process_file(path):
 
             L.marker([loc.lat, loc.lng], { icon: starIcon }).addTo(map).bindPopup(`
                 <div class="popup-content" style="min-width: 240px; color: #333;">
-                    <h3 style="color: var(--accent); font-weight: 600; font-size: 14px; margin-top: 0; margin-bottom: 6px; border-bottom: 1px solid #eee; padding-bottom: 4px;"><a href="${mapsUrl}" target="_blank" style="color: inherit; text-decoration: none;" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">✨ ${loc.name}</a></h3>
+                    <h3 style="color: var(--accent); font-weight: 600; font-size: 14px; margin-top: 0; margin-bottom: 6px; border-bottom: 1px solid #eee; padding-bottom: 4px;">✨ ${loc.name}</h3>
                     <p style="margin: 4px 0; font-size: 12px; color: #666; line-height: 1.4;">${loc.note}</p>
                     <hr style="margin: 6px 0; border: 0; border-top: 1px solid #eee;">
                     <p style="margin: 3px 0; font-size: 11px; display: flex; justify-content: space-between;"><span>Monthly Catchment:</span> <strong style="color: #111;">${loc.catchment.toLocaleString()} pax</strong></p>
@@ -417,7 +417,7 @@ def process_file(path):
             radius: 350
         }).addTo(map).bindPopup(`
             <div class="popup-content">
-                <h3 style="color: #c6a87c;"><a href="https://www.google.com/maps/search/?api=1&query=1.464,103.768" target="_blank" style="color: inherit; text-decoration: none;" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">RTS Bukit Chagar Terminal Area</a></h3>
+                <h3 style="color: #c6a87c;">RTS Bukit Chagar Terminal Area</h3>
                 <p><strong>Primary Transit Hub</strong></p>
                 <p><strong>Nationalities:</strong> Singaporean & Malaysian cross-border commuters</p>
                 <p>Over 10,000 hourly commuters expected upon RTS completion. High Singaporean day-tripper density.</p>
