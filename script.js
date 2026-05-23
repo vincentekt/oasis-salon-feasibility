@@ -1040,6 +1040,9 @@ document.addEventListener('DOMContentLoaded', () => {
             const color   = getColor(payback);
             const opacity = getOpacity(capexVal);
             const radius  = getRadius(city.underserved);  // "65%" string → parsed in getRadius
+            
+            // Calculate zIndexOffset: faster payback (smaller number) gets higher z-index
+            const zOffset = payback > 0 ? (1000 - payback) : 0;
 
             const formatStr  = city.format;
             const capexStr   = city.capex;
@@ -1068,7 +1071,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>
             `;
             
-            const marker = L.marker(city.coords, { icon: customIcon }).addTo(mapInstance).bindPopup(popupContent);
+            const marker = L.marker(city.coords, { 
+                icon: customIcon,
+                zIndexOffset: zOffset
+            }).addTo(mapInstance).bindPopup(popupContent);
             mapMarkers.push(marker);
         });
     }
