@@ -45,9 +45,14 @@
             50% { transform: scale(1.25); }
             100% { transform: scale(1); }
         }
-    </style>
+    
+        /* Dynamic data loading state */
+        .loading-row { animation: pulse 1.5s ease-in-out infinite; }
+        @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.4; } }
+        .sub-row td:first-child { color: #888; font-size: 0.92em; padding-left: 1.8rem; }
+        </style>
 </head>
-<body>
+<body data-city="Fukuoka">
     <div class="app-container">
         <!-- Sidebar Navigation -->
         <nav class="sidebar">
@@ -698,78 +703,11 @@
                             </tr>
                         </thead>
                         <tbody>
-                                  <tr>
-                                      <td>Space</td>
-                                      <td><strong>800 sq ft</strong></td>
-                                  </tr>
-                                  <tr>
-                                      <td>Styling Stations</td>
-                                      <td><strong>4 stations + 2 wash basins</strong></td>
-                                  </tr>
-                                  <tr>
-                                      <td>Team Size</td>
-                                      <td><strong>7 (2 Senior Stylists + 2 Juniors + 2 Assistants + 1 Manager)</strong></td>
-                                  </tr>
-                                  <tr>
-                                      <td>Session Capacity</td>
-                                      <td><strong>264 sessions/month (max at 100%)</strong></td>
-                                  </tr>
-                                  <tr>
-                                      <td>Operating Clients (Year 1 — 65% util.)</td>
-                                      <td><strong>171 clients/month</strong></td>
-                                  </tr>
-                                  <tr>
-                                      <td>Operating Clients (Year 2 — 75% util.)</td>
-                                      <td><strong>198 clients/month</strong></td>
-                                  </tr>
-                                  <tr>
-                                      <td>Break-Even Volume</td>
-                                      <td><strong>~117 clients/month (~5.3 sessions/day)</strong></td>
-                                  </tr>
-                                  <tr>
-                                      <td>Average Ticket</td>
-                                      <td><strong>USD 130</strong></td>
-                                  </tr>
-                                  <tr>
-                                      <td>COGS per Session (10%)</td>
-                                      <td><strong>USD 13.00</strong></td>
-                                  </tr>
-                                  <tr>
-                                      <td>Gross Margin per Session</td>
-                                      <td><strong>USD 117.00 (90%)</strong></td>
-                                  </tr>
-                                  <tr>
-                                      <td>Monthly OPEX (Total)</td>
-                                      <td><strong>USD 13,743</strong></td>
-                                  </tr>
-                                  <tr class="sub-row">
-                                      <td>  → Rent</td>
-                                      <td><strong>USD 1,600</strong></td>
-                                  </tr>
-                                  <tr class="sub-row">
-                                      <td>  → Staff & Payroll</td>
-                                      <td><strong>USD 10,653</strong></td>
-                                  </tr>
-                                  <tr class="sub-row">
-                                      <td>  → Utilities + Marketing + Misc</td>
-                                      <td><strong>USD 1,490</strong></td>
-                                  </tr>
-                                  <tr>
-                                      <td>Monthly PAT at 75% Utilization (After 30% Tax)</td>
-                                      <td><strong>USD 6,596</strong></td>
-                                  </tr>
-                                  <tr>
-                                      <td>PAT / OPEX Ratio</td>
-                                      <td><strong>48%</strong></td>
-                                  </tr>
-                                  <tr>
-                                      <td>Estimated CAPEX</td>
-                                      <td><strong>USD 110k – 130k</strong></td>
-                                  </tr>
-                                  <tr>
-                                      <td>Payback Period (at 75% utilization)</td>
-                                      <td><strong>~18 months</strong></td>
-                                  </tr>
+                    <tr>
+                        <td colspan="2" class="loading-row" style="text-align:center;padding:1.5rem;color:#888">
+                            <span class="loading-spinner">⏳</span> Loading financial data…
+                        </td>
+                    </tr>
 </tbody>
                     </table>
                 </div>
@@ -1036,5 +974,6 @@
         });
     </script>
     <script src="script.js"></script>
+    <script src="salon_ui.js"></script>
 </body>
 </html>

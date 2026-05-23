@@ -268,6 +268,8 @@ for city in city_inputs:
     r  = results[name]
     ex = extra_meta.get(name, {})
 
+    deposit_usd = int(round(city["rent"] * city["dep_mo"]))
+
     entry = {
         "name":         name,
         "url":          city["url"],
@@ -275,37 +277,61 @@ for city in city_inputs:
         "format":       ex.get("format", "Premium Boutique Salon"),
         "size":         r["size"],
         "airport":      ex.get("airport", ""),
-        # Financial inputs
+        # Financial inputs (raw numbers for UI rendering)
+        "ticket_raw":   int(r["ticket"]),
         "ticket":       f"USD {r['ticket']:.0f}",
         "cogs":         f"USD {r['cogs_session']:.2f}",
         "margin":       "90%",
+        "rent_raw":     int(r["rent"]),
         "rent_mo":      fmt_usd(r["rent"]),
         # Staff
         "stations":     r["stations"],
         "wash_basins":  r["wash_basins"],
+        "seniors":      r["seniors"],
+        "juniors":      r["juniors"],
+        "assistants":   r["assistants"],
         "total_staff":  r["total_staff"],
         "staff_label":  staff_label(r["seniors"], r["juniors"], r["assistants"]),
+        "staff_cost_raw": int(r["staff_cost"]),
         "staff_cost_mo":fmt_usd(r["staff_cost"]),
         # Capacity
         "max_capacity": f"{r['max_cap']} sessions/month",
+        "max_cap_raw":  r["max_cap"],
         "y1_clients":   r["y1_clients"],
         "y2_clients":   r["y2_clients"],
         "util_y1":      f"{int(r['util_y1']*100)}%",
         "util_y2":      f"{int(r['util_y2']*100)}%",
-        # OPEX
+        "sess_per_day": city["sess"],
+        "working_days": city["wd"],
+        # OPEX breakdown (raw numbers for UI)
         "opex":         fmt_usd(r["total_opex"]),
         "opex_raw":     r["total_opex"],
+        "utilities_raw":r["utilities"],
+        "mktg_misc_raw":r["mktg_misc"],
         # Economics
         "breakeven":    f"~{r['breakeven']} customers/mo",
+        "breakeven_raw":r["breakeven"],
         "daily_breakeven": f"~{r['be_daily']} sessions/day",
         "tax":          f"{r['tax']*100:.1f}%",
+        "tax_raw":      r["tax"],
         "pat_ratio":    f"{r['pat_ratio']}% (Post-Tax, at 75% util.)",
+        "pat_ratio_raw":r["pat_ratio"],
         "y2_pat":       fmt_usd(r["y2_pat"]),
-        # CAPEX
+        "y2_pat_raw":   round(r["y2_pat"], 2),
+        "cogs_session_raw": r["cogs_session"],
+        "gm_session_raw":   r["gm_session"],
+        # CAPEX — range + line items (all from Excel inputs, no hardcoding)
         "capex":        fmt_capex(r["capex_low"], r["capex_high"]),
         "capex_low":    r["capex_low"],
         "capex_high":   r["capex_high"],
+        "capex_mid":    r["capex_mid"],
+        "fitout_usd":   int(city["fitout"]),
+        "equip_usd":    int(city["equip"]),
+        "other_usd":    int(city["other"]),
+        "deposit_usd":  deposit_usd,
+        "dep_months":   city["dep_mo"],
         "payback":      f"{r['payback_mo']} Months (at 75% util.)",
+        "payback_raw":  r["payback_mo"],
         # Risk & flags
         "risk":         ex.get("risk", ""),
         "viable":       r["viable"],
@@ -320,57 +346,10 @@ if not DRY_RUN:
 else:
     print(f"  [DRY RUN] Would write {len(cities_json)} cities to {JSON_FILE}")
 
-# ── PATCH script.js ─────────────────────────────────────────────────────────
-print(f"\nPatching script.js...")
-
-with open(JS_FILE, "r", encoding="utf-8") as f:
-    js_content = f.read()
-
-# Build fields to update per city in the citiesDb
-changed = 0
-for entry in cities_json:
-    name = entry["name"]
-    url  = entry["url"]
-
-    city_pattern = re.compile(
-        r'(\{\s*"name":\s*"' + re.escape(name) + r'")(.*?)("url":\s*"' + re.escape(url) + r'"\s*\})',
-        re.DOTALL
-    )
-    m = city_pattern.search(js_content)
-    if not m:
-        print(f"  ✗ NOT FOUND in script.js: {name}")
-        continue
-
-    old_block = m.group(0)
-    new_block = old_block
-
-    fields = [
-        (r'"format":\s*"[^"]*"',          f'"format": "{entry["format"]}"'),
-        (r'"size":\s*"[^"]*"',             f'"size": "{entry["size"]}"'),
-        (r'"capex":\s*"[^"]*"',            f'"capex": "{entry["capex"]}"'),
-        (r'"opex":\s*"[^"]*"',             f'"opex": "{entry["opex"]}"'),
-        (r'"ticket":\s*"[^"]*"',           f'"ticket": "{entry["ticket"]}"'),
-        (r'"cogs":\s*"[^"]*"',             f'"cogs": "{entry["cogs"]}"'),
-        (r'"margin":\s*"[^"]*"',           f'"margin": "90%"'),
-        (r'"breakeven":\s*"[^"]*"',        f'"breakeven": "{entry["breakeven"]}"'),
-        (r'"daily_breakeven":\s*"[^"]*"',  f'"daily_breakeven": "{entry["daily_breakeven"]}"'),
-        (r'"tax":\s*"[^"]*"',              f'"tax": "{entry["tax"]}"'),
-        (r'"pat_ratio":\s*"[^"]*"',        f'"pat_ratio": "{entry["pat_ratio"]}"'),
-        (r'"payback":\s*"[^"]*"',          f'"payback": "{entry["payback"]}"'),
-        (r'"risk":\s*"[^"]*"',             f'"risk": "{entry["risk"]}"'),
-    ]
-    for pat, repl in fields:
-        new_block = re.sub(pat, repl, new_block, count=1)
-
-    js_content = js_content[:m.start()] + new_block + js_content[m.end():]
-    changed += 1
-
-if not DRY_RUN:
-    with open(JS_FILE, "w", encoding="utf-8") as f:
-        f.write(js_content)
-    print(f"  ✓ Updated {changed}/27 city blocks in script.js")
-else:
-    print(f"  [DRY RUN] Would update {changed}/27 city blocks in script.js")
+# ── script.js note ───────────────────────────────────────────────────────────
+# script.js now fetches city_data.json at runtime via loadCityDataAndInit().
+# No patching needed — the JSON IS the data source.
+print("\nscript.js reads city_data.json at runtime. No patching needed.")
 
 # ── SUMMARY TABLE ─────────────────────────────────────────────────────────────
 print("\n" + "=" * 80)
