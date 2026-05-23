@@ -26,7 +26,7 @@ def clean_num(val):
     return float(val)
 
 def main():
-    folder = r"c:\Users\vince\Projects\HairSpa\HK_Proposal_Web"
+    folder = r"c:\Users\vince\Projects\HairSpa\Oasis_Salon_Web"
     files = [
         "bangkok.html", "binhduong.html", "danang.html", 
         "dongnai.html", "haiphong.html", "hanoi.html", "hcmc.html", 
@@ -76,25 +76,21 @@ def main():
 
         # 3. Get Base Case Net Profit
         # Look at scenario tables
-        table_match = re.search(r'Base Case.*?(\$[\d,]+|\+[\d,]+|[\d,]+)\s*</td>\s*</tr>', content, re.DOTALL | re.IGNORECASE)
-        if not table_match:
-            # Try HCMC table style
-            table_match = re.search(r'Base Case.*?Net Profit.*?\+?\$?([\d,]+)', content, re.DOTALL | re.IGNORECASE)
-        if not table_match:
-            # Let's extract the profit from the table row
-            # e.g. Base Case <td>...</td><td>...</td><td>...</td><td>...</td><td>...</td>
-            # Let's write a regex to find Base Case row and extract the last numeric cell
-            row_match = re.search(r'Base Case.*?</tr>', content, re.DOTALL | re.IGNORECASE)
-            if row_match:
-                cells = re.findall(r'<td>(.*?)</td>', row_match.group(0))
-                if cells:
-                    # typically net profit is the last cell
-                    table_match = re.search(r'[\d,]+', cells[-1])
-        
         profit_pre_tax = 0.0
-        if table_match:
-            profit_pre_tax = clean_num(table_match.group(0))
-        else:
+        row_match = re.search(r'<tr.*?>\s*<td>\s*Base Case.*?</tr>', content, re.DOTALL | re.IGNORECASE)
+        if not row_match:
+            row_match = re.search(r'Base Case.*?</tr>', content, re.DOTALL | re.IGNORECASE)
+        if row_match:
+            cells = re.findall(r'<td>(.*?)</td>', row_match.group(0), re.DOTALL)
+            if cells:
+                val = re.sub(r'[^\d\.\-]', '', cells[-1])
+                if val:
+                    try:
+                        profit_pre_tax = float(val)
+                    except ValueError:
+                        pass
+        
+        if profit_pre_tax == 0.0:
             # Fallback based on pre-tax ratio or manual entries
             print(f"Warning: could not find pre-tax profit in {file}")
             
