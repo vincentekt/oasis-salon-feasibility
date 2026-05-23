@@ -289,28 +289,28 @@
                             </tr>
                         </thead>
 <tbody>
-                              <tr class="highlight-row">
-                                  <td>Minh Khai St (near Deep C IP Gate)</td>
+<tr class="highlight-row">
+                                  <td><a href="https://www.google.com/maps/search/?api=1&query=20.838,106.715" target="_blank">Minh Khai St (near Deep C IP Gate)</a></td>
                                   <td>USD 500 - 800</td>
                                   <td>5-min drive from Deep C Industrial Zone gate (20,000+ Korean workers). Ground-floor shophouse with direct road access. Zero premium competition in entire corridor. Factory bus routes pass this street.</td>
                                   <td>Requires active marketing into industrial zone networks; no organic walk-in from general public</td>
                                   <td>4.9 / 5 (Recommended)</td>
                               </tr>
-                              <tr>
-                                  <td>Vinhomes Imperia Commercial Strip</td>
+<tr>
+                                  <td><a href="https://www.google.com/maps/search/?api=1&query=20.862,106.67" target="_blank">Vinhomes Imperia Commercial Strip</a></td>
                                   <td>USD 650 - 950</td>
                                   <td>Captive resident market within premium gated community. Korean/Japanese families in compound. Guaranteed residential repeat clientele with very short travel time.</td>
                                   <td>Smaller total catchment; community lease terms may restrict external marketing</td>
                                   <td>4.4 / 5</td>
                               </tr>
-                              <tr>
-                                  <td>Lach Tray St (City Center)</td>
+<tr>
+                                  <td><a href="https://www.google.com/maps/search/?api=1&query=20.843,106.696" target="_blank">Lach Tray St (City Center)</a></td>
                                   <td>USD 600 - 900</td>
                                   <td>Central commercial zone. HaLa and Nguyen Hung competition validates premium demand. Broader Vietnamese professional catchment.</td>
                                   <td>More competitive environment; HaLa and Nguyen Hung already entrenched here; harder to differentiate</td>
                                   <td>3.5 / 5</td>
                               </tr>
-             </tbody></table>
+</tbody></table>
                 </div>
                 <div class="conclusion-box">
                     <strong>Strategy:</strong> Lease an 800 sq ft shophouse unit near Vinhomes Imperia or Le Hong Phong. Target rent: USD 1,000/month. This ensures direct visibility to the core expat manager demographic.
@@ -333,31 +333,31 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td><strong>HaLa Hair Salon</strong></td>
+<tr>
+                                <td><a href="https://www.google.com/maps/search/?api=1&query=20.858,106.682" target="_blank"><strong>HaLa Hair Salon</strong></a></td>
                                 <td>Hai Phong City Centre</td>
                                 <td>Balayage $35–70; Color $15–35</td>
                                 <td>Est. 2010, TONI&amp;GUY Academy certified owner, L'Oréal Paris exclusive products, professional track record</td>
                                 <td>Mass L'Oréal positioning limits creative color depth; functional salon environment, not luxury boutique; limited English proficiency</td>
                                 <td>Premium Schwarzkopf + Milbon product stack; boutique luxury interior; bilingual (Korean/Vietnamese/English) team</td>
                             </tr>
-                            <tr>
-                                <td><strong>Nguyen Hung Hair Salon</strong></td>
+<tr>
+                                <td><a href="https://www.google.com/maps/search/?api=1&query=20.852,106.674" target="_blank"><strong>Nguyen Hung Hair Salon</strong></a></td>
                                 <td>Hai Phong</td>
                                 <td>Color $12–30; Balayage $30–60</td>
                                 <td>High-volume, well-equipped, imported product claims, modern facilities, large loyal local following</td>
                                 <td>High volume = rushed service; not boutique; no English-language expat consultation; limited balayage specialist depth</td>
                                 <td>Appointment-only senior stylist delivery; private bay atmosphere; pre-appointment English/Korean WhatsApp consultation</td>
                             </tr>
-                            <tr>
-                                <td><strong>L'Amour Hair Salon</strong></td>
+<tr>
+                                <td><a href="https://www.google.com/maps/search/?api=1&query=L%27Amour+Hair+Salon%2C+Hai+Phong" target="_blank"><strong>L'Amour Hair Salon</strong></a></td>
                                 <td>Hai Phong</td>
                                 <td>Color $15–40; Cut $8–15</td>
                                 <td>Personalized consultations, professional environment, attention to detail</td>
                                 <td>Mid-tier positioning without genuine premium service differentiation; no creative specialist color team; limited international client experience</td>
                                 <td>True luxury boutique positioning at accessible Haiphong price points; specialist creative color (balayage, fashion toning)</td>
                             </tr>
-                        </tbody>
+</tbody>
                     </table>
                 </div>
 </section>
@@ -811,11 +811,13 @@
 
         // Premium Expat Residential Zones
         const residential = [
-            { name: "Vinhomes Imperia Expat Enclave", lat: 20.8640, lng: 106.6680, radius: 450, estPop: 2000 },
-            { name: "Le Hong Phong Corporate Residential Area", lat: 20.8450, lng: 106.6980, radius: 400, estPop: 1500 }
+            { name: "Vinhomes Imperia Expat Enclave", lat: 20.864, lng: 106.668, radius: 450, estPop: 2000, nationality: "Mixed Expats" },
+            { name: "Le Hong Phong Corporate Residential Area", lat: 20.845, lng: 106.698, radius: 400, estPop: 1500, nationality: "Mixed Expats" }
         ];
 
         residential.forEach(res => {
+            const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${res.lat},${res.lng}`;
+            let natText = res.nationality ? `<p><strong>Nationalities:</strong> ${res.nationality}</p>` : "";
             L.circle([res.lat, res.lng], {
                 color: '#a133ff',
                 fillColor: '#a133ff',
@@ -823,12 +825,12 @@
                 weight: 1.5,
                 radius: res.radius
             }).addTo(map).bindPopup(`
-                <div class="popup-content" style="min-width: 150px;">
-                    <h3 style="color: #a133ff; margin-bottom: 2px;">${res.name}</h3>
-                    <p><strong>Premium Residential Hub</strong></p>
-                    <hr style="margin: 5px 0; border: 0; border-top: 1px solid #eee;">
-                    <p style="margin-bottom: 0;"><strong>Est. Premium Residents:</strong></p>
-                    <p style="font-size: 14px; font-weight: bold; color: #333; margin-top: 2px;">~${res.estPop.toLocaleString()} households</p>
+                <div class="popup-content">
+                    <h3 style="color: #a133ff;">${res.name}</h3>
+                    <p><strong>Expat Residential Hub</strong></p>
+                    ${natText}
+                    <p><strong>Est. Population:</strong> ~${res.estPop.toLocaleString()} residents</p>
+                    <p style="margin-top: 8px;"><a href="${mapsUrl}" target="_blank" style="color: #a133ff; text-decoration: underline; font-weight: bold;">📍 View on Google Maps</a></p>
                 </div>
             `);
         });
@@ -839,18 +841,19 @@
         ];
 
         malls.forEach(loc => {
+            const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${loc.lat},${loc.lng}`;
             L.circleMarker([loc.lat, loc.lng], {
                 radius: getRadius(loc.footfall),
                 fillColor: "#333",
                 color: "#fff",
-                weight: 1,
+                weight: 1.5,
                 opacity: 1,
-                fillOpacity: 0.7
+                fillOpacity: 0.8
             }).addTo(map).bindPopup(`
                 <div class="popup-content">
                     <h3>🛍️ ${loc.name}</h3>
-                    <p><strong>Type:</strong> ${loc.type}</p>
-                    <p><strong>Est. Footfall Traffic:</strong> ${loc.footfall}/100</p>
+                    <p><strong>Est. Relative Footfall:</strong> ${loc.footfall}/100</p>
+                    <p style="margin-top: 8px;"><a href="${mapsUrl}" target="_blank" style="color: #fff; text-decoration: underline; font-weight: bold;">📍 View on Google Maps</a></p>
                 </div>
             `);
         });
@@ -863,6 +866,7 @@
         ];
 
         competitors.forEach(loc => {
+            const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${loc.lat},${loc.lng}`;
             L.circleMarker([loc.lat, loc.lng], {
                 radius: getRadius(loc.footfall),
                 fillColor: "#ef4444",
@@ -876,6 +880,7 @@
                     <p><strong>Price Level:</strong> ${loc.price}</p>
                     <p><strong>Est. Footfall Traffic:</strong> ${loc.footfall}/100</p>
                     <p><strong>Note:</strong> ${loc.comment}</p>
+                    <p style="margin-top: 8px;"><a href="${mapsUrl}" target="_blank" style="color: #ef4444; text-decoration: underline; font-weight: bold;">📍 View on Google Maps</a></p>
                 </div>
             `);
         });
@@ -918,6 +923,7 @@
             const underservedDemand = Math.max(0, targetDemand - loc.competitorCapacity);
             const underservedPct = Math.round((underservedDemand / targetDemand) * 100);
             const ratio = (underservedDemand / loc.rent).toFixed(2);
+            const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${loc.lat},${loc.lng}`;
 
             L.marker([loc.lat, loc.lng], { icon: starIcon }).addTo(map).bindPopup(`
                 <div class="popup-content" style="min-width: 240px; color: #333;">
@@ -931,10 +937,11 @@
                     <p style="margin: 3px 0; font-size: 11px; display: flex; justify-content: space-between;"><span>Underserved Demand Gap:</span> <strong style="color: #e11d48;">${underservedDemand.toLocaleString()} visits (${underservedPct}%)</strong></p>
                     <p style="margin: 3px 0; font-size: 11px; display: flex; justify-content: space-between;"><span>Airport Travel Time:</span> <strong style="color: #111;">${loc.airportTime}</strong></p>
                     <p style="margin: 3px 0; font-size: 11px; display: flex; justify-content: space-between;"><span>Monthly Rent:</span> <strong style="color: #111;">USD ${loc.rent.toLocaleString()}</strong></p>
-                    <div style="background: rgba(198,168,124,0.15); padding: 8px; border-radius: 6px; border-left: 3px solid var(--accent); margin-top: 8px;">
+                    <div style="background: rgba(198,168,124,0.15); padding: 8px; border-radius: 6px; border-left: 3px solid var(--accent); margin-top: 8px; margin-bottom: 8px;">
                         <strong style="color: var(--accent); font-size: 10px; text-transform: uppercase; letter-spacing: 0.5px; display: block; margin-bottom: 2px;">Potential Customer to Rent Ratio:</strong>
                         <span style="font-size: 14px; font-weight: bold; color: #111;">${ratio} potential customers/USD 1 rent</span>
                     </div>
+                    <p style="margin-top: 8px; text-align: center;"><a href="${mapsUrl}" target="_blank" style="color: var(--accent); text-decoration: underline; font-weight: bold; font-size: 12px;">📍 View on Google Maps</a></p>
                 </div>
             `);
         });

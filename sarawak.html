@@ -297,28 +297,28 @@
                             </tr>
                         </thead>
                         <tbody>
-                              <tr class="highlight-row">
-                                  <td>Tabuan Jaya Commercial Strip</td>
+<tr class="highlight-row">
+                                  <td><a href="https://www.google.com/maps/search/?api=1&query=1.512,110.375" target="_blank">Tabuan Jaya Commercial Strip</a></td>
                                   <td>MYR 2,000 - 3,500</td>
                                   <td>Shell Sarawak / Petronas Carigali expat residential hub. Ground-floor shophouse 5-min drive from expatriate housing estates (Green Road, Stutong). Zero premium competition in zone. Captured Shell rotation-cycle clientele.</td>
                                   <td>Requires active corporate partnership with Shell/Petronas HR for staff awareness; less organic tourist walk-in</td>
                                   <td>4.9 / 5 (Recommended)</td>
                               </tr>
-                              <tr>
-                                  <td>Hikmah Exchange Commercial</td>
+<tr>
+                                  <td><a href="https://www.google.com/maps/search/?api=1&query=1.5275,110.364" target="_blank">Hikmah Exchange Commercial</a></td>
                                   <td>MYR 2,500 - 4,000</td>
                                   <td>Kuching's emerging premium lifestyle hub. Gene's Work Hair Studio present — validates premium market. Central location accessible to entire Kuching metro. Growing F&amp;B and retail ecosystem.</td>
                                   <td>Gene's Work is an entrenched competitor in this zone; higher rent than Tabuan Jaya</td>
                                   <td>4.3 / 5</td>
                               </tr>
-                              <tr>
-                                  <td>The Northbank Waterfront</td>
+<tr>
+                                  <td><a href="https://www.google.com/maps/search/?api=1&query=1.5585,110.3465" target="_blank">The Northbank Waterfront</a></td>
                                   <td>MYR 1,800 - 3,000</td>
                                   <td>Kuching's revitalised waterfront. Mane Society confirms premium hair interest in zone. Heritage boutique aesthetic advantage. Tourist and professional cross-traffic.</td>
                                   <td>Mane Society direct competition; tourist-heavy waterfront lowers repeat-client residential density</td>
                                   <td>3.8 / 5</td>
                               </tr>
-             </tbody></table>
+</tbody></table>
                 </div>
                 <div class="conclusion-box">
                     <strong>Strategy:</strong> Lease a premium shophouse unit in the Saradise commercial enclave or near Jalan Song. Target rent: USD 1,530/month. This captures affluent local families and retirees while providing easy parking and high-end neighborhood visibility.
@@ -341,31 +341,31 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td><strong>Cutting Edge The Premium Salon</strong></td>
+<tr>
+                                <td><a href="https://www.google.com/maps/search/?api=1&query=1.553,110.354" target="_blank"><strong>Cutting Edge The Premium Salon</strong></a></td>
                                 <td>Kuching</td>
                                 <td>Balayage MYR 400–650 (~$86–$140)</td>
                                 <td>Premium brand positioning, professional atmosphere, reputable for quality color</td>
                                 <td>Not boutique-level private bays; limited creative/vivid color portfolio; no structured membership offering</td>
                                 <td>Private styling bays; dedicated vivid color specialist; structured membership with priority booking</td>
                             </tr>
-                            <tr>
-                                <td><strong>Gene's Work Hair Studio</strong></td>
+<tr>
+                                <td><a href="https://www.google.com/maps/search/?api=1&query=Gene%27s+Work+Hair+Studio%2C+Sarawak" target="_blank"><strong>Gene's Work Hair Studio</strong></a></td>
                                 <td>Multiple (Saradise, Trinity Hub, Gala City)</td>
                                 <td>Color MYR 250–500 (~$54–$108); Tokio Inkarami treatments</td>
                                 <td>Premium Japanese treatments (Tokio Inkarami), multi-outlet reach, professional product range, loyal Kuching following</td>
                                 <td>Multi-outlet chain = inconsistent stylist quality; not a boutique experience; treatment-heavy without creative color specialist depth</td>
                                 <td>Single boutique with consistent senior stylist delivery; creative color alongside premium treatments in one visit</td>
                             </tr>
-                            <tr>
-                                <td><strong>Mane Society</strong></td>
+<tr>
+                                <td><a href="https://www.google.com/maps/search/?api=1&query=Mane+Society%2C+Sarawak" target="_blank"><strong>Mane Society</strong></a></td>
                                 <td>The Northbank, Kuching</td>
                                 <td>Color MYR 200–450 (~$43–$97)</td>
                                 <td>Modern aesthetic, quality-focused environment, Northbank upscale location, contemporary positioning</td>
                                 <td>Relatively new — building client base; limited track record for complex color corrections; no Muslimah private bay</td>
                                 <td>Established creative color expertise + private Muslimah bay + soft-water filtration — Kuching's most complete premium offering</td>
                             </tr>
-                        </tbody>
+</tbody>
                     </table>
                 </div>
 </section>
@@ -814,11 +814,13 @@
 
         // Premium Expat Residential Zones in Sarawak
         const residential = [
-            { name: "Waterfront Heritage Enclave", lat: 1.5590, lng: 110.3460, radius: 450, estPop: 1500 },
-            { name: "Jalan Song Expat Hub Area", lat: 1.5280, lng: 110.3660, radius: 400, estPop: 1200 }
+            { name: "Waterfront Heritage Enclave", lat: 1.559, lng: 110.346, radius: 450, estPop: 1500, nationality: "British & European Expats" },
+            { name: "Jalan Song Expat Hub Area", lat: 1.528, lng: 110.366, radius: 400, estPop: 1200, nationality: "British & European Expats (Shell/Petronas)" }
         ];
 
         residential.forEach(res => {
+            const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${res.lat},${res.lng}`;
+            let natText = res.nationality ? `<p><strong>Nationalities:</strong> ${res.nationality}</p>` : "";
             L.circle([res.lat, res.lng], {
                 color: '#a133ff',
                 fillColor: '#a133ff',
@@ -826,12 +828,12 @@
                 weight: 1.5,
                 radius: res.radius
             }).addTo(map).bindPopup(`
-                <div class="popup-content" style="min-width: 150px;">
-                    <h3 style="color: #a133ff; margin-bottom: 2px;">${res.name}</h3>
-                    <p><strong>Premium Residential Hub</strong></p>
-                    <hr style="margin: 5px 0; border: 0; border-top: 1px solid #eee;">
-                    <p style="margin-bottom: 0;"><strong>Est. Premium Residents:</strong></p>
-                    <p style="font-size: 14px; font-weight: bold; color: #333; margin-top: 2px;">~${res.estPop.toLocaleString()} households</p>
+                <div class="popup-content">
+                    <h3 style="color: #a133ff;">${res.name}</h3>
+                    <p><strong>Expat Residential Hub</strong></p>
+                    ${natText}
+                    <p><strong>Est. Population:</strong> ~${res.estPop.toLocaleString()} residents</p>
+                    <p style="margin-top: 8px;"><a href="${mapsUrl}" target="_blank" style="color: #a133ff; text-decoration: underline; font-weight: bold;">📍 View on Google Maps</a></p>
                 </div>
             `);
         });
@@ -843,18 +845,19 @@
         ];
 
         malls.forEach(loc => {
+            const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${loc.lat},${loc.lng}`;
             L.circleMarker([loc.lat, loc.lng], {
                 radius: getRadius(loc.footfall),
                 fillColor: "#333",
                 color: "#fff",
-                weight: 1,
+                weight: 1.5,
                 opacity: 1,
-                fillOpacity: 0.7
+                fillOpacity: 0.8
             }).addTo(map).bindPopup(`
                 <div class="popup-content">
                     <h3>🛍️ ${loc.name}</h3>
-                    <p><strong>Type:</strong> ${loc.type}</p>
-                    <p><strong>Est. Footfall Traffic:</strong> ${loc.footfall}/100</p>
+                    <p><strong>Est. Relative Footfall:</strong> ${loc.footfall}/100</p>
+                    <p style="margin-top: 8px;"><a href="${mapsUrl}" target="_blank" style="color: #fff; text-decoration: underline; font-weight: bold;">📍 View on Google Maps</a></p>
                 </div>
             `);
         });
@@ -867,6 +870,7 @@
         ];
 
         competitors.forEach(loc => {
+            const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${loc.lat},${loc.lng}`;
             L.circleMarker([loc.lat, loc.lng], {
                 radius: getRadius(loc.footfall),
                 fillColor: "#ef4444",
@@ -880,6 +884,7 @@
                     <p><strong>Price Level:</strong> ${loc.price}</p>
                     <p><strong>Est. Footfall Traffic:</strong> ${loc.footfall}/100</p>
                     <p><strong>Note:</strong> ${loc.comment}</p>
+                    <p style="margin-top: 8px;"><a href="${mapsUrl}" target="_blank" style="color: #ef4444; text-decoration: underline; font-weight: bold;">📍 View on Google Maps</a></p>
                 </div>
             `);
         });
@@ -918,10 +923,11 @@
         });
 
         candidates.forEach(loc => {
-            const targetDemand = Math.round(loc.catchment * (loc.premiumTargetPct / 100)); // monthly visits
+            const targetDemand = Math.round(loc.catchment * (loc.premiumTargetPct / 100));
             const underservedDemand = Math.max(0, targetDemand - loc.competitorCapacity);
             const underservedPct = Math.round((underservedDemand / targetDemand) * 100);
             const ratio = (underservedDemand / loc.rent).toFixed(2);
+            const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${loc.lat},${loc.lng}`;
 
             L.marker([loc.lat, loc.lng], { icon: starIcon }).addTo(map).bindPopup(`
                 <div class="popup-content" style="min-width: 240px; color: #333;">
@@ -935,10 +941,11 @@
                     <p style="margin: 3px 0; font-size: 11px; display: flex; justify-content: space-between;"><span>Underserved Demand Gap:</span> <strong style="color: #e11d48;">${underservedDemand.toLocaleString()} visits (${underservedPct}%)</strong></p>
                     <p style="margin: 3px 0; font-size: 11px; display: flex; justify-content: space-between;"><span>Airport Travel Time:</span> <strong style="color: #111;">${loc.airportTime}</strong></p>
                     <p style="margin: 3px 0; font-size: 11px; display: flex; justify-content: space-between;"><span>Monthly Rent:</span> <strong style="color: #111;">USD ${loc.rent.toLocaleString()}</strong></p>
-                    <div style="background: rgba(198,168,124,0.15); padding: 8px; border-radius: 6px; border-left: 3px solid var(--accent); margin-top: 8px;">
+                    <div style="background: rgba(198,168,124,0.15); padding: 8px; border-radius: 6px; border-left: 3px solid var(--accent); margin-top: 8px; margin-bottom: 8px;">
                         <strong style="color: var(--accent); font-size: 10px; text-transform: uppercase; letter-spacing: 0.5px; display: block; margin-bottom: 2px;">Potential Customer to Rent Ratio:</strong>
                         <span style="font-size: 14px; font-weight: bold; color: #111;">${ratio} potential customers/USD 1 rent</span>
                     </div>
+                    <p style="margin-top: 8px; text-align: center;"><a href="${mapsUrl}" target="_blank" style="color: var(--accent); text-decoration: underline; font-weight: bold; font-size: 12px;">📍 View on Google Maps</a></p>
                 </div>
             `);
         });\n    </script>

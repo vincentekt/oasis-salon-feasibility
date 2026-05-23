@@ -295,28 +295,28 @@
                             </tr>
                         </thead>
                         <tbody>
-                              <tr class="highlight-row">
-                                  <td>Subiaco - Rokeby Rd</td>
+<tr class="highlight-row">
+                                  <td><a href="https://www.google.com/maps/search/?api=1&query=-31.9475,115.8265" target="_blank">Subiaco - Rokeby Rd</a></td>
                                   <td>AUD 2,500 - 4,000</td>
                                   <td>Perth's premium inner-western suburb. High FIFO mining/resources executive family density (2-weeks-on/off rotation creates regular appointment windows). Ground-floor on Rokeby Rd retail strip. UV-protection angle strongest in Perth (UV 11+ summer). No premium colour boutique in zone.</td>
                                   <td>FIFO rotation cycles create appointment volatility; Rokeby Rd parking can be congested on market days</td>
                                   <td>4.8 / 5 (Recommended)</td>
                               </tr>
-                              <tr>
-                                  <td>Claremont - St Quentin Ave</td>
+<tr>
+                                  <td><a href="https://www.google.com/maps/search/?api=1&query=-31.9805,115.783" target="_blank">Claremont - St Quentin Ave</a></td>
                                   <td>AUD 2,200 - 3,800</td>
                                   <td>Old-money western suburbs. Highest household income in Perth metro. Premium boutique aesthetic fits heritage streetscape. HNWI appointment-only clientele — matches premium model.</td>
                                   <td>Small total catchment; very appointment-dependent model; limited organic foot traffic</td>
                                   <td>4.3 / 5</td>
                               </tr>
-                              <tr>
-                                  <td>Cottesloe - Marine Pde Coastal</td>
+<tr>
+                                  <td><a href="https://www.google.com/maps/search/?api=1&query=-31.9965,115.7595" target="_blank">Cottesloe - Marine Pde Coastal</a></td>
                                   <td>AUD 2,000 - 3,500</td>
                                   <td>Coastal boutique positioning. Beach lifestyle + UV damage angle strongest here. Summer tourist season (Oct–Apr) boosts volume significantly. Beach aesthetic aligns with UV-protect brand narrative.</td>
                                   <td>Significant seasonality risk (May–Sep winter slump); smaller permanent resident catchment; tourist clients rarely repeat</td>
                                   <td>3.8 / 5</td>
                               </tr>
-             </tbody></table>
+</tbody></table>
                 </div>
                 <div class="text-content" style="margin-top: 1rem;">
                     <p><strong>Strategy:</strong> Secure a lease on a side-lane boutique space in Subiaco. Target rent: USD 2,150/month (approx. AUD 3,200/mo). This avoids high-street frontage costs while capturing affluent local pedestrian flows.</p>
@@ -342,31 +342,31 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
+<tr>
                                 <td>Tao of Hair</td>
-                                <td>Perth CBD</td>
+                                <td><a href="https://www.google.com/maps/search/?api=1&query=Perth+CBD%2C+Perth" target="_blank">Perth CBD</a></td>
                                 <td>$100 - $180 (cut & styling), $250 - $450 (color)</td>
                                 <td>Avant-garde styling, elite reputation, high-end CBD boutique feel</td>
                                 <td>Very busy, noisy open layout, high wait times</td>
                                 <td>Semi-private styling stations, personalized consultations, premium organic color lines, and water softening</td>
                             </tr>
-                            <tr>
+<tr>
                                 <td>Circles of Hair</td>
-                                <td>Subiaco</td>
+                                <td><a href="https://www.google.com/maps/search/?api=1&query=Subiaco%2C+Perth" target="_blank">Subiaco</a></td>
                                 <td>$90 - $160 (cut & styling), $200 - $400 (color)</td>
                                 <td>High local brand equity, celebrity stylists, strong social media presence</td>
                                 <td>High-energy and noisy environment, mass-market luxury feel, less individual privacy</td>
                                 <td>Exclusive ground-floor boutique layout with dedicated one-on-one attention from start to finish, and soft-water rinse</td>
                             </tr>
-                            <tr>
+<tr>
                                 <td>Maurice Meade</td>
-                                <td>Subiaco / Claremont</td>
+                                <td><a href="https://www.google.com/maps/search/?api=1&query=Subiaco+%2F+Claremont%2C+Perth" target="_blank">Subiaco / Claremont</a></td>
                                 <td>$80 - $150 (cut & styling), $180 - $350 (color)</td>
                                 <td>Long-standing legacy brand, multiple high-income location footholds</td>
                                 <td>Traditional/corporate salon vibe, slower adoption of modern organic botanical color formulas</td>
                                 <td>Strict organic backbar, custom water softening, and personalized styling consultations</td>
                             </tr>
-                        </tbody>
+</tbody>
                     </table>
                 </div>
             </section>
@@ -814,14 +814,14 @@
 
         // High Income Residential Zones
         const residential = [
-            
-            { name: "Subiaco High Income", lat: -31.9470, lng: 115.8260, radius: 400, estPop: 2200 },
-            { name: "Cottesloe Coastal Hub", lat: -31.9960, lng: 115.7590, radius: 450, estPop: 1800 },
-            { name: "Dalkeith Premium", lat: -32.0010, lng: 115.8020, radius: 500, estPop: 1200 }
-        
+            { name: "Subiaco High Income", lat: -31.947, lng: 115.826, radius: 400, estPop: 2200, nationality: "British & European Expats" },
+            { name: "Cottesloe Coastal Hub", lat: -31.996, lng: 115.759, radius: 450, estPop: 1800, nationality: "British & European Expats" },
+            { name: "Dalkeith Premium", lat: -32.001, lng: 115.802, radius: 500, estPop: 1200, nationality: "British & European Expats" }
         ];
 
         residential.forEach(res => {
+            const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${res.lat},${res.lng}`;
+            let natText = res.nationality ? `<p><strong>Nationalities:</strong> ${res.nationality}</p>` : "";
             L.circle([res.lat, res.lng], {
                 color: '#a133ff',
                 fillColor: '#a133ff',
@@ -829,12 +829,12 @@
                 weight: 1.5,
                 radius: res.radius
             }).addTo(map).bindPopup(`
-                <div class="popup-content" style="min-width: 150px;">
-                    <h3 style="color: #a133ff; margin-bottom: 2px;">${res.name}</h3>
-                    <p><strong>Premium Residential Hub</strong></p>
-                    <hr style="margin: 5px 0; border: 0; border-top: 1px solid #eee;">
-                    <p style="margin-bottom: 0;"><strong>Est. Premium Residents:</strong></p>
-                    <p style="font-size: 14px; font-weight: bold; color: #333; margin-top: 2px;">~${res.estPop.toLocaleString()} households</p>
+                <div class="popup-content">
+                    <h3 style="color: #a133ff;">${res.name}</h3>
+                    <p><strong>Expat Residential Hub</strong></p>
+                    ${natText}
+                    <p><strong>Est. Population:</strong> ~${res.estPop.toLocaleString()} residents</p>
+                    <p style="margin-top: 8px;"><a href="${mapsUrl}" target="_blank" style="color: #a133ff; text-decoration: underline; font-weight: bold;">📍 View on Google Maps</a></p>
                 </div>
             `);
         });
@@ -848,18 +848,19 @@
         ];
 
         malls.forEach(loc => {
+            const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${loc.lat},${loc.lng}`;
             L.circleMarker([loc.lat, loc.lng], {
                 radius: getRadius(loc.footfall),
                 fillColor: "#333",
                 color: "#fff",
-                weight: 1,
+                weight: 1.5,
                 opacity: 1,
-                fillOpacity: 0.7
+                fillOpacity: 0.8
             }).addTo(map).bindPopup(`
                 <div class="popup-content">
                     <h3>🛍️ ${loc.name}</h3>
-                    <p><strong>Type:</strong> ${loc.type}</p>
-                    <p><strong>Est. Footfall Traffic:</strong> ${loc.footfall}/100</p>
+                    <p><strong>Est. Relative Footfall:</strong> ${loc.footfall}/100</p>
+                    <p style="margin-top: 8px;"><a href="${mapsUrl}" target="_blank" style="color: #fff; text-decoration: underline; font-weight: bold;">📍 View on Google Maps</a></p>
                 </div>
             `);
         });
@@ -873,6 +874,7 @@
         ];
 
         competitors.forEach(loc => {
+            const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${loc.lat},${loc.lng}`;
             L.circleMarker([loc.lat, loc.lng], {
                 radius: getRadius(loc.footfall),
                 fillColor: "#ef4444",
@@ -886,6 +888,7 @@
                     <p><strong>Price Level:</strong> ${loc.price}</p>
                     <p><strong>Est. Footfall Traffic:</strong> ${loc.footfall}/100</p>
                     <p><strong>Note:</strong> ${loc.comment}</p>
+                    <p style="margin-top: 8px;"><a href="${mapsUrl}" target="_blank" style="color: #ef4444; text-decoration: underline; font-weight: bold;">📍 View on Google Maps</a></p>
                 </div>
             `);
         });
@@ -928,6 +931,7 @@
             const underservedDemand = Math.max(0, targetDemand - loc.competitorCapacity);
             const underservedPct = Math.round((underservedDemand / targetDemand) * 100);
             const ratio = (underservedDemand / loc.rent).toFixed(2);
+            const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${loc.lat},${loc.lng}`;
 
             L.marker([loc.lat, loc.lng], { icon: starIcon }).addTo(map).bindPopup(`
                 <div class="popup-content" style="min-width: 240px; color: #333;">
@@ -941,10 +945,11 @@
                     <p style="margin: 3px 0; font-size: 11px; display: flex; justify-content: space-between;"><span>Underserved Demand Gap:</span> <strong style="color: #e11d48;">${underservedDemand.toLocaleString()} visits (${underservedPct}%)</strong></p>
                     <p style="margin: 3px 0; font-size: 11px; display: flex; justify-content: space-between;"><span>Airport Travel Time:</span> <strong style="color: #111;">${loc.airportTime}</strong></p>
                     <p style="margin: 3px 0; font-size: 11px; display: flex; justify-content: space-between;"><span>Monthly Rent:</span> <strong style="color: #111;">USD ${loc.rent.toLocaleString()}</strong></p>
-                    <div style="background: rgba(198,168,124,0.15); padding: 8px; border-radius: 6px; border-left: 3px solid var(--accent); margin-top: 8px;">
+                    <div style="background: rgba(198,168,124,0.15); padding: 8px; border-radius: 6px; border-left: 3px solid var(--accent); margin-top: 8px; margin-bottom: 8px;">
                         <strong style="color: var(--accent); font-size: 10px; text-transform: uppercase; letter-spacing: 0.5px; display: block; margin-bottom: 2px;">Potential Customer to Rent Ratio:</strong>
                         <span style="font-size: 14px; font-weight: bold; color: #111;">${ratio} potential customers/USD 1 rent</span>
                     </div>
+                    <p style="margin-top: 8px; text-align: center;"><a href="${mapsUrl}" target="_blank" style="color: var(--accent); text-decoration: underline; font-weight: bold; font-size: 12px;">📍 View on Google Maps</a></p>
                 </div>
             `);
         });

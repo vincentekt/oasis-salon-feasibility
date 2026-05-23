@@ -297,28 +297,28 @@
                             </tr>
                         </thead>
                         <tbody>
-                              <tr class="highlight-row">
-                                  <td>Jalan Burma (Georgetown Premium Corridor)</td>
+<tr class="highlight-row">
+                                  <td><a href="https://www.google.com/maps/search/?api=1&query=5.431,100.315" target="_blank">Jalan Burma (Georgetown Premium Corridor)</a></td>
                                   <td>MYR 2,500 - 4,000</td>
                                   <td>Georgetown's premium lifestyle corridor between Gurney Drive and Penang Hill Road junction. A-Saloon and Wave Hair within 600m confirm premium demand. Heritage shophouse aesthetic fits boutique positioning naturally.</td>
                                   <td>Heritage conservation area requires MBPP planning approval for fit-out changes; limited parking on Burma Rd itself</td>
                                   <td>4.8 / 5 (Recommended)</td>
                               </tr>
-                              <tr>
-                                  <td>Gurney Drive (Gurney Paragon Adjacent)</td>
+<tr>
+                                  <td><a href="https://www.google.com/maps/search/?api=1&query=5.437,100.307" target="_blank">Gurney Drive (Gurney Paragon Adjacent)</a></td>
                                   <td>MYR 3,500 - 6,000</td>
                                   <td>Adjacent to Penang's most premium mall. High visibility to HNWI families. Good parking. Strong luxury retail environment for premium positioning.</td>
                                   <td>Higher rent; mall-adjacent means closer competition from Gurney Paragon anchor salon tenants</td>
                                   <td>4.3 / 5</td>
                               </tr>
-                              <tr>
-                                  <td>Chulia St Heritage Lane</td>
+<tr>
+                                  <td><a href="https://www.google.com/maps/search/?api=1&query=5.418,100.336" target="_blank">Chulia St Heritage Lane</a></td>
                                   <td>MYR 1,800 - 3,000</td>
                                   <td>Instagram-worthy heritage setting. High tourist traffic. Best for brand awareness and digital nomad market.</td>
                                   <td>Lower premium residential density; tourist-heavy means lower repeat-visit rate; heritage lane limits signage options</td>
                                   <td>3.6 / 5</td>
                               </tr>
-             </tbody></table>
+</tbody></table>
                 </div>
                 <div class="conclusion-box">
                     <strong>Strategy:</strong> Lease a ground-floor commercial unit in a premium shophouse lane off Jalan Kelawei. Target rent: USD 1,200/month. This ensures direct visibility for Gurney Drive expats while avoiding heavy mall rental premiums.
@@ -341,39 +341,39 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td><strong>Wave Salon</strong></td>
+<tr>
+                                <td><a href="https://www.google.com/maps/search/?api=1&query=Wave+Salon%2C+Penang" target="_blank"><strong>Wave Salon</strong></a></td>
                                 <td>Karpal Singh Drive, Penang</td>
                                 <td>Balayage MYR 320–650 (~$70–$140)</td>
                                 <td>Schwarzkopf Professional Creative Ambassador; modern premium experience; strong balayage and color transformation portfolio</td>
                                 <td>Located away from Georgetown expat core; appointment-heavy; limited capacity for walk-in premium clients</td>
                                 <td>Georgetown address captures core expat residential zone; walk-in ready capacity plus online pre-booking</td>
                             </tr>
-                            <tr>
-                                <td><strong>Hairstory International</strong></td>
+<tr>
+                                <td><a href="https://www.google.com/maps/search/?api=1&query=5.4305,100.3115" target="_blank"><strong>Hairstory International</strong></a></td>
                                 <td>Gurney Walk + Multiple Georgetown</td>
                                 <td>Color MYR 180–450 (~$39–$97)</td>
                                 <td>Award-winning established chain, consistent service standards, convenient mall locations, large loyal base</td>
                                 <td>Chain salon formula — not a boutique premium experience; stylists vary in skill level across outlets; not specialist color boutique</td>
                                 <td>Boutique consistency: every client served by senior color specialist; private styling bays vs. open chain layout</td>
                             </tr>
-                            <tr>
-                                <td><strong>A-Saloon Prestige</strong></td>
+<tr>
+                                <td><a href="https://www.google.com/maps/search/?api=1&query=5.4372,100.3095" target="_blank"><strong>A-Saloon Prestige</strong></a></td>
                                 <td>Gurney Paragon Mall</td>
                                 <td>Color MYR 250–600 (~$54–$129)</td>
                                 <td>Upscale mall positioning, professional environment, established premium brand</td>
                                 <td>Mall dependency limits boutique intimacy; Gurney Paragon pricing may exclude middle-premium segment; generic service menu</td>
                                 <td>Independent boutique in Georgetown's heritage zone — authentically boutique vs. mall-based premium</td>
                             </tr>
-                            <tr>
-                                <td><strong>Twiggy Hair Salon</strong></td>
+<tr>
+                                <td><a href="https://www.google.com/maps/search/?api=1&query=Twiggy+Hair+Salon%2C+Penang" target="_blank"><strong>Twiggy Hair Salon</strong></a></td>
                                 <td>Georgetown</td>
                                 <td>Color MYR 200–400 (~$43–$86)</td>
                                 <td>Shiseido + Schwarzkopf products, good color theory consultation, experienced stylists, loyal client base</td>
                                 <td>Decor dated relative to premium positioning; not proactively targeting expat international clients; limited creative balayage portfolio</td>
                                 <td>Updated studio aesthetic, active expat social media outreach, vivid creative color specialization</td>
                             </tr>
-                        </tbody>
+</tbody>
                     </table>
                 </div>
 </section>
@@ -821,11 +821,13 @@
 
         // Premium Expat Residential Zones
         const residential = [
-            { name: "Gurney Drive / Jalan Kelawei Expat Core", lat: 5.4320, lng: 100.3120, radius: 450, estPop: 2200 },
-            { name: "Tanjung Tokong Expat Waterfront", lat: 5.4540, lng: 100.3060, radius: 400, estPop: 1800 }
+            { name: "Gurney Drive / Jalan Kelawei Expat Core", lat: 5.432, lng: 100.312, radius: 450, estPop: 2200, nationality: "Western, Japanese & British retirees/expats" },
+            { name: "Tanjung Tokong Expat Waterfront", lat: 5.454, lng: 100.306, radius: 400, estPop: 1800, nationality: "Western, Japanese & Korean Expats" }
         ];
 
         residential.forEach(res => {
+            const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${res.lat},${res.lng}`;
+            let natText = res.nationality ? `<p><strong>Nationalities:</strong> ${res.nationality}</p>` : "";
             L.circle([res.lat, res.lng], {
                 color: '#a133ff',
                 fillColor: '#a133ff',
@@ -833,12 +835,12 @@
                 weight: 1.5,
                 radius: res.radius
             }).addTo(map).bindPopup(`
-                <div class="popup-content" style="min-width: 150px;">
-                    <h3 style="color: #a133ff; margin-bottom: 2px;">${res.name}</h3>
-                    <p><strong>Premium Residential Hub</strong></p>
-                    <hr style="margin: 5px 0; border: 0; border-top: 1px solid #eee;">
-                    <p style="margin-bottom: 0;"><strong>Est. Premium Residents:</strong></p>
-                    <p style="font-size: 14px; font-weight: bold; color: #333; margin-top: 2px;">~${res.estPop.toLocaleString()} households</p>
+                <div class="popup-content">
+                    <h3 style="color: #a133ff;">${res.name}</h3>
+                    <p><strong>Expat Residential Hub</strong></p>
+                    ${natText}
+                    <p><strong>Est. Population:</strong> ~${res.estPop.toLocaleString()} residents</p>
+                    <p style="margin-top: 8px;"><a href="${mapsUrl}" target="_blank" style="color: #a133ff; text-decoration: underline; font-weight: bold;">📍 View on Google Maps</a></p>
                 </div>
             `);
         });
@@ -850,18 +852,19 @@
         ];
 
         malls.forEach(loc => {
+            const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${loc.lat},${loc.lng}`;
             L.circleMarker([loc.lat, loc.lng], {
                 radius: getRadius(loc.footfall),
                 fillColor: "#333",
                 color: "#fff",
-                weight: 1,
+                weight: 1.5,
                 opacity: 1,
-                fillOpacity: 0.7
+                fillOpacity: 0.8
             }).addTo(map).bindPopup(`
                 <div class="popup-content">
                     <h3>🛍️ ${loc.name}</h3>
-                    <p><strong>Type:</strong> ${loc.type}</p>
-                    <p><strong>Est. Footfall Traffic:</strong> ${loc.footfall}/100</p>
+                    <p><strong>Est. Relative Footfall:</strong> ${loc.footfall}/100</p>
+                    <p style="margin-top: 8px;"><a href="${mapsUrl}" target="_blank" style="color: #fff; text-decoration: underline; font-weight: bold;">📍 View on Google Maps</a></p>
                 </div>
             `);
         });
@@ -874,6 +877,7 @@
         ];
 
         competitors.forEach(loc => {
+            const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${loc.lat},${loc.lng}`;
             L.circleMarker([loc.lat, loc.lng], {
                 radius: getRadius(loc.footfall),
                 fillColor: "#ef4444",
@@ -887,6 +891,7 @@
                     <p><strong>Price Level:</strong> ${loc.price}</p>
                     <p><strong>Est. Footfall Traffic:</strong> ${loc.footfall}/100</p>
                     <p><strong>Note:</strong> ${loc.comment}</p>
+                    <p style="margin-top: 8px;"><a href="${mapsUrl}" target="_blank" style="color: #ef4444; text-decoration: underline; font-weight: bold;">📍 View on Google Maps</a></p>
                 </div>
             `);
         });
@@ -925,11 +930,11 @@
         });
 
         candidates.forEach(loc => {
-            // Calculation logic
-            const targetDemand = Math.round(loc.catchment * (loc.premiumTargetPct / 100)); // monthly visits
+            const targetDemand = Math.round(loc.catchment * (loc.premiumTargetPct / 100));
             const underservedDemand = Math.max(0, targetDemand - loc.competitorCapacity);
             const underservedPct = Math.round((underservedDemand / targetDemand) * 100);
             const ratio = (underservedDemand / loc.rent).toFixed(2);
+            const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${loc.lat},${loc.lng}`;
 
             L.marker([loc.lat, loc.lng], { icon: starIcon }).addTo(map).bindPopup(`
                 <div class="popup-content" style="min-width: 240px; color: #333;">
@@ -943,10 +948,11 @@
                     <p style="margin: 3px 0; font-size: 11px; display: flex; justify-content: space-between;"><span>Underserved Demand Gap:</span> <strong style="color: #e11d48;">${underservedDemand.toLocaleString()} visits (${underservedPct}%)</strong></p>
                     <p style="margin: 3px 0; font-size: 11px; display: flex; justify-content: space-between;"><span>Airport Travel Time:</span> <strong style="color: #111;">${loc.airportTime}</strong></p>
                     <p style="margin: 3px 0; font-size: 11px; display: flex; justify-content: space-between;"><span>Monthly Rent:</span> <strong style="color: #111;">USD ${loc.rent.toLocaleString()}</strong></p>
-                    <div style="background: rgba(198,168,124,0.15); padding: 8px; border-radius: 6px; border-left: 3px solid var(--accent); margin-top: 8px;">
+                    <div style="background: rgba(198,168,124,0.15); padding: 8px; border-radius: 6px; border-left: 3px solid var(--accent); margin-top: 8px; margin-bottom: 8px;">
                         <strong style="color: var(--accent); font-size: 10px; text-transform: uppercase; letter-spacing: 0.5px; display: block; margin-bottom: 2px;">Potential Customer to Rent Ratio:</strong>
                         <span style="font-size: 14px; font-weight: bold; color: #111;">${ratio} potential customers/USD 1 rent</span>
                     </div>
+                    <p style="margin-top: 8px; text-align: center;"><a href="${mapsUrl}" target="_blank" style="color: var(--accent); text-decoration: underline; font-weight: bold; font-size: 12px;">📍 View on Google Maps</a></p>
                 </div>
             `);
         });

@@ -289,28 +289,28 @@
                             </tr>
                         </thead>
 <tbody>
-                              <tr class="highlight-row">
-                                  <td>VSIP I Commercial Zone (Thuan An)</td>
+<tr class="highlight-row">
+                                  <td><a href="https://www.google.com/maps/search/?api=1&query=10.93,106.71" target="_blank">VSIP I Commercial Zone (Thuan An)</a></td>
                                   <td>USD 500 - 750</td>
                                   <td>Adjacent to VSIP I (50,000+ Korean/Japanese workers). Ground-floor unit within walking distance of factory bus stop. Zero premium competition within 10km. Anchor tenant positioning in a blank-slate market.</td>
                                   <td>Industrial area feel — boutique interior design critical to create contrasting premium atmosphere; logistics from HCMC needed for premium products</td>
                                   <td>4.9 / 5 (Recommended)</td>
                               </tr>
-                              <tr>
-                                  <td>Aeon Mall Binh Duong (Thuan An)</td>
+<tr>
+                                  <td><a href="https://www.google.com/maps/search/?api=1&query=10.933,106.697" target="_blank">Aeon Mall Binh Duong (Thuan An)</a></td>
                                   <td>USD 750 - 1,100</td>
                                   <td>Guaranteed foot traffic from Korean family shopping trips. Multiple Korean restaurants confirm demand in zone. Higher mall rent but lower fit-out risk — established premium retail environment.</td>
                                   <td>Mall rent premium; mall hours constrain operating schedule; competitor risk from national chain anchors</td>
                                   <td>4.2 / 5</td>
                               </tr>
-                              <tr>
-                                  <td>Thu Dau Mot City Center (Chanh Nghia)</td>
+<tr>
+                                  <td><a href="https://www.google.com/maps/search/?api=1&query=10.978,106.656" target="_blank">Thu Dau Mot City Center (Chanh Nghia)</a></td>
                                   <td>USD 400 - 650</td>
                                   <td>Provincial capital hub. Larger Vietnamese management-class catchment. Good for Phase 2 after industrial expat base is established.</td>
                                   <td>Lower Korean expat density; further from VSIP/AMATA zones; primarily serves Vietnamese professional rather than expat market</td>
                                   <td>3.4 / 5</td>
                               </tr>
-             </tbody></table>
+</tbody></table>
                 </div>
                 <div class="conclusion-box">
                     <strong>Strategy:</strong> Lease an 800 sq ft ground-floor commercial unit in Thuan An near Aeon Mall/VSIP 1 to target the main expat traffic. Target rent: USD 795/month.
@@ -333,31 +333,31 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td><strong>Local Vietnamese Salons</strong> (e.g., Toc Trinh, Toc Lam)</td>
+<tr>
+                                <td><a href="https://www.google.com/maps/search/?api=1&query=Local+Vietnamese+Salons%2C+Binh+Duong" target="_blank"><strong>Local Vietnamese Salons</strong> (e.g., Toc Trinh, Toc Lam)</a></td>
                                 <td>Thu Dau Mot City centre, DT750 corridor</td>
                                 <td>Color $8–20; Cut $3–8</td>
                                 <td>Extremely price competitive, high local client volume, abundant locations near factory zones</td>
                                 <td>No English; no expat color expertise; basic chemicals only; no Olaplex or bond-repair products; cannot safely bleach for balayage</td>
                                 <td>Korean/Japanese product stack (Milbon, Schwarzkopf, K18); bilingual (English/Korean/Vietnamese); safe bleach-based creative color</td>
                             </tr>
-                            <tr>
-                                <td><strong>Korean Salon Chains</strong> (Aube Vietnam, Hallyuhair)</td>
+<tr>
+                                <td><a href="https://www.google.com/maps/search/?api=1&query=Korean+Salon+Chains%2C+Binh+Duong" target="_blank"><strong>Korean Salon Chains</strong> (Aube Vietnam, Hallyuhair)</a></td>
                                 <td>HCMC (expats commute 40–60 min)</td>
                                 <td>Color $30–80; Cut $15–25</td>
                                 <td>Professional Korean product stack, consistent color quality, trusted by Korean expat community</td>
                                 <td>Located in HCMC — 40–60 minute commute each way for Binh Duong factory workers; significant time cost</td>
                                 <td>On-site in Binh Duong (VSIP, My Phuoc zones) — same product quality, zero commute time for Korean factory managers</td>
                             </tr>
-                            <tr>
-                                <td><strong>Concept Coiffure</strong> (HCMC Flagship)</td>
+<tr>
+                                <td><a href="https://www.google.com/maps/search/?api=1&query=Concept+Coiffure%2C+Binh+Duong" target="_blank"><strong>Concept Coiffure</strong> (HCMC Flagship)</a></td>
                                 <td>HCMC District 1</td>
                                 <td>Balayage $80–200; Cut $30–60</td>
                                 <td>Premium French-managed salon, top HCMC expat choice, bilingual French/English/Vietnamese</td>
                                 <td>60–90 minute drive from Binh Duong — not viable for after-work visit; requires full day commitment</td>
                                 <td>Binh Duong flagship delivers equivalent quality; 5-min drive from VSIP II/III management estates</td>
                             </tr>
-                        </tbody>
+</tbody>
                     </table>
                 </div>
 </section>
@@ -812,11 +812,13 @@
 
         // Premium Expat Residential Zones
         const residential = [
-            { name: "Thuan An Expat Residential Core", lat: 10.9320, lng: 106.6980, radius: 450, estPop: 2500 },
-            { name: "Thu Dau Mot Corporate Residential Area", lat: 10.9800, lng: 106.6550, radius: 400, estPop: 1800 }
+            { name: "Thuan An Expat Residential Core", lat: 10.932, lng: 106.698, radius: 450, estPop: 2500, nationality: "Korean & Japanese Expats" },
+            { name: "Thu Dau Mot Corporate Residential Area", lat: 10.98, lng: 106.655, radius: 400, estPop: 1800, nationality: "Korean & Japanese Expats" }
         ];
 
         residential.forEach(res => {
+            const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${res.lat},${res.lng}`;
+            let natText = res.nationality ? `<p><strong>Nationalities:</strong> ${res.nationality}</p>` : "";
             L.circle([res.lat, res.lng], {
                 color: '#a133ff',
                 fillColor: '#a133ff',
@@ -824,12 +826,12 @@
                 weight: 1.5,
                 radius: res.radius
             }).addTo(map).bindPopup(`
-                <div class="popup-content" style="min-width: 150px;">
-                    <h3 style="color: #a133ff; margin-bottom: 2px;">${res.name}</h3>
-                    <p><strong>Premium Residential Hub</strong></p>
-                    <hr style="margin: 5px 0; border: 0; border-top: 1px solid #eee;">
-                    <p style="margin-bottom: 0;"><strong>Est. Premium Residents:</strong></p>
-                    <p style="font-size: 14px; font-weight: bold; color: #333; margin-top: 2px;">~${res.estPop.toLocaleString()} households</p>
+                <div class="popup-content">
+                    <h3 style="color: #a133ff;">${res.name}</h3>
+                    <p><strong>Expat Residential Hub</strong></p>
+                    ${natText}
+                    <p><strong>Est. Population:</strong> ~${res.estPop.toLocaleString()} residents</p>
+                    <p style="margin-top: 8px;"><a href="${mapsUrl}" target="_blank" style="color: #a133ff; text-decoration: underline; font-weight: bold;">📍 View on Google Maps</a></p>
                 </div>
             `);
         });
@@ -841,18 +843,19 @@
         ];
 
         malls.forEach(loc => {
+            const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${loc.lat},${loc.lng}`;
             L.circleMarker([loc.lat, loc.lng], {
                 radius: getRadius(loc.footfall),
                 fillColor: "#333",
                 color: "#fff",
-                weight: 1,
+                weight: 1.5,
                 opacity: 1,
-                fillOpacity: 0.7
+                fillOpacity: 0.8
             }).addTo(map).bindPopup(`
                 <div class="popup-content">
                     <h3>🛍️ ${loc.name}</h3>
-                    <p><strong>Type:</strong> ${loc.type}</p>
-                    <p><strong>Est. Footfall Traffic:</strong> ${loc.footfall}/100</p>
+                    <p><strong>Est. Relative Footfall:</strong> ${loc.footfall}/100</p>
+                    <p style="margin-top: 8px;"><a href="${mapsUrl}" target="_blank" style="color: #fff; text-decoration: underline; font-weight: bold;">📍 View on Google Maps</a></p>
                 </div>
             `);
         });
@@ -865,6 +868,7 @@
         ];
 
         competitors.forEach(loc => {
+            const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${loc.lat},${loc.lng}`;
             L.circleMarker([loc.lat, loc.lng], {
                 radius: getRadius(loc.footfall),
                 fillColor: "#ef4444",
@@ -878,6 +882,7 @@
                     <p><strong>Price Level:</strong> ${loc.price}</p>
                     <p><strong>Est. Footfall Traffic:</strong> ${loc.footfall}/100</p>
                     <p><strong>Note:</strong> ${loc.comment}</p>
+                    <p style="margin-top: 8px;"><a href="${mapsUrl}" target="_blank" style="color: #ef4444; text-decoration: underline; font-weight: bold;">📍 View on Google Maps</a></p>
                 </div>
             `);
         });
@@ -920,6 +925,7 @@
             const underservedDemand = Math.max(0, targetDemand - loc.competitorCapacity);
             const underservedPct = Math.round((underservedDemand / targetDemand) * 100);
             const ratio = (underservedDemand / loc.rent).toFixed(2);
+            const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${loc.lat},${loc.lng}`;
 
             L.marker([loc.lat, loc.lng], { icon: starIcon }).addTo(map).bindPopup(`
                 <div class="popup-content" style="min-width: 240px; color: #333;">
@@ -933,10 +939,11 @@
                     <p style="margin: 3px 0; font-size: 11px; display: flex; justify-content: space-between;"><span>Underserved Demand Gap:</span> <strong style="color: #e11d48;">${underservedDemand.toLocaleString()} visits (${underservedPct}%)</strong></p>
                     <p style="margin: 3px 0; font-size: 11px; display: flex; justify-content: space-between;"><span>Airport Travel Time:</span> <strong style="color: #111;">${loc.airportTime}</strong></p>
                     <p style="margin: 3px 0; font-size: 11px; display: flex; justify-content: space-between;"><span>Monthly Rent:</span> <strong style="color: #111;">USD ${loc.rent.toLocaleString()}</strong></p>
-                    <div style="background: rgba(198,168,124,0.15); padding: 8px; border-radius: 6px; border-left: 3px solid var(--accent); margin-top: 8px;">
+                    <div style="background: rgba(198,168,124,0.15); padding: 8px; border-radius: 6px; border-left: 3px solid var(--accent); margin-top: 8px; margin-bottom: 8px;">
                         <strong style="color: var(--accent); font-size: 10px; text-transform: uppercase; letter-spacing: 0.5px; display: block; margin-bottom: 2px;">Potential Customer to Rent Ratio:</strong>
                         <span style="font-size: 14px; font-weight: bold; color: #111;">${ratio} potential customers/USD 1 rent</span>
                     </div>
+                    <p style="margin-top: 8px; text-align: center;"><a href="${mapsUrl}" target="_blank" style="color: var(--accent); text-decoration: underline; font-weight: bold; font-size: 12px;">📍 View on Google Maps</a></p>
                 </div>
             `);
         });

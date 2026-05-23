@@ -300,28 +300,28 @@
                             </tr>
                         </thead>
                         <tbody>
-                              <tr class="highlight-row">
-                                  <td>Thao Dien - Xuan Thuy St (D2)</td>
+<tr class="highlight-row">
+                                  <td><a href="https://www.google.com/maps/search/?api=1&query=10.8048,106.736" target="_blank">Thao Dien - Xuan Thuy St (D2)</a></td>
                                   <td>USD 2,500 - 3,500</td>
                                   <td>Heart of Japanese/Korean/Western expat cluster. Concept Coiffure &amp; J-First within 500m confirm premium demand. Ground-floor shophouse on main expat street.</td>
                                   <td>High rent premium for Thao Dien address; weekday parking can be congested</td>
                                   <td>4.9 / 5 (Recommended)</td>
                               </tr>
-                              <tr>
-                                  <td>Thao Dien - Quoc Huong St (D2)</td>
+<tr>
+                                  <td><a href="https://www.google.com/maps/search/?api=1&query=10.8025,106.735" target="_blank">Thao Dien - Quoc Huong St (D2)</a></td>
                                   <td>USD 2,000 - 2,800</td>
                                   <td>Parallel street, quieter lane, lower rent. Same expat density. Better parking for school-run appointment timing.</td>
                                   <td>Slightly less main-road visibility; needs signage investment</td>
                                   <td>4.5 / 5</td>
                               </tr>
-                              <tr>
-                                  <td>Le Thanh Ton Alley (D1)</td>
+<tr>
+                                  <td><a href="https://www.google.com/maps/search/?api=1&query=10.7785,106.7055" target="_blank">Le Thanh Ton Alley (D1)</a></td>
                                   <td>USD 3,500 - 5,000</td>
                                   <td>Central D1 expat corridor. Vampire Hair (competitor) validates premium demand. Captures business-traveler and hotel-guest walk-in market.</td>
                                   <td>High D1 rent; lower residential density than Thao Dien; more tourist-mix than expat-resident</td>
                                   <td>3.8 / 5</td>
                               </tr>
-             </tbody></table>
+</tbody></table>
                 </div>
                 <div class="conclusion-box">
                     <strong>Strategy:</strong> Establish the boutique salon in District 3 (Vo Thi Sau St) in a premium villa-style unit. Rent target: USD 1,600/month (scaled to USD 1,360) for a 800 sq ft space. This balances prestige, layout flexibility, and reasonable fixed rent.
@@ -344,31 +344,31 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
+<tr>
                                 <td>Japanese Luxury Salons</td>
-                                <td>J-First Tokyo (D1/D3)</td>
+                                <td><a href="https://www.google.com/maps/search/?api=1&query=10.774567,106.706176" target="_blank">J-First Tokyo (D1/D3)</a></td>
                                 <td>$40 - $200</td>
                                 <td>Premium reputation, Japanese stylists, strong expat base</td>
                                 <td>Busy D1 street noise, long booking backlog, premium pricing</td>
                                 <td>Quiet styling bays, soft-water hair rinse, and luxury styling stations</td>
                             </tr>
-                            <tr>
+<tr>
                                 <td>French Premium Salons</td>
-                                <td>Concept Coiffure (Thao Dien)</td>
+                                <td><a href="https://www.google.com/maps/search/?api=1&query=10.775317,106.704251" target="_blank">Concept Coiffure (Thao Dien)</a></td>
                                 <td>$35 - $180</td>
                                 <td>Established expat clientele, western-style styling</td>
                                 <td>High price point, lacks water filtration to prevent chlorine/mineral fade</td>
                                 <td>Double water filtration, Western styling standards, and competitive pricing packages</td>
                             </tr>
-                            <tr>
+<tr>
                                 <td>Trendy Premium Salons</td>
-                                <td>Vamp Hair Line (D1)</td>
+                                <td><a href="https://www.google.com/maps/search/?api=1&query=10.77653,106.69896" target="_blank">Vamp Hair Line (D1)</a></td>
                                 <td>$25 - $150</td>
                                 <td>Japanese Peek-A-Boo style training, excellent balayage and highlights</td>
                                 <td>Loud, high-turnover environment, lack of personalized styling stations comfort</td>
                                 <td>Quiet, ground-floor premium boutique styling bays, damage-free organic dyes, and filtered soft-water care</td>
                             </tr>
-                        </tbody>
+</tbody>
                     </table>
                 </div>
             </section>
@@ -843,12 +843,14 @@
 
         // Japanese Expat Residential Areas
         const residential = [
-            { name: "Masteri Thao Dien Area", lat: 10.804, lng: 106.745, radius: 450, estPop: 3500 },
-            { name: "Japan Town (Le Thanh Ton / Thai Van Lung)", lat: 10.778, lng: 106.705, radius: 350, estPop: 2500 },
-            { name: "Vinhomes Golden River", lat: 10.785, lng: 106.708, radius: 400, estPop: 2000 }
+            { name: "Masteri Thao Dien Area", lat: 10.804, lng: 106.745, radius: 450, estPop: 3500, nationality: "Japanese, Korean & Western Expats" },
+            { name: "Japan Town (Le Thanh Ton / Thai Van Lung)", lat: 10.778, lng: 106.705, radius: 350, estPop: 2500, nationality: "Japanese Expats" },
+            { name: "Vinhomes Golden River", lat: 10.785, lng: 106.708, radius: 400, estPop: 2000, nationality: "Korean, Japanese & Western Expats" }
         ];
 
         residential.forEach(res => {
+            const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${res.lat},${res.lng}`;
+            let natText = res.nationality ? `<p><strong>Nationalities:</strong> ${res.nationality}</p>` : "";
             L.circle([res.lat, res.lng], {
                 color: '#c6a87c',
                 fillColor: '#c6a87c',
@@ -859,7 +861,9 @@
                 <div class="popup-content">
                     <h3 style="color: #c6a87c;">${res.name}</h3>
                     <p><strong>Expat Residential Hub</strong></p>
-                    <p><strong>Est. Japanese/Expat Pop:</strong> ~${res.estPop.toLocaleString()} residents</p>
+                    ${natText}
+                    <p><strong>Est. Population:</strong> ~${res.estPop.toLocaleString()} residents</p>
+                    <p style="margin-top: 8px;"><a href="${mapsUrl}" target="_blank" style="color: #c6a87c; text-decoration: underline; font-weight: bold;">📍 View on Google Maps</a></p>
                 </div>
             `);
         });
@@ -872,6 +876,7 @@
         ];
 
         malls.forEach(loc => {
+            const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${loc.lat},${loc.lng}`;
             L.circleMarker([loc.lat, loc.lng], {
                 radius: getRadius(loc.footfall),
                 fillColor: "#fff",
@@ -883,6 +888,7 @@
                 <div class="popup-content">
                     <h3>🛍️ ${loc.name}</h3>
                     <p><strong>Est. Relative Footfall:</strong> ${loc.footfall}/100</p>
+                    <p style="margin-top: 8px;"><a href="${mapsUrl}" target="_blank" style="color: #c6a87c; text-decoration: underline; font-weight: bold;">📍 View on Google Maps</a></p>
                 </div>
             `);
         });
@@ -895,6 +901,7 @@
         ];
 
         competitors.forEach(loc => {
+            const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${loc.lat},${loc.lng}`;
             L.circleMarker([loc.lat, loc.lng], {
                 radius: getRadius(loc.footfall),
                 fillColor: "#ef4444",
@@ -908,6 +915,7 @@
                     <p><strong>Price Level:</strong> ${loc.price}</p>
                     <p><strong>Est. Footfall Traffic:</strong> ${loc.footfall}/100</p>
                     <p><strong>Note:</strong> ${loc.comment}</p>
+                    <p style="margin-top: 8px;"><a href="${mapsUrl}" target="_blank" style="color: #ef4444; text-decoration: underline; font-weight: bold;">📍 View on Google Maps</a></p>
                 </div>
             `);
         });
@@ -946,11 +954,11 @@
         });
 
         candidates.forEach(loc => {
-            // Calculation logic
-            const targetDemand = Math.round(loc.catchment * (loc.premiumTargetPct / 100)); // monthly visits (assuming 1 visit/month)
+            const targetDemand = Math.round(loc.catchment * (loc.premiumTargetPct / 100));
             const underservedDemand = Math.max(0, targetDemand - loc.competitorCapacity);
             const underservedPct = Math.round((underservedDemand / targetDemand) * 100);
             const ratio = (underservedDemand / loc.rent).toFixed(2);
+            const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${loc.lat},${loc.lng}`;
 
             L.marker([loc.lat, loc.lng], { icon: starIcon }).addTo(map).bindPopup(`
                 <div class="popup-content" style="min-width: 240px; color: #333;">
@@ -964,10 +972,11 @@
                     <p style="margin: 3px 0; font-size: 11px; display: flex; justify-content: space-between;"><span>Underserved Demand Gap:</span> <strong style="color: #e11d48;">${underservedDemand.toLocaleString()} visits (${underservedPct}%)</strong></p>
                     <p style="margin: 3px 0; font-size: 11px; display: flex; justify-content: space-between;"><span>Airport Travel Time:</span> <strong style="color: #111;">${loc.airportTime}</strong></p>
                     <p style="margin: 3px 0; font-size: 11px; display: flex; justify-content: space-between;"><span>Monthly Rent:</span> <strong style="color: #111;">USD ${loc.rent.toLocaleString()}</strong></p>
-                    <div style="background: rgba(198,168,124,0.15); padding: 8px; border-radius: 6px; border-left: 3px solid var(--accent); margin-top: 8px;">
+                    <div style="background: rgba(198,168,124,0.15); padding: 8px; border-radius: 6px; border-left: 3px solid var(--accent); margin-top: 8px; margin-bottom: 8px;">
                         <strong style="color: var(--accent); font-size: 10px; text-transform: uppercase; letter-spacing: 0.5px; display: block; margin-bottom: 2px;">Potential Customer to Rent Ratio:</strong>
                         <span style="font-size: 14px; font-weight: bold; color: #111;">${ratio} potential customers/USD 1 rent</span>
                     </div>
+                    <p style="margin-top: 8px; text-align: center;"><a href="${mapsUrl}" target="_blank" style="color: var(--accent); text-decoration: underline; font-weight: bold; font-size: 12px;">📍 View on Google Maps</a></p>
                 </div>
             `);
         });

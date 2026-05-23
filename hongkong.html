@@ -287,21 +287,21 @@
                             </tr>
                         </thead>
                         <tbody>
-                              <tr class="highlight-row">
-                                  <td>Causeway Bay - Lockhart Rd Ground Floor</td>
+<tr class="highlight-row">
+                                  <td><a href="https://www.google.com/maps/search/?api=1&query=22.2808,114.1839" target="_blank">Causeway Bay - Lockhart Rd Ground Floor</a></td>
                                   <td>HKD 60,000 - 100,000</td>
                                   <td>HK's most accessible premium retail zone. Bruneblonde and Love Hair both operate in district — high premium colour demand confirmed. Soft-water filtration is a genuine USP vs all Causeway Bay competitors on same tap water (TDS 50–100 ppm, high chloramine). MTR Causeway Bay station at doorstep.</td>
                                   <td>Extremely high HK commercial rent; Lockhart Rd premium ground-floor units have limited availability and short lease terms; must secure multi-year lease upfront</td>
                                   <td>4.9 / 5 (Recommended)</td>
                               </tr>
-                              <tr>
-                                  <td>Central - Wyndham St / SOHO</td>
+<tr>
+                                  <td><a href="https://www.google.com/maps/search/?api=1&query=22.2815,114.1555" target="_blank">Central - Wyndham St / SOHO</a></td>
                                   <td>HKD 80,000 - 130,000</td>
                                   <td>HK's financial and expat social hub. Kimrobinson flagship validates ultra-premium demand. Ground-floor on Wyndham or Peel St. After-work and lunch appointments from IFC/Chater House financial professionals. Highest average ticket potential in HK portfolio.</td>
                                   <td>Ultra-high rent; Central after-hours quiet means evening appointments only; Kimrobinson is an entrenched luxury competitor requiring strong differentiation on product quality</td>
                                   <td>4.5 / 5</td>
                               </tr>
-             </tbody></table>
+</tbody></table>
                 </div>
                 <div class="conclusion-box">
                     <strong>Final Ranking:</strong> 1. Causeway Bay, 2. Central, 3. Soho / LKF.<br>
@@ -325,31 +325,31 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
+<tr>
                                 <td>Luxury Concept Salon</td>
-                                <td>Kimrobinson (Chater House)</td>
+                                <td><a href="https://www.google.com/maps/search/?api=1&query=22.282,114.1585" target="_blank">Kimrobinson (Chater House)</a></td>
                                 <td>$300 - $500+</td>
                                 <td>Elite prestige branding, loyal high-society clientele</td>
                                 <td>Extremely expensive, open layout lacks privacy, high commission model</td>
                                 <td>Bespoke styling and coloring at competitive luxury rates, semi-private styling stations</td>
                             </tr>
-                            <tr>
+<tr>
                                 <td>Premium Expat Salon</td>
-                                <td>BRUNEBLONDE (Grand Hyatt)</td>
+                                <td><a href="https://www.google.com/maps/search/?api=1&query=22.2805,114.1725" target="_blank">BRUNEBLONDE (Grand Hyatt)</a></td>
                                 <td>$180 - $350</td>
                                 <td>French-style premium styling, hotel clientele, strong reputation</td>
                                 <td>Tucked inside a hotel (low footfall), open layout, lacks targeted water filtration marketing</td>
                                 <td>High-visibility retail frontage, demineralized soft-water filtration, private styling bays</td>
                             </tr>
-                            <tr>
+<tr>
                                 <td>Eco-Boutique Salon</td>
-                                <td>Love Hair (SOHO)</td>
+                                <td><a href="https://www.google.com/maps/search/?api=1&query=22.2825,114.152" target="_blank">Love Hair (SOHO)</a></td>
                                 <td>$150 - $250</td>
                                 <td>Strong eco-friendly positioning, expat community focus</td>
                                 <td>Limited styling capacity, no specific soft-water marketing focus</td>
                                 <td>Demineralized soft water to preserve coloring, higher styling capacity with 4 stations</td>
                             </tr>
-                        </tbody>
+</tbody>
                     </table>
                 </div>
             </section>
@@ -848,11 +848,13 @@
 
         // Expat / Affluent Residential Zones
         const residential = [
-            { name: "Mid-Levels Expat Core", lat: 22.2780, lng: 114.1500, radius: 500, estPop: 8000 },
-            { name: "Jardine's Lookout / Happy Valley", lat: 22.2680, lng: 114.1850, radius: 450, estPop: 5000 }
+            { name: "Mid-Levels Expat Core", lat: 22.278, lng: 114.15, radius: 500, estPop: 8000, nationality: "Mixed Expats" },
+            { name: "Jardine's Lookout / Happy Valley", lat: 22.268, lng: 114.185, radius: 450, estPop: 5000, nationality: "Mixed Expats" }
         ];
 
         residential.forEach(res => {
+            const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${res.lat},${res.lng}`;
+            let natText = res.nationality ? `<p><strong>Nationalities:</strong> ${res.nationality}</p>` : "";
             L.circle([res.lat, res.lng], {
                 color: '#a133ff',
                 fillColor: '#a133ff',
@@ -860,12 +862,12 @@
                 weight: 1.5,
                 radius: res.radius
             }).addTo(map).bindPopup(`
-                <div class="popup-content" style="min-width: 150px;">
-                    <h3 style="color: #a133ff; margin-bottom: 2px;">${res.name}</h3>
-                    <p><strong>Premium Residential Hub</strong></p>
-                    <hr style="margin: 5px 0; border: 0; border-top: 1px solid #eee;">
-                    <p style="margin-bottom: 0;"><strong>Est. Premium Residents:</strong></p>
-                    <p style="font-size: 14px; font-weight: bold; color: #333; margin-top: 2px;">~${res.estPop.toLocaleString()} households</p>
+                <div class="popup-content">
+                    <h3 style="color: #a133ff;">${res.name}</h3>
+                    <p><strong>Expat Residential Hub</strong></p>
+                    ${natText}
+                    <p><strong>Est. Population:</strong> ~${res.estPop.toLocaleString()} residents</p>
+                    <p style="margin-top: 8px;"><a href="${mapsUrl}" target="_blank" style="color: #a133ff; text-decoration: underline; font-weight: bold;">📍 View on Google Maps</a></p>
                 </div>
             `);
         });
@@ -878,18 +880,19 @@
         ];
 
         malls.forEach(loc => {
+            const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${loc.lat},${loc.lng}`;
             L.circleMarker([loc.lat, loc.lng], {
                 radius: getRadius(loc.footfall),
                 fillColor: "#333",
                 color: "#fff",
-                weight: 1,
+                weight: 1.5,
                 opacity: 1,
-                fillOpacity: 0.7
+                fillOpacity: 0.8
             }).addTo(map).bindPopup(`
                 <div class="popup-content">
                     <h3>🛍️ ${loc.name}</h3>
-                    <p><strong>Type:</strong> ${loc.type}</p>
-                    <p><strong>Est. Footfall Traffic:</strong> ${loc.footfall}/100</p>
+                    <p><strong>Est. Relative Footfall:</strong> ${loc.footfall}/100</p>
+                    <p style="margin-top: 8px;"><a href="${mapsUrl}" target="_blank" style="color: #fff; text-decoration: underline; font-weight: bold;">📍 View on Google Maps</a></p>
                 </div>
             `);
         });
@@ -900,6 +903,7 @@
             { name: "Kimrobinson (Chater House)", price: "US$300+", footfall: 80, lat: 22.2820, lng: 114.1585, comment: "Ultra-luxury salon chain. Outstanding prestige dry-cuts, but high commission rates and open styling floor." }];
 
         competitors.forEach(loc => {
+            const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${loc.lat},${loc.lng}`;
             L.circleMarker([loc.lat, loc.lng], {
                 radius: getRadius(loc.footfall),
                 fillColor: "#ef4444",
@@ -913,6 +917,7 @@
                     <p><strong>Price Level:</strong> ${loc.price}</p>
                     <p><strong>Est. Footfall Traffic:</strong> ${loc.footfall}/100</p>
                     <p><strong>Note:</strong> ${loc.comment}</p>
+                    <p style="margin-top: 8px;"><a href="${mapsUrl}" target="_blank" style="color: #ef4444; text-decoration: underline; font-weight: bold;">📍 View on Google Maps</a></p>
                 </div>
             `);
         });
@@ -944,11 +949,11 @@
         });
 
         candidates.forEach(loc => {
-            // Calculation logic
-            const targetDemand = Math.round(loc.catchment * (loc.premiumTargetPct / 100)); // monthly visits
+            const targetDemand = Math.round(loc.catchment * (loc.premiumTargetPct / 100));
             const underservedDemand = Math.max(0, targetDemand - loc.competitorCapacity);
             const underservedPct = Math.round((underservedDemand / targetDemand) * 100);
             const ratio = (underservedDemand / loc.rent).toFixed(2);
+            const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${loc.lat},${loc.lng}`;
 
             L.marker([loc.lat, loc.lng], { icon: starIcon }).addTo(map).bindPopup(`
                 <div class="popup-content" style="min-width: 240px; color: #333;">
@@ -962,10 +967,11 @@
                     <p style="margin: 3px 0; font-size: 11px; display: flex; justify-content: space-between;"><span>Underserved Demand Gap:</span> <strong style="color: #e11d48;">${underservedDemand.toLocaleString()} visits (${underservedPct}%)</strong></p>
                     <p style="margin: 3px 0; font-size: 11px; display: flex; justify-content: space-between;"><span>Airport Travel Time:</span> <strong style="color: #111;">${loc.airportTime}</strong></p>
                     <p style="margin: 3px 0; font-size: 11px; display: flex; justify-content: space-between;"><span>Monthly Rent:</span> <strong style="color: #111;">USD ${loc.rent.toLocaleString()}</strong></p>
-                    <div style="background: rgba(198,168,124,0.15); padding: 8px; border-radius: 6px; border-left: 3px solid var(--accent); margin-top: 8px;">
+                    <div style="background: rgba(198,168,124,0.15); padding: 8px; border-radius: 6px; border-left: 3px solid var(--accent); margin-top: 8px; margin-bottom: 8px;">
                         <strong style="color: var(--accent); font-size: 10px; text-transform: uppercase; letter-spacing: 0.5px; display: block; margin-bottom: 2px;">Potential Customer to Rent Ratio:</strong>
                         <span style="font-size: 14px; font-weight: bold; color: #111;">${ratio} potential customers/USD 1 rent</span>
                     </div>
+                    <p style="margin-top: 8px; text-align: center;"><a href="${mapsUrl}" target="_blank" style="color: var(--accent); text-decoration: underline; font-weight: bold; font-size: 12px;">📍 View on Google Maps</a></p>
                 </div>
             `);
         });

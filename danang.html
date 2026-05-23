@@ -297,28 +297,28 @@
                             </tr>
                         </thead>
                         <tbody>
-                              <tr class="highlight-row">
-                                  <td>An Thuong Beach Area</td>
+<tr class="highlight-row">
+                                  <td><a href="https://www.google.com/maps/search/?api=1&query=16.049,108.245" target="_blank">An Thuong Beach Area</a></td>
                                   <td>USD 600 - 1,000</td>
                                   <td>Digital nomad + Korean expat residential cluster. Highest per-capita expat density in Da Nang. Ground-floor shophouse within walking distance of beach cafes and co-working spaces.</td>
                                   <td>Seasonal volume variance (Nov–Mar monsoon slows tourism); smaller total catchment than city center</td>
                                   <td>4.8 / 5 (Recommended)</td>
                               </tr>
-                              <tr>
-                                  <td>My Khe Beach Rd</td>
+<tr>
+                                  <td><a href="https://www.google.com/maps/search/?api=1&query=16.039,108.25" target="_blank">My Khe Beach Rd</a></td>
                                   <td>USD 500 - 850</td>
                                   <td>Adjacent to resort strip. Strong tourist walk-in potential and resort-staff clientele. Growing year-round Korean permanent resident base.</td>
                                   <td>Slightly lower Korean residential density than An Thuong; more resort-tourist than professional-expat</td>
                                   <td>4.2 / 5</td>
                               </tr>
-                              <tr>
-                                  <td>Hai Chau City Center</td>
+<tr>
+                                  <td><a href="https://www.google.com/maps/search/?api=1&query=16.058,108.221" target="_blank">Hai Chau City Center</a></td>
                                   <td>USD 700 - 1,100</td>
                                   <td>City-center anchor. Captures Vietnamese professional market. Access to larger commercial retail space with better loading/logistics.</td>
                                   <td>Lower expat density; more mid-tier local competition; less "destination boutique" feel</td>
                                   <td>3.5 / 5</td>
                               </tr>
-             </tbody></table>
+</tbody></table>
                 </div>
                 <div class="conclusion-box">
                     <strong>Strategy:</strong> Lease an 800 sq ft ground-floor property in Hai Chau or a side-street in An Thuong. Target rent: USD 800/month. This balances high expat footfall with commercial rent efficiency.
@@ -341,39 +341,39 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td><strong>Hai Stylist Da Nang</strong></td>
+<tr>
+                                <td><a href="https://www.google.com/maps/search/?api=1&query=Hai+Stylist+Da+Nang%2C+Da+Nang" target="_blank"><strong>Hai Stylist Da Nang</strong></a></td>
                                 <td>Da Nang City Centre</td>
                                 <td>Balayage $60–180; Color $30–80</td>
                                 <td>L'Oréal + Goldwell + Olaplex certified, popular with international guests, English spoken, modern environment</td>
                                 <td>Busy tourist traffic creates inconsistent experience quality; basic salon interior not premium; no private bays</td>
                                 <td>Boutique private bays, consistent senior-stylist-only delivery, dedicated expat booking lane</td>
                             </tr>
-                            <tr>
-                                <td><strong>A Doan Hair Salon</strong></td>
+<tr>
+                                <td><a href="https://www.google.com/maps/search/?api=1&query=A+Doan+Hair+Salon%2C+Da+Nang" target="_blank"><strong>A Doan Hair Salon</strong></a></td>
                                 <td>Da Nang + Hoi An</td>
                                 <td>Color $25–70; Cut $15–30</td>
                                 <td>Established brand, dual-city presence, wide range of services, master stylist upgrades available</td>
                                 <td>Mid-tier positioning — not a premium boutique; styling environment is functional rather than luxury; no creative color specialist</td>
                                 <td>Dedicated creative color portfolio, fully private styling environment, bilingual booking via LINE/WhatsApp</td>
                             </tr>
-                            <tr>
-                                <td><strong>Phúc Trần Hair Salon</strong> (Hoi An)</td>
+<tr>
+                                <td><a href="https://www.google.com/maps/search/?api=1&query=Ph%C3%BAc+Tr%E1%BA%A7n+Hair+Salon%2C+Da+Nang" target="_blank"><strong>Phúc Trần Hair Salon</strong> (Hoi An)</a></td>
                                 <td>Hoi An Ancient Town</td>
                                 <td>Balayage $70–180; Full Color $25–65</td>
                                 <td>Highest-rated expat salon in Hoi An area, Olaplex certified, transparent pricing, strong English</td>
                                 <td>Located in Hoi An (30km from Da Nang city) — inconvenient for Da Nang-based residents; small capacity</td>
                                 <td>Da Nang My Khe beachfront location accessible to both city residents and Hoi An visitors</td>
                             </tr>
-                            <tr>
-                                <td><strong>Barbary Coast</strong> (Hoi An)</td>
+<tr>
+                                <td><a href="https://www.google.com/maps/search/?api=1&query=Barbary+Coast%2C+Da+Nang" target="_blank"><strong>Barbary Coast</strong> (Hoi An)</a></td>
                                 <td>Hoi An</td>
                                 <td>Cut + Color $40–100</td>
                                 <td>US-trained owner, strong expat reputation, trusted for quality and communication</td>
                                 <td>Hoi An only — not accessible for Da Nang residents; limited capacity; no specialist color team</td>
                                 <td>Da Nang beachfront address + specialist color team + scalp care add-ons</td>
                             </tr>
-                        </tbody>
+</tbody>
                     </table>
                 </div>
 </section>
@@ -825,11 +825,13 @@
 
         // Premium Expat Residential Zones
         const residential = [
-            { name: "Hai Chau High Wealth Core", lat: 16.0600, lng: 108.2180, radius: 450, estPop: 2200 },
-            { name: "An Thuong Expat Ward", lat: 16.0500, lng: 108.2430, radius: 400, estPop: 1800 }
+            { name: "Hai Chau High Wealth Core", lat: 16.06, lng: 108.218, radius: 450, estPop: 2200, nationality: "Western & Asian Expats" },
+            { name: "An Thuong Expat Ward", lat: 16.05, lng: 108.243, radius: 400, estPop: 1800, nationality: "Western, Korean & Russian Expats (Digital Nomads)" }
         ];
 
         residential.forEach(res => {
+            const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${res.lat},${res.lng}`;
+            let natText = res.nationality ? `<p><strong>Nationalities:</strong> ${res.nationality}</p>` : "";
             L.circle([res.lat, res.lng], {
                 color: '#a133ff',
                 fillColor: '#a133ff',
@@ -837,12 +839,12 @@
                 weight: 1.5,
                 radius: res.radius
             }).addTo(map).bindPopup(`
-                <div class="popup-content" style="min-width: 150px;">
-                    <h3 style="color: #a133ff; margin-bottom: 2px;">${res.name}</h3>
-                    <p><strong>Premium Residential Hub</strong></p>
-                    <hr style="margin: 5px 0; border: 0; border-top: 1px solid #eee;">
-                    <p style="margin-bottom: 0;"><strong>Est. Premium Residents:</strong></p>
-                    <p style="font-size: 14px; font-weight: bold; color: #333; margin-top: 2px;">~${res.estPop.toLocaleString()} households</p>
+                <div class="popup-content">
+                    <h3 style="color: #a133ff;">${res.name}</h3>
+                    <p><strong>Expat Residential Hub</strong></p>
+                    ${natText}
+                    <p><strong>Est. Population:</strong> ~${res.estPop.toLocaleString()} residents</p>
+                    <p style="margin-top: 8px;"><a href="${mapsUrl}" target="_blank" style="color: #a133ff; text-decoration: underline; font-weight: bold;">📍 View on Google Maps</a></p>
                 </div>
             `);
         });
@@ -854,18 +856,19 @@
         ];
 
         malls.forEach(loc => {
+            const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${loc.lat},${loc.lng}`;
             L.circleMarker([loc.lat, loc.lng], {
                 radius: getRadius(loc.footfall),
                 fillColor: "#333",
                 color: "#fff",
-                weight: 1,
+                weight: 1.5,
                 opacity: 1,
-                fillOpacity: 0.7
+                fillOpacity: 0.8
             }).addTo(map).bindPopup(`
                 <div class="popup-content">
                     <h3>🛍️ ${loc.name}</h3>
-                    <p><strong>Type:</strong> ${loc.type}</p>
-                    <p><strong>Est. Footfall Traffic:</strong> ${loc.footfall}/100</p>
+                    <p><strong>Est. Relative Footfall:</strong> ${loc.footfall}/100</p>
+                    <p style="margin-top: 8px;"><a href="${mapsUrl}" target="_blank" style="color: #fff; text-decoration: underline; font-weight: bold;">📍 View on Google Maps</a></p>
                 </div>
             `);
         });
@@ -878,6 +881,7 @@
         ];
 
         competitors.forEach(loc => {
+            const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${loc.lat},${loc.lng}`;
             L.circleMarker([loc.lat, loc.lng], {
                 radius: getRadius(loc.footfall),
                 fillColor: "#ef4444",
@@ -891,6 +895,7 @@
                     <p><strong>Price Level:</strong> ${loc.price}</p>
                     <p><strong>Est. Footfall Traffic:</strong> ${loc.footfall}/100</p>
                     <p><strong>Note:</strong> ${loc.comment}</p>
+                    <p style="margin-top: 8px;"><a href="${mapsUrl}" target="_blank" style="color: #ef4444; text-decoration: underline; font-weight: bold;">📍 View on Google Maps</a></p>
                 </div>
             `);
         });
@@ -933,6 +938,7 @@
             const underservedDemand = Math.max(0, targetDemand - loc.competitorCapacity);
             const underservedPct = Math.round((underservedDemand / targetDemand) * 100);
             const ratio = (underservedDemand / loc.rent).toFixed(2);
+            const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${loc.lat},${loc.lng}`;
 
             L.marker([loc.lat, loc.lng], { icon: starIcon }).addTo(map).bindPopup(`
                 <div class="popup-content" style="min-width: 240px; color: #333;">
@@ -946,10 +952,11 @@
                     <p style="margin: 3px 0; font-size: 11px; display: flex; justify-content: space-between;"><span>Underserved Demand Gap:</span> <strong style="color: #e11d48;">${underservedDemand.toLocaleString()} visits (${underservedPct}%)</strong></p>
                     <p style="margin: 3px 0; font-size: 11px; display: flex; justify-content: space-between;"><span>Airport Travel Time:</span> <strong style="color: #111;">${loc.airportTime}</strong></p>
                     <p style="margin: 3px 0; font-size: 11px; display: flex; justify-content: space-between;"><span>Monthly Rent:</span> <strong style="color: #111;">USD ${loc.rent.toLocaleString()}</strong></p>
-                    <div style="background: rgba(198,168,124,0.15); padding: 8px; border-radius: 6px; border-left: 3px solid var(--accent); margin-top: 8px;">
+                    <div style="background: rgba(198,168,124,0.15); padding: 8px; border-radius: 6px; border-left: 3px solid var(--accent); margin-top: 8px; margin-bottom: 8px;">
                         <strong style="color: var(--accent); font-size: 10px; text-transform: uppercase; letter-spacing: 0.5px; display: block; margin-bottom: 2px;">Potential Customer to Rent Ratio:</strong>
                         <span style="font-size: 14px; font-weight: bold; color: #111;">${ratio} potential customers/USD 1 rent</span>
                     </div>
+                    <p style="margin-top: 8px; text-align: center;"><a href="${mapsUrl}" target="_blank" style="color: var(--accent); text-decoration: underline; font-weight: bold; font-size: 12px;">📍 View on Google Maps</a></p>
                 </div>
             `);
         });

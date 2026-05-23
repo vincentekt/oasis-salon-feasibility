@@ -284,28 +284,28 @@
                             </tr>
                         </thead>
                         <tbody>
-                              <tr class="highlight-row">
-                                  <td>Jumeirah 1 / Safa Park Corridor</td>
+<tr class="highlight-row">
+                                  <td><a href="https://www.google.com/maps/search/?api=1&query=25.21,55.24" target="_blank">Jumeirah 1 / Safa Park Corridor</a></td>
                                   <td>AED 120,000 - 180,000 / yr</td>
                                   <td>Dubai's Western expat residential core. British, American, Australian expat families concentrated here. Ground-floor villa shopfront on Jumeirah Rd near Safa Park. Soft-water filtration is essential — Dubai tap water TDS 500–1200 ppm destroys colour. This is the most defensible USP in Dubai's overcrowded salon market.</td>
                                   <td>Villa shopfront leases are DEWA-metered — utility costs higher than commercial units; requires annual lease upfront per UAE commercial norms</td>
                                   <td>4.9 / 5 (Recommended)</td>
                               </tr>
-                              <tr>
-                                  <td>Dubai Marina / JBR Promenade</td>
+<tr>
+                                  <td><a href="https://www.google.com/maps/search/?api=1&query=25.078,55.135" target="_blank">Dubai Marina / JBR Promenade</a></td>
                                   <td>AED 180,000 - 280,000 / yr</td>
                                   <td>High-density expat residential towers. Strong walk-in from JBR beach promenade. Diverse European, Russian, Indian expat community. Multiple salons present — validates premium demand in zone.</td>
                                   <td>Very high rent; Marina has 30+ premium salons — most saturated premium zone in Dubai; must have exceptional soft-water + balayage differentiation to compete</td>
                                   <td>4.2 / 5</td>
                               </tr>
-                              <tr>
-                                  <td>Al Wasl Rd (Traditional Expat Residential)</td>
+<tr>
+                                  <td><a href="https://www.google.com/maps/search/?api=1&query=25.185,55.22" target="_blank">Al Wasl Rd (Traditional Expat Residential)</a></td>
                                   <td>AED 100,000 - 160,000 / yr</td>
                                   <td>Old-established expat zone. Lower rent, loyal long-term Dubai resident clientele. Best for word-of-mouth growth among established expat community vs tourist-heavy Marina zone.</td>
                                   <td>Lower foot traffic than Jumeirah Rd or Marina; requires stronger referral and loyalty marketing; less Instagram-visible than beachfront alternatives</td>
                                   <td>4.1 / 5</td>
                               </tr>
-             </tbody></table>
+</tbody></table>
                 </div>
                 <div class="conclusion-box">
                     <strong>Strategy:</strong> Lease an intimate 800 sq ft boutique space in Jumeirah or Dubai Marina. Target rent: USD 5,200/month (approx. AED 19,000/mo). This positions the salon directly within the daily flow of Dubai's high-income residential and tourist hotspots, utilizing premium styling stations (4) and specialized coloring services to ensure high ticket margins.
@@ -328,31 +328,31 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
+<tr>
                                 <td>Luxury Styling & Color Salons</td>
-                                <td>Rami Jabali Salon (Jumeirah)</td>
+                                <td><a href="https://www.google.com/maps/search/?api=1&query=25.161,55.205" target="_blank">Rami Jabali Salon (Jumeirah)</a></td>
                                 <td>$150 - $450</td>
                                 <td>Exceptional coloring and hair restoration, loyal premium clientele</td>
                                 <td>Premium pricing, long wait times</td>
                                 <td>Boutique setting featuring integrated multi-stage water filtration and specialized color protection protocols</td>
                             </tr>
-                            <tr>
+<tr>
                                 <td>Premium Beauty & Wellness</td>
-                                <td>Casa Aire Salon (Dubai Marina)</td>
+                                <td><a href="https://www.google.com/maps/search/?api=1&query=25.078,55.135" target="_blank">Casa Aire Salon (Dubai Marina)</a></td>
                                 <td>$130 - $350</td>
                                 <td>Boutique aesthetic, strong Instagram presence, specializing in styling and blowouts</td>
                                 <td>Limited station capacity, high booking wait times</td>
                                 <td>Premium coloring, balayage, and advanced water purification systems to protect client hair health</td>
                             </tr>
-                            <tr>
+<tr>
                                 <td>Standard Commercial Chains</td>
-                                <td>Toni & Guy (Dubai Marina)</td>
+                                <td><a href="https://www.google.com/maps/search/?api=1&query=Toni+%26+Guy%2C+Dubai" target="_blank">Toni & Guy (Dubai Marina)</a></td>
                                 <td>$80 - $180</td>
                                 <td>Strong global brand name, multiple locations</td>
                                 <td>Lacks private styling areas, open and noisy floor plan</td>
                                 <td>Custom track lighting relaxation environment, customized organic treatment lines</td>
                             </tr>
-                        </tbody>
+</tbody>
                     </table>
                 </div>
             </section>
@@ -795,12 +795,14 @@
 
         // Premium Residential Zones in Dubai
         const residential = [
-            { name: "Jumeirah Residential Enclave", lat: 25.2000, lng: 55.2500, radius: 450, estPop: 3000 },
-            { name: "Dubai Marina Expat Hub", lat: 25.0780, lng: 55.1350, radius: 350, estPop: 2000 },
-            { name: "Palm Jumeirah Waterfront Hub", lat: 25.1150, lng: 55.1380, radius: 400, estPop: 1500 }
+            { name: "Jumeirah Residential Enclave", lat: 25.2, lng: 55.25, radius: 450, estPop: 3000, nationality: "British, American & European Expats" },
+            { name: "Dubai Marina Expat Hub", lat: 25.078, lng: 55.135, radius: 350, estPop: 2000, nationality: "European, British & Russian Expats" },
+            { name: "Palm Jumeirah Waterfront Hub", lat: 25.115, lng: 55.138, radius: 400, estPop: 1500, nationality: "British, American & European Expats" }
         ];
 
         residential.forEach(res => {
+            const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${res.lat},${res.lng}`;
+            let natText = res.nationality ? `<p><strong>Nationalities:</strong> ${res.nationality}</p>` : "";
             L.circle([res.lat, res.lng], {
                 color: '#a133ff',
                 fillColor: '#a133ff',
@@ -808,12 +810,12 @@
                 weight: 1.5,
                 radius: res.radius
             }).addTo(map).bindPopup(`
-                <div class="popup-content" style="min-width: 150px;">
-                    <h3 style="color: #a133ff; margin-bottom: 2px;">${res.name}</h3>
-                    <p><strong>Premium Residential Hub</strong></p>
-                    <hr style="margin: 5px 0; border: 0; border-top: 1px solid #eee;">
-                    <p style="margin-bottom: 0;"><strong>Est. Premium Residents:</strong></p>
-                    <p style="font-size: 14px; font-weight: bold; color: #333; margin-top: 2px;">~${res.estPop.toLocaleString()} households</p>
+                <div class="popup-content">
+                    <h3 style="color: #a133ff;">${res.name}</h3>
+                    <p><strong>Expat Residential Hub</strong></p>
+                    ${natText}
+                    <p><strong>Est. Population:</strong> ~${res.estPop.toLocaleString()} residents</p>
+                    <p style="margin-top: 8px;"><a href="${mapsUrl}" target="_blank" style="color: #a133ff; text-decoration: underline; font-weight: bold;">📍 View on Google Maps</a></p>
                 </div>
             `);
         });
@@ -826,18 +828,19 @@
         ];
 
         malls.forEach(loc => {
+            const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${loc.lat},${loc.lng}`;
             L.circleMarker([loc.lat, loc.lng], {
                 radius: getRadius(loc.footfall),
                 fillColor: "#333",
                 color: "#fff",
-                weight: 1,
+                weight: 1.5,
                 opacity: 1,
-                fillOpacity: 0.7
+                fillOpacity: 0.8
             }).addTo(map).bindPopup(`
                 <div class="popup-content">
                     <h3>🛍️ ${loc.name}</h3>
-                    <p><strong>Type:</strong> ${loc.type}</p>
-                    <p><strong>Est. Footfall Traffic:</strong> ${loc.footfall}/100</p>
+                    <p><strong>Est. Relative Footfall:</strong> ${loc.footfall}/100</p>
+                    <p style="margin-top: 8px;"><a href="${mapsUrl}" target="_blank" style="color: #fff; text-decoration: underline; font-weight: bold;">📍 View on Google Maps</a></p>
                 </div>
             `);
         });
@@ -849,22 +852,24 @@
         ];
  
          competitors.forEach(loc => {
-             L.circleMarker([loc.lat, loc.lng], {
-                 radius: getRadius(loc.footfall),
-                 fillColor: "#ef4444",
-                 color: "#fff",
-                 weight: 1.5,
-                 opacity: 1,
-                 fillOpacity: 0.9
-             }).addTo(map).bindPopup(`
-                 <div class="popup-content">
-                     <h3 style="color: #ef4444;">🔴 ${loc.name}</h3>
-                     <p><strong>Price Level:</strong> ${loc.price}</p>
-                     <p><strong>Est. Footfall Traffic:</strong> ${loc.footfall}/100</p>
-                     <p><strong>Note:</strong> ${loc.comment}</p>
-                 </div>
-             `);
-         });
+            const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${loc.lat},${loc.lng}`;
+            L.circleMarker([loc.lat, loc.lng], {
+                radius: getRadius(loc.footfall),
+                fillColor: "#ef4444",
+                color: "#fff",
+                weight: 1.5,
+                opacity: 1,
+                fillOpacity: 0.9
+            }).addTo(map).bindPopup(`
+                <div class="popup-content">
+                    <h3 style="color: #ef4444;">🔴 ${loc.name}</h3>
+                    <p><strong>Price Level:</strong> ${loc.price}</p>
+                    <p><strong>Est. Footfall Traffic:</strong> ${loc.footfall}/100</p>
+                    <p><strong>Note:</strong> ${loc.comment}</p>
+                    <p style="margin-top: 8px;"><a href="${mapsUrl}" target="_blank" style="color: #ef4444; text-decoration: underline; font-weight: bold;">📍 View on Google Maps</a></p>
+                </div>
+            `);
+        });
  
          // Shop Candidates in Dubai (Scaled: rent * 0.85, targetPct * 1.20, competitorCapacity * 1.50)
          const candidates = [
@@ -900,10 +905,11 @@
         });
 
         candidates.forEach(loc => {
-            const targetDemand = Math.round(loc.catchment * (loc.premiumTargetPct / 100)); // monthly visits
+            const targetDemand = Math.round(loc.catchment * (loc.premiumTargetPct / 100));
             const underservedDemand = Math.max(0, targetDemand - loc.competitorCapacity);
             const underservedPct = Math.round((underservedDemand / targetDemand) * 100);
             const ratio = (underservedDemand / loc.rent).toFixed(2);
+            const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${loc.lat},${loc.lng}`;
 
             L.marker([loc.lat, loc.lng], { icon: starIcon }).addTo(map).bindPopup(`
                 <div class="popup-content" style="min-width: 240px; color: #333;">
@@ -917,10 +923,11 @@
                     <p style="margin: 3px 0; font-size: 11px; display: flex; justify-content: space-between;"><span>Underserved Demand Gap:</span> <strong style="color: #e11d48;">${underservedDemand.toLocaleString()} visits (${underservedPct}%)</strong></p>
                     <p style="margin: 3px 0; font-size: 11px; display: flex; justify-content: space-between;"><span>Airport Travel Time:</span> <strong style="color: #111;">${loc.airportTime}</strong></p>
                     <p style="margin: 3px 0; font-size: 11px; display: flex; justify-content: space-between;"><span>Monthly Rent:</span> <strong style="color: #111;">USD ${loc.rent.toLocaleString()}</strong></p>
-                    <div style="background: rgba(198,168,124,0.15); padding: 8px; border-radius: 6px; border-left: 3px solid var(--accent); margin-top: 8px;">
+                    <div style="background: rgba(198,168,124,0.15); padding: 8px; border-radius: 6px; border-left: 3px solid var(--accent); margin-top: 8px; margin-bottom: 8px;">
                         <strong style="color: var(--accent); font-size: 10px; text-transform: uppercase; letter-spacing: 0.5px; display: block; margin-bottom: 2px;">Potential Customer to Rent Ratio:</strong>
                         <span style="font-size: 14px; font-weight: bold; color: #111;">${ratio} potential customers/USD 1 rent</span>
                     </div>
+                    <p style="margin-top: 8px; text-align: center;"><a href="${mapsUrl}" target="_blank" style="color: var(--accent); text-decoration: underline; font-weight: bold; font-size: 12px;">📍 View on Google Maps</a></p>
                 </div>
             `);
         });

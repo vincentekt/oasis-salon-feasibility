@@ -297,28 +297,28 @@
                             </tr>
                         </thead>
                         <tbody>
-                              <tr class="highlight-row">
-                                  <td>Jesselton Point Waterfront Retail</td>
+<tr class="highlight-row">
+                                  <td><a href="https://www.google.com/maps/search/?api=1&query=5.9925,116.08" target="_blank">Jesselton Point Waterfront Retail</a></td>
                                   <td>MYR 3,000 - 5,000</td>
                                   <td>KK's premier waterfront. Ground-floor retail facing Jesselton Point Ferry Terminal — maximum tourist and expat visibility. Oil &amp; gas executives from Menara TH and Sabah Energy cluster nearby. No premium colour studio in this corridor.</td>
                                   <td>Ferry terminal proximity means tourist-heavy crowd — need clear positioning to attract resident premium clients vs day-trippers</td>
                                   <td>4.8 / 5 (Recommended)</td>
                               </tr>
-                              <tr>
-                                  <td>Jalan Gaya (City Center)</td>
+<tr>
+                                  <td><a href="https://www.google.com/maps/search/?api=1&query=5.989,116.0745" target="_blank">Jalan Gaya (City Center)</a></td>
                                   <td>MYR 2,500 - 4,000</td>
                                   <td>KK's main commercial street. Within walking distance of Suria Sabah and Oceanus Mall. Michael &amp; Guys nearby confirms premium hair demand. Best balance of rent vs established foot traffic.</td>
                                   <td>Michael &amp; Guys direct competition on same commercial strip; ground-floor availability limited</td>
                                   <td>4.4 / 5</td>
                               </tr>
-                              <tr>
-                                  <td>Sutera Harbour Boulevard</td>
+<tr>
+                                  <td><a href="https://www.google.com/maps/search/?api=1&query=5.982,116.065" target="_blank">Sutera Harbour Boulevard</a></td>
                                   <td>MYR 5,000 - 9,000</td>
                                   <td>5-star resort corridor. Guaranteed HNWI clientele from Shell, Murphy Oil, resort management. Highest average ticket potential of three candidates.</td>
                                   <td>Very high rent; very low walk-in; appointment-only model requires strong advance booking system; limited Muslimah privacy options in resort-facing boutiques</td>
                                   <td>4.0 / 5</td>
                               </tr>
-             </tbody></table>
+</tbody></table>
                 </div>
                 <div class="conclusion-box">
                     <strong>Strategy:</strong> Lease a ground-floor commercial unit in a premium shophouse lane off Jesselton Quay Waterfront. Target rent: USD 1,020/month. This ensures direct visibility for waterfront tourists and high-income condo residents while optimizing lease overhead.
@@ -341,31 +341,31 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td><strong>Amos Hair Studio</strong></td>
+<tr>
+                                <td><a href="https://www.google.com/maps/search/?api=1&query=Amos+Hair+Studio%2C+Sabah" target="_blank"><strong>Amos Hair Studio</strong></a></td>
                                 <td>Riverson Lifestyle Centre, KK</td>
                                 <td>Balayage MYR 380–600 (~$82–$129)</td>
                                 <td>International-standard experience, professional atmosphere, highly rated for complex color corrections, English-friendly</td>
                                 <td>Riverson location is relatively new and less established for walk-in traffic; limited capacity; no structured membership</td>
                                 <td>Central KK Gaya Street / Jesselton Point boutique — prime tourist and expat corridor; structured membership with priority slots</td>
                             </tr>
-                            <tr>
-                                <td><strong>Michael and Guys</strong></td>
+<tr>
+                                <td><a href="https://www.google.com/maps/search/?api=1&query=Michael+and+Guys%2C+Sabah" target="_blank"><strong>Michael and Guys</strong></a></td>
                                 <td>Kota Kinabalu</td>
                                 <td>Balayage MYR 350–600 (~$75–$129); Kérastase rituals MYR 150+</td>
                                 <td>Detailed pricing transparency, Kérastase product range, professional consultations, pre-lightening expertise</td>
                                 <td>Not positioned as boutique luxury; functional salon aesthetic; limited creative/vivid color portfolio</td>
                                 <td>Boutique studio aesthetic + vivid color specialization + soft-water filtration for KK's tropical water challenges</td>
                             </tr>
-                            <tr>
-                                <td><strong>Your Hair Studio</strong></td>
+<tr>
+                                <td><a href="https://www.google.com/maps/search/?api=1&query=Your+Hair+Studio%2C+Sabah" target="_blank"><strong>Your Hair Studio</strong></a></td>
                                 <td>Kepayan, KK</td>
                                 <td>Balayage MYR 300–500 (~$65–$108); Air Touch MYR 400+</td>
                                 <td>Air Touch and European balayage techniques, length-specific transparent pricing, modern balayage methodology</td>
                                 <td>Kepayan location is suburban — less accessible for tourists and city-centre expats; no private styling bays; limited English communication</td>
                                 <td>City-centre ground-floor location; English + Malay + Mandarin trilingual team; private styling bays for Muslimah clientele</td>
                             </tr>
-                        </tbody>
+</tbody>
                     </table>
                 </div>
 </section>
@@ -813,11 +813,13 @@
 
         // Premium Expat Residential Zones in Sabah
         const residential = [
-            { name: "Likas Bay Premium Residential", lat: 6.0020, lng: 116.0900, radius: 450, estPop: 1200 },
-            { name: "Sutera Harbour Waterfront Enclave", lat: 5.9680, lng: 116.0580, radius: 400, estPop: 800 }
+            { name: "Likas Bay Premium Residential", lat: 6.002, lng: 116.09, radius: 450, estPop: 1200, nationality: "Korean, Japanese & Western Expats" },
+            { name: "Sutera Harbour Waterfront Enclave", lat: 5.968, lng: 116.058, radius: 400, estPop: 800, nationality: "Korean, Japanese & Western Expats" }
         ];
 
         residential.forEach(res => {
+            const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${res.lat},${res.lng}`;
+            let natText = res.nationality ? `<p><strong>Nationalities:</strong> ${res.nationality}</p>` : "";
             L.circle([res.lat, res.lng], {
                 color: '#a133ff',
                 fillColor: '#a133ff',
@@ -825,12 +827,12 @@
                 weight: 1.5,
                 radius: res.radius
             }).addTo(map).bindPopup(`
-                <div class="popup-content" style="min-width: 150px;">
-                    <h3 style="color: #a133ff; margin-bottom: 2px;">${res.name}</h3>
-                    <p><strong>Premium Residential Hub</strong></p>
-                    <hr style="margin: 5px 0; border: 0; border-top: 1px solid #eee;">
-                    <p style="margin-bottom: 0;"><strong>Est. Premium Residents:</strong></p>
-                    <p style="font-size: 14px; font-weight: bold; color: #333; margin-top: 2px;">~${res.estPop.toLocaleString()} households</p>
+                <div class="popup-content">
+                    <h3 style="color: #a133ff;">${res.name}</h3>
+                    <p><strong>Expat Residential Hub</strong></p>
+                    ${natText}
+                    <p><strong>Est. Population:</strong> ~${res.estPop.toLocaleString()} residents</p>
+                    <p style="margin-top: 8px;"><a href="${mapsUrl}" target="_blank" style="color: #a133ff; text-decoration: underline; font-weight: bold;">📍 View on Google Maps</a></p>
                 </div>
             `);
         });
@@ -842,18 +844,19 @@
         ];
 
         malls.forEach(loc => {
+            const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${loc.lat},${loc.lng}`;
             L.circleMarker([loc.lat, loc.lng], {
                 radius: getRadius(loc.footfall),
                 fillColor: "#333",
                 color: "#fff",
-                weight: 1,
+                weight: 1.5,
                 opacity: 1,
-                fillOpacity: 0.7
+                fillOpacity: 0.8
             }).addTo(map).bindPopup(`
                 <div class="popup-content">
                     <h3>🛍️ ${loc.name}</h3>
-                    <p><strong>Type:</strong> ${loc.type}</p>
-                    <p><strong>Est. Footfall Traffic:</strong> ${loc.footfall}/100</p>
+                    <p><strong>Est. Relative Footfall:</strong> ${loc.footfall}/100</p>
+                    <p style="margin-top: 8px;"><a href="${mapsUrl}" target="_blank" style="color: #fff; text-decoration: underline; font-weight: bold;">📍 View on Google Maps</a></p>
                 </div>
             `);
         });
@@ -866,6 +869,7 @@
         ];
 
         competitors.forEach(loc => {
+            const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${loc.lat},${loc.lng}`;
             L.circleMarker([loc.lat, loc.lng], {
                 radius: getRadius(loc.footfall),
                 fillColor: "#ef4444",
@@ -879,6 +883,7 @@
                     <p><strong>Price Level:</strong> ${loc.price}</p>
                     <p><strong>Est. Footfall Traffic:</strong> ${loc.footfall}/100</p>
                     <p><strong>Note:</strong> ${loc.comment}</p>
+                    <p style="margin-top: 8px;"><a href="${mapsUrl}" target="_blank" style="color: #ef4444; text-decoration: underline; font-weight: bold;">📍 View on Google Maps</a></p>
                 </div>
             `);
         });
@@ -917,10 +922,11 @@
         });
 
         candidates.forEach(loc => {
-            const targetDemand = Math.round(loc.catchment * (loc.premiumTargetPct / 100)); // monthly visits
+            const targetDemand = Math.round(loc.catchment * (loc.premiumTargetPct / 100));
             const underservedDemand = Math.max(0, targetDemand - loc.competitorCapacity);
             const underservedPct = Math.round((underservedDemand / targetDemand) * 100);
             const ratio = (underservedDemand / loc.rent).toFixed(2);
+            const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${loc.lat},${loc.lng}`;
 
             L.marker([loc.lat, loc.lng], { icon: starIcon }).addTo(map).bindPopup(`
                 <div class="popup-content" style="min-width: 240px; color: #333;">
@@ -934,10 +940,11 @@
                     <p style="margin: 3px 0; font-size: 11px; display: flex; justify-content: space-between;"><span>Underserved Demand Gap:</span> <strong style="color: #e11d48;">${underservedDemand.toLocaleString()} visits (${underservedPct}%)</strong></p>
                     <p style="margin: 3px 0; font-size: 11px; display: flex; justify-content: space-between;"><span>Airport Travel Time:</span> <strong style="color: #111;">${loc.airportTime}</strong></p>
                     <p style="margin: 3px 0; font-size: 11px; display: flex; justify-content: space-between;"><span>Monthly Rent:</span> <strong style="color: #111;">USD ${loc.rent.toLocaleString()}</strong></p>
-                    <div style="background: rgba(198,168,124,0.15); padding: 8px; border-radius: 6px; border-left: 3px solid var(--accent); margin-top: 8px;">
+                    <div style="background: rgba(198,168,124,0.15); padding: 8px; border-radius: 6px; border-left: 3px solid var(--accent); margin-top: 8px; margin-bottom: 8px;">
                         <strong style="color: var(--accent); font-size: 10px; text-transform: uppercase; letter-spacing: 0.5px; display: block; margin-bottom: 2px;">Potential Customer to Rent Ratio:</strong>
                         <span style="font-size: 14px; font-weight: bold; color: #111;">${ratio} potential customers/USD 1 rent</span>
                     </div>
+                    <p style="margin-top: 8px; text-align: center;"><a href="${mapsUrl}" target="_blank" style="color: var(--accent); text-decoration: underline; font-weight: bold; font-size: 12px;">📍 View on Google Maps</a></p>
                 </div>
             `);
         });
