@@ -241,6 +241,72 @@
         });
     }
 
+    // ── Update top KPI boxes dynamically ──────────────────────────────────────
+    function populateTopKpis(city) {
+        document.querySelectorAll('.stat-box').forEach(box => {
+            const labelEl = box.querySelector('.label');
+            const valueEl = box.querySelector('.value');
+            if (!labelEl || !valueEl) return;
+            const label = labelEl.textContent.trim().toLowerCase();
+            if (label.includes('initial capex') || label === 'capex') {
+                valueEl.textContent = city.capex || '—';
+            } else if (label.includes('monthly opex') || label === 'opex') {
+                valueEl.textContent = city.opex || '—';
+            } else if (label.includes('breakeven volume') || label.includes('break-even')) {
+                valueEl.textContent = city.daily_breakeven || '—';
+            } else if (label.includes('average ticket') || label === 'ticket') {
+                valueEl.textContent = city.ticket || '—';
+            } else if (label.includes('setup size') || label.includes('space size')) {
+                valueEl.textContent = city.size || '—';
+            }
+        });
+    }
+
+    // ── Update CAPEX Section Conclusion Box dynamically ───────────────────────
+    function populateCapexConclusion(city) {
+        const capexSection = document.querySelector('#capex, section[data-section="capex"]');
+        if (!capexSection) return;
+        const box = capexSection.querySelector('.conclusion-box');
+        if (!box) return;
+
+        const capexLow = city.capex_low;
+        const capexHigh = city.capex_high;
+        const capexMid = city.capex_mid || Math.round((capexLow + capexHigh) / 2);
+        const capexStr = city.capex || 'N/A';
+
+        box.innerHTML = `
+            <strong>Total Estimate: USD ${capexMid.toLocaleString('en-US')} (Midpoint of ${capexStr} range)</strong>
+        `;
+    }
+
+    // ── Update Unit Economics Post-Tax Conclusion Box dynamically ────────────
+    function populatePostTaxConclusion(city) {
+        const econSection = document.querySelector('#unit-economics, #economics, section[data-section="economics"]');
+        if (!econSection) return;
+        const box = econSection.querySelector('.conclusion-box');
+        if (!box) return;
+
+        const taxRate = city.tax_raw || 0;
+        const taxPctStr = city.tax || '0%';
+        const y2Pat = city.y2_pat_raw || 0;
+        const preTaxProfit = taxRate < 1 ? y2Pat / (1 - taxRate) : y2Pat;
+        const taxPaid = preTaxProfit * taxRate;
+        const paybackStr = city.payback || '—';
+        const ratioStr = city.pat_ratio || '—';
+
+        box.innerHTML = `
+            <h3 style="color: var(--success); font-size: 1.2rem; margin-bottom: 0.5rem; font-family: var(--font-heading);">Post-Tax Financial Feasibility Analysis</h3>
+            <p>All calculations in the table above represent pre-tax performance. Factoring in the local Corporate Income Tax (CIT) rate of <strong>${taxPctStr}</strong>, we arrive at the following post-tax projections for the Base Case:</p>
+            <ul style="margin-top: 0.5rem; margin-left: 1.5rem; list-style-type: disc; display: flex; flex-direction: column; gap: 0.4rem;">
+                <li><strong>Base Case Pre-Tax Monthly Net Profit:</strong> USD ${Math.round(preTaxProfit).toLocaleString('en-US')}</li>
+                <li><strong>Estimated Monthly Corporate Income Tax:</strong> USD ${Math.round(taxPaid).toLocaleString('en-US')}</li>
+                <li><strong>Post-Tax Net Monthly Profit (PAT):</strong> USD ${Math.round(y2Pat).toLocaleString('en-US')}</li>
+                <li><strong>Post-Tax Profit to OPEX Ratio:</strong> <strong>${ratioStr}</strong></li>
+                <li><strong>Post-Tax CAPEX Payback Period:</strong> <strong>${paybackStr}</strong></li>
+            </ul>
+        `;
+    }
+
     // ── Main init ─────────────────────────────────────────────────────────────
     function init() {
         const cityName = document.body.dataset.city;
@@ -260,6 +326,9 @@
                 populateOpexGrid(city);
                 populateHighlights(city);
                 updateMeta(city);
+                populateTopKpis(city);
+                populateCapexConclusion(city);
+                populatePostTaxConclusion(city);
             })
             .catch(err => {
                 console.error('[salon_ui] Failed to load city_data.json:', err);
