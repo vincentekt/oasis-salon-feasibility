@@ -1035,13 +1035,25 @@ document.addEventListener('DOMContentLoaded', () => {
             return minRad + ((pct - minPct) / (maxPct - minPct)) * (maxRad - minRad);
         };
 
+        const activeTabEl = document.querySelector('#overview-table .tab-btn.active');
+        const activeTab = activeTabEl ? activeTabEl.dataset.region : 'All';
+        const queryEl = document.querySelector('#overview-table .search-input');
+        const query = queryEl ? queryEl.value.toLowerCase() : '';
+
         // Render markers — all values from city_data.json (Excel-driven, no recomputation)
         citiesDb.forEach(city => {
-            if (city.capexVal > maxCapex) return;
+            const region = city.region;
+            const cityName = city.name.toLowerCase();
+            const capexVal = city.capexVal || 0;
+
+            const matchTab = (activeTab === 'All' || region === activeTab);
+            const matchQuery = cityName.includes(query);
+            const matchCapex = (capexVal <= maxCapex);
+
+            if (!matchTab || !matchQuery || !matchCapex) return;
             // Use pre-computed values from Excel model (via city_data.json)
             const payback = city.payback_raw   || 0;   // months at 75% util
             const ratio   = city.pat_ratio_raw || 0;   // % PAT/OPEX
-            const capexVal= city.capex_mid     || 0;   // USD midpoint for opacity scale
 
             const color   = getColor(payback);
             const opacity = getOpacity(capexVal);
@@ -1575,10 +1587,22 @@ window.filterTable = function(region, type) {
     
     // Apply filters
     applyFilters(type);
+
+    // Update map markers when overview region changes
+    if (type === 'overview') {
+        const state = getActiveState();
+        renderMapMarkers(state.model);
+    }
 };
 
 window.filterTableBySearch = function(type) {
     applyFilters(type);
+
+    // Update map markers when overview search changes
+    if (type === 'overview') {
+        const state = getActiveState();
+        renderMapMarkers(state.model);
+    }
 };
 
 window.filterByCapex = function(value) {
