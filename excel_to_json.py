@@ -74,6 +74,10 @@ for row in ws_i.iter_rows(min_row=5, max_row=50, values_only=True):
         "dep_mo":   int(row[13]) if row[13] else 3,
         "util_y1":  float(row[14]) if row[14] else 0.65,
         "util_y2":  float(row[15]) if row[15] else 0.75,
+        # Geography (cols Q=16, R=17, S=18)
+        "lat":         float(row[16]) if len(row) > 16 and row[16] is not None else 0.0,
+        "lon":         float(row[17]) if len(row) > 17 and row[17] is not None else 0.0,
+        "underserved": int(row[18])   if len(row) > 18 and row[18] is not None else 40,
     })
 print(f"  Loaded {len(city_inputs)} cities")
 
@@ -332,6 +336,12 @@ for city in city_inputs:
         "dep_months":   city["dep_mo"],
         "payback":      f"{r['payback_mo']} Months (at 75% util.)",
         "payback_raw":  r["payback_mo"],
+        # Geography — from Excel cols Q/R/S (editable in Cities sheet)
+        "lat":          city["lat"],
+        "lon":          city["lon"],
+        "coords":       [city["lat"], city["lon"]],   # Leaflet format [lat, lon]
+        "underserved":  f"{city['underserved']}%",
+        "underserved_raw": city["underserved"],
         # Risk & flags
         "risk":         ex.get("risk", ""),
         "viable":       r["viable"],

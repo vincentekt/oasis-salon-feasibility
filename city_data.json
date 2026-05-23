@@ -55,6 +55,14 @@
     "dep_months": 3,
     "payback": "7 Months (at 75% util.)",
     "payback_raw": 7,
+    "lat": 10.776,
+    "lon": 106.701,
+    "coords": [
+      10.776,
+      106.701
+    ],
+    "underserved": "65%",
+    "underserved_raw": 65,
     "risk": "Foreign ownership license compliance (IRC/ERC process 2-4 months)",
     "viable": true,
     "country": "VN"
@@ -115,6 +123,14 @@
     "dep_months": 3,
     "payback": "6 Months (at 75% util.)",
     "payback_raw": 6,
+    "lat": 21.028,
+    "lon": 105.852,
+    "coords": [
+      21.028,
+      105.852
+    ],
+    "underserved": "55%",
+    "underserved_raw": 55,
     "risk": "Hard water (TDS 400+ ppm) requires RO filtration investment; foreign license compliance",
     "viable": true,
     "country": "VN"
@@ -175,6 +191,14 @@
     "dep_months": 3,
     "payback": "6 Months (at 75% util.)",
     "payback_raw": 6,
+    "lat": 16.068,
+    "lon": 108.212,
+    "coords": [
+      16.068,
+      108.212
+    ],
+    "underserved": "70%",
+    "underserved_raw": 70,
     "risk": "Seasonal tourism slump (Nov-Feb monsoon); nomad base fluctuates with global remote-work trends",
     "viable": true,
     "country": "VN"
@@ -235,6 +259,14 @@
     "dep_months": 3,
     "payback": "7 Months (at 75% util.)",
     "payback_raw": 7,
+    "lat": 20.865,
+    "lon": 106.683,
+    "coords": [
+      20.865,
+      106.683
+    ],
+    "underserved": "72%",
+    "underserved_raw": 72,
     "risk": "Dependency on Deep C / VSIP Korean industrial rotation cycles",
     "viable": true,
     "country": "VN"
@@ -295,6 +327,14 @@
     "dep_months": 3,
     "payback": "7 Months (at 75% util.)",
     "payback_raw": 7,
+    "lat": 10.98,
+    "lon": 106.653,
+    "coords": [
+      10.98,
+      106.653
+    ],
+    "underserved": "75%",
+    "underserved_raw": 75,
     "risk": "Korean factory shift rotation cycles; premium product supply chain from HCMC (60 min)",
     "viable": true,
     "country": "VN"
@@ -355,6 +395,14 @@
     "dep_months": 3,
     "payback": "4 Months (at 75% util.)",
     "payback_raw": 4,
+    "lat": 10.945,
+    "lon": 106.824,
+    "coords": [
+      10.945,
+      106.824
+    ],
+    "underserved": "73%",
+    "underserved_raw": 73,
     "risk": "Zero local competition but small total expat population; 60-min SGN logistics chain",
     "viable": true,
     "country": "VN"
@@ -415,6 +463,14 @@
     "dep_months": 3,
     "payback": "9 Months (at 75% util.)",
     "payback_raw": 9,
+    "lat": 3.148,
+    "lon": 101.686,
+    "coords": [
+      3.148,
+      101.686
+    ],
+    "underserved": "40%",
+    "underserved_raw": 40,
     "risk": "KLCC/Ampang corridor gap vs. 4 established competitors in Bangsar; Muslimah bay planning needed",
     "viable": true,
     "country": "MY"
@@ -475,6 +531,14 @@
     "dep_months": 3,
     "payback": "7 Months (at 75% util.)",
     "payback_raw": 7,
+    "lat": 1.492,
+    "lon": 103.743,
+    "coords": [
+      1.492,
+      103.743
+    ],
+    "underserved": "55%",
+    "underserved_raw": 55,
     "risk": "RTS operational delays; SG cross-border demand tied to MYR/SGD exchange rate sensitivity",
     "viable": true,
     "country": "MY"
@@ -535,6 +599,14 @@
     "dep_months": 3,
     "payback": "8 Months (at 75% util.)",
     "payback_raw": 8,
+    "lat": 5.414,
+    "lon": 100.33,
+    "coords": [
+      5.414,
+      100.33
+    ],
+    "underserved": "50%",
+    "underserved_raw": 50,
     "risk": "Georgetown heritage DA restrictions on fit-out signage; limited premium residential density vs KL",
     "viable": true,
     "country": "MY"
@@ -595,6 +667,14 @@
     "dep_months": 3,
     "payback": "12 Months (at 75% util.)",
     "payback_raw": 12,
+    "lat": 5.978,
+    "lon": 116.073,
+    "coords": [
+      5.978,
+      116.073
+    ],
+    "underserved": "68%",
+    "underserved_raw": 68,
     "risk": "Small total expat base; East Malaysia logistics surcharge for premium colour product supply",
     "viable": true,
     "country": "MY"
@@ -655,6 +735,14 @@
     "dep_months": 3,
     "payback": "11 Months (at 75% util.)",
     "payback_raw": 11,
+    "lat": 1.553,
+    "lon": 110.36,
+    "coords": [
+      1.553,
+      110.36
+    ],
+    "underserved": "65%",
+    "underserved_raw": 65,
     "risk": "Shell/Petronas rotation cycles; East Malaysia freight costs for salon products",
     "viable": true,
     "country": "MY"
@@ -715,6 +803,14 @@
     "dep_months": 3,
     "payback": "35 Months (at 75% util.)",
     "payback_raw": 35,
+    "lat": 1.283,
+    "lon": 103.85,
+    "coords": [
+      1.283,
+      103.85
+    ],
+    "underserved": "25%",
+    "underserved_raw": 25,
     "risk": "Ultra-high rent; Holland V HDB commercial leases require SCDF & BCA approvals; F&B landlord competition",
     "viable": true,
     "country": "SG"
@@ -775,6 +871,14 @@
     "dep_months": 3,
     "payback": "21 Months (at 75% util.)",
     "payback_raw": 21,
+    "lat": 22.279,
+    "lon": 114.165,
+    "coords": [
+      22.279,
+      114.165
+    ],
+    "underserved": "22%",
+    "underserved_raw": 22,
     "risk": "Ultra-high commercial rent; Causeway Bay lease scarcity and key money demands",
     "viable": true,
     "country": "HK"
@@ -835,6 +939,14 @@
     "dep_months": 3,
     "payback": "6 Months (at 75% util.)",
     "payback_raw": 6,
+    "lat": 13.745,
+    "lon": 100.532,
+    "coords": [
+      13.745,
+      100.532
+    ],
+    "underserved": "45%",
+    "underserved_raw": 45,
     "risk": "Hard water (TDS 300-500 ppm) — RO filtration essential; very high Thonglor rent premium",
     "viable": true,
     "country": "TH"
@@ -895,6 +1007,14 @@
     "dep_months": 3,
     "payback": "16 Months (at 75% util.)",
     "payback_raw": 16,
+    "lat": 22.197,
+    "lon": 113.545,
+    "coords": [
+      22.197,
+      113.545
+    ],
+    "underserved": "38%",
+    "underserved_raw": 38,
     "risk": "Casino industry cyclicality; 12% Macau profit tax but gaming downturn risk",
     "viable": true,
     "country": "MC"
@@ -955,6 +1075,14 @@
     "dep_months": 12,
     "payback": "15 Months (at 75% util.)",
     "payback_raw": 15,
+    "lat": 25.187,
+    "lon": 55.274,
+    "coords": [
+      25.187,
+      55.274
+    ],
+    "underserved": "30%",
+    "underserved_raw": 30,
     "risk": "Extreme hard water (TDS 500-1200 ppm) — heavy RO investment; annual lease pre-payment UAE norm",
     "viable": true,
     "country": "AE"
@@ -1015,6 +1143,14 @@
     "dep_months": 3,
     "payback": "13 Months (at 75% util.)",
     "payback_raw": 13,
+    "lat": 25.033,
+    "lon": 121.565,
+    "coords": [
+      25.033,
+      121.565
+    ],
+    "underserved": "35%",
+    "underserved_raw": 35,
     "risk": "Intense local competition; 6-9 hr wait at top competitors — booking system must prevent same bottleneck",
     "viable": true,
     "country": "TW"
@@ -1075,6 +1211,14 @@
     "dep_months": 3,
     "payback": "10 Months (at 75% util.)",
     "payback_raw": 10,
+    "lat": 24.163,
+    "lon": 120.647,
+    "coords": [
+      24.163,
+      120.647
+    ],
+    "underserved": "42%",
+    "underserved_raw": 42,
     "risk": "Qi-qi premium rent inflation; experienced colour stylist scarcity vs. local Taiwanese market",
     "viable": true,
     "country": "TW"
@@ -1135,6 +1279,14 @@
     "dep_months": 3,
     "payback": "6 Months (at 75% util.)",
     "payback_raw": 6,
+    "lat": 22.627,
+    "lon": 120.302,
+    "coords": [
+      22.627,
+      120.302
+    ],
+    "underserved": "48%",
+    "underserved_raw": 48,
     "risk": "THSR Zuoying first-mover reliant on commuter appointment behavior; Round2/UCA Lingya competition",
     "viable": true,
     "country": "TW"
@@ -1195,6 +1347,14 @@
     "dep_months": 3,
     "payback": "14 Months (at 75% util.)",
     "payback_raw": 14,
+    "lat": 22.993,
+    "lon": 120.202,
+    "coords": [
+      22.993,
+      120.202
+    ],
+    "underserved": "55%",
+    "underserved_raw": 55,
     "risk": "TSMC Sinshih expat base still ramping — 2025-2027 TSMC Fab 18 construction dependency",
     "viable": true,
     "country": "TW"
@@ -1255,6 +1415,14 @@
     "dep_months": 3,
     "payback": "29 Months (at 75% util.)",
     "payback_raw": 29,
+    "lat": 33.589,
+    "lon": 130.398,
+    "coords": [
+      33.589,
+      130.398
+    ],
+    "underserved": "38%",
+    "underserved_raw": 38,
     "risk": "30% JP corporate tax; Daimyo boutique lease scarcity; TONI&GUY/saco japan direct competition on same block",
     "viable": true,
     "country": "JP"
@@ -1315,6 +1483,14 @@
     "dep_months": 3,
     "payback": "17 Months (at 75% util.)",
     "payback_raw": 17,
+    "lat": 26.213,
+    "lon": 127.679,
+    "coords": [
+      26.213,
+      127.679
+    ],
+    "underserved": "52%",
+    "underserved_raw": 52,
     "risk": "Bilingual (English/Korean) stylist recruitment extremely difficult in Okinawa; 30% JP tax burden",
     "viable": true,
     "country": "JP"
@@ -1375,6 +1551,14 @@
     "dep_months": 3,
     "payback": "21 Months (at 75% util.)",
     "payback_raw": 21,
+    "lat": 35.158,
+    "lon": 129.06,
+    "coords": [
+      35.158,
+      129.06
+    ],
+    "underserved": "45%",
+    "underserved_raw": 45,
     "risk": "K-franchise dominance (Juno Hair 200+ outlets); Marine City appointment-only requires strong pre-booking system",
     "viable": true,
     "country": "KR"
@@ -1435,6 +1619,14 @@
     "dep_months": 3,
     "payback": "8 Months (at 75% util.)",
     "payback_raw": 8,
+    "lat": -33.869,
+    "lon": 151.207,
+    "coords": [
+      -33.869,
+      151.207
+    ],
+    "underserved": "30%",
+    "underserved_raw": 30,
     "risk": "High AU labour Award rates + 11.5% superannuation; inner-west DA heritage restrictions on fit-out",
     "viable": true,
     "country": "AU"
@@ -1495,6 +1687,14 @@
     "dep_months": 3,
     "payback": "11 Months (at 75% util.)",
     "payback_raw": 11,
+    "lat": -37.814,
+    "lon": 144.963,
+    "coords": [
+      -37.814,
+      144.963
+    ],
+    "underserved": "32%",
+    "underserved_raw": 32,
     "risk": "High AU labour + superannuation; Chapel St rent inflation; F&B competition for prime ground-floor leases",
     "viable": true,
     "country": "AU"
@@ -1555,6 +1755,14 @@
     "dep_months": 3,
     "payback": "8 Months (at 75% util.)",
     "payback_raw": 8,
+    "lat": -27.47,
+    "lon": 153.026,
+    "coords": [
+      -27.47,
+      153.026
+    ],
+    "underserved": "36%",
+    "underserved_raw": 36,
     "risk": "High AU labour costs and superannuation; UV-damaged colour turnover requires more frequent client visits",
     "viable": true,
     "country": "AU"
@@ -1615,6 +1823,14 @@
     "dep_months": 3,
     "payback": "10 Months (at 75% util.)",
     "payback_raw": 10,
+    "lat": -31.953,
+    "lon": 115.857,
+    "coords": [
+      -31.953,
+      115.857
+    ],
+    "underserved": "38%",
+    "underserved_raw": 38,
     "risk": "FIFO schedule volatility; isolation from east-coast premium product supply chain",
     "viable": true,
     "country": "AU"
