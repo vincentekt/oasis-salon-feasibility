@@ -848,13 +848,14 @@
 
         // Expat / Affluent Residential Zones
         const residential = [
-            { name: "Mid-Levels Expat Core", lat: 22.278, lng: 114.15, radius: 500, estPop: 8000, nationality: "Mixed Expats" },
+            { name: "Mid-Levels Expat Core", lat: 22.278, lng: 114.15, radius: 500, estPop: 8000, employers: "Goldman Sachs, Morgan Stanley, HSBC, McKinsey", nationality: "Mixed Expats" },
             { name: "Jardine's Lookout / Happy Valley", lat: 22.268, lng: 114.185, radius: 450, estPop: 5000, nationality: "Mixed Expats" }
         ];
 
         residential.forEach(res => {
             const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${res.lat},${res.lng}`;
             let natText = res.nationality ? `<p><strong>Nationalities:</strong> ${res.nationality}</p>` : "";
+            let empText = res.employers ? `<p><strong>Key Employers:</strong> ${res.employers}</p>` : "";
             L.circle([res.lat, res.lng], {
                 color: '#a133ff',
                 fillColor: '#a133ff',
@@ -866,6 +867,7 @@
                     <h3 style="color: #a133ff;">${res.name}</h3>
                     <p><strong>Expat Residential Hub</strong></p>
                     ${natText}
+                    ${empText}
                     <p><strong>Est. Population:</strong> ~${res.estPop.toLocaleString()} residents</p>
                     <p style="margin-top: 8px;"><a href="${mapsUrl}" target="_blank" style="color: #a133ff; text-decoration: underline; font-weight: bold;">📍 View on Google Maps</a></p>
                 </div>

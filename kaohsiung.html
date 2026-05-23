@@ -868,13 +868,14 @@
 
         // Premium Residential Zones
         const residential = [
-            { name: "Gushan Art District Residential", lat: 22.657, lng: 120.291, radius: 450, estPop: 5000, nationality: "Japanese & Western Expats" },
-            { name: "Sanduo High-Rise Residential", lat: 22.615, lng: 120.305, radius: 350, estPop: 3500, nationality: "Japanese & Western Expats" }
+            { name: "Gushan Art District Residential", lat: 22.657, lng: 120.291, radius: 450, estPop: 5000, employers: "ASML, Tokyo Electron, Innolux, China Steel", nationality: "Japanese & Western Expats" },
+            { name: "Sanduo High-Rise Residential", lat: 22.615, lng: 120.305, radius: 350, estPop: 3500, employers: "Foxconn, ASE Group, Shipping Lines, Nanzih Tech", nationality: "Japanese & Western Expats" }
         ];
 
         residential.forEach(res => {
             const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${res.lat},${res.lng}`;
             let natText = res.nationality ? `<p><strong>Nationalities:</strong> ${res.nationality}</p>` : "";
+            let empText = res.employers ? `<p><strong>Key Employers:</strong> ${res.employers}</p>` : "";
             L.circle([res.lat, res.lng], {
                 color: '#a133ff',
                 fillColor: '#a133ff',
@@ -886,6 +887,7 @@
                     <h3 style="color: #a133ff;">${res.name}</h3>
                     <p><strong>Expat Residential Hub</strong></p>
                     ${natText}
+                    ${empText}
                     <p><strong>Est. Population:</strong> ~${res.estPop.toLocaleString()} residents</p>
                     <p style="margin-top: 8px;"><a href="${mapsUrl}" target="_blank" style="color: #a133ff; text-decoration: underline; font-weight: bold;">📍 View on Google Maps</a></p>
                 </div>

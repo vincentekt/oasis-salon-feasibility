@@ -862,12 +862,13 @@
         // Expat / Affluent Residential Zones
         const residential = [
             { name: "Da'an Residential Core", lat: 25.033, lng: 121.543, radius: 400, estPop: 6000, nationality: "Japanese, American & Western Expats" },
-            { name: "Songshan Minsheng Residential", lat: 25.058, lng: 121.555, radius: 350, estPop: 4000, nationality: "Japanese & Western Expats" }
+            { name: "Songshan Minsheng Residential", lat: 25.058, lng: 121.555, radius: 350, estPop: 4000, employers: "Japanese Trading Houses, Financial MNCs, ANA/JAL", nationality: "Japanese & Western Expats" }
         ];
 
         residential.forEach(res => {
             const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${res.lat},${res.lng}`;
             let natText = res.nationality ? `<p><strong>Nationalities:</strong> ${res.nationality}</p>` : "";
+            let empText = res.employers ? `<p><strong>Key Employers:</strong> ${res.employers}</p>` : "";
             L.circle([res.lat, res.lng], {
                 color: '#a133ff',
                 fillColor: '#a133ff',
@@ -879,6 +880,7 @@
                     <h3 style="color: #a133ff;">${res.name}</h3>
                     <p><strong>Expat Residential Hub</strong></p>
                     ${natText}
+                    ${empText}
                     <p><strong>Est. Population:</strong> ~${res.estPop.toLocaleString()} residents</p>
                     <p style="margin-top: 8px;"><a href="${mapsUrl}" target="_blank" style="color: #a133ff; text-decoration: underline; font-weight: bold;">📍 View on Google Maps</a></p>
                 </div>

@@ -833,13 +833,14 @@
 
         // Expat / Affluent Residential Zones
         const residential = [
-            { name: "Omoromachi Residential Core", lat: 26.2225, lng: 127.6965, radius: 400, estPop: 6000, nationality: "American & Western Expats" },
-            { name: "Kumoji Affluent Hub", lat: 26.216, lng: 127.6815, radius: 350, estPop: 4000, nationality: "American & Western Expats" }
+            { name: "Omoromachi Residential Core", lat: 26.2225, lng: 127.6965, radius: 400, estPop: 6000, employers: "US Military Civil Service, OIST, Tourism Boards", nationality: "American & Western Expats" },
+            { name: "Kumoji Affluent Hub", lat: 26.216, lng: 127.6815, radius: 350, estPop: 4000, employers: "Local Banks, Okinawa Cellular, Airlines, Hotels", nationality: "American & Western Expats" }
         ];
 
         residential.forEach(res => {
             const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${res.lat},${res.lng}`;
             let natText = res.nationality ? `<p><strong>Nationalities:</strong> ${res.nationality}</p>` : "";
+            let empText = res.employers ? `<p><strong>Key Employers:</strong> ${res.employers}</p>` : "";
             L.circle([res.lat, res.lng], {
                 color: '#a133ff',
                 fillColor: '#a133ff',
@@ -851,6 +852,7 @@
                     <h3 style="color: #a133ff;">${res.name}</h3>
                     <p><strong>Expat Residential Hub</strong></p>
                     ${natText}
+                    ${empText}
                     <p><strong>Est. Population:</strong> ~${res.estPop.toLocaleString()} residents</p>
                     <p style="margin-top: 8px;"><a href="${mapsUrl}" target="_blank" style="color: #a133ff; text-decoration: underline; font-weight: bold;">📍 View on Google Maps</a></p>
                 </div>

@@ -825,13 +825,14 @@
 
         // Premium Expat Residential Zones
         const residential = [
-            { name: "Hai Chau High Wealth Core", lat: 16.06, lng: 108.218, radius: 450, estPop: 2200, nationality: "Western & Asian Expats" },
-            { name: "An Thuong Expat Ward", lat: 16.05, lng: 108.243, radius: 400, estPop: 1800, nationality: "Western, Korean & Russian Expats (Digital Nomads)" }
+            { name: "Hai Chau High Wealth Core", lat: 16.06, lng: 108.218, radius: 450, estPop: 2200, employers: "FPT Software, Enclave, International NGOs", nationality: "Western & Asian Expats" },
+            { name: "An Thuong Expat Ward", lat: 16.05, lng: 108.243, radius: 400, estPop: 1800, employers: "Remote Startups, Digital Agencies, Dalat School", nationality: "Western, Korean & Russian Expats (Digital Nomads)" }
         ];
 
         residential.forEach(res => {
             const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${res.lat},${res.lng}`;
             let natText = res.nationality ? `<p><strong>Nationalities:</strong> ${res.nationality}</p>` : "";
+            let empText = res.employers ? `<p><strong>Key Employers:</strong> ${res.employers}</p>` : "";
             L.circle([res.lat, res.lng], {
                 color: '#a133ff',
                 fillColor: '#a133ff',
@@ -843,6 +844,7 @@
                     <h3 style="color: #a133ff;">${res.name}</h3>
                     <p><strong>Expat Residential Hub</strong></p>
                     ${natText}
+                    ${empText}
                     <p><strong>Est. Population:</strong> ~${res.estPop.toLocaleString()} residents</p>
                     <p style="margin-top: 8px;"><a href="${mapsUrl}" target="_blank" style="color: #a133ff; text-decoration: underline; font-weight: bold;">📍 View on Google Maps</a></p>
                 </div>

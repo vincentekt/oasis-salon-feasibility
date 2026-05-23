@@ -808,14 +808,15 @@
 
         // Premium Residential Zones
         const residential = [
-            { name: "Orchard Luxury Enclave", lat: 1.305, lng: 103.832, radius: 450, estPop: 3000, nationality: "Western, British & Japanese Expats" },
-            { name: "Tanjong Pagar / CBD Shophouses", lat: 1.277, lng: 103.844, radius: 350, estPop: 2000, nationality: "Western & European Expats" },
-            { name: "River Valley Affluent Hub", lat: 1.295, lng: 103.83, radius: 400, estPop: 2500, nationality: "Western, British & Japanese Expats" }
+            { name: "Orchard Luxury Enclave", lat: 1.305, lng: 103.832, radius: 450, estPop: 3000, employers: "Google, Meta, Apple, Citibank, Japanese MNCs", nationality: "Western, British & Japanese Expats" },
+            { name: "Tanjong Pagar / CBD Shophouses", lat: 1.277, lng: 103.844, radius: 350, estPop: 2000, employers: "Goldman Sachs, PwC, KPMG, Trading Houses", nationality: "Western & European Expats" },
+            { name: "River Valley Affluent Hub", lat: 1.295, lng: 103.83, radius: 400, estPop: 2500, employers: "Grab, Shopee, Microsoft, Unilever, HSBC", nationality: "Western, British & Japanese Expats" }
         ];
 
         residential.forEach(res => {
             const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${res.lat},${res.lng}`;
             let natText = res.nationality ? `<p><strong>Nationalities:</strong> ${res.nationality}</p>` : "";
+            let empText = res.employers ? `<p><strong>Key Employers:</strong> ${res.employers}</p>` : "";
             L.circle([res.lat, res.lng], {
                 color: '#a133ff',
                 fillColor: '#a133ff',
@@ -827,6 +828,7 @@
                     <h3 style="color: #a133ff;">${res.name}</h3>
                     <p><strong>Expat Residential Hub</strong></p>
                     ${natText}
+                    ${empText}
                     <p><strong>Est. Population:</strong> ~${res.estPop.toLocaleString()} residents</p>
                     <p style="margin-top: 8px;"><a href="${mapsUrl}" target="_blank" style="color: #a133ff; text-decoration: underline; font-weight: bold;">📍 View on Google Maps</a></p>
                 </div>

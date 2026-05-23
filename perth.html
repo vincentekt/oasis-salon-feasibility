@@ -814,14 +814,15 @@
 
         // High Income Residential Zones
         const residential = [
-            { name: "Subiaco High Income", lat: -31.947, lng: 115.826, radius: 400, estPop: 2200, nationality: "British & European Expats" },
-            { name: "Cottesloe Coastal Hub", lat: -31.996, lng: 115.759, radius: 450, estPop: 1800, nationality: "British & European Expats" },
-            { name: "Dalkeith Premium", lat: -32.001, lng: 115.802, radius: 500, estPop: 1200, nationality: "British & European Expats" }
+            { name: "Subiaco High Income", lat: -31.947, lng: 115.826, radius: 400, estPop: 2200, employers: "Woodside Energy, Chevron, South32, Mining Consultancies", nationality: "British & European Expats" },
+            { name: "Cottesloe Coastal Hub", lat: -31.996, lng: 115.759, radius: 450, estPop: 1800, employers: "Rio Tinto, BHP, Medical Specialists", nationality: "British & European Expats" },
+            { name: "Dalkeith Premium", lat: -32.001, lng: 115.802, radius: 500, estPop: 1200, employers: "Corporate Law, Mining Founders, UWA Faculty", nationality: "British & European Expats" }
         ];
 
         residential.forEach(res => {
             const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${res.lat},${res.lng}`;
             let natText = res.nationality ? `<p><strong>Nationalities:</strong> ${res.nationality}</p>` : "";
+            let empText = res.employers ? `<p><strong>Key Employers:</strong> ${res.employers}</p>` : "";
             L.circle([res.lat, res.lng], {
                 color: '#a133ff',
                 fillColor: '#a133ff',
@@ -833,6 +834,7 @@
                     <h3 style="color: #a133ff;">${res.name}</h3>
                     <p><strong>Expat Residential Hub</strong></p>
                     ${natText}
+                    ${empText}
                     <p><strong>Est. Population:</strong> ~${res.estPop.toLocaleString()} residents</p>
                     <p style="margin-top: 8px;"><a href="${mapsUrl}" target="_blank" style="color: #a133ff; text-decoration: underline; font-weight: bold;">📍 View on Google Maps</a></p>
                 </div>

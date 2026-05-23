@@ -819,14 +819,15 @@
 
         // Premium Expat Residential Zones
         const residential = [
-            { name: "Thonglor Japanese Expat Center", lat: 13.731, lng: 100.581, radius: 500, estPop: 4500, nationality: "Mixed Expats" },
-            { name: "Ekkamai Affluent Residential Core", lat: 13.725, lng: 100.586, radius: 400, estPop: 3000, nationality: "Mixed Expats" },
-            { name: "Phrom Phong Japanese Enclave", lat: 13.73, lng: 100.57, radius: 450, estPop: 4000, nationality: "Japanese Expats" }
+            { name: "Thonglor Japanese Expat Center", lat: 13.731, lng: 100.581, radius: 500, estPop: 4500, employers: "Toyota, Honda, Mitsubishi, UN ESCAP", nationality: "Mixed Expats" },
+            { name: "Ekkamai Affluent Residential Core", lat: 13.725, lng: 100.586, radius: 400, estPop: 3000, employers: "Japanese MNCs, Chevron, ExxonMobil", nationality: "Mixed Expats" },
+            { name: "Phrom Phong Japanese Enclave", lat: 13.73, lng: 100.57, radius: 450, estPop: 4000, employers: "Toyota, Mitsui, Sumitomo, Japanese Embassy", nationality: "Japanese Expats" }
         ];
 
         residential.forEach(res => {
             const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${res.lat},${res.lng}`;
             let natText = res.nationality ? `<p><strong>Nationalities:</strong> ${res.nationality}</p>` : "";
+            let empText = res.employers ? `<p><strong>Key Employers:</strong> ${res.employers}</p>` : "";
             L.circle([res.lat, res.lng], {
                 color: '#a133ff',
                 fillColor: '#a133ff',
@@ -838,6 +839,7 @@
                     <h3 style="color: #a133ff;">${res.name}</h3>
                     <p><strong>Expat Residential Hub</strong></p>
                     ${natText}
+                    ${empText}
                     <p><strong>Est. Population:</strong> ~${res.estPop.toLocaleString()} residents</p>
                     <p style="margin-top: 8px;"><a href="${mapsUrl}" target="_blank" style="color: #a133ff; text-decoration: underline; font-weight: bold;">📍 View on Google Maps</a></p>
                 </div>

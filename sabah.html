@@ -813,13 +813,14 @@
 
         // Premium Expat Residential Zones in Sabah
         const residential = [
-            { name: "Likas Bay Premium Residential", lat: 6.002, lng: 116.09, radius: 450, estPop: 1200, nationality: "Korean, Japanese & Western Expats" },
-            { name: "Sutera Harbour Waterfront Enclave", lat: 5.968, lng: 116.058, radius: 400, estPop: 800, nationality: "Korean, Japanese & Western Expats" }
+            { name: "Likas Bay Premium Residential", lat: 6.002, lng: 116.09, radius: 450, estPop: 1200, employers: "Shell Sabah, Petronas Carigali, Repsol, Federal Govt", nationality: "Korean, Japanese & Western Expats" },
+            { name: "Sutera Harbour Waterfront Enclave", lat: 5.968, lng: 116.058, radius: 400, estPop: 800, employers: "Tourism Developers, Maritime Operations, Oil & Gas", nationality: "Korean, Japanese & Western Expats" }
         ];
 
         residential.forEach(res => {
             const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${res.lat},${res.lng}`;
             let natText = res.nationality ? `<p><strong>Nationalities:</strong> ${res.nationality}</p>` : "";
+            let empText = res.employers ? `<p><strong>Key Employers:</strong> ${res.employers}</p>` : "";
             L.circle([res.lat, res.lng], {
                 color: '#a133ff',
                 fillColor: '#a133ff',
@@ -831,6 +832,7 @@
                     <h3 style="color: #a133ff;">${res.name}</h3>
                     <p><strong>Expat Residential Hub</strong></p>
                     ${natText}
+                    ${empText}
                     <p><strong>Est. Population:</strong> ~${res.estPop.toLocaleString()} residents</p>
                     <p style="margin-top: 8px;"><a href="${mapsUrl}" target="_blank" style="color: #a133ff; text-decoration: underline; font-weight: bold;">📍 View on Google Maps</a></p>
                 </div>
