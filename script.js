@@ -1059,7 +1059,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const popupContent = `
                 <div class="popup-content">
-                    <h3>${city.name}</h3>
+                    <h3><a href="https://www.google.com/maps/search/?api=1&query=${city.coords[0]},${city.coords[1]}" target="_blank" style="color: inherit; text-decoration: none;" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">${city.name}</a></h3>
                     <p>Format: <strong>${formatStr}</strong></p>
                     <p>Initial CAPEX: <strong>${capexStr}</strong></p>
                     <p>Monthly OPEX: <strong>${opexStr}</strong></p>
