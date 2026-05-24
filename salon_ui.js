@@ -55,73 +55,7 @@
     }
     function fmtPct(v) { return Number(v * 100).toFixed(1) + '%'; }
 
-    // ── Build unit economics table rows ───────────────────────────────────────
-    function buildEconomicsRows(city) {
-        const c = city;
-        const util_y1 = c.util_y1 || '65%';
-        const util_y2 = c.util_y2 || '75%';
 
-        const rows = [
-            // Space & Capacity
-            { label: 'Space Size',             value: c.size || '—',           section: 'capacity' },
-            { label: 'Styling Stations',       value: `${c.stations || '—'} active styling chairs`, section: 'capacity' },
-            { label: 'Color Bar Seats',        value: `${c.color_bar_seats || '—'} seats (for concurrent color processing)`, section: 'capacity' },
-            { label: 'Total Physical Seats',   value: `${c.total_seats || '—'} seats`, section: 'capacity' },
-            { label: 'Wash Basins',            value: `${c.wash_basins || 2} filtration basins`, section: 'capacity' },
-            { label: 'Team Size',              value: `${c.total_staff || '—'} (${c.staff_label || '—'})`, section: 'capacity' },
-            { label: 'Session Capacity',       value: c.max_capacity || '—',   section: 'capacity' },
-            { label: `Operating Clients (Year 1 — ${util_y1})`, value: `${c.y1_clients || '—'} sessions/month`, section: 'capacity' },
-            { label: `Operating Clients (Year 2 — ${util_y2})`, value: `${c.y2_clients || '—'} sessions/month`, section: 'capacity' },
-            // Pricing
-            { label: 'Average Ticket',         value: c.ticket || '—',         section: 'pricing' },
-            { label: 'COGS per Session (10%)', value: c.cogs || '—',           section: 'pricing' },
-            { label: 'Gross Margin per Session', value: c.margin ? `${c.ticket} × 90% = USD ${(parseInt(c.ticket.replace(/\D/g,'')) * 0.9).toFixed(2)}` : '—', section: 'pricing' },
-            // Breakeven
-            { label: 'Break-Even Volume (Accounting)', value: c.breakeven || '—',      section: 'breakeven' },
-            { label: 'Daily Break-Even',       value: c.daily_breakeven || '—', section: 'breakeven' },
-            // OPEX breakdown
-            { label: 'Monthly Cash OPEX (Total)', value: c.rent_mo && c.staff_cost_mo ? 'USD ' + (c.opex_raw).toLocaleString('en-US') : '—', section: 'opex' },
-            { label: '  → Rent',               value: c.rent_mo || '—',        section: 'opex', sub: true },
-            { label: '  → Staff & Payroll',    value: c.staff_cost_mo || '—',  section: 'opex', sub: true },
-            { label: '  → Admin, Software & Insur.', value: c.admin_sw_mo || '—', section: 'opex', sub: true },
-            { label: '  → Utilities + Marketing + Misc', value: (() => {
-                if (!c.opex_raw || !c.staff_cost_mo || !c.rent_mo || !c.admin_sw_raw) return '—';
-                const opex = c.opex_raw;
-                const rent = parseInt(c.rent_mo.replace(/\D/g,''));
-                const staff = parseInt(c.staff_cost_mo.replace(/\D/g,''));
-                const admin = c.admin_sw_raw;
-                return 'USD ' + (opex - rent - staff - admin).toLocaleString('en-US');
-            })(), section: 'opex', sub: true },
-            { label: 'Monthly Non-Cash Depreciation', value: c.depreciation_mo || '—', section: 'opex' },
-            { label: 'Monthly Total Accounting OPEX', value: c.total_opex_mo || '—', section: 'opex' },
-            // Profit
-            { label: `Monthly PAT at ${util_y2} Utilization`, value: c.y2_pat || '—', section: 'profit' },
-            { label: 'PAT / Cash OPEX Ratio',  value: c.pat_ratio || '—',      section: 'profit' },
-            { label: 'Corporate Tax Rate',     value: c.tax || '—',            section: 'profit' },
-            // CAPEX
-            { label: 'Estimated CAPEX',        value: c.capex || '—',          section: 'capex' },
-            { label: '  → Biz Registration Fee', value: c.biz_reg_usd || '—',  section: 'capex', sub: true },
-            { label: 'Payback Period',         value: c.payback || '—',        section: 'capex' },
-        ];
-        return rows;
-    }
-
-    // ── Populate #unit-economics table ────────────────────────────────────────
-    function populateEconomicsTable(city) {
-        const section = document.querySelector('#unit-economics, #economics, section[data-section="economics"]');
-        if (!section) return;
-        let tbody = section.querySelector('tbody');
-        if (!tbody) return;
-
-        const rows = buildEconomicsRows(city);
-        tbody.innerHTML = rows.map(row => {
-            const cls = row.sub ? ' class="sub-row"' : '';
-            return `<tr${cls}>
-                <td>${row.label}</td>
-                <td><strong>${row.value}</strong></td>
-            </tr>`;
-        }).join('\n');
-    }
 
     // ── Populate CAPEX breakdown grid ─────────────────────────────────────────
     function populateCapexGrid(city) {
@@ -279,34 +213,6 @@
         `;
     }
 
-    // ── Update Unit Economics Post-Tax Conclusion Box dynamically ────────────
-    function populatePostTaxConclusion(city) {
-        const econSection = document.querySelector('#unit-economics, #economics, section[data-section="economics"]');
-        if (!econSection) return;
-        const box = econSection.querySelector('.conclusion-box');
-        if (!box) return;
-
-        const taxRate = city.tax_raw || 0;
-        const taxPctStr = city.tax || '0%';
-        const y2Pat = city.y2_pat_raw || 0;
-        const preTaxProfit = taxRate < 1 ? y2Pat / (1 - taxRate) : y2Pat;
-        const taxPaid = preTaxProfit * taxRate;
-        const paybackStr = city.payback || '—';
-        const ratioStr = city.pat_ratio || '—';
-
-        box.innerHTML = `
-            <h3 style="color: var(--success); font-size: 1.2rem; margin-bottom: 0.5rem; font-family: var(--font-heading);">Post-Tax Financial Feasibility Analysis</h3>
-            <p>All calculations in the table above represent pre-tax performance. Factoring in the local Corporate Income Tax (CIT) rate of <strong>${taxPctStr}</strong>, we arrive at the following post-tax projections for the Base Case:</p>
-            <ul style="margin-top: 0.5rem; margin-left: 1.5rem; list-style-type: disc; display: flex; flex-direction: column; gap: 0.4rem;">
-                <li><strong>Base Case Pre-Tax Monthly Net Profit:</strong> USD ${Math.round(preTaxProfit).toLocaleString('en-US')}</li>
-                <li><strong>Estimated Monthly Corporate Income Tax:</strong> USD ${Math.round(taxPaid).toLocaleString('en-US')}</li>
-                <li><strong>Post-Tax Net Monthly Profit (PAT):</strong> USD ${Math.round(y2Pat).toLocaleString('en-US')}</li>
-                <li><strong>Post-Tax Profit to OPEX Ratio:</strong> <strong>${ratioStr}</strong></li>
-                <li><strong>Post-Tax CAPEX Payback Period:</strong> <strong>${paybackStr}</strong></li>
-            </ul>
-        `;
-    }
-
     // ── Main init ─────────────────────────────────────────────────────────────
     function init() {
         const cityName = document.body.dataset.city;
@@ -321,14 +227,12 @@
                 }
                 console.log(`[salon_ui] Loaded: ${city.name}`);
 
-                // populateEconomicsTable(city); // Disabled to prevent conflict with script.js's 3-scenario table
                 populateCapexGrid(city);
                 populateOpexGrid(city);
                 populateHighlights(city);
                 updateMeta(city);
                 populateTopKpis(city);
                 populateCapexConclusion(city);
-                // populatePostTaxConclusion(city); // Disabled to prevent conflict with script.js's post-tax calculations
             })
             .catch(err => {
                 console.error('[salon_ui] Failed to load city_data.json:', err);
