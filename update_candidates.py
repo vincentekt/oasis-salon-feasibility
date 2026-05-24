@@ -63,7 +63,7 @@ CANDIDATES = {
                 name: "Candidate C: Starbucks Trang Tien Plaza", 
                 lat: 21.0252, lng: 105.8525, 
                 note: "Located at Starbucks Trang Tien Plaza. High foot traffic tourist/business zone. Lower premium residential density than Tay Ho but accessible for business traveler clients. Higher competition from mid-tier local salons.", 
-                rent: 2500, catchment: 22000, premiumTargetPct: 22, competitorCapacity: 12000,
+                rent: 2500, catchment: 22000, premiumTargetPct: 22, competitorCapacity: 9000,
                 airportTime: "35 mins from HAN"
             }
         ]""",
@@ -243,21 +243,21 @@ CANDIDATES = {
                 name: "Candidate A: Starbucks Jesselton Point", 
                 lat: 5.993, lng: 116.079, 
                 note: "Located at Starbucks Jesselton Point. TOP PICK. KK's premier waterfront commercial zone. Ground-floor retail facing Jesselton Point Ferry Terminal — maximum tourist and expat visibility. Oil & gas executives from nearby Menara TH clusters here. Rent MYR 3,000–5,000/mo.", 
-                rent: 900, catchment: 25000, premiumTargetPct: 40, competitorCapacity: 3000,
+                rent: 900, catchment: 25000, premiumTargetPct: 40, competitorCapacity: 1000,
                 airportTime: "20 mins from BKI"
             },
             { 
                 name: "Candidate B: Starbucks Suria Sabah (Jalan Gaya)", 
                 lat: 5.988, lng: 116.076, 
                 note: "Located at Starbucks Suria Sabah. KK's main commercial street. Ground-floor unit within walking distance of Suria Sabah and Oceanus Mall. Michael & Guys nearby confirms premium hair demand. Best balance of rent vs foot traffic.", 
-                rent: 800, catchment: 22000, premiumTargetPct: 35, competitorCapacity: 4000,
+                rent: 800, catchment: 22000, premiumTargetPct: 35, competitorCapacity: 2000,
                 airportTime: "20 mins from BKI"
             },
             { 
                 name: "Candidate C: Magellan Club Restaurant (Sutera Harbour)", 
                 lat: 5.969, lng: 116.059, 
                 note: "Located in Magellan Club Restaurant. 5-star resort corridor. Expat families from Shell, Murphy Oil, and resort management cluster in Sutera Harbour. Guaranteed HNWI clientele but lower total foot traffic and very high rent.", 
-                rent: 1500, catchment: 15000, premiumTargetPct: 50, competitorCapacity: 1500,
+                rent: 1500, catchment: 15000, premiumTargetPct: 50, competitorCapacity: 3000,
                 airportTime: "18 mins from BKI"
             }
         ]""",
