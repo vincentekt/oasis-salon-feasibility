@@ -1572,3 +1572,24 @@ details.city-group[open] summary {
     border-color: var(--accent);
     font-weight: 600;
 }
+
+/* Section Anchor Links */
+.section-anchor {
+    font-size: 0.8em;
+    color: var(--text-muted);
+    text-decoration: none;
+    opacity: 0;
+    margin-left: 0.5rem;
+    transition: opacity 0.2s ease, color 0.2s ease;
+    cursor: pointer;
+    vertical-align: middle;
+}
+
+h2:hover .section-anchor {
+    opacity: 0.65;
+}
+
+.section-anchor:hover {
+    color: var(--accent) !important;
+    opacity: 1 !important;
+}

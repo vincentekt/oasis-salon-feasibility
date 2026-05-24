@@ -1684,6 +1684,45 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // ==========================================
+    // SECTION ANCHOR GENERATION
+    // ==========================================
+    function addSectionAnchors() {
+        const sections = document.querySelectorAll('section[id]');
+        sections.forEach(sec => {
+            const h2 = sec.querySelector('h2');
+            if (h2 && !h2.querySelector('.section-anchor')) {
+                const id = sec.getAttribute('id');
+                const anchor = document.createElement('a');
+                anchor.href = `#${id}`;
+                anchor.className = 'section-anchor';
+                anchor.innerHTML = ' 🔗';
+                anchor.title = 'Copy link to this section';
+                
+                anchor.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const url = window.location.origin + window.location.pathname + `#${id}`;
+                    navigator.clipboard.writeText(url).then(() => {
+                        const originalText = anchor.innerHTML;
+                        anchor.innerHTML = ' ✓';
+                        anchor.style.color = '#10b981';
+                        setTimeout(() => {
+                            anchor.innerHTML = ' 🔗';
+                            anchor.style.color = '';
+                        }, 1500);
+                    }).catch(err => {
+                        console.error('Failed to copy URL: ', err);
+                        window.location.hash = id;
+                    });
+                    window.location.hash = id;
+                });
+
+                h2.appendChild(anchor);
+            }
+        });
+    }
+    addSectionAnchors();
+
+    // ==========================================
     // HERO ANIMATION DELAY
     // ==========================================
     setTimeout(() => {
