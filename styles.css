@@ -732,7 +732,7 @@ footer {
         order: 1;
     }
     
-    .download-report-btn {
+    .hero .download-report-btn {
         order: 2;
         position: static;
         display: block;
