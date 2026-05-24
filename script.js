@@ -1129,11 +1129,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Helper calculations
         const getColor = (payback) => {
-            if (payback <= 6) return "#10b981";  // Green (<= 6 months)
-            if (payback <= 12) return "#eab308"; // Yellow (7-12 months / <= 1 year)
-            if (payback <= 24) return "#f97316"; // Orange (13-24 months / > 1 year <= 2 years)
-            if (payback <= 36) return "#ef4444"; // Red (25-36 months / > 2 years <= 3 years)
-            return "#78350f";                    // Brown (37+ months / > 3 years)
+            if (payback <= 12) return "#10b981"; // Green (<= 12 months / <= 1 year)
+            if (payback <= 20) return "#eab308"; // Yellow (13-20 months / ~1.5 years)
+            if (payback <= 30) return "#f97316"; // Orange (21-30 months / 1.5 - 2.5 years)
+            if (payback <= 40) return "#ef4444"; // Red (31-40 months / 2.5 - 3.3 years)
+            return "#78350f";                    // Brown (41+ months / > 3.3 years)
         };
 
         const getOpacity = (capex) => {
