@@ -1328,7 +1328,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (h2) opexSec.appendChild(h2);
 
         const details = city.opex_details || [];
-        const depVal = city.depreciation_mo || 0;
+        const depVal = city.depreciation_raw || 0;
         
         let totalCash = 0;
         details.forEach(item => {
