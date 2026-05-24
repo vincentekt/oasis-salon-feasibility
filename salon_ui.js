@@ -321,14 +321,14 @@
                 }
                 console.log(`[salon_ui] Loaded: ${city.name}`);
 
-                populateEconomicsTable(city);
+                // populateEconomicsTable(city); // Disabled to prevent conflict with script.js's 3-scenario table
                 populateCapexGrid(city);
                 populateOpexGrid(city);
                 populateHighlights(city);
                 updateMeta(city);
                 populateTopKpis(city);
                 populateCapexConclusion(city);
-                populatePostTaxConclusion(city);
+                // populatePostTaxConclusion(city); // Disabled to prevent conflict with script.js's post-tax calculations
             })
             .catch(err => {
                 console.error('[salon_ui] Failed to load city_data.json:', err);

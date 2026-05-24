@@ -211,6 +211,7 @@ document.addEventListener('DOMContentLoaded', () => {
         "Total Initial CAPEX": "初期投資想定額合計",
         "Total Base OPEX": "基本運営費合計",
         "Total Monthly OPEX": "月間運営費合計",
+        "Blended Gross Margin:": "売上総利益率:",
         "Contribution Margin per Ticket:": "1客あたり限界利益:",
         "Monthly Breakeven Volume:": "月間損益分岐客数:",
         "Daily Breakeven:": "日間損益分岐客数:",
@@ -445,6 +446,7 @@ document.addEventListener('DOMContentLoaded', () => {
         "Total Initial CAPEX": "Tổng vốn đầu tư ban đầu (CAPEX)",
         "Total Base OPEX": "Tổng chi phí vận hành cơ bản",
         "Total Monthly OPEX": "Tổng chi phí vận hành hàng tháng",
+        "Blended Gross Margin:": "Tỷ suất lợi nhuận gộp:",
         "Contribution Margin per Ticket:": "Biên đóng góp trên mỗi dịch vụ:",
         "Monthly Breakeven Volume:": "Số lượng khách hòa vốn hàng tháng:",
         "Daily Breakeven:": "Số lượng khách hòa vốn hàng ngày:",
@@ -1286,7 +1288,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         // 4. Update Unit Economics Scenario Table
-        updateEconomicsTable(ticketVal, opexVal, volumeBase, taxRate, capexVal);
+        updateEconomicsTable(city);
 
         // 5. Update Timeline duration Weeks
         updateTimelineTable(model);
@@ -1627,35 +1629,108 @@ document.addEventListener('DOMContentLoaded', () => {
         // Dynamic rendering handles this automatically
     }
 
-    function updateEconomicsTable(ticket, opex, baseVol, taxRate, capexMid) {
-        const econTable = document.querySelector('#economics table');
-        if (!econTable) return;
-        const rows = Array.from(econTable.querySelectorAll('tbody tr'));
-        
+    function updateEconomicsTable(city) {
+        const ticket = city.ticket_raw || 0;
+        const opex = city.opex_raw || 0;
+        const baseVol = city.y2_clients || 300;
+        const taxRate = city.tax_raw || 0;
+        const capexMid = city.capex_mid || 0;
+
+        // 1. Update text-content bullet points dynamically
+        const textContent = document.querySelector('#economics .text-content');
         const cogs = ticket * 0.10;
         const contribMargin = ticket - cogs;
+        const monthlyBreakeven = Math.round(opex / contribMargin);
+
+        if (textContent) {
+            const lang = getActiveState().lang;
+            const isJa = lang === 'ja';
+            const isVi = lang === 'vi';
+            
+            const ticketFmt = Math.round(ticket).toLocaleString();
+            const cogsFmt = (ticket * 0.10).toFixed(2);
+            const contribFmt = Math.round(contribMargin).toLocaleString();
+            const opexFmt = Math.round(opex).toLocaleString();
+            const beMonthly = monthlyBreakeven;
+            const wd = city.working_days || 26;
+            const beDaily = (beMonthly / wd).toFixed(1);
+
+            let bulletsHtml = '';
+            if (isJa) {
+                bulletsHtml = `
+                    <ul>
+                        <li><strong>想定客単価:</strong> USD ${ticketFmt}</li>
+                        <li><strong>売上総利益率:</strong> 90% (施術原価 ~USD ${cogsFmt}/回)</li>
+                        <li><strong>1客あたり限界利益:</strong> USD ${contribFmt}</li>
+                        <li><strong>月間損益分岐客数:</strong> USD ${opexFmt} (月間運営費) / USD ${contribFmt} = ~${beMonthly.toLocaleString()} 客/月</li>
+                        <li><strong>日間損益分岐客数:</strong> ~${beDaily} 客/日</li>
+                    </ul>
+                `;
+            } else if (isVi) {
+                bulletsHtml = `
+                    <ul>
+                        <li><strong>Giá dịch vụ trung bình:</strong> USD ${ticketFmt}</li>
+                        <li><strong>Tỷ suất lợi nhuận gộp:</strong> 90% (Giá vốn hàng bán ~USD ${cogsFmt}/lượt)</li>
+                        <li><strong>Biên đóng góp trên mỗi dịch vụ:</strong> USD ${contribFmt}</li>
+                        <li><strong>Số lượng khách hòa vốn hàng tháng:</strong> USD ${opexFmt} (OPEX) / USD ${contribFmt} = ~${beMonthly.toLocaleString()} khách/tháng</li>
+                        <li><strong>Số lượng khách hòa vốn hàng ngày:</strong> ~${beDaily} khách/ngày</li>
+                    </ul>
+                `;
+            } else {
+                bulletsHtml = `
+                    <ul>
+                        <li><strong>Average Ticket:</strong> USD ${ticketFmt}</li>
+                        <li><strong>Blended Gross Margin:</strong> 90% (Cost of goods ~USD ${cogsFmt}/session)</li>
+                        <li><strong>Contribution Margin per Ticket:</strong> USD ${contribFmt}</li>
+                        <li><strong>Monthly Breakeven Volume:</strong> USD ${opexFmt} (OPEX) / USD ${contribFmt} = ~${beMonthly.toLocaleString()} customers/month</li>
+                        <li><strong>Daily Breakeven:</strong> ~${beDaily} customers/day</li>
+                    </ul>
+                `;
+            }
+            textContent.innerHTML = bulletsHtml;
+        }
+
+        // 2. Update table rows
+        const econTable = document.querySelector('#economics table');
+        if (!econTable) return;
+        
+        const tbody = econTable.querySelector('tbody');
+        if (!tbody) return;
         
         const scenarios = [
-            { name: "Breakeven Case", vol: Math.round(opex / contribMargin) },
+            { name: "Breakeven Case", vol: monthlyBreakeven },
             { name: "Base Case", vol: Math.round(baseVol) },
             { name: "High-Performance Case", vol: Math.round(baseVol * 1.25) }
         ];
         
-        scenarios.forEach((scen, idx) => {
-            const row = rows[idx];
-            if (!row) return;
-            
+        let tbodyHtml = '';
+        scenarios.forEach(scen => {
             const rev = scen.vol * ticket;
             const cogVal = scen.vol * cogs;
             const netProfit = rev - cogVal - opex;
             
-            if (row.cells[1]) row.cells[1].textContent = `${scen.vol.toLocaleString()} customers`;
-            if (row.cells[2]) row.cells[2].textContent = `$${Math.round(rev).toLocaleString()}`;
-            if (row.cells[3]) row.cells[3].textContent = `$${Math.round(cogVal).toLocaleString()}`;
-            if (row.cells[4]) row.cells[4].textContent = `$${Math.round(opex).toLocaleString()}`;
-            if (row.cells[5]) row.cells[5].textContent = `$${Math.round(netProfit).toLocaleString()}`;
+            let profitText = '';
+            if (netProfit < 0) {
+                profitText = `<span style="color: #ff4d4d; font-weight: 500;">-$${Math.abs(Math.round(netProfit)).toLocaleString()}</span>`;
+            } else {
+                profitText = `<span style="color: #00e676; font-weight: 500;">+$${Math.round(netProfit).toLocaleString()}</span>`;
+            }
+
+            tbodyHtml += `
+                <tr>
+                    <td><strong>${escapeHtml(scen.name)}</strong></td>
+                    <td>${scen.vol.toLocaleString()} customers</td>
+                    <td>$${Math.round(rev).toLocaleString()}</td>
+                    <td>$${Math.round(cogVal).toLocaleString()}</td>
+                    <td>$${Math.round(opex).toLocaleString()}</td>
+                    <td>${profitText}</td>
+                </tr>
+            `;
         });
         
+        tbody.innerHTML = tbodyHtml;
+        
+        // 3. Update post-tax conclusion box
         const conclusionBox = document.querySelector('#economics .conclusion-box');
         if (conclusionBox) {
             const preTaxPAT = (baseVol * contribMargin) - opex;
