@@ -1321,6 +1321,7 @@ details.city-group[open] summary {
 
     /* Hide UI-only elements */
     .sidebar, 
+    .mobile-header,
     .download-report-btn, 
     .table-controls, 
     .filter-tabs, 
