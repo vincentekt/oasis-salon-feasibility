@@ -685,7 +685,7 @@
                         <tbody>
                     <tr>
                         <td colspan="2" class="loading-row" style="text-align:center;padding:1.5rem;color:#888">
-                            <span class="loading-spinner">⏳</span> Loading financial data…
+                            <span class="loading-spinner"></span> Loading financial data…
                         </td>
                     </tr>
 </tbody>
@@ -846,7 +846,7 @@
                     <p><strong>Expat Residential Hub</strong></p>
                     ${natText}
                     <p><strong>Est. Population:</strong> ~${res.estPop.toLocaleString()} residents</p>
-                    <p style="margin-top: 8px;"><a href="${mapsUrl}" target="_blank" style="color: #a133ff; text-decoration: underline; font-weight: bold;">📍 View on Google Maps</a></p>
+                    <p style="margin-top: 8px;"><a href="${mapsUrl}" target="_blank" style="color: #a133ff; text-decoration: underline; font-weight: bold;">View on Google Maps</a></p>
                 </div>
             `);
         });
@@ -870,9 +870,9 @@
                 fillOpacity: 0.8
             }).addTo(map).bindPopup(`
                 <div class="popup-content">
-                    <h3>🛍️ ${loc.name}</h3>
+                    <h3>Mall: ${loc.name}</h3>
                     <p><strong>Est. Relative Footfall:</strong> ${loc.footfall}/100</p>
-                    <p style="margin-top: 8px;"><a href="${mapsUrl}" target="_blank" style="color: #fff; text-decoration: underline; font-weight: bold;">📍 View on Google Maps</a></p>
+                    <p style="margin-top: 8px;"><a href="${mapsUrl}" target="_blank" style="color: #fff; text-decoration: underline; font-weight: bold;">View on Google Maps</a></p>
                 </div>
             `);
         });
@@ -896,11 +896,11 @@
                 fillOpacity: 0.9
             }).addTo(map).bindPopup(`
                 <div class="popup-content">
-                    <h3 style="color: #ef4444;">🔴 ${loc.name}</h3>
+                    <h3 style="color: #ef4444;">Competitor: ${loc.name}</h3>
                     <p><strong>Price Level:</strong> ${loc.price}</p>
                     <p><strong>Est. Footfall Traffic:</strong> ${loc.footfall}/100</p>
                     <p><strong>Note:</strong> ${loc.comment}</p>
-                    <p style="margin-top: 8px;"><a href="${mapsUrl}" target="_blank" style="color: #ef4444; text-decoration: underline; font-weight: bold;">📍 View on Google Maps</a></p>
+                    <p style="margin-top: 8px;"><a href="${mapsUrl}" target="_blank" style="color: #ef4444; text-decoration: underline; font-weight: bold;">View on Google Maps</a></p>
                 </div>
             `);
         });
@@ -932,7 +932,7 @@
 
         // Star Icon for Candidates
         const starIcon = L.divIcon({
-            html: '<div style="font-size: 24px; filter: drop-shadow(0px 0px 4px rgba(0,0,0,0.5)); animation: pulse 2s infinite;">🌟</div>',
+            html: '<svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="filter: drop-shadow(0px 0px 4px rgba(0,0,0,0.5)); animation: pulse 2s infinite;"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="#c6a87c" stroke="#fff" stroke-width="1.5" stroke-linejoin="round"/></svg>',
             className: 'custom-div-icon',
             iconSize: [30, 30],
             iconAnchor: [15, 15]
@@ -949,7 +949,7 @@
 
             L.marker([loc.lat, loc.lng], { icon: starIcon }).addTo(map).bindPopup(`
                 <div class="popup-content" style="min-width: 240px; color: #333;">
-                    <h3 style="color: var(--accent); font-weight: 600; font-size: 14px; margin-top: 0; margin-bottom: 6px; border-bottom: 1px solid #eee; padding-bottom: 4px;">✨ ${loc.name}</h3>
+                    <h3 style="color: var(--accent); font-weight: 600; font-size: 14px; margin-top: 0; margin-bottom: 6px; border-bottom: 1px solid #eee; padding-bottom: 4px;">${loc.name}</h3>
                     <p style="margin: 4px 0; font-size: 12px; color: #666; line-height: 1.4;">${loc.note}</p>
                     <hr style="margin: 6px 0; border: 0; border-top: 1px solid #eee;">
                     <p style="margin: 3px 0; font-size: 11px; display: flex; justify-content: space-between;"><span>Monthly Catchment:</span> <strong style="color: #111;">${loc.catchment.toLocaleString()} pax</strong></p>
@@ -963,7 +963,7 @@
                         <strong style="color: var(--accent); font-size: 10px; text-transform: uppercase; letter-spacing: 0.5px; display: block; margin-bottom: 2px;">Potential Customer to Rent Ratio:</strong>
                         <span style="font-size: 14px; font-weight: bold; color: #111;">${ratio} potential customers/USD 1 rent</span>
                     </div>
-                    <p style="margin-top: 8px; text-align: center;"><a href="${mapsUrl}" target="_blank" style="color: var(--accent); text-decoration: underline; font-weight: bold; font-size: 12px;">📍 View on Google Maps</a></p>
+                    <p style="margin-top: 8px; text-align: center;"><a href="${mapsUrl}" target="_blank" style="color: var(--accent); text-decoration: underline; font-weight: bold; font-size: 12px;">View on Google Maps</a></p>
                 </div>
             `);
         });

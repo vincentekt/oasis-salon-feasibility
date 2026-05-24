@@ -307,7 +307,7 @@ def process_file(path):
                     <p><strong>Expat Residential Hub</strong></p>
                     ${{natText}}
                     <p><strong>Est. Population:</strong> ~${{res.estPop.toLocaleString()}} residents</p>
-                    <p style="margin-top: 8px;"><a href="${{mapsUrl}}" target="_blank" style="color: {color}; text-decoration: underline; font-weight: bold;">📍 View on Google Maps</a></p>
+                    <p style="margin-top: 8px;"><a href="${{mapsUrl}}" target="_blank" style="color: {color}; text-decoration: underline; font-weight: bold;">View on Google Maps</a></p>
                 </div>
             `);
         }});"""
@@ -336,9 +336,9 @@ def process_file(path):
                 fillOpacity: 0.8
             }}).addTo(map).bindPopup(`
                 <div class="popup-content">
-                    <h3>🛍️ ${{loc.name}}</h3>
+                    <h3>Mall: ${{loc.name}}</h3>
                     <p><strong>Est. Relative Footfall:</strong> ${{loc.footfall}}/100</p>
-                    <p style="margin-top: 8px;"><a href="${{mapsUrl}}" target="_blank" style="color: {color}; text-decoration: underline; font-weight: bold;">📍 View on Google Maps</a></p>
+                    <p style="margin-top: 8px;"><a href="${{mapsUrl}}" target="_blank" style="color: {color}; text-decoration: underline; font-weight: bold;">View on Google Maps</a></p>
                 </div>
             `);
         }});"""
@@ -367,11 +367,11 @@ def process_file(path):
                 fillOpacity: 0.9
             }}).addTo(map).bindPopup(`
                 <div class="popup-content">
-                    <h3 style="color: {fillColor};">🔴 ${{loc.name}}</h3>
+                    <h3 style="color: {fillColor};">Competitor: ${{loc.name}}</h3>
                     <p><strong>Price Level:</strong> ${{loc.price}}</p>
                     <p><strong>Est. Footfall Traffic:</strong> ${{loc.footfall}}/100</p>
                     <p><strong>Note:</strong> ${{loc.comment}}</p>
-                    <p style="margin-top: 8px;"><a href="${{mapsUrl}}" target="_blank" style="color: {fillColor}; text-decoration: underline; font-weight: bold;">📍 View on Google Maps</a></p>
+                    <p style="margin-top: 8px;"><a href="${{mapsUrl}}" target="_blank" style="color: {fillColor}; text-decoration: underline; font-weight: bold;">View on Google Maps</a></p>
                 </div>
             `);
         }});"""
@@ -391,7 +391,7 @@ def process_file(path):
 
             L.marker([loc.lat, loc.lng], { icon: starIcon }).addTo(map).bindPopup(`
                 <div class="popup-content" style="min-width: 240px; color: #333;">
-                    <h3 style="color: var(--accent); font-weight: 600; font-size: 14px; margin-top: 0; margin-bottom: 6px; border-bottom: 1px solid #eee; padding-bottom: 4px;">✨ ${loc.name}</h3>
+                    <h3 style="color: var(--accent); font-weight: 600; font-size: 14px; margin-top: 0; margin-bottom: 6px; border-bottom: 1px solid #eee; padding-bottom: 4px;">${loc.name}</h3>
                     <p style="margin: 4px 0; font-size: 12px; color: #666; line-height: 1.4;">${loc.note}</p>
                     <hr style="margin: 6px 0; border: 0; border-top: 1px solid #eee;">
                     <p style="margin: 3px 0; font-size: 11px; display: flex; justify-content: space-between;"><span>Monthly Catchment:</span> <strong style="color: #111;">${loc.catchment.toLocaleString()} pax</strong></p>
@@ -405,7 +405,7 @@ def process_file(path):
                         <strong style="color: var(--accent); font-size: 10px; text-transform: uppercase; letter-spacing: 0.5px; display: block; margin-bottom: 2px;">Potential Customer to Rent Ratio:</strong>
                         <span style="font-size: 14px; font-weight: bold; color: #111;">${ratio} potential customers/USD 1 rent</span>
                     </div>
-                    <p style="margin-top: 8px; text-align: center;"><a href="${mapsUrl}" target="_blank" style="color: var(--accent); text-decoration: underline; font-weight: bold; font-size: 12px;">📍 View on Google Maps</a></p>
+                    <p style="margin-top: 8px; text-align: center;"><a href="${mapsUrl}" target="_blank" style="color: var(--accent); text-decoration: underline; font-weight: bold; font-size: 12px;">View on Google Maps</a></p>
                 </div>
             `);
         });"""
@@ -426,7 +426,7 @@ def process_file(path):
                 <p><strong>Primary Transit Hub</strong></p>
                 <p><strong>Nationalities:</strong> Singaporean & Malaysian cross-border commuters</p>
                 <p>Over 10,000 hourly commuters expected upon RTS completion. High Singaporean day-tripper density.</p>
-                <p style="margin-top: 8px;"><a href="https://www.google.com/maps/search/?api=1&query=RTS+Bukit+Chagar+Terminal+Area%2C+Johor+Bahru" target="_blank" style="color: #c6a87c; text-decoration: underline; font-weight: bold;">📍 View on Google Maps</a></p>
+                <p style="margin-top: 8px;"><a href="https://www.google.com/maps/search/?api=1&query=RTS+Bukit+Chagar+Terminal+Area%2C+Johor+Bahru" target="_blank" style="color: #c6a87c; text-decoration: underline; font-weight: bold;">View on Google Maps</a></p>
             </div>
         `);"""
         content = re.sub(johor_circle_pattern, new_johor_circle, content, flags=re.DOTALL)

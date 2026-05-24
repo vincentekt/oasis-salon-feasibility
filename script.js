@@ -1273,9 +1273,17 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
 
-        // 3. Update OPEX and CAPEX tables
-        scaleOPEXTable(1.0);
-        scaleCAPEXTable(1.0);
+        // 3. Render OPEX and CAPEX tables dynamically from database details
+        if (city.opex_details && city.opex_details.length > 0) {
+            renderOPEXTable(city);
+        } else {
+            scaleOPEXTable(1.0);
+        }
+        if (city.capex_details && city.capex_details.length > 0) {
+            renderCAPEXTable(city);
+        } else {
+            scaleCAPEXTable(1.0);
+        }
 
         // 4. Update Unit Economics Scenario Table
         updateEconomicsTable(ticketVal, opexVal, volumeBase, taxRate, capexVal);
@@ -1301,71 +1309,161 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Helper functions for table scaling in subpages
-    function scaleOPEXTable(factor) {
-        const opexTable = document.querySelector('#opex table');
-        if (!opexTable) return;
-        const rows = Array.from(opexTable.querySelectorAll('tbody tr'));
-        let items = [];
-        let total = 0;
-        rows.forEach((row) => {
-            if (row.classList.contains('total-row')) return;
-            const costCell = row.cells[1];
-            if (costCell) {
-                const text = costCell.textContent.trim();
-                const val = parseInt(text.replace(/[^0-9]/g, ''));
-                if (!isNaN(val)) {
-                    const newVal = Math.round(val * factor);
-                    costCell.textContent = `$${newVal.toLocaleString()}`;
-                    total += newVal;
-                    items.push({ row, val: newVal });
-                }
-            }
-        });
+    // Helper functions for detailed dynamic rendering in subpages
+    function escapeHtml(str) {
+        if (!str) return '';
+        return str
+            .replace(/&/g, "&amp;")
+            .replace(/</g, "&lt;")
+            .replace(/>/g, "&gt;")
+            .replace(/"/g, "&quot;")
+            .replace(/'/g, "&#039;");
+    }
+
+    function renderOPEXTable(city) {
+        const opexSec = document.getElementById('opex');
+        if (!opexSec) return;
+        const h2 = opexSec.querySelector('h2');
+        opexSec.innerHTML = '';
+        if (h2) opexSec.appendChild(h2);
+
+        const details = city.opex_details || [];
+        const depVal = city.depreciation_mo || 0;
         
-        const totalRow = opexTable.querySelector('.total-row');
-        if (totalRow) {
-            const totalCell = totalRow.cells[1];
-            if (totalCell) {
-                totalCell.innerHTML = `<strong>$${total.toLocaleString()}</strong>`;
-            }
+        let totalCash = 0;
+        details.forEach(item => {
+            totalCash += item.cost;
+        });
+        const grandTotal = totalCash + depVal;
+
+        const wrapper = document.createElement('div');
+        wrapper.className = 'table-wrapper';
+        
+        let tbodyHtml = '';
+        details.forEach(item => {
+            const pct = grandTotal > 0 ? ((item.cost / grandTotal) * 100).toFixed(1) + '%' : '0%';
+            tbodyHtml += `
+                <tr>
+                    <td><strong>${escapeHtml(item.category)}</strong></td>
+                    <td style="white-space: normal; min-width: 180px;">${escapeHtml(item.component)}</td>
+                    <td style="text-align: right;">$${Math.round(item.cost).toLocaleString()}</td>
+                    <td>${pct}</td>
+                    <td style="white-space: normal; min-width: 200px; font-size: 0.85rem; color: #94a3b8;">${escapeHtml(item.reference)}</td>
+                </tr>
+            `;
+        });
+
+        if (depVal > 0) {
+            const pct = grandTotal > 0 ? ((depVal / grandTotal) * 100).toFixed(1) + '%' : '0%';
+            tbodyHtml += `
+                <tr>
+                    <td><strong>Depreciation</strong></td>
+                    <td style="white-space: normal; min-width: 180px;">Equipment Depreciation (Non-Cash)</td>
+                    <td style="text-align: right;">$${Math.round(depVal).toLocaleString()}</td>
+                    <td>${pct}</td>
+                    <td style="white-space: normal; min-width: 200px; font-size: 0.85rem; color: #94a3b8;">5-year straight-line depreciation on salon equipment</td>
+                </tr>
+            `;
         }
-        
-        items.forEach(item => {
-            const pctCell = item.row.cells[2];
-            if (pctCell) {
-                const pct = total > 0 ? Math.round((item.val / total) * 100) : 0;
-                pctCell.textContent = `${pct}%`;
-            }
+
+        tbodyHtml += `
+            <tr class="total-row">
+                <td><strong>Total Monthly OPEX</strong></td>
+                <td><strong>All Operations & Depreciation</strong></td>
+                <td style="text-align: right;"><strong>$${Math.round(grandTotal).toLocaleString()}</strong></td>
+                <td><strong>100%</strong></td>
+                <td><strong>Base operations budget</strong></td>
+            </tr>
+        `;
+
+        wrapper.innerHTML = `
+            <table>
+                <thead>
+                    <tr>
+                        <th>Category</th>
+                        <th>Detailed Component</th>
+                        <th style="text-align: right;">Cost (USD/mo)</th>
+                        <th>% of Total</th>
+                        <th>Reference / Source</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    ${tbodyHtml}
+                </tbody>
+            </table>
+        `;
+        opexSec.appendChild(wrapper);
+    }
+
+    function renderCAPEXTable(city) {
+        const capexSec = document.getElementById('capex');
+        if (!capexSec) return;
+        const h2 = capexSec.querySelector('h2');
+        capexSec.innerHTML = '';
+        if (h2) capexSec.appendChild(h2);
+
+        const details = city.capex_details || [];
+        let total = 0;
+        details.forEach(item => {
+            total += item.cost;
         });
+
+        const wrapper = document.createElement('div');
+        wrapper.className = 'table-wrapper';
+        
+        let tbodyHtml = '';
+        details.forEach(item => {
+            tbodyHtml += `
+                <tr>
+                    <td><strong>${escapeHtml(item.category)}</strong></td>
+                    <td style="white-space: normal; min-width: 180px;">${escapeHtml(item.component)}</td>
+                    <td style="text-align: right;">$${Math.round(item.cost).toLocaleString()}</td>
+                    <td style="white-space: normal; min-width: 200px; font-size: 0.85rem; color: #94a3b8;">${escapeHtml(item.reference)}</td>
+                </tr>
+            `;
+        });
+
+        tbodyHtml += `
+            <tr class="total-row">
+                <td><strong>Total Base CAPEX</strong></td>
+                <td><strong>Renovation, Equipment, Setup & Deposits</strong></td>
+                <td style="text-align: right;"><strong>$${Math.round(total).toLocaleString()}</strong></td>
+                <td style="white-space: normal; min-width: 200px;"><strong>Calculated Base Value</strong></td>
+            </tr>
+        `;
+
+        wrapper.innerHTML = `
+            <table>
+                <thead>
+                    <tr>
+                        <th>Category</th>
+                        <th>Detailed Component</th>
+                        <th style="text-align: right;">Cost (USD)</th>
+                        <th>Reference / Source</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    ${tbodyHtml}
+                </tbody>
+            </table>
+        `;
+        capexSec.appendChild(wrapper);
+
+        // Add the conclusion box with range
+        const totalMidStr = city.capex || `$${Math.round(total).toLocaleString()}`;
+        const conclusionBox = document.createElement('div');
+        conclusionBox.className = 'conclusion-box';
+        conclusionBox.style.marginTop = '1.5rem';
+        conclusionBox.innerHTML = `<strong>Total Initial Investment Range: ${totalMidStr}</strong> (Includes local contingency buffer and entity registration fee setup).`;
+        capexSec.appendChild(conclusionBox);
+    }
+
+    function scaleOPEXTable(factor) {
+        // Dynamic rendering handles this automatically
     }
 
     function scaleCAPEXTable(factor) {
-        const capexTable = document.querySelector('#capex table');
-        if (!capexTable) return;
-        const rows = Array.from(capexTable.querySelectorAll('tbody tr'));
-        let total = 0;
-        rows.forEach((row) => {
-            if (row.classList.contains('total-row')) return;
-            const costCell = row.cells[1];
-            if (costCell) {
-                const text = costCell.textContent.trim();
-                const val = parseInt(text.replace(/[^0-9]/g, ''));
-                if (!isNaN(val)) {
-                    const newVal = Math.round(val * factor);
-                    costCell.textContent = `$${newVal.toLocaleString()}`;
-                    total += newVal;
-                }
-            }
-        });
-        
-        const totalRow = capexTable.querySelector('.total-row');
-        if (totalRow) {
-            const totalCell = totalRow.cells[1];
-            if (totalCell) {
-                totalCell.innerHTML = `<strong>$${total.toLocaleString()}</strong>`;
-            }
-        }
+        // Dynamic rendering handles this automatically
     }
 
     function updateEconomicsTable(ticket, opex, baseVol, taxRate, capexMid) {

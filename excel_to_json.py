@@ -94,6 +94,48 @@ for row in ws_i.iter_rows(min_row=5, max_row=50, values_only=True):
     })
 print(f"  Loaded {len(city_inputs)} cities")
 
+# ── CAPEX & OPEX DETAILS (CAPEX_Details & OPEX_Details sheets) ────────────────
+ws_capex = wb["CAPEX_Details"]
+capex_details = {}
+for row in ws_capex.iter_rows(min_row=2, max_row=500, values_only=True):
+    if not row[0]:
+        continue
+    city_name = str(row[0]).strip()
+    category = str(row[1]).strip()
+    component = str(row[2]).strip()
+    cost = float(row[3]) if row[3] is not None else 0.0
+    ref = str(row[4]).strip() if row[4] else ""
+    
+    if city_name not in capex_details:
+        capex_details[city_name] = []
+    capex_details[city_name].append({
+        "category": category,
+        "component": component,
+        "cost": cost,
+        "reference": ref
+    })
+
+ws_opex = wb["OPEX_Details"]
+opex_details = {}
+for row in ws_opex.iter_rows(min_row=2, max_row=500, values_only=True):
+    if not row[0]:
+        continue
+    city_name = str(row[0]).strip()
+    category = str(row[1]).strip()
+    component = str(row[2]).strip()
+    cost = float(row[3]) if row[3] is not None else 0.0
+    ref = str(row[4]).strip() if row[4] else ""
+    
+    if city_name not in opex_details:
+        opex_details[city_name] = []
+    opex_details[city_name].append({
+        "category": category,
+        "component": component,
+        "cost": cost,
+        "reference": ref
+    })
+print(f"  Loaded CAPEX & OPEX details for {len(capex_details)} cities")
+
 # ── MIRRORED MODEL FORMULAS ───────────────────────────────────────────────────
 def compute_model(city, cp):
     """Mirrors the Excel Model sheet formulas exactly."""
@@ -408,6 +450,9 @@ for city in city_inputs:
         "country":      city["country"],
         # Complexity (dynamic map)
         "complexity":   complexities.get(name),
+        # Financial Details from Excel
+        "capex_details": capex_details.get(name, []),
+        "opex_details":  opex_details.get(name, []),
     }
     cities_json.append(entry)
 
