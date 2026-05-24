@@ -234,7 +234,9 @@ document.addEventListener('DOMContentLoaded', () => {
         "Net Profit": "純利益",
         "Scenario": "シナリオ",
         "Monthly Revenue (USD)": "月間売上 (USD)",
-        "Net Monthly Profit (USD)": "月間純利益 (USD)"
+        "Net Monthly Profit (USD)": "月間純利益 (USD)",
+        "Monthly Customers": "月間客数",
+        "OPEX (USD)": "月間運営費 (USD)"
     };
 
     const viTranslations = {
@@ -469,7 +471,9 @@ document.addEventListener('DOMContentLoaded', () => {
         "Net Profit": "Lợi nhuận thuần",
         "Scenario": "Kịch bản",
         "Monthly Revenue (USD)": "Doanh thu hàng tháng (USD)",
-        "Net Monthly Profit (USD)": "Lợi nhuận thuần hàng tháng (USD)"
+        "Net Monthly Profit (USD)": "Lợi nhuận thuần hàng tháng (USD)",
+        "Monthly Customers": "Lượng khách hàng tháng",
+        "OPEX (USD)": "Chi phí vận hành (USD)"
     };
 
     function translateDOM(root) {
@@ -591,13 +595,25 @@ document.addEventListener('DOMContentLoaded', () => {
             })
             .catch(function(err) {
                 console.error('[Oasis] Failed to load city_data.json:', err);
-                // Graceful fallback: show error state on dashboard
-                const main = document.querySelector('main, .dashboard-content, #city-grid');
-                if (main) {
-                    main.insertAdjacentHTML('afterbegin',
-                        '<div style="background:#fee;color:#900;padding:1rem;border-radius:8px;margin:1rem">' +
-                        '⚠️ Could not load city_data.json. Run excel_to_json.py and refresh.' +
-                        '</div>');
+                
+                const state = getActiveState();
+                const pathname = window.location.pathname;
+                const currentPage = pathname.substring(pathname.lastIndexOf('/') + 1) || 'index.html';
+                const isDashboard = currentPage === 'index.html' || currentPage === '';
+
+                if (isDashboard) {
+                    // Graceful fallback: show error state on dashboard
+                    const main = document.querySelector('main, .dashboard-content, #city-grid');
+                    if (main) {
+                        main.insertAdjacentHTML('afterbegin',
+                            '<div style="background:#fee;color:#900;padding:1rem;border-radius:8px;margin:1rem">' +
+                            '⚠️ Could not load city_data.json. Run excel_to_json.py and refresh.' +
+                            '</div>');
+                    }
+                } else {
+                    // On subpages, initialize dashboard with empty database so sidebar/translations render from static HTML
+                    citiesDb = [];
+                    initDashboard();
                 }
             });
     }
@@ -1704,6 +1720,7 @@ document.addEventListener('DOMContentLoaded', () => {
         ];
         
         let tbodyHtml = '';
+        const lang = getActiveState().lang;
         scenarios.forEach(scen => {
             const rev = scen.vol * ticket;
             const cogVal = scen.vol * cogs;
@@ -1716,10 +1733,21 @@ document.addEventListener('DOMContentLoaded', () => {
                 profitText = `<span style="color: #00e676; font-weight: 500;">+$${Math.round(netProfit).toLocaleString()}</span>`;
             }
 
+            let volStr = '';
+            if (lang === 'ja') {
+                volStr = `${scen.vol.toLocaleString()} 名`;
+            } else if (lang === 'vi') {
+                volStr = `${scen.vol.toLocaleString()} khách hàng`;
+            } else {
+                volStr = `${scen.vol.toLocaleString()} customers`;
+            }
+
+            const rowClass = scen.name === "Base Case" ? ' class="highlight-row"' : '';
+
             tbodyHtml += `
-                <tr>
+                <tr${rowClass}>
                     <td><strong>${escapeHtml(scen.name)}</strong></td>
-                    <td>${scen.vol.toLocaleString()} customers</td>
+                    <td>${volStr}</td>
                     <td>$${Math.round(rev).toLocaleString()}</td>
                     <td>$${Math.round(cogVal).toLocaleString()}</td>
                     <td>$${Math.round(opex).toLocaleString()}</td>
