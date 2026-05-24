@@ -1456,6 +1456,167 @@ document.addEventListener('DOMContentLoaded', () => {
         conclusionBox.style.marginTop = '1.5rem';
         conclusionBox.innerHTML = `<strong>Total Initial Investment Range: ${totalMidStr}</strong> (Includes local contingency buffer and entity registration fee setup).`;
         capexSec.appendChild(conclusionBox);
+
+        // Calculate allocated stock
+        const stockRows = details.filter(r => r.category === 'Other CAPEX' && r.component.includes('Stock'));
+        let allocatedStock = 0;
+        stockRows.forEach(r => allocatedStock += r.cost);
+        if (allocatedStock === 0) {
+            allocatedStock = (city.other_usd || 0) * 0.75;
+        }
+
+        // Sourcing and stock details interactive section
+        const container = document.createElement('div');
+        container.className = 'sourcing-interactive-section';
+        container.style.marginTop = '2rem';
+        
+        container.innerHTML = `
+            <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 1.5rem;">
+                <button class="btn btn-secondary" id="toggle-sourcing-btn" style="padding: 0.6rem 1.2rem; font-size: 0.85rem; border-radius: 8px; background: rgba(198,168,124,0.1); border: 1px solid var(--accent); color: var(--accent); cursor: pointer; transition: all 0.2s ease; font-family: var(--font-main);">
+                    View Equipment Sourcing Analysis (Import vs Local)
+                </button>
+                <button class="btn btn-secondary" id="toggle-stock-btn" style="padding: 0.6rem 1.2rem; font-size: 0.85rem; border-radius: 8px; background: rgba(198,168,124,0.1); border: 1px solid var(--accent); color: var(--accent); cursor: pointer; transition: all 0.2s ease; font-family: var(--font-main);">
+                    View Initial Inventory Stock List
+                </button>
+            </div>
+            <div id="sourcing-panel" style="display: none; padding: 1.5rem; background: #13171e; border: 1px solid var(--border-color); border-radius: 12px; margin-bottom: 1.5rem; animation: fadeIn 0.3s ease;">
+                <h3 style="color: var(--accent); font-family: var(--font-heading); font-size: 1.1rem; margin-top: 0; margin-bottom: 1rem;">Equipment Sourcing Logistics & Local Sourcing Analysis</h3>
+                <p style="font-size: 0.9rem; color: #94a3b8; margin-bottom: 1rem; line-height: 1.5;">
+                    Comparison of direct manufacturing sourcing (including freight shipping, port handling, and customs clearing) vs buying through local authorized distributors. Sourcing metrics apply to this city's country: <strong>${escapeHtml(city.country)}</strong>.
+                </p>
+                <div class="table-wrapper" style="margin-bottom: 1rem;">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Equipment Type</th>
+                                <th>Import Model</th>
+                                <th style="text-align: right;">Base Price (USD)</th>
+                                <th style="text-align: right;">Shipping & Duty (USD)</th>
+                                <th style="text-align: right;">Total Import Cost (USD)</th>
+                                <th>Local Supplier Model</th>
+                                <th style="text-align: right;">Local Cost (USD)</th>
+                                <th>Cheaper Option</th>
+                            </tr>
+                        </thead>
+                        <tbody id="sourcing-tbody"></tbody>
+                    </table>
+                </div>
+                <div class="conclusion-box" style="background: rgba(198,168,124,0.03); border-left-color: var(--accent); padding: 1rem; font-size: 0.85rem; color: #94a3b8; line-height: 1.5; margin-top: 1rem;">
+                    <strong>Strategic Recommendation:</strong> Direct importing saves between 40% to 60% per unit on styling chairs and wash basins. However, for a premium luxury setup, sourcing locally is recommended for styling basins and motorized chairs to secure immediate parts replacement, warranty support, and installation compliance.
+                </div>
+            </div>
+            <div id="stock-panel" style="display: none; padding: 1.5rem; background: #13171e; border: 1px solid var(--border-color); border-radius: 12px; animation: fadeIn 0.3s ease;">
+                <h3 style="color: var(--accent); font-family: var(--font-heading); font-size: 1.1rem; margin-top: 0; margin-bottom: 1rem;">Initial Inventory Stock List Template</h3>
+                <p style="font-size: 0.9rem; color: #94a3b8; margin-bottom: 1rem; line-height: 1.5;">
+                    Itemized breakdown of opening stock (professional color lines, developers, backwash care, and retail shelf inventory). Quantities below have been scaled proportionally to match this city's specific stock allocation budget of <strong>$${Math.round(allocatedStock).toLocaleString()} USD</strong>.
+                </p>
+                <div class="table-wrapper" style="margin-bottom: 1rem;">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Category</th>
+                                <th>Brand / Item Name</th>
+                                <th style="text-align: right;">Wholesale Price</th>
+                                <th style="text-align: right;">Quantity</th>
+                                <th style="text-align: right;">Total Cost (USD)</th>
+                                <th>Reference / Source</th>
+                            </tr>
+                        </thead>
+                        <tbody id="stock-tbody"></tbody>
+                    </table>
+                </div>
+            </div>
+        `;
+        capexSec.appendChild(container);
+
+        // Populate Sourcing Body
+        const sourcingTbody = container.querySelector('#sourcing-tbody');
+        const sourcing = city.equipment_sourcing || [];
+        sourcing.forEach(item => {
+            const tr = document.createElement('tr');
+            tr.innerHTML = `
+                <td><strong>${escapeHtml(item.equipment_type)}</strong></td>
+                <td style="white-space: normal; min-width: 150px;">${escapeHtml(item.import_model)}</td>
+                <td style="text-align: right;">$${Math.round(item.import_base_cost).toLocaleString()}</td>
+                <td style="text-align: right;">$${Math.round(item.logistics_and_duty).toLocaleString()}</td>
+                <td style="text-align: right; color: var(--success); font-weight: bold;">$${Math.round(item.total_import_cost).toLocaleString()}</td>
+                <td style="white-space: normal; min-width: 150px;">${escapeHtml(item.local_supplier_model)}</td>
+                <td style="text-align: right;">$${Math.round(item.local_supplier_cost).toLocaleString()}</td>
+                <td><span style="padding: 2px 6px; border-radius: 4px; font-size: 0.75rem; font-weight: bold; background: rgba(16,185,129,0.1); color: var(--success);">${escapeHtml(item.cheaper_option)}</span></td>
+            `;
+            sourcingTbody.appendChild(tr);
+        });
+
+        // Populate Stock Body
+        const stockTbody = container.querySelector('#stock-tbody');
+        const stockTemplate = city.stock_template || [];
+        
+        let baseTotalStock = 0;
+        stockTemplate.forEach(item => {
+            baseTotalStock += item.unit_price * item.quantity;
+        });
+        const scaleFactor = baseTotalStock > 0 ? (allocatedStock / baseTotalStock) : 1.0;
+        
+        let scaledSum = 0;
+        stockTemplate.forEach(item => {
+            const scaledQty = Math.round(item.quantity * scaleFactor);
+            const itemTotal = item.unit_price * scaledQty;
+            scaledSum += itemTotal;
+            
+            const tr = document.createElement('tr');
+            tr.innerHTML = `
+                <td><strong>${escapeHtml(item.category)}</strong></td>
+                <td style="white-space: normal; min-width: 200px;">${escapeHtml(item.brand_name)}</td>
+                <td style="text-align: right;">$${item.unit_price.toFixed(2)}</td>
+                <td style="text-align: right;">${scaledQty}</td>
+                <td style="text-align: right; font-weight: bold;">$${Math.round(itemTotal).toLocaleString()}</td>
+                <td style="white-space: normal; min-width: 180px; font-size: 0.8rem; color: #94a3b8;">${escapeHtml(item.reference)}</td>
+            `;
+            stockTbody.appendChild(tr);
+        });
+
+        // Add total row for stocks
+        const totalTr = document.createElement('tr');
+        totalTr.className = 'total-row';
+        totalTr.innerHTML = `
+            <td><strong>Total Stock Value</strong></td>
+            <td><strong>Itemized Color & Retail Inventory</strong></td>
+            <td>-</td>
+            <td>-</td>
+            <td style="text-align: right;"><strong>$${Math.round(scaledSum).toLocaleString()}</strong></td>
+            <td><strong>Standard template scaled to city budget</strong></td>
+        `;
+        stockTbody.appendChild(totalTr);
+
+        // Buttons event listeners
+        const sourcingBtn = container.querySelector('#toggle-sourcing-btn');
+        const stockBtn = container.querySelector('#toggle-stock-btn');
+        const sourcingPanel = container.querySelector('#sourcing-panel');
+        const stockPanel = container.querySelector('#stock-panel');
+        
+        sourcingBtn.addEventListener('click', () => {
+            if (sourcingPanel.style.display === 'none') {
+                sourcingPanel.style.display = 'block';
+                sourcingBtn.style.background = 'var(--accent)';
+                sourcingBtn.style.color = '#000';
+            } else {
+                sourcingPanel.style.display = 'none';
+                sourcingBtn.style.background = 'rgba(198,168,124,0.1)';
+                sourcingBtn.style.color = 'var(--accent)';
+            }
+        });
+        
+        stockBtn.addEventListener('click', () => {
+            if (stockPanel.style.display === 'none') {
+                stockPanel.style.display = 'block';
+                stockBtn.style.background = 'var(--accent)';
+                stockBtn.style.color = '#000';
+            } else {
+                stockPanel.style.display = 'none';
+                stockBtn.style.background = 'rgba(198,168,124,0.1)';
+                stockBtn.style.color = 'var(--accent)';
+            }
+        });
     }
 
     function scaleOPEXTable(factor) {

@@ -136,6 +136,60 @@ for row in ws_opex.iter_rows(min_row=2, max_row=500, values_only=True):
     })
 print(f"  Loaded CAPEX & OPEX details for {len(capex_details)} cities")
 
+# ── EQUIPMENT SOURCING DETAILS ──────────────────────────────────────────────
+ws_equip = wb["Equipment_Sourcing"]
+equip_sourcing = {}
+for row in ws_equip.iter_rows(min_row=2, max_row=200, values_only=True):
+    if not row[0]:
+        continue
+    country = str(row[0]).strip()
+    eq_type = str(row[1]).strip()
+    imp_model = str(row[2]).strip()
+    imp_base = float(row[3]) if row[3] is not None else 0.0
+    logistics = float(row[4]) if row[4] is not None else 0.0
+    imp_total = float(row[5]) if row[5] is not None else 0.0
+    local_model = str(row[6]).strip()
+    local_cost = float(row[7]) if row[7] is not None else 0.0
+    cheaper = str(row[8]).strip()
+    ref = str(row[9]).strip() if row[9] else ""
+    
+    if country not in equip_sourcing:
+        equip_sourcing[country] = []
+    equip_sourcing[country].append({
+        "equipment_type": eq_type,
+        "import_model": imp_model,
+        "import_base_cost": imp_base,
+        "logistics_and_duty": logistics,
+        "total_import_cost": imp_total,
+        "local_supplier_model": local_model,
+        "local_supplier_cost": local_cost,
+        "cheaper_option": cheaper,
+        "reference": ref
+    })
+
+# ── STOCK DETAILS ────────────────────────────────────────────────────────────
+ws_stock = wb["Stock_Details"]
+stock_template = []
+for row in ws_stock.iter_rows(min_row=2, max_row=100, values_only=True):
+    if not row[0]:
+        continue
+    cat = str(row[0]).strip()
+    name = str(row[1]).strip()
+    price = float(row[2]) if row[2] is not None else 0.0
+    qty = int(row[3]) if row[3] is not None else 0
+    total = float(row[4]) if row[4] is not None else 0.0
+    ref = str(row[5]).strip() if row[5] else ""
+    
+    stock_template.append({
+        "category": cat,
+        "brand_name": name,
+        "unit_price": price,
+        "quantity": qty,
+        "total_cost": total,
+        "reference": ref
+    })
+print(f"  Loaded equipment sourcing for {len(equip_sourcing)} countries and {len(stock_template)} stock lines")
+
 # ── MIRRORED MODEL FORMULAS ───────────────────────────────────────────────────
 def compute_model(city, cp):
     """Mirrors the Excel Model sheet formulas exactly."""
@@ -453,6 +507,8 @@ for city in city_inputs:
         # Financial Details from Excel
         "capex_details": capex_details.get(name, []),
         "opex_details":  opex_details.get(name, []),
+        "equipment_sourcing": equip_sourcing.get(city["country"], []),
+        "stock_template": stock_template,
     }
     cities_json.append(entry)
 

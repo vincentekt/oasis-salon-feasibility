@@ -234,6 +234,160 @@
         "cost": 120.0,
         "reference": "Local business insurance quote & independent accountant retainer"
       }
+    ],
+    "equipment_sourcing": [
+      {
+        "equipment_type": "Styling Chair",
+        "import_model": "Foshan Grand Hydraulic",
+        "import_base_cost": 180.0,
+        "logistics_and_duty": 129.0,
+        "total_import_cost": 309.0,
+        "local_supplier_model": "Hieu Salon Equipment Saigon",
+        "local_supplier_cost": 450.0,
+        "cheaper_option": "Imported",
+        "reference": "Foshan factory quote & local customs broker clearance estimate"
+      },
+      {
+        "equipment_type": "Shampoo Backwash Unit",
+        "import_model": "Premium Relax Basin Unit",
+        "import_base_cost": 350.0,
+        "logistics_and_duty": 255.0,
+        "total_import_cost": 605.0,
+        "local_supplier_model": "Hieu Salon Equipment Saigon",
+        "local_supplier_cost": 800.0,
+        "cheaper_option": "Imported",
+        "reference": "Vietnam Customs tariff (20% import duty + 10% VAT) + sea LCL shipping"
+      }
+    ],
+    "stock_template": [
+      {
+        "category": "Color & Chemical",
+        "brand_name": "Wella Koleston Perfect Permanent Color Tube (60ml)",
+        "unit_price": 7.0,
+        "quantity": 400,
+        "total_cost": 2800.0,
+        "reference": "Wella Professionals Distributor B2B Catalog 2025"
+      },
+      {
+        "category": "Color & Chemical",
+        "brand_name": "Wella Welloxon Perfect Developer (1000ml)",
+        "unit_price": 12.0,
+        "quantity": 40,
+        "total_cost": 480.0,
+        "reference": "Wella Professionals Distributor B2B Catalog 2025"
+      },
+      {
+        "category": "Color & Chemical",
+        "brand_name": "Wella Blondor Multi-Blonde Bleach Powder (800g)",
+        "unit_price": 25.0,
+        "quantity": 20,
+        "total_cost": 500.0,
+        "reference": "Wella Professionals Distributor B2B Catalog 2025"
+      },
+      {
+        "category": "Color & Chemical",
+        "brand_name": "Olaplex Salon Intro Kit (Bond Multiplier No. 1 + Bond Perfector No. 2)",
+        "unit_price": 150.0,
+        "quantity": 5,
+        "total_cost": 750.0,
+        "reference": "Olaplex Professional Partner B2B Pricing"
+      },
+      {
+        "category": "Backwash Care",
+        "brand_name": "Kérastase Bain Chroma Respect (Color-treated, 1000ml)",
+        "unit_price": 42.0,
+        "quantity": 15,
+        "total_cost": 630.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Backwash Care",
+        "brand_name": "Kérastase Bain Fluidealiste (Frizz control, 1000ml)",
+        "unit_price": 42.0,
+        "quantity": 15,
+        "total_cost": 630.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Backwash Care",
+        "brand_name": "Kérastase Bain Densifique (Thinning/volume, 1000ml)",
+        "unit_price": 42.0,
+        "quantity": 10,
+        "total_cost": 420.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Backwash Care",
+        "brand_name": "Kérastase Fondant Chroma Respect Conditioner (1000ml)",
+        "unit_price": 48.0,
+        "quantity": 12,
+        "total_cost": 576.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Backwash Care",
+        "brand_name": "Kérastase Fondant Fluidealiste Conditioner (1000ml)",
+        "unit_price": 48.0,
+        "quantity": 12,
+        "total_cost": 576.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Retail Stock",
+        "brand_name": "Oribe Gold Lust Repair & Restore Shampoo (250ml)",
+        "unit_price": 24.5,
+        "quantity": 40,
+        "total_cost": 980.0,
+        "reference": "Oribe Salon Partner Program B2B Price List 2025"
+      },
+      {
+        "category": "Retail Stock",
+        "brand_name": "Oribe Gold Lust Repair & Restore Conditioner (200ml)",
+        "unit_price": 26.0,
+        "quantity": 40,
+        "total_cost": 1040.0,
+        "reference": "Oribe Salon Partner Program B2B Price List 2025"
+      },
+      {
+        "category": "Retail Stock",
+        "brand_name": "Oribe Dry Texturizing Spray (300ml)",
+        "unit_price": 24.0,
+        "quantity": 30,
+        "total_cost": 720.0,
+        "reference": "Oribe Salon Partner Program B2B Price List 2025"
+      },
+      {
+        "category": "Retail Stock",
+        "brand_name": "Kérastase Elixir Ultime Hair Oil (100ml)",
+        "unit_price": 26.0,
+        "quantity": 40,
+        "total_cost": 1040.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Backstation Essentials",
+        "brand_name": "Oribe Royal Blowout Heat Styling Spray (175ml)",
+        "unit_price": 34.0,
+        "quantity": 15,
+        "total_cost": 510.0,
+        "reference": "Oribe Salon Partner Program B2B Price List 2025"
+      },
+      {
+        "category": "Backstation Essentials",
+        "brand_name": "Oribe Gold Lust Dry Shampoo (250ml)",
+        "unit_price": 24.0,
+        "quantity": 20,
+        "total_cost": 480.0,
+        "reference": "Oribe Salon Partner Program B2B Price List 2025"
+      },
+      {
+        "category": "Backstation Essentials",
+        "brand_name": "Miscellaneous color bowls, brushes, foils, gloves, capes, towels (Lot)",
+        "unit_price": 1100.0,
+        "quantity": 1,
+        "total_cost": 1100.0,
+        "reference": "Salon Essentials Wholesale Distributor Lot Price 2025"
+      }
     ]
   },
   {
@@ -470,6 +624,160 @@
         "component": "Commercial Insurance, Bookkeeping & Compliance",
         "cost": 120.0,
         "reference": "Local business insurance quote & independent accountant retainer"
+      }
+    ],
+    "equipment_sourcing": [
+      {
+        "equipment_type": "Styling Chair",
+        "import_model": "Foshan Grand Hydraulic",
+        "import_base_cost": 180.0,
+        "logistics_and_duty": 129.0,
+        "total_import_cost": 309.0,
+        "local_supplier_model": "Hieu Salon Equipment Saigon",
+        "local_supplier_cost": 450.0,
+        "cheaper_option": "Imported",
+        "reference": "Foshan factory quote & local customs broker clearance estimate"
+      },
+      {
+        "equipment_type": "Shampoo Backwash Unit",
+        "import_model": "Premium Relax Basin Unit",
+        "import_base_cost": 350.0,
+        "logistics_and_duty": 255.0,
+        "total_import_cost": 605.0,
+        "local_supplier_model": "Hieu Salon Equipment Saigon",
+        "local_supplier_cost": 800.0,
+        "cheaper_option": "Imported",
+        "reference": "Vietnam Customs tariff (20% import duty + 10% VAT) + sea LCL shipping"
+      }
+    ],
+    "stock_template": [
+      {
+        "category": "Color & Chemical",
+        "brand_name": "Wella Koleston Perfect Permanent Color Tube (60ml)",
+        "unit_price": 7.0,
+        "quantity": 400,
+        "total_cost": 2800.0,
+        "reference": "Wella Professionals Distributor B2B Catalog 2025"
+      },
+      {
+        "category": "Color & Chemical",
+        "brand_name": "Wella Welloxon Perfect Developer (1000ml)",
+        "unit_price": 12.0,
+        "quantity": 40,
+        "total_cost": 480.0,
+        "reference": "Wella Professionals Distributor B2B Catalog 2025"
+      },
+      {
+        "category": "Color & Chemical",
+        "brand_name": "Wella Blondor Multi-Blonde Bleach Powder (800g)",
+        "unit_price": 25.0,
+        "quantity": 20,
+        "total_cost": 500.0,
+        "reference": "Wella Professionals Distributor B2B Catalog 2025"
+      },
+      {
+        "category": "Color & Chemical",
+        "brand_name": "Olaplex Salon Intro Kit (Bond Multiplier No. 1 + Bond Perfector No. 2)",
+        "unit_price": 150.0,
+        "quantity": 5,
+        "total_cost": 750.0,
+        "reference": "Olaplex Professional Partner B2B Pricing"
+      },
+      {
+        "category": "Backwash Care",
+        "brand_name": "Kérastase Bain Chroma Respect (Color-treated, 1000ml)",
+        "unit_price": 42.0,
+        "quantity": 15,
+        "total_cost": 630.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Backwash Care",
+        "brand_name": "Kérastase Bain Fluidealiste (Frizz control, 1000ml)",
+        "unit_price": 42.0,
+        "quantity": 15,
+        "total_cost": 630.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Backwash Care",
+        "brand_name": "Kérastase Bain Densifique (Thinning/volume, 1000ml)",
+        "unit_price": 42.0,
+        "quantity": 10,
+        "total_cost": 420.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Backwash Care",
+        "brand_name": "Kérastase Fondant Chroma Respect Conditioner (1000ml)",
+        "unit_price": 48.0,
+        "quantity": 12,
+        "total_cost": 576.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Backwash Care",
+        "brand_name": "Kérastase Fondant Fluidealiste Conditioner (1000ml)",
+        "unit_price": 48.0,
+        "quantity": 12,
+        "total_cost": 576.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Retail Stock",
+        "brand_name": "Oribe Gold Lust Repair & Restore Shampoo (250ml)",
+        "unit_price": 24.5,
+        "quantity": 40,
+        "total_cost": 980.0,
+        "reference": "Oribe Salon Partner Program B2B Price List 2025"
+      },
+      {
+        "category": "Retail Stock",
+        "brand_name": "Oribe Gold Lust Repair & Restore Conditioner (200ml)",
+        "unit_price": 26.0,
+        "quantity": 40,
+        "total_cost": 1040.0,
+        "reference": "Oribe Salon Partner Program B2B Price List 2025"
+      },
+      {
+        "category": "Retail Stock",
+        "brand_name": "Oribe Dry Texturizing Spray (300ml)",
+        "unit_price": 24.0,
+        "quantity": 30,
+        "total_cost": 720.0,
+        "reference": "Oribe Salon Partner Program B2B Price List 2025"
+      },
+      {
+        "category": "Retail Stock",
+        "brand_name": "Kérastase Elixir Ultime Hair Oil (100ml)",
+        "unit_price": 26.0,
+        "quantity": 40,
+        "total_cost": 1040.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Backstation Essentials",
+        "brand_name": "Oribe Royal Blowout Heat Styling Spray (175ml)",
+        "unit_price": 34.0,
+        "quantity": 15,
+        "total_cost": 510.0,
+        "reference": "Oribe Salon Partner Program B2B Price List 2025"
+      },
+      {
+        "category": "Backstation Essentials",
+        "brand_name": "Oribe Gold Lust Dry Shampoo (250ml)",
+        "unit_price": 24.0,
+        "quantity": 20,
+        "total_cost": 480.0,
+        "reference": "Oribe Salon Partner Program B2B Price List 2025"
+      },
+      {
+        "category": "Backstation Essentials",
+        "brand_name": "Miscellaneous color bowls, brushes, foils, gloves, capes, towels (Lot)",
+        "unit_price": 1100.0,
+        "quantity": 1,
+        "total_cost": 1100.0,
+        "reference": "Salon Essentials Wholesale Distributor Lot Price 2025"
       }
     ]
   },
@@ -708,6 +1016,160 @@
         "cost": 120.0,
         "reference": "Local business insurance quote & independent accountant retainer"
       }
+    ],
+    "equipment_sourcing": [
+      {
+        "equipment_type": "Styling Chair",
+        "import_model": "Foshan Grand Hydraulic",
+        "import_base_cost": 180.0,
+        "logistics_and_duty": 129.0,
+        "total_import_cost": 309.0,
+        "local_supplier_model": "Hieu Salon Equipment Saigon",
+        "local_supplier_cost": 450.0,
+        "cheaper_option": "Imported",
+        "reference": "Foshan factory quote & local customs broker clearance estimate"
+      },
+      {
+        "equipment_type": "Shampoo Backwash Unit",
+        "import_model": "Premium Relax Basin Unit",
+        "import_base_cost": 350.0,
+        "logistics_and_duty": 255.0,
+        "total_import_cost": 605.0,
+        "local_supplier_model": "Hieu Salon Equipment Saigon",
+        "local_supplier_cost": 800.0,
+        "cheaper_option": "Imported",
+        "reference": "Vietnam Customs tariff (20% import duty + 10% VAT) + sea LCL shipping"
+      }
+    ],
+    "stock_template": [
+      {
+        "category": "Color & Chemical",
+        "brand_name": "Wella Koleston Perfect Permanent Color Tube (60ml)",
+        "unit_price": 7.0,
+        "quantity": 400,
+        "total_cost": 2800.0,
+        "reference": "Wella Professionals Distributor B2B Catalog 2025"
+      },
+      {
+        "category": "Color & Chemical",
+        "brand_name": "Wella Welloxon Perfect Developer (1000ml)",
+        "unit_price": 12.0,
+        "quantity": 40,
+        "total_cost": 480.0,
+        "reference": "Wella Professionals Distributor B2B Catalog 2025"
+      },
+      {
+        "category": "Color & Chemical",
+        "brand_name": "Wella Blondor Multi-Blonde Bleach Powder (800g)",
+        "unit_price": 25.0,
+        "quantity": 20,
+        "total_cost": 500.0,
+        "reference": "Wella Professionals Distributor B2B Catalog 2025"
+      },
+      {
+        "category": "Color & Chemical",
+        "brand_name": "Olaplex Salon Intro Kit (Bond Multiplier No. 1 + Bond Perfector No. 2)",
+        "unit_price": 150.0,
+        "quantity": 5,
+        "total_cost": 750.0,
+        "reference": "Olaplex Professional Partner B2B Pricing"
+      },
+      {
+        "category": "Backwash Care",
+        "brand_name": "Kérastase Bain Chroma Respect (Color-treated, 1000ml)",
+        "unit_price": 42.0,
+        "quantity": 15,
+        "total_cost": 630.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Backwash Care",
+        "brand_name": "Kérastase Bain Fluidealiste (Frizz control, 1000ml)",
+        "unit_price": 42.0,
+        "quantity": 15,
+        "total_cost": 630.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Backwash Care",
+        "brand_name": "Kérastase Bain Densifique (Thinning/volume, 1000ml)",
+        "unit_price": 42.0,
+        "quantity": 10,
+        "total_cost": 420.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Backwash Care",
+        "brand_name": "Kérastase Fondant Chroma Respect Conditioner (1000ml)",
+        "unit_price": 48.0,
+        "quantity": 12,
+        "total_cost": 576.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Backwash Care",
+        "brand_name": "Kérastase Fondant Fluidealiste Conditioner (1000ml)",
+        "unit_price": 48.0,
+        "quantity": 12,
+        "total_cost": 576.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Retail Stock",
+        "brand_name": "Oribe Gold Lust Repair & Restore Shampoo (250ml)",
+        "unit_price": 24.5,
+        "quantity": 40,
+        "total_cost": 980.0,
+        "reference": "Oribe Salon Partner Program B2B Price List 2025"
+      },
+      {
+        "category": "Retail Stock",
+        "brand_name": "Oribe Gold Lust Repair & Restore Conditioner (200ml)",
+        "unit_price": 26.0,
+        "quantity": 40,
+        "total_cost": 1040.0,
+        "reference": "Oribe Salon Partner Program B2B Price List 2025"
+      },
+      {
+        "category": "Retail Stock",
+        "brand_name": "Oribe Dry Texturizing Spray (300ml)",
+        "unit_price": 24.0,
+        "quantity": 30,
+        "total_cost": 720.0,
+        "reference": "Oribe Salon Partner Program B2B Price List 2025"
+      },
+      {
+        "category": "Retail Stock",
+        "brand_name": "Kérastase Elixir Ultime Hair Oil (100ml)",
+        "unit_price": 26.0,
+        "quantity": 40,
+        "total_cost": 1040.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Backstation Essentials",
+        "brand_name": "Oribe Royal Blowout Heat Styling Spray (175ml)",
+        "unit_price": 34.0,
+        "quantity": 15,
+        "total_cost": 510.0,
+        "reference": "Oribe Salon Partner Program B2B Price List 2025"
+      },
+      {
+        "category": "Backstation Essentials",
+        "brand_name": "Oribe Gold Lust Dry Shampoo (250ml)",
+        "unit_price": 24.0,
+        "quantity": 20,
+        "total_cost": 480.0,
+        "reference": "Oribe Salon Partner Program B2B Price List 2025"
+      },
+      {
+        "category": "Backstation Essentials",
+        "brand_name": "Miscellaneous color bowls, brushes, foils, gloves, capes, towels (Lot)",
+        "unit_price": 1100.0,
+        "quantity": 1,
+        "total_cost": 1100.0,
+        "reference": "Salon Essentials Wholesale Distributor Lot Price 2025"
+      }
     ]
   },
   {
@@ -944,6 +1406,160 @@
         "component": "Commercial Insurance, Bookkeeping & Compliance",
         "cost": 120.0,
         "reference": "Local business insurance quote & independent accountant retainer"
+      }
+    ],
+    "equipment_sourcing": [
+      {
+        "equipment_type": "Styling Chair",
+        "import_model": "Foshan Grand Hydraulic",
+        "import_base_cost": 180.0,
+        "logistics_and_duty": 129.0,
+        "total_import_cost": 309.0,
+        "local_supplier_model": "Hieu Salon Equipment Saigon",
+        "local_supplier_cost": 450.0,
+        "cheaper_option": "Imported",
+        "reference": "Foshan factory quote & local customs broker clearance estimate"
+      },
+      {
+        "equipment_type": "Shampoo Backwash Unit",
+        "import_model": "Premium Relax Basin Unit",
+        "import_base_cost": 350.0,
+        "logistics_and_duty": 255.0,
+        "total_import_cost": 605.0,
+        "local_supplier_model": "Hieu Salon Equipment Saigon",
+        "local_supplier_cost": 800.0,
+        "cheaper_option": "Imported",
+        "reference": "Vietnam Customs tariff (20% import duty + 10% VAT) + sea LCL shipping"
+      }
+    ],
+    "stock_template": [
+      {
+        "category": "Color & Chemical",
+        "brand_name": "Wella Koleston Perfect Permanent Color Tube (60ml)",
+        "unit_price": 7.0,
+        "quantity": 400,
+        "total_cost": 2800.0,
+        "reference": "Wella Professionals Distributor B2B Catalog 2025"
+      },
+      {
+        "category": "Color & Chemical",
+        "brand_name": "Wella Welloxon Perfect Developer (1000ml)",
+        "unit_price": 12.0,
+        "quantity": 40,
+        "total_cost": 480.0,
+        "reference": "Wella Professionals Distributor B2B Catalog 2025"
+      },
+      {
+        "category": "Color & Chemical",
+        "brand_name": "Wella Blondor Multi-Blonde Bleach Powder (800g)",
+        "unit_price": 25.0,
+        "quantity": 20,
+        "total_cost": 500.0,
+        "reference": "Wella Professionals Distributor B2B Catalog 2025"
+      },
+      {
+        "category": "Color & Chemical",
+        "brand_name": "Olaplex Salon Intro Kit (Bond Multiplier No. 1 + Bond Perfector No. 2)",
+        "unit_price": 150.0,
+        "quantity": 5,
+        "total_cost": 750.0,
+        "reference": "Olaplex Professional Partner B2B Pricing"
+      },
+      {
+        "category": "Backwash Care",
+        "brand_name": "Kérastase Bain Chroma Respect (Color-treated, 1000ml)",
+        "unit_price": 42.0,
+        "quantity": 15,
+        "total_cost": 630.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Backwash Care",
+        "brand_name": "Kérastase Bain Fluidealiste (Frizz control, 1000ml)",
+        "unit_price": 42.0,
+        "quantity": 15,
+        "total_cost": 630.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Backwash Care",
+        "brand_name": "Kérastase Bain Densifique (Thinning/volume, 1000ml)",
+        "unit_price": 42.0,
+        "quantity": 10,
+        "total_cost": 420.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Backwash Care",
+        "brand_name": "Kérastase Fondant Chroma Respect Conditioner (1000ml)",
+        "unit_price": 48.0,
+        "quantity": 12,
+        "total_cost": 576.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Backwash Care",
+        "brand_name": "Kérastase Fondant Fluidealiste Conditioner (1000ml)",
+        "unit_price": 48.0,
+        "quantity": 12,
+        "total_cost": 576.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Retail Stock",
+        "brand_name": "Oribe Gold Lust Repair & Restore Shampoo (250ml)",
+        "unit_price": 24.5,
+        "quantity": 40,
+        "total_cost": 980.0,
+        "reference": "Oribe Salon Partner Program B2B Price List 2025"
+      },
+      {
+        "category": "Retail Stock",
+        "brand_name": "Oribe Gold Lust Repair & Restore Conditioner (200ml)",
+        "unit_price": 26.0,
+        "quantity": 40,
+        "total_cost": 1040.0,
+        "reference": "Oribe Salon Partner Program B2B Price List 2025"
+      },
+      {
+        "category": "Retail Stock",
+        "brand_name": "Oribe Dry Texturizing Spray (300ml)",
+        "unit_price": 24.0,
+        "quantity": 30,
+        "total_cost": 720.0,
+        "reference": "Oribe Salon Partner Program B2B Price List 2025"
+      },
+      {
+        "category": "Retail Stock",
+        "brand_name": "Kérastase Elixir Ultime Hair Oil (100ml)",
+        "unit_price": 26.0,
+        "quantity": 40,
+        "total_cost": 1040.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Backstation Essentials",
+        "brand_name": "Oribe Royal Blowout Heat Styling Spray (175ml)",
+        "unit_price": 34.0,
+        "quantity": 15,
+        "total_cost": 510.0,
+        "reference": "Oribe Salon Partner Program B2B Price List 2025"
+      },
+      {
+        "category": "Backstation Essentials",
+        "brand_name": "Oribe Gold Lust Dry Shampoo (250ml)",
+        "unit_price": 24.0,
+        "quantity": 20,
+        "total_cost": 480.0,
+        "reference": "Oribe Salon Partner Program B2B Price List 2025"
+      },
+      {
+        "category": "Backstation Essentials",
+        "brand_name": "Miscellaneous color bowls, brushes, foils, gloves, capes, towels (Lot)",
+        "unit_price": 1100.0,
+        "quantity": 1,
+        "total_cost": 1100.0,
+        "reference": "Salon Essentials Wholesale Distributor Lot Price 2025"
       }
     ]
   },
@@ -1182,6 +1798,160 @@
         "cost": 120.0,
         "reference": "Local business insurance quote & independent accountant retainer"
       }
+    ],
+    "equipment_sourcing": [
+      {
+        "equipment_type": "Styling Chair",
+        "import_model": "Foshan Grand Hydraulic",
+        "import_base_cost": 180.0,
+        "logistics_and_duty": 129.0,
+        "total_import_cost": 309.0,
+        "local_supplier_model": "Hieu Salon Equipment Saigon",
+        "local_supplier_cost": 450.0,
+        "cheaper_option": "Imported",
+        "reference": "Foshan factory quote & local customs broker clearance estimate"
+      },
+      {
+        "equipment_type": "Shampoo Backwash Unit",
+        "import_model": "Premium Relax Basin Unit",
+        "import_base_cost": 350.0,
+        "logistics_and_duty": 255.0,
+        "total_import_cost": 605.0,
+        "local_supplier_model": "Hieu Salon Equipment Saigon",
+        "local_supplier_cost": 800.0,
+        "cheaper_option": "Imported",
+        "reference": "Vietnam Customs tariff (20% import duty + 10% VAT) + sea LCL shipping"
+      }
+    ],
+    "stock_template": [
+      {
+        "category": "Color & Chemical",
+        "brand_name": "Wella Koleston Perfect Permanent Color Tube (60ml)",
+        "unit_price": 7.0,
+        "quantity": 400,
+        "total_cost": 2800.0,
+        "reference": "Wella Professionals Distributor B2B Catalog 2025"
+      },
+      {
+        "category": "Color & Chemical",
+        "brand_name": "Wella Welloxon Perfect Developer (1000ml)",
+        "unit_price": 12.0,
+        "quantity": 40,
+        "total_cost": 480.0,
+        "reference": "Wella Professionals Distributor B2B Catalog 2025"
+      },
+      {
+        "category": "Color & Chemical",
+        "brand_name": "Wella Blondor Multi-Blonde Bleach Powder (800g)",
+        "unit_price": 25.0,
+        "quantity": 20,
+        "total_cost": 500.0,
+        "reference": "Wella Professionals Distributor B2B Catalog 2025"
+      },
+      {
+        "category": "Color & Chemical",
+        "brand_name": "Olaplex Salon Intro Kit (Bond Multiplier No. 1 + Bond Perfector No. 2)",
+        "unit_price": 150.0,
+        "quantity": 5,
+        "total_cost": 750.0,
+        "reference": "Olaplex Professional Partner B2B Pricing"
+      },
+      {
+        "category": "Backwash Care",
+        "brand_name": "Kérastase Bain Chroma Respect (Color-treated, 1000ml)",
+        "unit_price": 42.0,
+        "quantity": 15,
+        "total_cost": 630.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Backwash Care",
+        "brand_name": "Kérastase Bain Fluidealiste (Frizz control, 1000ml)",
+        "unit_price": 42.0,
+        "quantity": 15,
+        "total_cost": 630.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Backwash Care",
+        "brand_name": "Kérastase Bain Densifique (Thinning/volume, 1000ml)",
+        "unit_price": 42.0,
+        "quantity": 10,
+        "total_cost": 420.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Backwash Care",
+        "brand_name": "Kérastase Fondant Chroma Respect Conditioner (1000ml)",
+        "unit_price": 48.0,
+        "quantity": 12,
+        "total_cost": 576.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Backwash Care",
+        "brand_name": "Kérastase Fondant Fluidealiste Conditioner (1000ml)",
+        "unit_price": 48.0,
+        "quantity": 12,
+        "total_cost": 576.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Retail Stock",
+        "brand_name": "Oribe Gold Lust Repair & Restore Shampoo (250ml)",
+        "unit_price": 24.5,
+        "quantity": 40,
+        "total_cost": 980.0,
+        "reference": "Oribe Salon Partner Program B2B Price List 2025"
+      },
+      {
+        "category": "Retail Stock",
+        "brand_name": "Oribe Gold Lust Repair & Restore Conditioner (200ml)",
+        "unit_price": 26.0,
+        "quantity": 40,
+        "total_cost": 1040.0,
+        "reference": "Oribe Salon Partner Program B2B Price List 2025"
+      },
+      {
+        "category": "Retail Stock",
+        "brand_name": "Oribe Dry Texturizing Spray (300ml)",
+        "unit_price": 24.0,
+        "quantity": 30,
+        "total_cost": 720.0,
+        "reference": "Oribe Salon Partner Program B2B Price List 2025"
+      },
+      {
+        "category": "Retail Stock",
+        "brand_name": "Kérastase Elixir Ultime Hair Oil (100ml)",
+        "unit_price": 26.0,
+        "quantity": 40,
+        "total_cost": 1040.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Backstation Essentials",
+        "brand_name": "Oribe Royal Blowout Heat Styling Spray (175ml)",
+        "unit_price": 34.0,
+        "quantity": 15,
+        "total_cost": 510.0,
+        "reference": "Oribe Salon Partner Program B2B Price List 2025"
+      },
+      {
+        "category": "Backstation Essentials",
+        "brand_name": "Oribe Gold Lust Dry Shampoo (250ml)",
+        "unit_price": 24.0,
+        "quantity": 20,
+        "total_cost": 480.0,
+        "reference": "Oribe Salon Partner Program B2B Price List 2025"
+      },
+      {
+        "category": "Backstation Essentials",
+        "brand_name": "Miscellaneous color bowls, brushes, foils, gloves, capes, towels (Lot)",
+        "unit_price": 1100.0,
+        "quantity": 1,
+        "total_cost": 1100.0,
+        "reference": "Salon Essentials Wholesale Distributor Lot Price 2025"
+      }
     ]
   },
   {
@@ -1418,6 +2188,160 @@
         "component": "Commercial Insurance, Bookkeeping & Compliance",
         "cost": 120.0,
         "reference": "Local business insurance quote & independent accountant retainer"
+      }
+    ],
+    "equipment_sourcing": [
+      {
+        "equipment_type": "Styling Chair",
+        "import_model": "Foshan Grand Hydraulic",
+        "import_base_cost": 180.0,
+        "logistics_and_duty": 129.0,
+        "total_import_cost": 309.0,
+        "local_supplier_model": "Hieu Salon Equipment Saigon",
+        "local_supplier_cost": 450.0,
+        "cheaper_option": "Imported",
+        "reference": "Foshan factory quote & local customs broker clearance estimate"
+      },
+      {
+        "equipment_type": "Shampoo Backwash Unit",
+        "import_model": "Premium Relax Basin Unit",
+        "import_base_cost": 350.0,
+        "logistics_and_duty": 255.0,
+        "total_import_cost": 605.0,
+        "local_supplier_model": "Hieu Salon Equipment Saigon",
+        "local_supplier_cost": 800.0,
+        "cheaper_option": "Imported",
+        "reference": "Vietnam Customs tariff (20% import duty + 10% VAT) + sea LCL shipping"
+      }
+    ],
+    "stock_template": [
+      {
+        "category": "Color & Chemical",
+        "brand_name": "Wella Koleston Perfect Permanent Color Tube (60ml)",
+        "unit_price": 7.0,
+        "quantity": 400,
+        "total_cost": 2800.0,
+        "reference": "Wella Professionals Distributor B2B Catalog 2025"
+      },
+      {
+        "category": "Color & Chemical",
+        "brand_name": "Wella Welloxon Perfect Developer (1000ml)",
+        "unit_price": 12.0,
+        "quantity": 40,
+        "total_cost": 480.0,
+        "reference": "Wella Professionals Distributor B2B Catalog 2025"
+      },
+      {
+        "category": "Color & Chemical",
+        "brand_name": "Wella Blondor Multi-Blonde Bleach Powder (800g)",
+        "unit_price": 25.0,
+        "quantity": 20,
+        "total_cost": 500.0,
+        "reference": "Wella Professionals Distributor B2B Catalog 2025"
+      },
+      {
+        "category": "Color & Chemical",
+        "brand_name": "Olaplex Salon Intro Kit (Bond Multiplier No. 1 + Bond Perfector No. 2)",
+        "unit_price": 150.0,
+        "quantity": 5,
+        "total_cost": 750.0,
+        "reference": "Olaplex Professional Partner B2B Pricing"
+      },
+      {
+        "category": "Backwash Care",
+        "brand_name": "Kérastase Bain Chroma Respect (Color-treated, 1000ml)",
+        "unit_price": 42.0,
+        "quantity": 15,
+        "total_cost": 630.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Backwash Care",
+        "brand_name": "Kérastase Bain Fluidealiste (Frizz control, 1000ml)",
+        "unit_price": 42.0,
+        "quantity": 15,
+        "total_cost": 630.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Backwash Care",
+        "brand_name": "Kérastase Bain Densifique (Thinning/volume, 1000ml)",
+        "unit_price": 42.0,
+        "quantity": 10,
+        "total_cost": 420.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Backwash Care",
+        "brand_name": "Kérastase Fondant Chroma Respect Conditioner (1000ml)",
+        "unit_price": 48.0,
+        "quantity": 12,
+        "total_cost": 576.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Backwash Care",
+        "brand_name": "Kérastase Fondant Fluidealiste Conditioner (1000ml)",
+        "unit_price": 48.0,
+        "quantity": 12,
+        "total_cost": 576.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Retail Stock",
+        "brand_name": "Oribe Gold Lust Repair & Restore Shampoo (250ml)",
+        "unit_price": 24.5,
+        "quantity": 40,
+        "total_cost": 980.0,
+        "reference": "Oribe Salon Partner Program B2B Price List 2025"
+      },
+      {
+        "category": "Retail Stock",
+        "brand_name": "Oribe Gold Lust Repair & Restore Conditioner (200ml)",
+        "unit_price": 26.0,
+        "quantity": 40,
+        "total_cost": 1040.0,
+        "reference": "Oribe Salon Partner Program B2B Price List 2025"
+      },
+      {
+        "category": "Retail Stock",
+        "brand_name": "Oribe Dry Texturizing Spray (300ml)",
+        "unit_price": 24.0,
+        "quantity": 30,
+        "total_cost": 720.0,
+        "reference": "Oribe Salon Partner Program B2B Price List 2025"
+      },
+      {
+        "category": "Retail Stock",
+        "brand_name": "Kérastase Elixir Ultime Hair Oil (100ml)",
+        "unit_price": 26.0,
+        "quantity": 40,
+        "total_cost": 1040.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Backstation Essentials",
+        "brand_name": "Oribe Royal Blowout Heat Styling Spray (175ml)",
+        "unit_price": 34.0,
+        "quantity": 15,
+        "total_cost": 510.0,
+        "reference": "Oribe Salon Partner Program B2B Price List 2025"
+      },
+      {
+        "category": "Backstation Essentials",
+        "brand_name": "Oribe Gold Lust Dry Shampoo (250ml)",
+        "unit_price": 24.0,
+        "quantity": 20,
+        "total_cost": 480.0,
+        "reference": "Oribe Salon Partner Program B2B Price List 2025"
+      },
+      {
+        "category": "Backstation Essentials",
+        "brand_name": "Miscellaneous color bowls, brushes, foils, gloves, capes, towels (Lot)",
+        "unit_price": 1100.0,
+        "quantity": 1,
+        "total_cost": 1100.0,
+        "reference": "Salon Essentials Wholesale Distributor Lot Price 2025"
       }
     ]
   },
@@ -1656,6 +2580,160 @@
         "cost": 120.0,
         "reference": "Local business insurance quote & independent accountant retainer"
       }
+    ],
+    "equipment_sourcing": [
+      {
+        "equipment_type": "Styling Chair",
+        "import_model": "Foshan Grand Hydraulic",
+        "import_base_cost": 180.0,
+        "logistics_and_duty": 107.0,
+        "total_import_cost": 287.0,
+        "local_supplier_model": "Excel Salon Furniture KL",
+        "local_supplier_cost": 500.0,
+        "cheaper_option": "Imported",
+        "reference": "Malaysia customs clearing (5% duty + 10% SST) + Port Klang sea freight"
+      },
+      {
+        "equipment_type": "Shampoo Backwash Unit",
+        "import_model": "Premium Relax Basin Unit",
+        "import_base_cost": 350.0,
+        "logistics_and_duty": 212.0,
+        "total_import_cost": 562.0,
+        "local_supplier_model": "Excel Salon Furniture KL",
+        "local_supplier_cost": 950.0,
+        "cheaper_option": "Imported",
+        "reference": "Port Klang sea LCL shipping + SST clearance"
+      }
+    ],
+    "stock_template": [
+      {
+        "category": "Color & Chemical",
+        "brand_name": "Wella Koleston Perfect Permanent Color Tube (60ml)",
+        "unit_price": 7.0,
+        "quantity": 400,
+        "total_cost": 2800.0,
+        "reference": "Wella Professionals Distributor B2B Catalog 2025"
+      },
+      {
+        "category": "Color & Chemical",
+        "brand_name": "Wella Welloxon Perfect Developer (1000ml)",
+        "unit_price": 12.0,
+        "quantity": 40,
+        "total_cost": 480.0,
+        "reference": "Wella Professionals Distributor B2B Catalog 2025"
+      },
+      {
+        "category": "Color & Chemical",
+        "brand_name": "Wella Blondor Multi-Blonde Bleach Powder (800g)",
+        "unit_price": 25.0,
+        "quantity": 20,
+        "total_cost": 500.0,
+        "reference": "Wella Professionals Distributor B2B Catalog 2025"
+      },
+      {
+        "category": "Color & Chemical",
+        "brand_name": "Olaplex Salon Intro Kit (Bond Multiplier No. 1 + Bond Perfector No. 2)",
+        "unit_price": 150.0,
+        "quantity": 5,
+        "total_cost": 750.0,
+        "reference": "Olaplex Professional Partner B2B Pricing"
+      },
+      {
+        "category": "Backwash Care",
+        "brand_name": "Kérastase Bain Chroma Respect (Color-treated, 1000ml)",
+        "unit_price": 42.0,
+        "quantity": 15,
+        "total_cost": 630.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Backwash Care",
+        "brand_name": "Kérastase Bain Fluidealiste (Frizz control, 1000ml)",
+        "unit_price": 42.0,
+        "quantity": 15,
+        "total_cost": 630.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Backwash Care",
+        "brand_name": "Kérastase Bain Densifique (Thinning/volume, 1000ml)",
+        "unit_price": 42.0,
+        "quantity": 10,
+        "total_cost": 420.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Backwash Care",
+        "brand_name": "Kérastase Fondant Chroma Respect Conditioner (1000ml)",
+        "unit_price": 48.0,
+        "quantity": 12,
+        "total_cost": 576.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Backwash Care",
+        "brand_name": "Kérastase Fondant Fluidealiste Conditioner (1000ml)",
+        "unit_price": 48.0,
+        "quantity": 12,
+        "total_cost": 576.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Retail Stock",
+        "brand_name": "Oribe Gold Lust Repair & Restore Shampoo (250ml)",
+        "unit_price": 24.5,
+        "quantity": 40,
+        "total_cost": 980.0,
+        "reference": "Oribe Salon Partner Program B2B Price List 2025"
+      },
+      {
+        "category": "Retail Stock",
+        "brand_name": "Oribe Gold Lust Repair & Restore Conditioner (200ml)",
+        "unit_price": 26.0,
+        "quantity": 40,
+        "total_cost": 1040.0,
+        "reference": "Oribe Salon Partner Program B2B Price List 2025"
+      },
+      {
+        "category": "Retail Stock",
+        "brand_name": "Oribe Dry Texturizing Spray (300ml)",
+        "unit_price": 24.0,
+        "quantity": 30,
+        "total_cost": 720.0,
+        "reference": "Oribe Salon Partner Program B2B Price List 2025"
+      },
+      {
+        "category": "Retail Stock",
+        "brand_name": "Kérastase Elixir Ultime Hair Oil (100ml)",
+        "unit_price": 26.0,
+        "quantity": 40,
+        "total_cost": 1040.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Backstation Essentials",
+        "brand_name": "Oribe Royal Blowout Heat Styling Spray (175ml)",
+        "unit_price": 34.0,
+        "quantity": 15,
+        "total_cost": 510.0,
+        "reference": "Oribe Salon Partner Program B2B Price List 2025"
+      },
+      {
+        "category": "Backstation Essentials",
+        "brand_name": "Oribe Gold Lust Dry Shampoo (250ml)",
+        "unit_price": 24.0,
+        "quantity": 20,
+        "total_cost": 480.0,
+        "reference": "Oribe Salon Partner Program B2B Price List 2025"
+      },
+      {
+        "category": "Backstation Essentials",
+        "brand_name": "Miscellaneous color bowls, brushes, foils, gloves, capes, towels (Lot)",
+        "unit_price": 1100.0,
+        "quantity": 1,
+        "total_cost": 1100.0,
+        "reference": "Salon Essentials Wholesale Distributor Lot Price 2025"
+      }
     ]
   },
   {
@@ -1892,6 +2970,160 @@
         "component": "Commercial Insurance, Bookkeeping & Compliance",
         "cost": 120.0,
         "reference": "Local business insurance quote & independent accountant retainer"
+      }
+    ],
+    "equipment_sourcing": [
+      {
+        "equipment_type": "Styling Chair",
+        "import_model": "Foshan Grand Hydraulic",
+        "import_base_cost": 180.0,
+        "logistics_and_duty": 107.0,
+        "total_import_cost": 287.0,
+        "local_supplier_model": "Excel Salon Furniture KL",
+        "local_supplier_cost": 500.0,
+        "cheaper_option": "Imported",
+        "reference": "Malaysia customs clearing (5% duty + 10% SST) + Port Klang sea freight"
+      },
+      {
+        "equipment_type": "Shampoo Backwash Unit",
+        "import_model": "Premium Relax Basin Unit",
+        "import_base_cost": 350.0,
+        "logistics_and_duty": 212.0,
+        "total_import_cost": 562.0,
+        "local_supplier_model": "Excel Salon Furniture KL",
+        "local_supplier_cost": 950.0,
+        "cheaper_option": "Imported",
+        "reference": "Port Klang sea LCL shipping + SST clearance"
+      }
+    ],
+    "stock_template": [
+      {
+        "category": "Color & Chemical",
+        "brand_name": "Wella Koleston Perfect Permanent Color Tube (60ml)",
+        "unit_price": 7.0,
+        "quantity": 400,
+        "total_cost": 2800.0,
+        "reference": "Wella Professionals Distributor B2B Catalog 2025"
+      },
+      {
+        "category": "Color & Chemical",
+        "brand_name": "Wella Welloxon Perfect Developer (1000ml)",
+        "unit_price": 12.0,
+        "quantity": 40,
+        "total_cost": 480.0,
+        "reference": "Wella Professionals Distributor B2B Catalog 2025"
+      },
+      {
+        "category": "Color & Chemical",
+        "brand_name": "Wella Blondor Multi-Blonde Bleach Powder (800g)",
+        "unit_price": 25.0,
+        "quantity": 20,
+        "total_cost": 500.0,
+        "reference": "Wella Professionals Distributor B2B Catalog 2025"
+      },
+      {
+        "category": "Color & Chemical",
+        "brand_name": "Olaplex Salon Intro Kit (Bond Multiplier No. 1 + Bond Perfector No. 2)",
+        "unit_price": 150.0,
+        "quantity": 5,
+        "total_cost": 750.0,
+        "reference": "Olaplex Professional Partner B2B Pricing"
+      },
+      {
+        "category": "Backwash Care",
+        "brand_name": "Kérastase Bain Chroma Respect (Color-treated, 1000ml)",
+        "unit_price": 42.0,
+        "quantity": 15,
+        "total_cost": 630.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Backwash Care",
+        "brand_name": "Kérastase Bain Fluidealiste (Frizz control, 1000ml)",
+        "unit_price": 42.0,
+        "quantity": 15,
+        "total_cost": 630.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Backwash Care",
+        "brand_name": "Kérastase Bain Densifique (Thinning/volume, 1000ml)",
+        "unit_price": 42.0,
+        "quantity": 10,
+        "total_cost": 420.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Backwash Care",
+        "brand_name": "Kérastase Fondant Chroma Respect Conditioner (1000ml)",
+        "unit_price": 48.0,
+        "quantity": 12,
+        "total_cost": 576.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Backwash Care",
+        "brand_name": "Kérastase Fondant Fluidealiste Conditioner (1000ml)",
+        "unit_price": 48.0,
+        "quantity": 12,
+        "total_cost": 576.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Retail Stock",
+        "brand_name": "Oribe Gold Lust Repair & Restore Shampoo (250ml)",
+        "unit_price": 24.5,
+        "quantity": 40,
+        "total_cost": 980.0,
+        "reference": "Oribe Salon Partner Program B2B Price List 2025"
+      },
+      {
+        "category": "Retail Stock",
+        "brand_name": "Oribe Gold Lust Repair & Restore Conditioner (200ml)",
+        "unit_price": 26.0,
+        "quantity": 40,
+        "total_cost": 1040.0,
+        "reference": "Oribe Salon Partner Program B2B Price List 2025"
+      },
+      {
+        "category": "Retail Stock",
+        "brand_name": "Oribe Dry Texturizing Spray (300ml)",
+        "unit_price": 24.0,
+        "quantity": 30,
+        "total_cost": 720.0,
+        "reference": "Oribe Salon Partner Program B2B Price List 2025"
+      },
+      {
+        "category": "Retail Stock",
+        "brand_name": "Kérastase Elixir Ultime Hair Oil (100ml)",
+        "unit_price": 26.0,
+        "quantity": 40,
+        "total_cost": 1040.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Backstation Essentials",
+        "brand_name": "Oribe Royal Blowout Heat Styling Spray (175ml)",
+        "unit_price": 34.0,
+        "quantity": 15,
+        "total_cost": 510.0,
+        "reference": "Oribe Salon Partner Program B2B Price List 2025"
+      },
+      {
+        "category": "Backstation Essentials",
+        "brand_name": "Oribe Gold Lust Dry Shampoo (250ml)",
+        "unit_price": 24.0,
+        "quantity": 20,
+        "total_cost": 480.0,
+        "reference": "Oribe Salon Partner Program B2B Price List 2025"
+      },
+      {
+        "category": "Backstation Essentials",
+        "brand_name": "Miscellaneous color bowls, brushes, foils, gloves, capes, towels (Lot)",
+        "unit_price": 1100.0,
+        "quantity": 1,
+        "total_cost": 1100.0,
+        "reference": "Salon Essentials Wholesale Distributor Lot Price 2025"
       }
     ]
   },
@@ -2130,6 +3362,160 @@
         "cost": 120.0,
         "reference": "Local business insurance quote & independent accountant retainer"
       }
+    ],
+    "equipment_sourcing": [
+      {
+        "equipment_type": "Styling Chair",
+        "import_model": "Foshan Grand Hydraulic",
+        "import_base_cost": 180.0,
+        "logistics_and_duty": 107.0,
+        "total_import_cost": 287.0,
+        "local_supplier_model": "Excel Salon Furniture KL",
+        "local_supplier_cost": 500.0,
+        "cheaper_option": "Imported",
+        "reference": "Malaysia customs clearing (5% duty + 10% SST) + Port Klang sea freight"
+      },
+      {
+        "equipment_type": "Shampoo Backwash Unit",
+        "import_model": "Premium Relax Basin Unit",
+        "import_base_cost": 350.0,
+        "logistics_and_duty": 212.0,
+        "total_import_cost": 562.0,
+        "local_supplier_model": "Excel Salon Furniture KL",
+        "local_supplier_cost": 950.0,
+        "cheaper_option": "Imported",
+        "reference": "Port Klang sea LCL shipping + SST clearance"
+      }
+    ],
+    "stock_template": [
+      {
+        "category": "Color & Chemical",
+        "brand_name": "Wella Koleston Perfect Permanent Color Tube (60ml)",
+        "unit_price": 7.0,
+        "quantity": 400,
+        "total_cost": 2800.0,
+        "reference": "Wella Professionals Distributor B2B Catalog 2025"
+      },
+      {
+        "category": "Color & Chemical",
+        "brand_name": "Wella Welloxon Perfect Developer (1000ml)",
+        "unit_price": 12.0,
+        "quantity": 40,
+        "total_cost": 480.0,
+        "reference": "Wella Professionals Distributor B2B Catalog 2025"
+      },
+      {
+        "category": "Color & Chemical",
+        "brand_name": "Wella Blondor Multi-Blonde Bleach Powder (800g)",
+        "unit_price": 25.0,
+        "quantity": 20,
+        "total_cost": 500.0,
+        "reference": "Wella Professionals Distributor B2B Catalog 2025"
+      },
+      {
+        "category": "Color & Chemical",
+        "brand_name": "Olaplex Salon Intro Kit (Bond Multiplier No. 1 + Bond Perfector No. 2)",
+        "unit_price": 150.0,
+        "quantity": 5,
+        "total_cost": 750.0,
+        "reference": "Olaplex Professional Partner B2B Pricing"
+      },
+      {
+        "category": "Backwash Care",
+        "brand_name": "Kérastase Bain Chroma Respect (Color-treated, 1000ml)",
+        "unit_price": 42.0,
+        "quantity": 15,
+        "total_cost": 630.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Backwash Care",
+        "brand_name": "Kérastase Bain Fluidealiste (Frizz control, 1000ml)",
+        "unit_price": 42.0,
+        "quantity": 15,
+        "total_cost": 630.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Backwash Care",
+        "brand_name": "Kérastase Bain Densifique (Thinning/volume, 1000ml)",
+        "unit_price": 42.0,
+        "quantity": 10,
+        "total_cost": 420.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Backwash Care",
+        "brand_name": "Kérastase Fondant Chroma Respect Conditioner (1000ml)",
+        "unit_price": 48.0,
+        "quantity": 12,
+        "total_cost": 576.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Backwash Care",
+        "brand_name": "Kérastase Fondant Fluidealiste Conditioner (1000ml)",
+        "unit_price": 48.0,
+        "quantity": 12,
+        "total_cost": 576.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Retail Stock",
+        "brand_name": "Oribe Gold Lust Repair & Restore Shampoo (250ml)",
+        "unit_price": 24.5,
+        "quantity": 40,
+        "total_cost": 980.0,
+        "reference": "Oribe Salon Partner Program B2B Price List 2025"
+      },
+      {
+        "category": "Retail Stock",
+        "brand_name": "Oribe Gold Lust Repair & Restore Conditioner (200ml)",
+        "unit_price": 26.0,
+        "quantity": 40,
+        "total_cost": 1040.0,
+        "reference": "Oribe Salon Partner Program B2B Price List 2025"
+      },
+      {
+        "category": "Retail Stock",
+        "brand_name": "Oribe Dry Texturizing Spray (300ml)",
+        "unit_price": 24.0,
+        "quantity": 30,
+        "total_cost": 720.0,
+        "reference": "Oribe Salon Partner Program B2B Price List 2025"
+      },
+      {
+        "category": "Retail Stock",
+        "brand_name": "Kérastase Elixir Ultime Hair Oil (100ml)",
+        "unit_price": 26.0,
+        "quantity": 40,
+        "total_cost": 1040.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Backstation Essentials",
+        "brand_name": "Oribe Royal Blowout Heat Styling Spray (175ml)",
+        "unit_price": 34.0,
+        "quantity": 15,
+        "total_cost": 510.0,
+        "reference": "Oribe Salon Partner Program B2B Price List 2025"
+      },
+      {
+        "category": "Backstation Essentials",
+        "brand_name": "Oribe Gold Lust Dry Shampoo (250ml)",
+        "unit_price": 24.0,
+        "quantity": 20,
+        "total_cost": 480.0,
+        "reference": "Oribe Salon Partner Program B2B Price List 2025"
+      },
+      {
+        "category": "Backstation Essentials",
+        "brand_name": "Miscellaneous color bowls, brushes, foils, gloves, capes, towels (Lot)",
+        "unit_price": 1100.0,
+        "quantity": 1,
+        "total_cost": 1100.0,
+        "reference": "Salon Essentials Wholesale Distributor Lot Price 2025"
+      }
     ]
   },
   {
@@ -2366,6 +3752,160 @@
         "component": "Commercial Insurance, Bookkeeping & Compliance",
         "cost": 120.0,
         "reference": "Local business insurance quote & independent accountant retainer"
+      }
+    ],
+    "equipment_sourcing": [
+      {
+        "equipment_type": "Styling Chair",
+        "import_model": "Foshan Grand Hydraulic",
+        "import_base_cost": 180.0,
+        "logistics_and_duty": 107.0,
+        "total_import_cost": 287.0,
+        "local_supplier_model": "Excel Salon Furniture KL",
+        "local_supplier_cost": 500.0,
+        "cheaper_option": "Imported",
+        "reference": "Malaysia customs clearing (5% duty + 10% SST) + Port Klang sea freight"
+      },
+      {
+        "equipment_type": "Shampoo Backwash Unit",
+        "import_model": "Premium Relax Basin Unit",
+        "import_base_cost": 350.0,
+        "logistics_and_duty": 212.0,
+        "total_import_cost": 562.0,
+        "local_supplier_model": "Excel Salon Furniture KL",
+        "local_supplier_cost": 950.0,
+        "cheaper_option": "Imported",
+        "reference": "Port Klang sea LCL shipping + SST clearance"
+      }
+    ],
+    "stock_template": [
+      {
+        "category": "Color & Chemical",
+        "brand_name": "Wella Koleston Perfect Permanent Color Tube (60ml)",
+        "unit_price": 7.0,
+        "quantity": 400,
+        "total_cost": 2800.0,
+        "reference": "Wella Professionals Distributor B2B Catalog 2025"
+      },
+      {
+        "category": "Color & Chemical",
+        "brand_name": "Wella Welloxon Perfect Developer (1000ml)",
+        "unit_price": 12.0,
+        "quantity": 40,
+        "total_cost": 480.0,
+        "reference": "Wella Professionals Distributor B2B Catalog 2025"
+      },
+      {
+        "category": "Color & Chemical",
+        "brand_name": "Wella Blondor Multi-Blonde Bleach Powder (800g)",
+        "unit_price": 25.0,
+        "quantity": 20,
+        "total_cost": 500.0,
+        "reference": "Wella Professionals Distributor B2B Catalog 2025"
+      },
+      {
+        "category": "Color & Chemical",
+        "brand_name": "Olaplex Salon Intro Kit (Bond Multiplier No. 1 + Bond Perfector No. 2)",
+        "unit_price": 150.0,
+        "quantity": 5,
+        "total_cost": 750.0,
+        "reference": "Olaplex Professional Partner B2B Pricing"
+      },
+      {
+        "category": "Backwash Care",
+        "brand_name": "Kérastase Bain Chroma Respect (Color-treated, 1000ml)",
+        "unit_price": 42.0,
+        "quantity": 15,
+        "total_cost": 630.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Backwash Care",
+        "brand_name": "Kérastase Bain Fluidealiste (Frizz control, 1000ml)",
+        "unit_price": 42.0,
+        "quantity": 15,
+        "total_cost": 630.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Backwash Care",
+        "brand_name": "Kérastase Bain Densifique (Thinning/volume, 1000ml)",
+        "unit_price": 42.0,
+        "quantity": 10,
+        "total_cost": 420.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Backwash Care",
+        "brand_name": "Kérastase Fondant Chroma Respect Conditioner (1000ml)",
+        "unit_price": 48.0,
+        "quantity": 12,
+        "total_cost": 576.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Backwash Care",
+        "brand_name": "Kérastase Fondant Fluidealiste Conditioner (1000ml)",
+        "unit_price": 48.0,
+        "quantity": 12,
+        "total_cost": 576.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Retail Stock",
+        "brand_name": "Oribe Gold Lust Repair & Restore Shampoo (250ml)",
+        "unit_price": 24.5,
+        "quantity": 40,
+        "total_cost": 980.0,
+        "reference": "Oribe Salon Partner Program B2B Price List 2025"
+      },
+      {
+        "category": "Retail Stock",
+        "brand_name": "Oribe Gold Lust Repair & Restore Conditioner (200ml)",
+        "unit_price": 26.0,
+        "quantity": 40,
+        "total_cost": 1040.0,
+        "reference": "Oribe Salon Partner Program B2B Price List 2025"
+      },
+      {
+        "category": "Retail Stock",
+        "brand_name": "Oribe Dry Texturizing Spray (300ml)",
+        "unit_price": 24.0,
+        "quantity": 30,
+        "total_cost": 720.0,
+        "reference": "Oribe Salon Partner Program B2B Price List 2025"
+      },
+      {
+        "category": "Retail Stock",
+        "brand_name": "Kérastase Elixir Ultime Hair Oil (100ml)",
+        "unit_price": 26.0,
+        "quantity": 40,
+        "total_cost": 1040.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Backstation Essentials",
+        "brand_name": "Oribe Royal Blowout Heat Styling Spray (175ml)",
+        "unit_price": 34.0,
+        "quantity": 15,
+        "total_cost": 510.0,
+        "reference": "Oribe Salon Partner Program B2B Price List 2025"
+      },
+      {
+        "category": "Backstation Essentials",
+        "brand_name": "Oribe Gold Lust Dry Shampoo (250ml)",
+        "unit_price": 24.0,
+        "quantity": 20,
+        "total_cost": 480.0,
+        "reference": "Oribe Salon Partner Program B2B Price List 2025"
+      },
+      {
+        "category": "Backstation Essentials",
+        "brand_name": "Miscellaneous color bowls, brushes, foils, gloves, capes, towels (Lot)",
+        "unit_price": 1100.0,
+        "quantity": 1,
+        "total_cost": 1100.0,
+        "reference": "Salon Essentials Wholesale Distributor Lot Price 2025"
       }
     ]
   },
@@ -2604,6 +4144,160 @@
         "cost": 120.0,
         "reference": "Local business insurance quote & independent accountant retainer"
       }
+    ],
+    "equipment_sourcing": [
+      {
+        "equipment_type": "Styling Chair",
+        "import_model": "Foshan Grand Hydraulic",
+        "import_base_cost": 180.0,
+        "logistics_and_duty": 107.0,
+        "total_import_cost": 287.0,
+        "local_supplier_model": "Excel Salon Furniture KL",
+        "local_supplier_cost": 500.0,
+        "cheaper_option": "Imported",
+        "reference": "Malaysia customs clearing (5% duty + 10% SST) + Port Klang sea freight"
+      },
+      {
+        "equipment_type": "Shampoo Backwash Unit",
+        "import_model": "Premium Relax Basin Unit",
+        "import_base_cost": 350.0,
+        "logistics_and_duty": 212.0,
+        "total_import_cost": 562.0,
+        "local_supplier_model": "Excel Salon Furniture KL",
+        "local_supplier_cost": 950.0,
+        "cheaper_option": "Imported",
+        "reference": "Port Klang sea LCL shipping + SST clearance"
+      }
+    ],
+    "stock_template": [
+      {
+        "category": "Color & Chemical",
+        "brand_name": "Wella Koleston Perfect Permanent Color Tube (60ml)",
+        "unit_price": 7.0,
+        "quantity": 400,
+        "total_cost": 2800.0,
+        "reference": "Wella Professionals Distributor B2B Catalog 2025"
+      },
+      {
+        "category": "Color & Chemical",
+        "brand_name": "Wella Welloxon Perfect Developer (1000ml)",
+        "unit_price": 12.0,
+        "quantity": 40,
+        "total_cost": 480.0,
+        "reference": "Wella Professionals Distributor B2B Catalog 2025"
+      },
+      {
+        "category": "Color & Chemical",
+        "brand_name": "Wella Blondor Multi-Blonde Bleach Powder (800g)",
+        "unit_price": 25.0,
+        "quantity": 20,
+        "total_cost": 500.0,
+        "reference": "Wella Professionals Distributor B2B Catalog 2025"
+      },
+      {
+        "category": "Color & Chemical",
+        "brand_name": "Olaplex Salon Intro Kit (Bond Multiplier No. 1 + Bond Perfector No. 2)",
+        "unit_price": 150.0,
+        "quantity": 5,
+        "total_cost": 750.0,
+        "reference": "Olaplex Professional Partner B2B Pricing"
+      },
+      {
+        "category": "Backwash Care",
+        "brand_name": "Kérastase Bain Chroma Respect (Color-treated, 1000ml)",
+        "unit_price": 42.0,
+        "quantity": 15,
+        "total_cost": 630.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Backwash Care",
+        "brand_name": "Kérastase Bain Fluidealiste (Frizz control, 1000ml)",
+        "unit_price": 42.0,
+        "quantity": 15,
+        "total_cost": 630.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Backwash Care",
+        "brand_name": "Kérastase Bain Densifique (Thinning/volume, 1000ml)",
+        "unit_price": 42.0,
+        "quantity": 10,
+        "total_cost": 420.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Backwash Care",
+        "brand_name": "Kérastase Fondant Chroma Respect Conditioner (1000ml)",
+        "unit_price": 48.0,
+        "quantity": 12,
+        "total_cost": 576.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Backwash Care",
+        "brand_name": "Kérastase Fondant Fluidealiste Conditioner (1000ml)",
+        "unit_price": 48.0,
+        "quantity": 12,
+        "total_cost": 576.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Retail Stock",
+        "brand_name": "Oribe Gold Lust Repair & Restore Shampoo (250ml)",
+        "unit_price": 24.5,
+        "quantity": 40,
+        "total_cost": 980.0,
+        "reference": "Oribe Salon Partner Program B2B Price List 2025"
+      },
+      {
+        "category": "Retail Stock",
+        "brand_name": "Oribe Gold Lust Repair & Restore Conditioner (200ml)",
+        "unit_price": 26.0,
+        "quantity": 40,
+        "total_cost": 1040.0,
+        "reference": "Oribe Salon Partner Program B2B Price List 2025"
+      },
+      {
+        "category": "Retail Stock",
+        "brand_name": "Oribe Dry Texturizing Spray (300ml)",
+        "unit_price": 24.0,
+        "quantity": 30,
+        "total_cost": 720.0,
+        "reference": "Oribe Salon Partner Program B2B Price List 2025"
+      },
+      {
+        "category": "Retail Stock",
+        "brand_name": "Kérastase Elixir Ultime Hair Oil (100ml)",
+        "unit_price": 26.0,
+        "quantity": 40,
+        "total_cost": 1040.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Backstation Essentials",
+        "brand_name": "Oribe Royal Blowout Heat Styling Spray (175ml)",
+        "unit_price": 34.0,
+        "quantity": 15,
+        "total_cost": 510.0,
+        "reference": "Oribe Salon Partner Program B2B Price List 2025"
+      },
+      {
+        "category": "Backstation Essentials",
+        "brand_name": "Oribe Gold Lust Dry Shampoo (250ml)",
+        "unit_price": 24.0,
+        "quantity": 20,
+        "total_cost": 480.0,
+        "reference": "Oribe Salon Partner Program B2B Price List 2025"
+      },
+      {
+        "category": "Backstation Essentials",
+        "brand_name": "Miscellaneous color bowls, brushes, foils, gloves, capes, towels (Lot)",
+        "unit_price": 1100.0,
+        "quantity": 1,
+        "total_cost": 1100.0,
+        "reference": "Salon Essentials Wholesale Distributor Lot Price 2025"
+      }
     ]
   },
   {
@@ -2840,6 +4534,160 @@
         "component": "Commercial Insurance, Bookkeeping & Compliance",
         "cost": 180.0,
         "reference": "Local business insurance quote & independent accountant retainer"
+      }
+    ],
+    "equipment_sourcing": [
+      {
+        "equipment_type": "Styling Chair",
+        "import_model": "Foshan Grand Hydraulic",
+        "import_base_cost": 180.0,
+        "logistics_and_duty": 106.0,
+        "total_import_cost": 286.0,
+        "local_supplier_model": "Premium Salon Supplies SG",
+        "local_supplier_cost": 800.0,
+        "cheaper_option": "Imported",
+        "reference": "Singapore 9% GST + Keppel Port sea freight logistics"
+      },
+      {
+        "equipment_type": "Shampoo Backwash Unit",
+        "import_model": "Premium Relax Basin Unit",
+        "import_base_cost": 350.0,
+        "logistics_and_duty": 211.0,
+        "total_import_cost": 561.0,
+        "local_supplier_model": "Premium Salon Supplies SG",
+        "local_supplier_cost": 1400.0,
+        "cheaper_option": "Imported",
+        "reference": "Singapore sea LCL shipping + GST clearance"
+      }
+    ],
+    "stock_template": [
+      {
+        "category": "Color & Chemical",
+        "brand_name": "Wella Koleston Perfect Permanent Color Tube (60ml)",
+        "unit_price": 7.0,
+        "quantity": 400,
+        "total_cost": 2800.0,
+        "reference": "Wella Professionals Distributor B2B Catalog 2025"
+      },
+      {
+        "category": "Color & Chemical",
+        "brand_name": "Wella Welloxon Perfect Developer (1000ml)",
+        "unit_price": 12.0,
+        "quantity": 40,
+        "total_cost": 480.0,
+        "reference": "Wella Professionals Distributor B2B Catalog 2025"
+      },
+      {
+        "category": "Color & Chemical",
+        "brand_name": "Wella Blondor Multi-Blonde Bleach Powder (800g)",
+        "unit_price": 25.0,
+        "quantity": 20,
+        "total_cost": 500.0,
+        "reference": "Wella Professionals Distributor B2B Catalog 2025"
+      },
+      {
+        "category": "Color & Chemical",
+        "brand_name": "Olaplex Salon Intro Kit (Bond Multiplier No. 1 + Bond Perfector No. 2)",
+        "unit_price": 150.0,
+        "quantity": 5,
+        "total_cost": 750.0,
+        "reference": "Olaplex Professional Partner B2B Pricing"
+      },
+      {
+        "category": "Backwash Care",
+        "brand_name": "Kérastase Bain Chroma Respect (Color-treated, 1000ml)",
+        "unit_price": 42.0,
+        "quantity": 15,
+        "total_cost": 630.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Backwash Care",
+        "brand_name": "Kérastase Bain Fluidealiste (Frizz control, 1000ml)",
+        "unit_price": 42.0,
+        "quantity": 15,
+        "total_cost": 630.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Backwash Care",
+        "brand_name": "Kérastase Bain Densifique (Thinning/volume, 1000ml)",
+        "unit_price": 42.0,
+        "quantity": 10,
+        "total_cost": 420.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Backwash Care",
+        "brand_name": "Kérastase Fondant Chroma Respect Conditioner (1000ml)",
+        "unit_price": 48.0,
+        "quantity": 12,
+        "total_cost": 576.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Backwash Care",
+        "brand_name": "Kérastase Fondant Fluidealiste Conditioner (1000ml)",
+        "unit_price": 48.0,
+        "quantity": 12,
+        "total_cost": 576.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Retail Stock",
+        "brand_name": "Oribe Gold Lust Repair & Restore Shampoo (250ml)",
+        "unit_price": 24.5,
+        "quantity": 40,
+        "total_cost": 980.0,
+        "reference": "Oribe Salon Partner Program B2B Price List 2025"
+      },
+      {
+        "category": "Retail Stock",
+        "brand_name": "Oribe Gold Lust Repair & Restore Conditioner (200ml)",
+        "unit_price": 26.0,
+        "quantity": 40,
+        "total_cost": 1040.0,
+        "reference": "Oribe Salon Partner Program B2B Price List 2025"
+      },
+      {
+        "category": "Retail Stock",
+        "brand_name": "Oribe Dry Texturizing Spray (300ml)",
+        "unit_price": 24.0,
+        "quantity": 30,
+        "total_cost": 720.0,
+        "reference": "Oribe Salon Partner Program B2B Price List 2025"
+      },
+      {
+        "category": "Retail Stock",
+        "brand_name": "Kérastase Elixir Ultime Hair Oil (100ml)",
+        "unit_price": 26.0,
+        "quantity": 40,
+        "total_cost": 1040.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Backstation Essentials",
+        "brand_name": "Oribe Royal Blowout Heat Styling Spray (175ml)",
+        "unit_price": 34.0,
+        "quantity": 15,
+        "total_cost": 510.0,
+        "reference": "Oribe Salon Partner Program B2B Price List 2025"
+      },
+      {
+        "category": "Backstation Essentials",
+        "brand_name": "Oribe Gold Lust Dry Shampoo (250ml)",
+        "unit_price": 24.0,
+        "quantity": 20,
+        "total_cost": 480.0,
+        "reference": "Oribe Salon Partner Program B2B Price List 2025"
+      },
+      {
+        "category": "Backstation Essentials",
+        "brand_name": "Miscellaneous color bowls, brushes, foils, gloves, capes, towels (Lot)",
+        "unit_price": 1100.0,
+        "quantity": 1,
+        "total_cost": 1100.0,
+        "reference": "Salon Essentials Wholesale Distributor Lot Price 2025"
       }
     ]
   },
@@ -3078,6 +4926,160 @@
         "cost": 180.0,
         "reference": "Local business insurance quote & independent accountant retainer"
       }
+    ],
+    "equipment_sourcing": [
+      {
+        "equipment_type": "Styling Chair",
+        "import_model": "Foshan Grand Hydraulic",
+        "import_base_cost": 180.0,
+        "logistics_and_duty": 70.0,
+        "total_import_cost": 250.0,
+        "local_supplier_model": "Takara Belmont HK Agent",
+        "local_supplier_cost": 700.0,
+        "cheaper_option": "Imported",
+        "reference": "0% import duties/VAT, local truck logistics from Shenzhen port"
+      },
+      {
+        "equipment_type": "Shampoo Backwash Unit",
+        "import_model": "Premium Relax Basin Unit",
+        "import_base_cost": 350.0,
+        "logistics_and_duty": 150.0,
+        "total_import_cost": 500.0,
+        "local_supplier_model": "Takara Belmont HK Agent",
+        "local_supplier_cost": 1300.0,
+        "cheaper_option": "Imported",
+        "reference": "0% duties, sea LCL shipping + Kwai Chung port handling"
+      }
+    ],
+    "stock_template": [
+      {
+        "category": "Color & Chemical",
+        "brand_name": "Wella Koleston Perfect Permanent Color Tube (60ml)",
+        "unit_price": 7.0,
+        "quantity": 400,
+        "total_cost": 2800.0,
+        "reference": "Wella Professionals Distributor B2B Catalog 2025"
+      },
+      {
+        "category": "Color & Chemical",
+        "brand_name": "Wella Welloxon Perfect Developer (1000ml)",
+        "unit_price": 12.0,
+        "quantity": 40,
+        "total_cost": 480.0,
+        "reference": "Wella Professionals Distributor B2B Catalog 2025"
+      },
+      {
+        "category": "Color & Chemical",
+        "brand_name": "Wella Blondor Multi-Blonde Bleach Powder (800g)",
+        "unit_price": 25.0,
+        "quantity": 20,
+        "total_cost": 500.0,
+        "reference": "Wella Professionals Distributor B2B Catalog 2025"
+      },
+      {
+        "category": "Color & Chemical",
+        "brand_name": "Olaplex Salon Intro Kit (Bond Multiplier No. 1 + Bond Perfector No. 2)",
+        "unit_price": 150.0,
+        "quantity": 5,
+        "total_cost": 750.0,
+        "reference": "Olaplex Professional Partner B2B Pricing"
+      },
+      {
+        "category": "Backwash Care",
+        "brand_name": "Kérastase Bain Chroma Respect (Color-treated, 1000ml)",
+        "unit_price": 42.0,
+        "quantity": 15,
+        "total_cost": 630.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Backwash Care",
+        "brand_name": "Kérastase Bain Fluidealiste (Frizz control, 1000ml)",
+        "unit_price": 42.0,
+        "quantity": 15,
+        "total_cost": 630.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Backwash Care",
+        "brand_name": "Kérastase Bain Densifique (Thinning/volume, 1000ml)",
+        "unit_price": 42.0,
+        "quantity": 10,
+        "total_cost": 420.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Backwash Care",
+        "brand_name": "Kérastase Fondant Chroma Respect Conditioner (1000ml)",
+        "unit_price": 48.0,
+        "quantity": 12,
+        "total_cost": 576.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Backwash Care",
+        "brand_name": "Kérastase Fondant Fluidealiste Conditioner (1000ml)",
+        "unit_price": 48.0,
+        "quantity": 12,
+        "total_cost": 576.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Retail Stock",
+        "brand_name": "Oribe Gold Lust Repair & Restore Shampoo (250ml)",
+        "unit_price": 24.5,
+        "quantity": 40,
+        "total_cost": 980.0,
+        "reference": "Oribe Salon Partner Program B2B Price List 2025"
+      },
+      {
+        "category": "Retail Stock",
+        "brand_name": "Oribe Gold Lust Repair & Restore Conditioner (200ml)",
+        "unit_price": 26.0,
+        "quantity": 40,
+        "total_cost": 1040.0,
+        "reference": "Oribe Salon Partner Program B2B Price List 2025"
+      },
+      {
+        "category": "Retail Stock",
+        "brand_name": "Oribe Dry Texturizing Spray (300ml)",
+        "unit_price": 24.0,
+        "quantity": 30,
+        "total_cost": 720.0,
+        "reference": "Oribe Salon Partner Program B2B Price List 2025"
+      },
+      {
+        "category": "Retail Stock",
+        "brand_name": "Kérastase Elixir Ultime Hair Oil (100ml)",
+        "unit_price": 26.0,
+        "quantity": 40,
+        "total_cost": 1040.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Backstation Essentials",
+        "brand_name": "Oribe Royal Blowout Heat Styling Spray (175ml)",
+        "unit_price": 34.0,
+        "quantity": 15,
+        "total_cost": 510.0,
+        "reference": "Oribe Salon Partner Program B2B Price List 2025"
+      },
+      {
+        "category": "Backstation Essentials",
+        "brand_name": "Oribe Gold Lust Dry Shampoo (250ml)",
+        "unit_price": 24.0,
+        "quantity": 20,
+        "total_cost": 480.0,
+        "reference": "Oribe Salon Partner Program B2B Price List 2025"
+      },
+      {
+        "category": "Backstation Essentials",
+        "brand_name": "Miscellaneous color bowls, brushes, foils, gloves, capes, towels (Lot)",
+        "unit_price": 1100.0,
+        "quantity": 1,
+        "total_cost": 1100.0,
+        "reference": "Salon Essentials Wholesale Distributor Lot Price 2025"
+      }
     ]
   },
   {
@@ -3314,6 +5316,160 @@
         "component": "Commercial Insurance, Bookkeeping & Compliance",
         "cost": 120.0,
         "reference": "Local business insurance quote & independent accountant retainer"
+      }
+    ],
+    "equipment_sourcing": [
+      {
+        "equipment_type": "Styling Chair",
+        "import_model": "Foshan Grand Hydraulic",
+        "import_base_cost": 180.0,
+        "logistics_and_duty": 133.0,
+        "total_import_cost": 313.0,
+        "local_supplier_model": "Bangkok Salon Supply",
+        "local_supplier_cost": 550.0,
+        "cheaper_option": "Imported",
+        "reference": "Thailand Customs tariff (20% duty + 7% VAT) + Laem Chabang port logistics"
+      },
+      {
+        "equipment_type": "Shampoo Backwash Unit",
+        "import_model": "Premium Relax Basin Unit",
+        "import_base_cost": 350.0,
+        "logistics_and_duty": 254.0,
+        "total_import_cost": 604.0,
+        "local_supplier_model": "Bangkok Salon Supply",
+        "local_supplier_cost": 950.0,
+        "cheaper_option": "Imported",
+        "reference": "Laem Chabang sea freight + customs clearance"
+      }
+    ],
+    "stock_template": [
+      {
+        "category": "Color & Chemical",
+        "brand_name": "Wella Koleston Perfect Permanent Color Tube (60ml)",
+        "unit_price": 7.0,
+        "quantity": 400,
+        "total_cost": 2800.0,
+        "reference": "Wella Professionals Distributor B2B Catalog 2025"
+      },
+      {
+        "category": "Color & Chemical",
+        "brand_name": "Wella Welloxon Perfect Developer (1000ml)",
+        "unit_price": 12.0,
+        "quantity": 40,
+        "total_cost": 480.0,
+        "reference": "Wella Professionals Distributor B2B Catalog 2025"
+      },
+      {
+        "category": "Color & Chemical",
+        "brand_name": "Wella Blondor Multi-Blonde Bleach Powder (800g)",
+        "unit_price": 25.0,
+        "quantity": 20,
+        "total_cost": 500.0,
+        "reference": "Wella Professionals Distributor B2B Catalog 2025"
+      },
+      {
+        "category": "Color & Chemical",
+        "brand_name": "Olaplex Salon Intro Kit (Bond Multiplier No. 1 + Bond Perfector No. 2)",
+        "unit_price": 150.0,
+        "quantity": 5,
+        "total_cost": 750.0,
+        "reference": "Olaplex Professional Partner B2B Pricing"
+      },
+      {
+        "category": "Backwash Care",
+        "brand_name": "Kérastase Bain Chroma Respect (Color-treated, 1000ml)",
+        "unit_price": 42.0,
+        "quantity": 15,
+        "total_cost": 630.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Backwash Care",
+        "brand_name": "Kérastase Bain Fluidealiste (Frizz control, 1000ml)",
+        "unit_price": 42.0,
+        "quantity": 15,
+        "total_cost": 630.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Backwash Care",
+        "brand_name": "Kérastase Bain Densifique (Thinning/volume, 1000ml)",
+        "unit_price": 42.0,
+        "quantity": 10,
+        "total_cost": 420.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Backwash Care",
+        "brand_name": "Kérastase Fondant Chroma Respect Conditioner (1000ml)",
+        "unit_price": 48.0,
+        "quantity": 12,
+        "total_cost": 576.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Backwash Care",
+        "brand_name": "Kérastase Fondant Fluidealiste Conditioner (1000ml)",
+        "unit_price": 48.0,
+        "quantity": 12,
+        "total_cost": 576.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Retail Stock",
+        "brand_name": "Oribe Gold Lust Repair & Restore Shampoo (250ml)",
+        "unit_price": 24.5,
+        "quantity": 40,
+        "total_cost": 980.0,
+        "reference": "Oribe Salon Partner Program B2B Price List 2025"
+      },
+      {
+        "category": "Retail Stock",
+        "brand_name": "Oribe Gold Lust Repair & Restore Conditioner (200ml)",
+        "unit_price": 26.0,
+        "quantity": 40,
+        "total_cost": 1040.0,
+        "reference": "Oribe Salon Partner Program B2B Price List 2025"
+      },
+      {
+        "category": "Retail Stock",
+        "brand_name": "Oribe Dry Texturizing Spray (300ml)",
+        "unit_price": 24.0,
+        "quantity": 30,
+        "total_cost": 720.0,
+        "reference": "Oribe Salon Partner Program B2B Price List 2025"
+      },
+      {
+        "category": "Retail Stock",
+        "brand_name": "Kérastase Elixir Ultime Hair Oil (100ml)",
+        "unit_price": 26.0,
+        "quantity": 40,
+        "total_cost": 1040.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Backstation Essentials",
+        "brand_name": "Oribe Royal Blowout Heat Styling Spray (175ml)",
+        "unit_price": 34.0,
+        "quantity": 15,
+        "total_cost": 510.0,
+        "reference": "Oribe Salon Partner Program B2B Price List 2025"
+      },
+      {
+        "category": "Backstation Essentials",
+        "brand_name": "Oribe Gold Lust Dry Shampoo (250ml)",
+        "unit_price": 24.0,
+        "quantity": 20,
+        "total_cost": 480.0,
+        "reference": "Oribe Salon Partner Program B2B Price List 2025"
+      },
+      {
+        "category": "Backstation Essentials",
+        "brand_name": "Miscellaneous color bowls, brushes, foils, gloves, capes, towels (Lot)",
+        "unit_price": 1100.0,
+        "quantity": 1,
+        "total_cost": 1100.0,
+        "reference": "Salon Essentials Wholesale Distributor Lot Price 2025"
       }
     ]
   },
@@ -3552,6 +5708,160 @@
         "cost": 180.0,
         "reference": "Local business insurance quote & independent accountant retainer"
       }
+    ],
+    "equipment_sourcing": [
+      {
+        "equipment_type": "Styling Chair",
+        "import_model": "Foshan Grand Hydraulic",
+        "import_base_cost": 180.0,
+        "logistics_and_duty": 75.0,
+        "total_import_cost": 255.0,
+        "local_supplier_model": "Macau Salon Distributor",
+        "local_supplier_cost": 750.0,
+        "cheaper_option": "Imported",
+        "reference": "Macau 0% import duty, local logistics from HK port transfer"
+      },
+      {
+        "equipment_type": "Shampoo Backwash Unit",
+        "import_model": "Premium Relax Basin Unit",
+        "import_base_cost": 350.0,
+        "logistics_and_duty": 150.0,
+        "total_import_cost": 500.0,
+        "local_supplier_model": "Macau Salon Distributor",
+        "local_supplier_cost": 1350.0,
+        "cheaper_option": "Imported",
+        "reference": "Sea LCL shipping + Macau customs handling"
+      }
+    ],
+    "stock_template": [
+      {
+        "category": "Color & Chemical",
+        "brand_name": "Wella Koleston Perfect Permanent Color Tube (60ml)",
+        "unit_price": 7.0,
+        "quantity": 400,
+        "total_cost": 2800.0,
+        "reference": "Wella Professionals Distributor B2B Catalog 2025"
+      },
+      {
+        "category": "Color & Chemical",
+        "brand_name": "Wella Welloxon Perfect Developer (1000ml)",
+        "unit_price": 12.0,
+        "quantity": 40,
+        "total_cost": 480.0,
+        "reference": "Wella Professionals Distributor B2B Catalog 2025"
+      },
+      {
+        "category": "Color & Chemical",
+        "brand_name": "Wella Blondor Multi-Blonde Bleach Powder (800g)",
+        "unit_price": 25.0,
+        "quantity": 20,
+        "total_cost": 500.0,
+        "reference": "Wella Professionals Distributor B2B Catalog 2025"
+      },
+      {
+        "category": "Color & Chemical",
+        "brand_name": "Olaplex Salon Intro Kit (Bond Multiplier No. 1 + Bond Perfector No. 2)",
+        "unit_price": 150.0,
+        "quantity": 5,
+        "total_cost": 750.0,
+        "reference": "Olaplex Professional Partner B2B Pricing"
+      },
+      {
+        "category": "Backwash Care",
+        "brand_name": "Kérastase Bain Chroma Respect (Color-treated, 1000ml)",
+        "unit_price": 42.0,
+        "quantity": 15,
+        "total_cost": 630.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Backwash Care",
+        "brand_name": "Kérastase Bain Fluidealiste (Frizz control, 1000ml)",
+        "unit_price": 42.0,
+        "quantity": 15,
+        "total_cost": 630.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Backwash Care",
+        "brand_name": "Kérastase Bain Densifique (Thinning/volume, 1000ml)",
+        "unit_price": 42.0,
+        "quantity": 10,
+        "total_cost": 420.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Backwash Care",
+        "brand_name": "Kérastase Fondant Chroma Respect Conditioner (1000ml)",
+        "unit_price": 48.0,
+        "quantity": 12,
+        "total_cost": 576.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Backwash Care",
+        "brand_name": "Kérastase Fondant Fluidealiste Conditioner (1000ml)",
+        "unit_price": 48.0,
+        "quantity": 12,
+        "total_cost": 576.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Retail Stock",
+        "brand_name": "Oribe Gold Lust Repair & Restore Shampoo (250ml)",
+        "unit_price": 24.5,
+        "quantity": 40,
+        "total_cost": 980.0,
+        "reference": "Oribe Salon Partner Program B2B Price List 2025"
+      },
+      {
+        "category": "Retail Stock",
+        "brand_name": "Oribe Gold Lust Repair & Restore Conditioner (200ml)",
+        "unit_price": 26.0,
+        "quantity": 40,
+        "total_cost": 1040.0,
+        "reference": "Oribe Salon Partner Program B2B Price List 2025"
+      },
+      {
+        "category": "Retail Stock",
+        "brand_name": "Oribe Dry Texturizing Spray (300ml)",
+        "unit_price": 24.0,
+        "quantity": 30,
+        "total_cost": 720.0,
+        "reference": "Oribe Salon Partner Program B2B Price List 2025"
+      },
+      {
+        "category": "Retail Stock",
+        "brand_name": "Kérastase Elixir Ultime Hair Oil (100ml)",
+        "unit_price": 26.0,
+        "quantity": 40,
+        "total_cost": 1040.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Backstation Essentials",
+        "brand_name": "Oribe Royal Blowout Heat Styling Spray (175ml)",
+        "unit_price": 34.0,
+        "quantity": 15,
+        "total_cost": 510.0,
+        "reference": "Oribe Salon Partner Program B2B Price List 2025"
+      },
+      {
+        "category": "Backstation Essentials",
+        "brand_name": "Oribe Gold Lust Dry Shampoo (250ml)",
+        "unit_price": 24.0,
+        "quantity": 20,
+        "total_cost": 480.0,
+        "reference": "Oribe Salon Partner Program B2B Price List 2025"
+      },
+      {
+        "category": "Backstation Essentials",
+        "brand_name": "Miscellaneous color bowls, brushes, foils, gloves, capes, towels (Lot)",
+        "unit_price": 1100.0,
+        "quantity": 1,
+        "total_cost": 1100.0,
+        "reference": "Salon Essentials Wholesale Distributor Lot Price 2025"
+      }
     ]
   },
   {
@@ -3788,6 +6098,160 @@
         "component": "Commercial Insurance, Bookkeeping & Compliance",
         "cost": 180.0,
         "reference": "Local business insurance quote & independent accountant retainer"
+      }
+    ],
+    "equipment_sourcing": [
+      {
+        "equipment_type": "Styling Chair",
+        "import_model": "Foshan Grand Hydraulic",
+        "import_base_cost": 180.0,
+        "logistics_and_duty": 188.0,
+        "total_import_cost": 368.0,
+        "local_supplier_model": "EEM Salon Supplies Dubai",
+        "local_supplier_cost": 950.0,
+        "cheaper_option": "Imported",
+        "reference": "UAE Customs (5% duty + 5% VAT) + Jebel Ali port logistics"
+      },
+      {
+        "equipment_type": "Shampoo Backwash Unit",
+        "import_model": "Premium Relax Basin Unit",
+        "import_base_cost": 350.0,
+        "logistics_and_duty": 335.0,
+        "total_import_cost": 685.0,
+        "local_supplier_model": "EEM Salon Supplies Dubai",
+        "local_supplier_cost": 1900.0,
+        "cheaper_option": "Imported",
+        "reference": "Dubai LCL sea freight + local warehouse delivery"
+      }
+    ],
+    "stock_template": [
+      {
+        "category": "Color & Chemical",
+        "brand_name": "Wella Koleston Perfect Permanent Color Tube (60ml)",
+        "unit_price": 7.0,
+        "quantity": 400,
+        "total_cost": 2800.0,
+        "reference": "Wella Professionals Distributor B2B Catalog 2025"
+      },
+      {
+        "category": "Color & Chemical",
+        "brand_name": "Wella Welloxon Perfect Developer (1000ml)",
+        "unit_price": 12.0,
+        "quantity": 40,
+        "total_cost": 480.0,
+        "reference": "Wella Professionals Distributor B2B Catalog 2025"
+      },
+      {
+        "category": "Color & Chemical",
+        "brand_name": "Wella Blondor Multi-Blonde Bleach Powder (800g)",
+        "unit_price": 25.0,
+        "quantity": 20,
+        "total_cost": 500.0,
+        "reference": "Wella Professionals Distributor B2B Catalog 2025"
+      },
+      {
+        "category": "Color & Chemical",
+        "brand_name": "Olaplex Salon Intro Kit (Bond Multiplier No. 1 + Bond Perfector No. 2)",
+        "unit_price": 150.0,
+        "quantity": 5,
+        "total_cost": 750.0,
+        "reference": "Olaplex Professional Partner B2B Pricing"
+      },
+      {
+        "category": "Backwash Care",
+        "brand_name": "Kérastase Bain Chroma Respect (Color-treated, 1000ml)",
+        "unit_price": 42.0,
+        "quantity": 15,
+        "total_cost": 630.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Backwash Care",
+        "brand_name": "Kérastase Bain Fluidealiste (Frizz control, 1000ml)",
+        "unit_price": 42.0,
+        "quantity": 15,
+        "total_cost": 630.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Backwash Care",
+        "brand_name": "Kérastase Bain Densifique (Thinning/volume, 1000ml)",
+        "unit_price": 42.0,
+        "quantity": 10,
+        "total_cost": 420.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Backwash Care",
+        "brand_name": "Kérastase Fondant Chroma Respect Conditioner (1000ml)",
+        "unit_price": 48.0,
+        "quantity": 12,
+        "total_cost": 576.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Backwash Care",
+        "brand_name": "Kérastase Fondant Fluidealiste Conditioner (1000ml)",
+        "unit_price": 48.0,
+        "quantity": 12,
+        "total_cost": 576.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Retail Stock",
+        "brand_name": "Oribe Gold Lust Repair & Restore Shampoo (250ml)",
+        "unit_price": 24.5,
+        "quantity": 40,
+        "total_cost": 980.0,
+        "reference": "Oribe Salon Partner Program B2B Price List 2025"
+      },
+      {
+        "category": "Retail Stock",
+        "brand_name": "Oribe Gold Lust Repair & Restore Conditioner (200ml)",
+        "unit_price": 26.0,
+        "quantity": 40,
+        "total_cost": 1040.0,
+        "reference": "Oribe Salon Partner Program B2B Price List 2025"
+      },
+      {
+        "category": "Retail Stock",
+        "brand_name": "Oribe Dry Texturizing Spray (300ml)",
+        "unit_price": 24.0,
+        "quantity": 30,
+        "total_cost": 720.0,
+        "reference": "Oribe Salon Partner Program B2B Price List 2025"
+      },
+      {
+        "category": "Retail Stock",
+        "brand_name": "Kérastase Elixir Ultime Hair Oil (100ml)",
+        "unit_price": 26.0,
+        "quantity": 40,
+        "total_cost": 1040.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Backstation Essentials",
+        "brand_name": "Oribe Royal Blowout Heat Styling Spray (175ml)",
+        "unit_price": 34.0,
+        "quantity": 15,
+        "total_cost": 510.0,
+        "reference": "Oribe Salon Partner Program B2B Price List 2025"
+      },
+      {
+        "category": "Backstation Essentials",
+        "brand_name": "Oribe Gold Lust Dry Shampoo (250ml)",
+        "unit_price": 24.0,
+        "quantity": 20,
+        "total_cost": 480.0,
+        "reference": "Oribe Salon Partner Program B2B Price List 2025"
+      },
+      {
+        "category": "Backstation Essentials",
+        "brand_name": "Miscellaneous color bowls, brushes, foils, gloves, capes, towels (Lot)",
+        "unit_price": 1100.0,
+        "quantity": 1,
+        "total_cost": 1100.0,
+        "reference": "Salon Essentials Wholesale Distributor Lot Price 2025"
       }
     ]
   },
@@ -4026,6 +6490,160 @@
         "cost": 120.0,
         "reference": "Local business insurance quote & independent accountant retainer"
       }
+    ],
+    "equipment_sourcing": [
+      {
+        "equipment_type": "Styling Chair",
+        "import_model": "Foshan Grand Hydraulic",
+        "import_base_cost": 180.0,
+        "logistics_and_duty": 113.0,
+        "total_import_cost": 293.0,
+        "local_supplier_model": "Taipei Salon Design Depot",
+        "local_supplier_cost": 600.0,
+        "cheaper_option": "Imported",
+        "reference": "Taiwan Customs tariff (5% duty + 5% VAT) + Keelung port shipping"
+      },
+      {
+        "equipment_type": "Shampoo Backwash Unit",
+        "import_model": "Premium Relax Basin Unit",
+        "import_base_cost": 350.0,
+        "logistics_and_duty": 215.0,
+        "total_import_cost": 565.0,
+        "local_supplier_model": "Taipei Salon Design Depot",
+        "local_supplier_cost": 1100.0,
+        "cheaper_option": "Imported",
+        "reference": "Taiwan sea LCL shipping + import customs clearance"
+      }
+    ],
+    "stock_template": [
+      {
+        "category": "Color & Chemical",
+        "brand_name": "Wella Koleston Perfect Permanent Color Tube (60ml)",
+        "unit_price": 7.0,
+        "quantity": 400,
+        "total_cost": 2800.0,
+        "reference": "Wella Professionals Distributor B2B Catalog 2025"
+      },
+      {
+        "category": "Color & Chemical",
+        "brand_name": "Wella Welloxon Perfect Developer (1000ml)",
+        "unit_price": 12.0,
+        "quantity": 40,
+        "total_cost": 480.0,
+        "reference": "Wella Professionals Distributor B2B Catalog 2025"
+      },
+      {
+        "category": "Color & Chemical",
+        "brand_name": "Wella Blondor Multi-Blonde Bleach Powder (800g)",
+        "unit_price": 25.0,
+        "quantity": 20,
+        "total_cost": 500.0,
+        "reference": "Wella Professionals Distributor B2B Catalog 2025"
+      },
+      {
+        "category": "Color & Chemical",
+        "brand_name": "Olaplex Salon Intro Kit (Bond Multiplier No. 1 + Bond Perfector No. 2)",
+        "unit_price": 150.0,
+        "quantity": 5,
+        "total_cost": 750.0,
+        "reference": "Olaplex Professional Partner B2B Pricing"
+      },
+      {
+        "category": "Backwash Care",
+        "brand_name": "Kérastase Bain Chroma Respect (Color-treated, 1000ml)",
+        "unit_price": 42.0,
+        "quantity": 15,
+        "total_cost": 630.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Backwash Care",
+        "brand_name": "Kérastase Bain Fluidealiste (Frizz control, 1000ml)",
+        "unit_price": 42.0,
+        "quantity": 15,
+        "total_cost": 630.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Backwash Care",
+        "brand_name": "Kérastase Bain Densifique (Thinning/volume, 1000ml)",
+        "unit_price": 42.0,
+        "quantity": 10,
+        "total_cost": 420.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Backwash Care",
+        "brand_name": "Kérastase Fondant Chroma Respect Conditioner (1000ml)",
+        "unit_price": 48.0,
+        "quantity": 12,
+        "total_cost": 576.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Backwash Care",
+        "brand_name": "Kérastase Fondant Fluidealiste Conditioner (1000ml)",
+        "unit_price": 48.0,
+        "quantity": 12,
+        "total_cost": 576.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Retail Stock",
+        "brand_name": "Oribe Gold Lust Repair & Restore Shampoo (250ml)",
+        "unit_price": 24.5,
+        "quantity": 40,
+        "total_cost": 980.0,
+        "reference": "Oribe Salon Partner Program B2B Price List 2025"
+      },
+      {
+        "category": "Retail Stock",
+        "brand_name": "Oribe Gold Lust Repair & Restore Conditioner (200ml)",
+        "unit_price": 26.0,
+        "quantity": 40,
+        "total_cost": 1040.0,
+        "reference": "Oribe Salon Partner Program B2B Price List 2025"
+      },
+      {
+        "category": "Retail Stock",
+        "brand_name": "Oribe Dry Texturizing Spray (300ml)",
+        "unit_price": 24.0,
+        "quantity": 30,
+        "total_cost": 720.0,
+        "reference": "Oribe Salon Partner Program B2B Price List 2025"
+      },
+      {
+        "category": "Retail Stock",
+        "brand_name": "Kérastase Elixir Ultime Hair Oil (100ml)",
+        "unit_price": 26.0,
+        "quantity": 40,
+        "total_cost": 1040.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Backstation Essentials",
+        "brand_name": "Oribe Royal Blowout Heat Styling Spray (175ml)",
+        "unit_price": 34.0,
+        "quantity": 15,
+        "total_cost": 510.0,
+        "reference": "Oribe Salon Partner Program B2B Price List 2025"
+      },
+      {
+        "category": "Backstation Essentials",
+        "brand_name": "Oribe Gold Lust Dry Shampoo (250ml)",
+        "unit_price": 24.0,
+        "quantity": 20,
+        "total_cost": 480.0,
+        "reference": "Oribe Salon Partner Program B2B Price List 2025"
+      },
+      {
+        "category": "Backstation Essentials",
+        "brand_name": "Miscellaneous color bowls, brushes, foils, gloves, capes, towels (Lot)",
+        "unit_price": 1100.0,
+        "quantity": 1,
+        "total_cost": 1100.0,
+        "reference": "Salon Essentials Wholesale Distributor Lot Price 2025"
+      }
     ]
   },
   {
@@ -4262,6 +6880,160 @@
         "component": "Commercial Insurance, Bookkeeping & Compliance",
         "cost": 120.0,
         "reference": "Local business insurance quote & independent accountant retainer"
+      }
+    ],
+    "equipment_sourcing": [
+      {
+        "equipment_type": "Styling Chair",
+        "import_model": "Foshan Grand Hydraulic",
+        "import_base_cost": 180.0,
+        "logistics_and_duty": 113.0,
+        "total_import_cost": 293.0,
+        "local_supplier_model": "Taipei Salon Design Depot",
+        "local_supplier_cost": 600.0,
+        "cheaper_option": "Imported",
+        "reference": "Taiwan Customs tariff (5% duty + 5% VAT) + Keelung port shipping"
+      },
+      {
+        "equipment_type": "Shampoo Backwash Unit",
+        "import_model": "Premium Relax Basin Unit",
+        "import_base_cost": 350.0,
+        "logistics_and_duty": 215.0,
+        "total_import_cost": 565.0,
+        "local_supplier_model": "Taipei Salon Design Depot",
+        "local_supplier_cost": 1100.0,
+        "cheaper_option": "Imported",
+        "reference": "Taiwan sea LCL shipping + import customs clearance"
+      }
+    ],
+    "stock_template": [
+      {
+        "category": "Color & Chemical",
+        "brand_name": "Wella Koleston Perfect Permanent Color Tube (60ml)",
+        "unit_price": 7.0,
+        "quantity": 400,
+        "total_cost": 2800.0,
+        "reference": "Wella Professionals Distributor B2B Catalog 2025"
+      },
+      {
+        "category": "Color & Chemical",
+        "brand_name": "Wella Welloxon Perfect Developer (1000ml)",
+        "unit_price": 12.0,
+        "quantity": 40,
+        "total_cost": 480.0,
+        "reference": "Wella Professionals Distributor B2B Catalog 2025"
+      },
+      {
+        "category": "Color & Chemical",
+        "brand_name": "Wella Blondor Multi-Blonde Bleach Powder (800g)",
+        "unit_price": 25.0,
+        "quantity": 20,
+        "total_cost": 500.0,
+        "reference": "Wella Professionals Distributor B2B Catalog 2025"
+      },
+      {
+        "category": "Color & Chemical",
+        "brand_name": "Olaplex Salon Intro Kit (Bond Multiplier No. 1 + Bond Perfector No. 2)",
+        "unit_price": 150.0,
+        "quantity": 5,
+        "total_cost": 750.0,
+        "reference": "Olaplex Professional Partner B2B Pricing"
+      },
+      {
+        "category": "Backwash Care",
+        "brand_name": "Kérastase Bain Chroma Respect (Color-treated, 1000ml)",
+        "unit_price": 42.0,
+        "quantity": 15,
+        "total_cost": 630.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Backwash Care",
+        "brand_name": "Kérastase Bain Fluidealiste (Frizz control, 1000ml)",
+        "unit_price": 42.0,
+        "quantity": 15,
+        "total_cost": 630.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Backwash Care",
+        "brand_name": "Kérastase Bain Densifique (Thinning/volume, 1000ml)",
+        "unit_price": 42.0,
+        "quantity": 10,
+        "total_cost": 420.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Backwash Care",
+        "brand_name": "Kérastase Fondant Chroma Respect Conditioner (1000ml)",
+        "unit_price": 48.0,
+        "quantity": 12,
+        "total_cost": 576.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Backwash Care",
+        "brand_name": "Kérastase Fondant Fluidealiste Conditioner (1000ml)",
+        "unit_price": 48.0,
+        "quantity": 12,
+        "total_cost": 576.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Retail Stock",
+        "brand_name": "Oribe Gold Lust Repair & Restore Shampoo (250ml)",
+        "unit_price": 24.5,
+        "quantity": 40,
+        "total_cost": 980.0,
+        "reference": "Oribe Salon Partner Program B2B Price List 2025"
+      },
+      {
+        "category": "Retail Stock",
+        "brand_name": "Oribe Gold Lust Repair & Restore Conditioner (200ml)",
+        "unit_price": 26.0,
+        "quantity": 40,
+        "total_cost": 1040.0,
+        "reference": "Oribe Salon Partner Program B2B Price List 2025"
+      },
+      {
+        "category": "Retail Stock",
+        "brand_name": "Oribe Dry Texturizing Spray (300ml)",
+        "unit_price": 24.0,
+        "quantity": 30,
+        "total_cost": 720.0,
+        "reference": "Oribe Salon Partner Program B2B Price List 2025"
+      },
+      {
+        "category": "Retail Stock",
+        "brand_name": "Kérastase Elixir Ultime Hair Oil (100ml)",
+        "unit_price": 26.0,
+        "quantity": 40,
+        "total_cost": 1040.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Backstation Essentials",
+        "brand_name": "Oribe Royal Blowout Heat Styling Spray (175ml)",
+        "unit_price": 34.0,
+        "quantity": 15,
+        "total_cost": 510.0,
+        "reference": "Oribe Salon Partner Program B2B Price List 2025"
+      },
+      {
+        "category": "Backstation Essentials",
+        "brand_name": "Oribe Gold Lust Dry Shampoo (250ml)",
+        "unit_price": 24.0,
+        "quantity": 20,
+        "total_cost": 480.0,
+        "reference": "Oribe Salon Partner Program B2B Price List 2025"
+      },
+      {
+        "category": "Backstation Essentials",
+        "brand_name": "Miscellaneous color bowls, brushes, foils, gloves, capes, towels (Lot)",
+        "unit_price": 1100.0,
+        "quantity": 1,
+        "total_cost": 1100.0,
+        "reference": "Salon Essentials Wholesale Distributor Lot Price 2025"
       }
     ]
   },
@@ -4500,6 +7272,160 @@
         "cost": 120.0,
         "reference": "Local business insurance quote & independent accountant retainer"
       }
+    ],
+    "equipment_sourcing": [
+      {
+        "equipment_type": "Styling Chair",
+        "import_model": "Foshan Grand Hydraulic",
+        "import_base_cost": 180.0,
+        "logistics_and_duty": 113.0,
+        "total_import_cost": 293.0,
+        "local_supplier_model": "Taipei Salon Design Depot",
+        "local_supplier_cost": 600.0,
+        "cheaper_option": "Imported",
+        "reference": "Taiwan Customs tariff (5% duty + 5% VAT) + Keelung port shipping"
+      },
+      {
+        "equipment_type": "Shampoo Backwash Unit",
+        "import_model": "Premium Relax Basin Unit",
+        "import_base_cost": 350.0,
+        "logistics_and_duty": 215.0,
+        "total_import_cost": 565.0,
+        "local_supplier_model": "Taipei Salon Design Depot",
+        "local_supplier_cost": 1100.0,
+        "cheaper_option": "Imported",
+        "reference": "Taiwan sea LCL shipping + import customs clearance"
+      }
+    ],
+    "stock_template": [
+      {
+        "category": "Color & Chemical",
+        "brand_name": "Wella Koleston Perfect Permanent Color Tube (60ml)",
+        "unit_price": 7.0,
+        "quantity": 400,
+        "total_cost": 2800.0,
+        "reference": "Wella Professionals Distributor B2B Catalog 2025"
+      },
+      {
+        "category": "Color & Chemical",
+        "brand_name": "Wella Welloxon Perfect Developer (1000ml)",
+        "unit_price": 12.0,
+        "quantity": 40,
+        "total_cost": 480.0,
+        "reference": "Wella Professionals Distributor B2B Catalog 2025"
+      },
+      {
+        "category": "Color & Chemical",
+        "brand_name": "Wella Blondor Multi-Blonde Bleach Powder (800g)",
+        "unit_price": 25.0,
+        "quantity": 20,
+        "total_cost": 500.0,
+        "reference": "Wella Professionals Distributor B2B Catalog 2025"
+      },
+      {
+        "category": "Color & Chemical",
+        "brand_name": "Olaplex Salon Intro Kit (Bond Multiplier No. 1 + Bond Perfector No. 2)",
+        "unit_price": 150.0,
+        "quantity": 5,
+        "total_cost": 750.0,
+        "reference": "Olaplex Professional Partner B2B Pricing"
+      },
+      {
+        "category": "Backwash Care",
+        "brand_name": "Kérastase Bain Chroma Respect (Color-treated, 1000ml)",
+        "unit_price": 42.0,
+        "quantity": 15,
+        "total_cost": 630.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Backwash Care",
+        "brand_name": "Kérastase Bain Fluidealiste (Frizz control, 1000ml)",
+        "unit_price": 42.0,
+        "quantity": 15,
+        "total_cost": 630.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Backwash Care",
+        "brand_name": "Kérastase Bain Densifique (Thinning/volume, 1000ml)",
+        "unit_price": 42.0,
+        "quantity": 10,
+        "total_cost": 420.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Backwash Care",
+        "brand_name": "Kérastase Fondant Chroma Respect Conditioner (1000ml)",
+        "unit_price": 48.0,
+        "quantity": 12,
+        "total_cost": 576.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Backwash Care",
+        "brand_name": "Kérastase Fondant Fluidealiste Conditioner (1000ml)",
+        "unit_price": 48.0,
+        "quantity": 12,
+        "total_cost": 576.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Retail Stock",
+        "brand_name": "Oribe Gold Lust Repair & Restore Shampoo (250ml)",
+        "unit_price": 24.5,
+        "quantity": 40,
+        "total_cost": 980.0,
+        "reference": "Oribe Salon Partner Program B2B Price List 2025"
+      },
+      {
+        "category": "Retail Stock",
+        "brand_name": "Oribe Gold Lust Repair & Restore Conditioner (200ml)",
+        "unit_price": 26.0,
+        "quantity": 40,
+        "total_cost": 1040.0,
+        "reference": "Oribe Salon Partner Program B2B Price List 2025"
+      },
+      {
+        "category": "Retail Stock",
+        "brand_name": "Oribe Dry Texturizing Spray (300ml)",
+        "unit_price": 24.0,
+        "quantity": 30,
+        "total_cost": 720.0,
+        "reference": "Oribe Salon Partner Program B2B Price List 2025"
+      },
+      {
+        "category": "Retail Stock",
+        "brand_name": "Kérastase Elixir Ultime Hair Oil (100ml)",
+        "unit_price": 26.0,
+        "quantity": 40,
+        "total_cost": 1040.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Backstation Essentials",
+        "brand_name": "Oribe Royal Blowout Heat Styling Spray (175ml)",
+        "unit_price": 34.0,
+        "quantity": 15,
+        "total_cost": 510.0,
+        "reference": "Oribe Salon Partner Program B2B Price List 2025"
+      },
+      {
+        "category": "Backstation Essentials",
+        "brand_name": "Oribe Gold Lust Dry Shampoo (250ml)",
+        "unit_price": 24.0,
+        "quantity": 20,
+        "total_cost": 480.0,
+        "reference": "Oribe Salon Partner Program B2B Price List 2025"
+      },
+      {
+        "category": "Backstation Essentials",
+        "brand_name": "Miscellaneous color bowls, brushes, foils, gloves, capes, towels (Lot)",
+        "unit_price": 1100.0,
+        "quantity": 1,
+        "total_cost": 1100.0,
+        "reference": "Salon Essentials Wholesale Distributor Lot Price 2025"
+      }
     ]
   },
   {
@@ -4736,6 +7662,160 @@
         "component": "Commercial Insurance, Bookkeeping & Compliance",
         "cost": 120.0,
         "reference": "Local business insurance quote & independent accountant retainer"
+      }
+    ],
+    "equipment_sourcing": [
+      {
+        "equipment_type": "Styling Chair",
+        "import_model": "Foshan Grand Hydraulic",
+        "import_base_cost": 180.0,
+        "logistics_and_duty": 113.0,
+        "total_import_cost": 293.0,
+        "local_supplier_model": "Taipei Salon Design Depot",
+        "local_supplier_cost": 600.0,
+        "cheaper_option": "Imported",
+        "reference": "Taiwan Customs tariff (5% duty + 5% VAT) + Keelung port shipping"
+      },
+      {
+        "equipment_type": "Shampoo Backwash Unit",
+        "import_model": "Premium Relax Basin Unit",
+        "import_base_cost": 350.0,
+        "logistics_and_duty": 215.0,
+        "total_import_cost": 565.0,
+        "local_supplier_model": "Taipei Salon Design Depot",
+        "local_supplier_cost": 1100.0,
+        "cheaper_option": "Imported",
+        "reference": "Taiwan sea LCL shipping + import customs clearance"
+      }
+    ],
+    "stock_template": [
+      {
+        "category": "Color & Chemical",
+        "brand_name": "Wella Koleston Perfect Permanent Color Tube (60ml)",
+        "unit_price": 7.0,
+        "quantity": 400,
+        "total_cost": 2800.0,
+        "reference": "Wella Professionals Distributor B2B Catalog 2025"
+      },
+      {
+        "category": "Color & Chemical",
+        "brand_name": "Wella Welloxon Perfect Developer (1000ml)",
+        "unit_price": 12.0,
+        "quantity": 40,
+        "total_cost": 480.0,
+        "reference": "Wella Professionals Distributor B2B Catalog 2025"
+      },
+      {
+        "category": "Color & Chemical",
+        "brand_name": "Wella Blondor Multi-Blonde Bleach Powder (800g)",
+        "unit_price": 25.0,
+        "quantity": 20,
+        "total_cost": 500.0,
+        "reference": "Wella Professionals Distributor B2B Catalog 2025"
+      },
+      {
+        "category": "Color & Chemical",
+        "brand_name": "Olaplex Salon Intro Kit (Bond Multiplier No. 1 + Bond Perfector No. 2)",
+        "unit_price": 150.0,
+        "quantity": 5,
+        "total_cost": 750.0,
+        "reference": "Olaplex Professional Partner B2B Pricing"
+      },
+      {
+        "category": "Backwash Care",
+        "brand_name": "Kérastase Bain Chroma Respect (Color-treated, 1000ml)",
+        "unit_price": 42.0,
+        "quantity": 15,
+        "total_cost": 630.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Backwash Care",
+        "brand_name": "Kérastase Bain Fluidealiste (Frizz control, 1000ml)",
+        "unit_price": 42.0,
+        "quantity": 15,
+        "total_cost": 630.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Backwash Care",
+        "brand_name": "Kérastase Bain Densifique (Thinning/volume, 1000ml)",
+        "unit_price": 42.0,
+        "quantity": 10,
+        "total_cost": 420.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Backwash Care",
+        "brand_name": "Kérastase Fondant Chroma Respect Conditioner (1000ml)",
+        "unit_price": 48.0,
+        "quantity": 12,
+        "total_cost": 576.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Backwash Care",
+        "brand_name": "Kérastase Fondant Fluidealiste Conditioner (1000ml)",
+        "unit_price": 48.0,
+        "quantity": 12,
+        "total_cost": 576.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Retail Stock",
+        "brand_name": "Oribe Gold Lust Repair & Restore Shampoo (250ml)",
+        "unit_price": 24.5,
+        "quantity": 40,
+        "total_cost": 980.0,
+        "reference": "Oribe Salon Partner Program B2B Price List 2025"
+      },
+      {
+        "category": "Retail Stock",
+        "brand_name": "Oribe Gold Lust Repair & Restore Conditioner (200ml)",
+        "unit_price": 26.0,
+        "quantity": 40,
+        "total_cost": 1040.0,
+        "reference": "Oribe Salon Partner Program B2B Price List 2025"
+      },
+      {
+        "category": "Retail Stock",
+        "brand_name": "Oribe Dry Texturizing Spray (300ml)",
+        "unit_price": 24.0,
+        "quantity": 30,
+        "total_cost": 720.0,
+        "reference": "Oribe Salon Partner Program B2B Price List 2025"
+      },
+      {
+        "category": "Retail Stock",
+        "brand_name": "Kérastase Elixir Ultime Hair Oil (100ml)",
+        "unit_price": 26.0,
+        "quantity": 40,
+        "total_cost": 1040.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Backstation Essentials",
+        "brand_name": "Oribe Royal Blowout Heat Styling Spray (175ml)",
+        "unit_price": 34.0,
+        "quantity": 15,
+        "total_cost": 510.0,
+        "reference": "Oribe Salon Partner Program B2B Price List 2025"
+      },
+      {
+        "category": "Backstation Essentials",
+        "brand_name": "Oribe Gold Lust Dry Shampoo (250ml)",
+        "unit_price": 24.0,
+        "quantity": 20,
+        "total_cost": 480.0,
+        "reference": "Oribe Salon Partner Program B2B Price List 2025"
+      },
+      {
+        "category": "Backstation Essentials",
+        "brand_name": "Miscellaneous color bowls, brushes, foils, gloves, capes, towels (Lot)",
+        "unit_price": 1100.0,
+        "quantity": 1,
+        "total_cost": 1100.0,
+        "reference": "Salon Essentials Wholesale Distributor Lot Price 2025"
       }
     ]
   },
@@ -4974,6 +8054,160 @@
         "cost": 180.0,
         "reference": "Local business insurance quote & independent accountant retainer"
       }
+    ],
+    "equipment_sourcing": [
+      {
+        "equipment_type": "Styling Chair",
+        "import_model": "Foshan Grand Hydraulic",
+        "import_base_cost": 180.0,
+        "logistics_and_duty": 128.0,
+        "total_import_cost": 308.0,
+        "local_supplier_model": "Takara Belmont Domestic",
+        "local_supplier_cost": 750.0,
+        "cheaper_option": "Imported",
+        "reference": "Japan 10% consumption tax + Yokohama port shipping & customs broker"
+      },
+      {
+        "equipment_type": "Shampoo Backwash Unit",
+        "import_model": "Premium Relax Basin Unit",
+        "import_base_cost": 350.0,
+        "logistics_and_duty": 235.0,
+        "total_import_cost": 585.0,
+        "local_supplier_model": "Takara Belmont Domestic",
+        "local_supplier_cost": 1400.0,
+        "cheaper_option": "Imported",
+        "reference": "Japan customs clearance + sea LCL logistics"
+      }
+    ],
+    "stock_template": [
+      {
+        "category": "Color & Chemical",
+        "brand_name": "Wella Koleston Perfect Permanent Color Tube (60ml)",
+        "unit_price": 7.0,
+        "quantity": 400,
+        "total_cost": 2800.0,
+        "reference": "Wella Professionals Distributor B2B Catalog 2025"
+      },
+      {
+        "category": "Color & Chemical",
+        "brand_name": "Wella Welloxon Perfect Developer (1000ml)",
+        "unit_price": 12.0,
+        "quantity": 40,
+        "total_cost": 480.0,
+        "reference": "Wella Professionals Distributor B2B Catalog 2025"
+      },
+      {
+        "category": "Color & Chemical",
+        "brand_name": "Wella Blondor Multi-Blonde Bleach Powder (800g)",
+        "unit_price": 25.0,
+        "quantity": 20,
+        "total_cost": 500.0,
+        "reference": "Wella Professionals Distributor B2B Catalog 2025"
+      },
+      {
+        "category": "Color & Chemical",
+        "brand_name": "Olaplex Salon Intro Kit (Bond Multiplier No. 1 + Bond Perfector No. 2)",
+        "unit_price": 150.0,
+        "quantity": 5,
+        "total_cost": 750.0,
+        "reference": "Olaplex Professional Partner B2B Pricing"
+      },
+      {
+        "category": "Backwash Care",
+        "brand_name": "Kérastase Bain Chroma Respect (Color-treated, 1000ml)",
+        "unit_price": 42.0,
+        "quantity": 15,
+        "total_cost": 630.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Backwash Care",
+        "brand_name": "Kérastase Bain Fluidealiste (Frizz control, 1000ml)",
+        "unit_price": 42.0,
+        "quantity": 15,
+        "total_cost": 630.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Backwash Care",
+        "brand_name": "Kérastase Bain Densifique (Thinning/volume, 1000ml)",
+        "unit_price": 42.0,
+        "quantity": 10,
+        "total_cost": 420.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Backwash Care",
+        "brand_name": "Kérastase Fondant Chroma Respect Conditioner (1000ml)",
+        "unit_price": 48.0,
+        "quantity": 12,
+        "total_cost": 576.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Backwash Care",
+        "brand_name": "Kérastase Fondant Fluidealiste Conditioner (1000ml)",
+        "unit_price": 48.0,
+        "quantity": 12,
+        "total_cost": 576.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Retail Stock",
+        "brand_name": "Oribe Gold Lust Repair & Restore Shampoo (250ml)",
+        "unit_price": 24.5,
+        "quantity": 40,
+        "total_cost": 980.0,
+        "reference": "Oribe Salon Partner Program B2B Price List 2025"
+      },
+      {
+        "category": "Retail Stock",
+        "brand_name": "Oribe Gold Lust Repair & Restore Conditioner (200ml)",
+        "unit_price": 26.0,
+        "quantity": 40,
+        "total_cost": 1040.0,
+        "reference": "Oribe Salon Partner Program B2B Price List 2025"
+      },
+      {
+        "category": "Retail Stock",
+        "brand_name": "Oribe Dry Texturizing Spray (300ml)",
+        "unit_price": 24.0,
+        "quantity": 30,
+        "total_cost": 720.0,
+        "reference": "Oribe Salon Partner Program B2B Price List 2025"
+      },
+      {
+        "category": "Retail Stock",
+        "brand_name": "Kérastase Elixir Ultime Hair Oil (100ml)",
+        "unit_price": 26.0,
+        "quantity": 40,
+        "total_cost": 1040.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Backstation Essentials",
+        "brand_name": "Oribe Royal Blowout Heat Styling Spray (175ml)",
+        "unit_price": 34.0,
+        "quantity": 15,
+        "total_cost": 510.0,
+        "reference": "Oribe Salon Partner Program B2B Price List 2025"
+      },
+      {
+        "category": "Backstation Essentials",
+        "brand_name": "Oribe Gold Lust Dry Shampoo (250ml)",
+        "unit_price": 24.0,
+        "quantity": 20,
+        "total_cost": 480.0,
+        "reference": "Oribe Salon Partner Program B2B Price List 2025"
+      },
+      {
+        "category": "Backstation Essentials",
+        "brand_name": "Miscellaneous color bowls, brushes, foils, gloves, capes, towels (Lot)",
+        "unit_price": 1100.0,
+        "quantity": 1,
+        "total_cost": 1100.0,
+        "reference": "Salon Essentials Wholesale Distributor Lot Price 2025"
+      }
     ]
   },
   {
@@ -5210,6 +8444,160 @@
         "component": "Commercial Insurance, Bookkeeping & Compliance",
         "cost": 180.0,
         "reference": "Local business insurance quote & independent accountant retainer"
+      }
+    ],
+    "equipment_sourcing": [
+      {
+        "equipment_type": "Styling Chair",
+        "import_model": "Foshan Grand Hydraulic",
+        "import_base_cost": 180.0,
+        "logistics_and_duty": 128.0,
+        "total_import_cost": 308.0,
+        "local_supplier_model": "Takara Belmont Domestic",
+        "local_supplier_cost": 750.0,
+        "cheaper_option": "Imported",
+        "reference": "Japan 10% consumption tax + Yokohama port shipping & customs broker"
+      },
+      {
+        "equipment_type": "Shampoo Backwash Unit",
+        "import_model": "Premium Relax Basin Unit",
+        "import_base_cost": 350.0,
+        "logistics_and_duty": 235.0,
+        "total_import_cost": 585.0,
+        "local_supplier_model": "Takara Belmont Domestic",
+        "local_supplier_cost": 1400.0,
+        "cheaper_option": "Imported",
+        "reference": "Japan customs clearance + sea LCL logistics"
+      }
+    ],
+    "stock_template": [
+      {
+        "category": "Color & Chemical",
+        "brand_name": "Wella Koleston Perfect Permanent Color Tube (60ml)",
+        "unit_price": 7.0,
+        "quantity": 400,
+        "total_cost": 2800.0,
+        "reference": "Wella Professionals Distributor B2B Catalog 2025"
+      },
+      {
+        "category": "Color & Chemical",
+        "brand_name": "Wella Welloxon Perfect Developer (1000ml)",
+        "unit_price": 12.0,
+        "quantity": 40,
+        "total_cost": 480.0,
+        "reference": "Wella Professionals Distributor B2B Catalog 2025"
+      },
+      {
+        "category": "Color & Chemical",
+        "brand_name": "Wella Blondor Multi-Blonde Bleach Powder (800g)",
+        "unit_price": 25.0,
+        "quantity": 20,
+        "total_cost": 500.0,
+        "reference": "Wella Professionals Distributor B2B Catalog 2025"
+      },
+      {
+        "category": "Color & Chemical",
+        "brand_name": "Olaplex Salon Intro Kit (Bond Multiplier No. 1 + Bond Perfector No. 2)",
+        "unit_price": 150.0,
+        "quantity": 5,
+        "total_cost": 750.0,
+        "reference": "Olaplex Professional Partner B2B Pricing"
+      },
+      {
+        "category": "Backwash Care",
+        "brand_name": "Kérastase Bain Chroma Respect (Color-treated, 1000ml)",
+        "unit_price": 42.0,
+        "quantity": 15,
+        "total_cost": 630.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Backwash Care",
+        "brand_name": "Kérastase Bain Fluidealiste (Frizz control, 1000ml)",
+        "unit_price": 42.0,
+        "quantity": 15,
+        "total_cost": 630.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Backwash Care",
+        "brand_name": "Kérastase Bain Densifique (Thinning/volume, 1000ml)",
+        "unit_price": 42.0,
+        "quantity": 10,
+        "total_cost": 420.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Backwash Care",
+        "brand_name": "Kérastase Fondant Chroma Respect Conditioner (1000ml)",
+        "unit_price": 48.0,
+        "quantity": 12,
+        "total_cost": 576.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Backwash Care",
+        "brand_name": "Kérastase Fondant Fluidealiste Conditioner (1000ml)",
+        "unit_price": 48.0,
+        "quantity": 12,
+        "total_cost": 576.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Retail Stock",
+        "brand_name": "Oribe Gold Lust Repair & Restore Shampoo (250ml)",
+        "unit_price": 24.5,
+        "quantity": 40,
+        "total_cost": 980.0,
+        "reference": "Oribe Salon Partner Program B2B Price List 2025"
+      },
+      {
+        "category": "Retail Stock",
+        "brand_name": "Oribe Gold Lust Repair & Restore Conditioner (200ml)",
+        "unit_price": 26.0,
+        "quantity": 40,
+        "total_cost": 1040.0,
+        "reference": "Oribe Salon Partner Program B2B Price List 2025"
+      },
+      {
+        "category": "Retail Stock",
+        "brand_name": "Oribe Dry Texturizing Spray (300ml)",
+        "unit_price": 24.0,
+        "quantity": 30,
+        "total_cost": 720.0,
+        "reference": "Oribe Salon Partner Program B2B Price List 2025"
+      },
+      {
+        "category": "Retail Stock",
+        "brand_name": "Kérastase Elixir Ultime Hair Oil (100ml)",
+        "unit_price": 26.0,
+        "quantity": 40,
+        "total_cost": 1040.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Backstation Essentials",
+        "brand_name": "Oribe Royal Blowout Heat Styling Spray (175ml)",
+        "unit_price": 34.0,
+        "quantity": 15,
+        "total_cost": 510.0,
+        "reference": "Oribe Salon Partner Program B2B Price List 2025"
+      },
+      {
+        "category": "Backstation Essentials",
+        "brand_name": "Oribe Gold Lust Dry Shampoo (250ml)",
+        "unit_price": 24.0,
+        "quantity": 20,
+        "total_cost": 480.0,
+        "reference": "Oribe Salon Partner Program B2B Price List 2025"
+      },
+      {
+        "category": "Backstation Essentials",
+        "brand_name": "Miscellaneous color bowls, brushes, foils, gloves, capes, towels (Lot)",
+        "unit_price": 1100.0,
+        "quantity": 1,
+        "total_cost": 1100.0,
+        "reference": "Salon Essentials Wholesale Distributor Lot Price 2025"
       }
     ]
   },
@@ -5448,6 +8836,160 @@
         "cost": 180.0,
         "reference": "Local business insurance quote & independent accountant retainer"
       }
+    ],
+    "equipment_sourcing": [
+      {
+        "equipment_type": "Styling Chair",
+        "import_model": "Foshan Grand Hydraulic",
+        "import_base_cost": 180.0,
+        "logistics_and_duty": 142.0,
+        "total_import_cost": 322.0,
+        "local_supplier_model": "Takara Belmont Korea",
+        "local_supplier_cost": 750.0,
+        "cheaper_option": "Imported",
+        "reference": "Korea Customs tariff (8% duty + 10% VAT) + Busan port LCL shipping"
+      },
+      {
+        "equipment_type": "Shampoo Backwash Unit",
+        "import_model": "Premium Relax Basin Unit",
+        "import_base_cost": 350.0,
+        "logistics_and_duty": 263.0,
+        "total_import_cost": 613.0,
+        "local_supplier_model": "Takara Belmont Korea",
+        "local_supplier_cost": 1400.0,
+        "cheaper_option": "Imported",
+        "reference": "Korea import clearance + sea freight logistics"
+      }
+    ],
+    "stock_template": [
+      {
+        "category": "Color & Chemical",
+        "brand_name": "Wella Koleston Perfect Permanent Color Tube (60ml)",
+        "unit_price": 7.0,
+        "quantity": 400,
+        "total_cost": 2800.0,
+        "reference": "Wella Professionals Distributor B2B Catalog 2025"
+      },
+      {
+        "category": "Color & Chemical",
+        "brand_name": "Wella Welloxon Perfect Developer (1000ml)",
+        "unit_price": 12.0,
+        "quantity": 40,
+        "total_cost": 480.0,
+        "reference": "Wella Professionals Distributor B2B Catalog 2025"
+      },
+      {
+        "category": "Color & Chemical",
+        "brand_name": "Wella Blondor Multi-Blonde Bleach Powder (800g)",
+        "unit_price": 25.0,
+        "quantity": 20,
+        "total_cost": 500.0,
+        "reference": "Wella Professionals Distributor B2B Catalog 2025"
+      },
+      {
+        "category": "Color & Chemical",
+        "brand_name": "Olaplex Salon Intro Kit (Bond Multiplier No. 1 + Bond Perfector No. 2)",
+        "unit_price": 150.0,
+        "quantity": 5,
+        "total_cost": 750.0,
+        "reference": "Olaplex Professional Partner B2B Pricing"
+      },
+      {
+        "category": "Backwash Care",
+        "brand_name": "Kérastase Bain Chroma Respect (Color-treated, 1000ml)",
+        "unit_price": 42.0,
+        "quantity": 15,
+        "total_cost": 630.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Backwash Care",
+        "brand_name": "Kérastase Bain Fluidealiste (Frizz control, 1000ml)",
+        "unit_price": 42.0,
+        "quantity": 15,
+        "total_cost": 630.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Backwash Care",
+        "brand_name": "Kérastase Bain Densifique (Thinning/volume, 1000ml)",
+        "unit_price": 42.0,
+        "quantity": 10,
+        "total_cost": 420.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Backwash Care",
+        "brand_name": "Kérastase Fondant Chroma Respect Conditioner (1000ml)",
+        "unit_price": 48.0,
+        "quantity": 12,
+        "total_cost": 576.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Backwash Care",
+        "brand_name": "Kérastase Fondant Fluidealiste Conditioner (1000ml)",
+        "unit_price": 48.0,
+        "quantity": 12,
+        "total_cost": 576.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Retail Stock",
+        "brand_name": "Oribe Gold Lust Repair & Restore Shampoo (250ml)",
+        "unit_price": 24.5,
+        "quantity": 40,
+        "total_cost": 980.0,
+        "reference": "Oribe Salon Partner Program B2B Price List 2025"
+      },
+      {
+        "category": "Retail Stock",
+        "brand_name": "Oribe Gold Lust Repair & Restore Conditioner (200ml)",
+        "unit_price": 26.0,
+        "quantity": 40,
+        "total_cost": 1040.0,
+        "reference": "Oribe Salon Partner Program B2B Price List 2025"
+      },
+      {
+        "category": "Retail Stock",
+        "brand_name": "Oribe Dry Texturizing Spray (300ml)",
+        "unit_price": 24.0,
+        "quantity": 30,
+        "total_cost": 720.0,
+        "reference": "Oribe Salon Partner Program B2B Price List 2025"
+      },
+      {
+        "category": "Retail Stock",
+        "brand_name": "Kérastase Elixir Ultime Hair Oil (100ml)",
+        "unit_price": 26.0,
+        "quantity": 40,
+        "total_cost": 1040.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Backstation Essentials",
+        "brand_name": "Oribe Royal Blowout Heat Styling Spray (175ml)",
+        "unit_price": 34.0,
+        "quantity": 15,
+        "total_cost": 510.0,
+        "reference": "Oribe Salon Partner Program B2B Price List 2025"
+      },
+      {
+        "category": "Backstation Essentials",
+        "brand_name": "Oribe Gold Lust Dry Shampoo (250ml)",
+        "unit_price": 24.0,
+        "quantity": 20,
+        "total_cost": 480.0,
+        "reference": "Oribe Salon Partner Program B2B Price List 2025"
+      },
+      {
+        "category": "Backstation Essentials",
+        "brand_name": "Miscellaneous color bowls, brushes, foils, gloves, capes, towels (Lot)",
+        "unit_price": 1100.0,
+        "quantity": 1,
+        "total_cost": 1100.0,
+        "reference": "Salon Essentials Wholesale Distributor Lot Price 2025"
+      }
     ]
   },
   {
@@ -5684,6 +9226,160 @@
         "component": "Commercial Insurance, Bookkeeping & Compliance",
         "cost": 180.0,
         "reference": "Local business insurance quote & independent accountant retainer"
+      }
+    ],
+    "equipment_sourcing": [
+      {
+        "equipment_type": "Styling Chair",
+        "import_model": "Foshan Grand Hydraulic",
+        "import_base_cost": 180.0,
+        "logistics_and_duty": 257.0,
+        "total_import_cost": 437.0,
+        "local_supplier_model": "Comfortel Premium Australia",
+        "local_supplier_cost": 850.0,
+        "cheaper_option": "Imported",
+        "reference": "Australian Border Force tariff (5% duty + 10% GST) + Port Botany freight"
+      },
+      {
+        "equipment_type": "Shampoo Backwash Unit",
+        "import_model": "Premium Relax Basin Unit",
+        "import_base_cost": 350.0,
+        "logistics_and_duty": 402.0,
+        "total_import_cost": 752.0,
+        "local_supplier_model": "Comfortel Premium Australia",
+        "local_supplier_cost": 1800.0,
+        "cheaper_option": "Imported",
+        "reference": "Australian Customs broker clearance + LCL sea cargo"
+      }
+    ],
+    "stock_template": [
+      {
+        "category": "Color & Chemical",
+        "brand_name": "Wella Koleston Perfect Permanent Color Tube (60ml)",
+        "unit_price": 7.0,
+        "quantity": 400,
+        "total_cost": 2800.0,
+        "reference": "Wella Professionals Distributor B2B Catalog 2025"
+      },
+      {
+        "category": "Color & Chemical",
+        "brand_name": "Wella Welloxon Perfect Developer (1000ml)",
+        "unit_price": 12.0,
+        "quantity": 40,
+        "total_cost": 480.0,
+        "reference": "Wella Professionals Distributor B2B Catalog 2025"
+      },
+      {
+        "category": "Color & Chemical",
+        "brand_name": "Wella Blondor Multi-Blonde Bleach Powder (800g)",
+        "unit_price": 25.0,
+        "quantity": 20,
+        "total_cost": 500.0,
+        "reference": "Wella Professionals Distributor B2B Catalog 2025"
+      },
+      {
+        "category": "Color & Chemical",
+        "brand_name": "Olaplex Salon Intro Kit (Bond Multiplier No. 1 + Bond Perfector No. 2)",
+        "unit_price": 150.0,
+        "quantity": 5,
+        "total_cost": 750.0,
+        "reference": "Olaplex Professional Partner B2B Pricing"
+      },
+      {
+        "category": "Backwash Care",
+        "brand_name": "Kérastase Bain Chroma Respect (Color-treated, 1000ml)",
+        "unit_price": 42.0,
+        "quantity": 15,
+        "total_cost": 630.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Backwash Care",
+        "brand_name": "Kérastase Bain Fluidealiste (Frizz control, 1000ml)",
+        "unit_price": 42.0,
+        "quantity": 15,
+        "total_cost": 630.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Backwash Care",
+        "brand_name": "Kérastase Bain Densifique (Thinning/volume, 1000ml)",
+        "unit_price": 42.0,
+        "quantity": 10,
+        "total_cost": 420.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Backwash Care",
+        "brand_name": "Kérastase Fondant Chroma Respect Conditioner (1000ml)",
+        "unit_price": 48.0,
+        "quantity": 12,
+        "total_cost": 576.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Backwash Care",
+        "brand_name": "Kérastase Fondant Fluidealiste Conditioner (1000ml)",
+        "unit_price": 48.0,
+        "quantity": 12,
+        "total_cost": 576.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Retail Stock",
+        "brand_name": "Oribe Gold Lust Repair & Restore Shampoo (250ml)",
+        "unit_price": 24.5,
+        "quantity": 40,
+        "total_cost": 980.0,
+        "reference": "Oribe Salon Partner Program B2B Price List 2025"
+      },
+      {
+        "category": "Retail Stock",
+        "brand_name": "Oribe Gold Lust Repair & Restore Conditioner (200ml)",
+        "unit_price": 26.0,
+        "quantity": 40,
+        "total_cost": 1040.0,
+        "reference": "Oribe Salon Partner Program B2B Price List 2025"
+      },
+      {
+        "category": "Retail Stock",
+        "brand_name": "Oribe Dry Texturizing Spray (300ml)",
+        "unit_price": 24.0,
+        "quantity": 30,
+        "total_cost": 720.0,
+        "reference": "Oribe Salon Partner Program B2B Price List 2025"
+      },
+      {
+        "category": "Retail Stock",
+        "brand_name": "Kérastase Elixir Ultime Hair Oil (100ml)",
+        "unit_price": 26.0,
+        "quantity": 40,
+        "total_cost": 1040.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Backstation Essentials",
+        "brand_name": "Oribe Royal Blowout Heat Styling Spray (175ml)",
+        "unit_price": 34.0,
+        "quantity": 15,
+        "total_cost": 510.0,
+        "reference": "Oribe Salon Partner Program B2B Price List 2025"
+      },
+      {
+        "category": "Backstation Essentials",
+        "brand_name": "Oribe Gold Lust Dry Shampoo (250ml)",
+        "unit_price": 24.0,
+        "quantity": 20,
+        "total_cost": 480.0,
+        "reference": "Oribe Salon Partner Program B2B Price List 2025"
+      },
+      {
+        "category": "Backstation Essentials",
+        "brand_name": "Miscellaneous color bowls, brushes, foils, gloves, capes, towels (Lot)",
+        "unit_price": 1100.0,
+        "quantity": 1,
+        "total_cost": 1100.0,
+        "reference": "Salon Essentials Wholesale Distributor Lot Price 2025"
       }
     ]
   },
@@ -5922,6 +9618,160 @@
         "cost": 180.0,
         "reference": "Local business insurance quote & independent accountant retainer"
       }
+    ],
+    "equipment_sourcing": [
+      {
+        "equipment_type": "Styling Chair",
+        "import_model": "Foshan Grand Hydraulic",
+        "import_base_cost": 180.0,
+        "logistics_and_duty": 257.0,
+        "total_import_cost": 437.0,
+        "local_supplier_model": "Comfortel Premium Australia",
+        "local_supplier_cost": 850.0,
+        "cheaper_option": "Imported",
+        "reference": "Australian Border Force tariff (5% duty + 10% GST) + Port Botany freight"
+      },
+      {
+        "equipment_type": "Shampoo Backwash Unit",
+        "import_model": "Premium Relax Basin Unit",
+        "import_base_cost": 350.0,
+        "logistics_and_duty": 402.0,
+        "total_import_cost": 752.0,
+        "local_supplier_model": "Comfortel Premium Australia",
+        "local_supplier_cost": 1800.0,
+        "cheaper_option": "Imported",
+        "reference": "Australian Customs broker clearance + LCL sea cargo"
+      }
+    ],
+    "stock_template": [
+      {
+        "category": "Color & Chemical",
+        "brand_name": "Wella Koleston Perfect Permanent Color Tube (60ml)",
+        "unit_price": 7.0,
+        "quantity": 400,
+        "total_cost": 2800.0,
+        "reference": "Wella Professionals Distributor B2B Catalog 2025"
+      },
+      {
+        "category": "Color & Chemical",
+        "brand_name": "Wella Welloxon Perfect Developer (1000ml)",
+        "unit_price": 12.0,
+        "quantity": 40,
+        "total_cost": 480.0,
+        "reference": "Wella Professionals Distributor B2B Catalog 2025"
+      },
+      {
+        "category": "Color & Chemical",
+        "brand_name": "Wella Blondor Multi-Blonde Bleach Powder (800g)",
+        "unit_price": 25.0,
+        "quantity": 20,
+        "total_cost": 500.0,
+        "reference": "Wella Professionals Distributor B2B Catalog 2025"
+      },
+      {
+        "category": "Color & Chemical",
+        "brand_name": "Olaplex Salon Intro Kit (Bond Multiplier No. 1 + Bond Perfector No. 2)",
+        "unit_price": 150.0,
+        "quantity": 5,
+        "total_cost": 750.0,
+        "reference": "Olaplex Professional Partner B2B Pricing"
+      },
+      {
+        "category": "Backwash Care",
+        "brand_name": "Kérastase Bain Chroma Respect (Color-treated, 1000ml)",
+        "unit_price": 42.0,
+        "quantity": 15,
+        "total_cost": 630.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Backwash Care",
+        "brand_name": "Kérastase Bain Fluidealiste (Frizz control, 1000ml)",
+        "unit_price": 42.0,
+        "quantity": 15,
+        "total_cost": 630.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Backwash Care",
+        "brand_name": "Kérastase Bain Densifique (Thinning/volume, 1000ml)",
+        "unit_price": 42.0,
+        "quantity": 10,
+        "total_cost": 420.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Backwash Care",
+        "brand_name": "Kérastase Fondant Chroma Respect Conditioner (1000ml)",
+        "unit_price": 48.0,
+        "quantity": 12,
+        "total_cost": 576.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Backwash Care",
+        "brand_name": "Kérastase Fondant Fluidealiste Conditioner (1000ml)",
+        "unit_price": 48.0,
+        "quantity": 12,
+        "total_cost": 576.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Retail Stock",
+        "brand_name": "Oribe Gold Lust Repair & Restore Shampoo (250ml)",
+        "unit_price": 24.5,
+        "quantity": 40,
+        "total_cost": 980.0,
+        "reference": "Oribe Salon Partner Program B2B Price List 2025"
+      },
+      {
+        "category": "Retail Stock",
+        "brand_name": "Oribe Gold Lust Repair & Restore Conditioner (200ml)",
+        "unit_price": 26.0,
+        "quantity": 40,
+        "total_cost": 1040.0,
+        "reference": "Oribe Salon Partner Program B2B Price List 2025"
+      },
+      {
+        "category": "Retail Stock",
+        "brand_name": "Oribe Dry Texturizing Spray (300ml)",
+        "unit_price": 24.0,
+        "quantity": 30,
+        "total_cost": 720.0,
+        "reference": "Oribe Salon Partner Program B2B Price List 2025"
+      },
+      {
+        "category": "Retail Stock",
+        "brand_name": "Kérastase Elixir Ultime Hair Oil (100ml)",
+        "unit_price": 26.0,
+        "quantity": 40,
+        "total_cost": 1040.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Backstation Essentials",
+        "brand_name": "Oribe Royal Blowout Heat Styling Spray (175ml)",
+        "unit_price": 34.0,
+        "quantity": 15,
+        "total_cost": 510.0,
+        "reference": "Oribe Salon Partner Program B2B Price List 2025"
+      },
+      {
+        "category": "Backstation Essentials",
+        "brand_name": "Oribe Gold Lust Dry Shampoo (250ml)",
+        "unit_price": 24.0,
+        "quantity": 20,
+        "total_cost": 480.0,
+        "reference": "Oribe Salon Partner Program B2B Price List 2025"
+      },
+      {
+        "category": "Backstation Essentials",
+        "brand_name": "Miscellaneous color bowls, brushes, foils, gloves, capes, towels (Lot)",
+        "unit_price": 1100.0,
+        "quantity": 1,
+        "total_cost": 1100.0,
+        "reference": "Salon Essentials Wholesale Distributor Lot Price 2025"
+      }
     ]
   },
   {
@@ -6159,6 +10009,160 @@
         "cost": 180.0,
         "reference": "Local business insurance quote & independent accountant retainer"
       }
+    ],
+    "equipment_sourcing": [
+      {
+        "equipment_type": "Styling Chair",
+        "import_model": "Foshan Grand Hydraulic",
+        "import_base_cost": 180.0,
+        "logistics_and_duty": 257.0,
+        "total_import_cost": 437.0,
+        "local_supplier_model": "Comfortel Premium Australia",
+        "local_supplier_cost": 850.0,
+        "cheaper_option": "Imported",
+        "reference": "Australian Border Force tariff (5% duty + 10% GST) + Port Botany freight"
+      },
+      {
+        "equipment_type": "Shampoo Backwash Unit",
+        "import_model": "Premium Relax Basin Unit",
+        "import_base_cost": 350.0,
+        "logistics_and_duty": 402.0,
+        "total_import_cost": 752.0,
+        "local_supplier_model": "Comfortel Premium Australia",
+        "local_supplier_cost": 1800.0,
+        "cheaper_option": "Imported",
+        "reference": "Australian Customs broker clearance + LCL sea cargo"
+      }
+    ],
+    "stock_template": [
+      {
+        "category": "Color & Chemical",
+        "brand_name": "Wella Koleston Perfect Permanent Color Tube (60ml)",
+        "unit_price": 7.0,
+        "quantity": 400,
+        "total_cost": 2800.0,
+        "reference": "Wella Professionals Distributor B2B Catalog 2025"
+      },
+      {
+        "category": "Color & Chemical",
+        "brand_name": "Wella Welloxon Perfect Developer (1000ml)",
+        "unit_price": 12.0,
+        "quantity": 40,
+        "total_cost": 480.0,
+        "reference": "Wella Professionals Distributor B2B Catalog 2025"
+      },
+      {
+        "category": "Color & Chemical",
+        "brand_name": "Wella Blondor Multi-Blonde Bleach Powder (800g)",
+        "unit_price": 25.0,
+        "quantity": 20,
+        "total_cost": 500.0,
+        "reference": "Wella Professionals Distributor B2B Catalog 2025"
+      },
+      {
+        "category": "Color & Chemical",
+        "brand_name": "Olaplex Salon Intro Kit (Bond Multiplier No. 1 + Bond Perfector No. 2)",
+        "unit_price": 150.0,
+        "quantity": 5,
+        "total_cost": 750.0,
+        "reference": "Olaplex Professional Partner B2B Pricing"
+      },
+      {
+        "category": "Backwash Care",
+        "brand_name": "Kérastase Bain Chroma Respect (Color-treated, 1000ml)",
+        "unit_price": 42.0,
+        "quantity": 15,
+        "total_cost": 630.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Backwash Care",
+        "brand_name": "Kérastase Bain Fluidealiste (Frizz control, 1000ml)",
+        "unit_price": 42.0,
+        "quantity": 15,
+        "total_cost": 630.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Backwash Care",
+        "brand_name": "Kérastase Bain Densifique (Thinning/volume, 1000ml)",
+        "unit_price": 42.0,
+        "quantity": 10,
+        "total_cost": 420.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Backwash Care",
+        "brand_name": "Kérastase Fondant Chroma Respect Conditioner (1000ml)",
+        "unit_price": 48.0,
+        "quantity": 12,
+        "total_cost": 576.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Backwash Care",
+        "brand_name": "Kérastase Fondant Fluidealiste Conditioner (1000ml)",
+        "unit_price": 48.0,
+        "quantity": 12,
+        "total_cost": 576.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Retail Stock",
+        "brand_name": "Oribe Gold Lust Repair & Restore Shampoo (250ml)",
+        "unit_price": 24.5,
+        "quantity": 40,
+        "total_cost": 980.0,
+        "reference": "Oribe Salon Partner Program B2B Price List 2025"
+      },
+      {
+        "category": "Retail Stock",
+        "brand_name": "Oribe Gold Lust Repair & Restore Conditioner (200ml)",
+        "unit_price": 26.0,
+        "quantity": 40,
+        "total_cost": 1040.0,
+        "reference": "Oribe Salon Partner Program B2B Price List 2025"
+      },
+      {
+        "category": "Retail Stock",
+        "brand_name": "Oribe Dry Texturizing Spray (300ml)",
+        "unit_price": 24.0,
+        "quantity": 30,
+        "total_cost": 720.0,
+        "reference": "Oribe Salon Partner Program B2B Price List 2025"
+      },
+      {
+        "category": "Retail Stock",
+        "brand_name": "Kérastase Elixir Ultime Hair Oil (100ml)",
+        "unit_price": 26.0,
+        "quantity": 40,
+        "total_cost": 1040.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Backstation Essentials",
+        "brand_name": "Oribe Royal Blowout Heat Styling Spray (175ml)",
+        "unit_price": 34.0,
+        "quantity": 15,
+        "total_cost": 510.0,
+        "reference": "Oribe Salon Partner Program B2B Price List 2025"
+      },
+      {
+        "category": "Backstation Essentials",
+        "brand_name": "Oribe Gold Lust Dry Shampoo (250ml)",
+        "unit_price": 24.0,
+        "quantity": 20,
+        "total_cost": 480.0,
+        "reference": "Oribe Salon Partner Program B2B Price List 2025"
+      },
+      {
+        "category": "Backstation Essentials",
+        "brand_name": "Miscellaneous color bowls, brushes, foils, gloves, capes, towels (Lot)",
+        "unit_price": 1100.0,
+        "quantity": 1,
+        "total_cost": 1100.0,
+        "reference": "Salon Essentials Wholesale Distributor Lot Price 2025"
+      }
     ]
   },
   {
@@ -6395,6 +10399,160 @@
         "component": "Commercial Insurance, Bookkeeping & Compliance",
         "cost": 180.0,
         "reference": "Local business insurance quote & independent accountant retainer"
+      }
+    ],
+    "equipment_sourcing": [
+      {
+        "equipment_type": "Styling Chair",
+        "import_model": "Foshan Grand Hydraulic",
+        "import_base_cost": 180.0,
+        "logistics_and_duty": 257.0,
+        "total_import_cost": 437.0,
+        "local_supplier_model": "Comfortel Premium Australia",
+        "local_supplier_cost": 850.0,
+        "cheaper_option": "Imported",
+        "reference": "Australian Border Force tariff (5% duty + 10% GST) + Port Botany freight"
+      },
+      {
+        "equipment_type": "Shampoo Backwash Unit",
+        "import_model": "Premium Relax Basin Unit",
+        "import_base_cost": 350.0,
+        "logistics_and_duty": 402.0,
+        "total_import_cost": 752.0,
+        "local_supplier_model": "Comfortel Premium Australia",
+        "local_supplier_cost": 1800.0,
+        "cheaper_option": "Imported",
+        "reference": "Australian Customs broker clearance + LCL sea cargo"
+      }
+    ],
+    "stock_template": [
+      {
+        "category": "Color & Chemical",
+        "brand_name": "Wella Koleston Perfect Permanent Color Tube (60ml)",
+        "unit_price": 7.0,
+        "quantity": 400,
+        "total_cost": 2800.0,
+        "reference": "Wella Professionals Distributor B2B Catalog 2025"
+      },
+      {
+        "category": "Color & Chemical",
+        "brand_name": "Wella Welloxon Perfect Developer (1000ml)",
+        "unit_price": 12.0,
+        "quantity": 40,
+        "total_cost": 480.0,
+        "reference": "Wella Professionals Distributor B2B Catalog 2025"
+      },
+      {
+        "category": "Color & Chemical",
+        "brand_name": "Wella Blondor Multi-Blonde Bleach Powder (800g)",
+        "unit_price": 25.0,
+        "quantity": 20,
+        "total_cost": 500.0,
+        "reference": "Wella Professionals Distributor B2B Catalog 2025"
+      },
+      {
+        "category": "Color & Chemical",
+        "brand_name": "Olaplex Salon Intro Kit (Bond Multiplier No. 1 + Bond Perfector No. 2)",
+        "unit_price": 150.0,
+        "quantity": 5,
+        "total_cost": 750.0,
+        "reference": "Olaplex Professional Partner B2B Pricing"
+      },
+      {
+        "category": "Backwash Care",
+        "brand_name": "Kérastase Bain Chroma Respect (Color-treated, 1000ml)",
+        "unit_price": 42.0,
+        "quantity": 15,
+        "total_cost": 630.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Backwash Care",
+        "brand_name": "Kérastase Bain Fluidealiste (Frizz control, 1000ml)",
+        "unit_price": 42.0,
+        "quantity": 15,
+        "total_cost": 630.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Backwash Care",
+        "brand_name": "Kérastase Bain Densifique (Thinning/volume, 1000ml)",
+        "unit_price": 42.0,
+        "quantity": 10,
+        "total_cost": 420.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Backwash Care",
+        "brand_name": "Kérastase Fondant Chroma Respect Conditioner (1000ml)",
+        "unit_price": 48.0,
+        "quantity": 12,
+        "total_cost": 576.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Backwash Care",
+        "brand_name": "Kérastase Fondant Fluidealiste Conditioner (1000ml)",
+        "unit_price": 48.0,
+        "quantity": 12,
+        "total_cost": 576.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Retail Stock",
+        "brand_name": "Oribe Gold Lust Repair & Restore Shampoo (250ml)",
+        "unit_price": 24.5,
+        "quantity": 40,
+        "total_cost": 980.0,
+        "reference": "Oribe Salon Partner Program B2B Price List 2025"
+      },
+      {
+        "category": "Retail Stock",
+        "brand_name": "Oribe Gold Lust Repair & Restore Conditioner (200ml)",
+        "unit_price": 26.0,
+        "quantity": 40,
+        "total_cost": 1040.0,
+        "reference": "Oribe Salon Partner Program B2B Price List 2025"
+      },
+      {
+        "category": "Retail Stock",
+        "brand_name": "Oribe Dry Texturizing Spray (300ml)",
+        "unit_price": 24.0,
+        "quantity": 30,
+        "total_cost": 720.0,
+        "reference": "Oribe Salon Partner Program B2B Price List 2025"
+      },
+      {
+        "category": "Retail Stock",
+        "brand_name": "Kérastase Elixir Ultime Hair Oil (100ml)",
+        "unit_price": 26.0,
+        "quantity": 40,
+        "total_cost": 1040.0,
+        "reference": "L'Oreal Division Professionnelle Trade Pricing 2025"
+      },
+      {
+        "category": "Backstation Essentials",
+        "brand_name": "Oribe Royal Blowout Heat Styling Spray (175ml)",
+        "unit_price": 34.0,
+        "quantity": 15,
+        "total_cost": 510.0,
+        "reference": "Oribe Salon Partner Program B2B Price List 2025"
+      },
+      {
+        "category": "Backstation Essentials",
+        "brand_name": "Oribe Gold Lust Dry Shampoo (250ml)",
+        "unit_price": 24.0,
+        "quantity": 20,
+        "total_cost": 480.0,
+        "reference": "Oribe Salon Partner Program B2B Price List 2025"
+      },
+      {
+        "category": "Backstation Essentials",
+        "brand_name": "Miscellaneous color bowls, brushes, foils, gloves, capes, towels (Lot)",
+        "unit_price": 1100.0,
+        "quantity": 1,
+        "total_cost": 1100.0,
+        "reference": "Salon Essentials Wholesale Distributor Lot Price 2025"
       }
     ]
   }
