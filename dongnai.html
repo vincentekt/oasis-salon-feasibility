@@ -292,21 +292,21 @@
                         </thead>
 <tbody>
 <tr class="highlight-row">
-                                  <td><a href="https://www.google.com/maps/search/?api=1&query=10.9535,106.8405" target="_blank">Highlands Coffee Amata Gate</a></td>
+                                  <td><a href="https://www.google.com/maps/search/?api=1&query=Highlands+Coffee+Amata+Gate%2C+Dong+Nai" target="_blank">Highlands Coffee Amata Gate</a></td>
                                   <td>USD 400 - 650</td>
                                   <td>AMATA Industrial City main gate road. 40,000+ Korean/Japanese workers within 2km. Currently ZERO premium salon competition in entire zone. Factory family residential compounds within 3km. Highest underserved demand in entire 27-city portfolio.</td>
                                   <td>Requires heavy marketing investment to bootstrap awareness; no existing premium salon precedent to piggyback on</td>
                                   <td>4.9 / 5 (Recommended)</td>
                               </tr>
 <tr>
-                                  <td><a href="https://www.google.com/maps/search/?api=1&query=10.9615,106.8515" target="_blank">The Coffee House Loteco Gate</a></td>
+                                  <td><a href="https://www.google.com/maps/search/?api=1&query=The+Coffee+House+Loteco+Gate%2C+Dong+Nai" target="_blank">The Coffee House Loteco Gate</a></td>
                                   <td>USD 380 - 600</td>
                                   <td>Captures Loteco 1 &amp; 2 and Nhon Trach overflow. Korean restaurant cluster confirms expat demand. Slightly lower density than AMATA gate but lower rent.</td>
                                   <td>Smaller total Korean catchment than AMATA zone; less established commercial strip</td>
                                   <td>4.4 / 5</td>
                               </tr>
 <tr>
-                                  <td><a href="https://www.google.com/maps/search/?api=1&query=10.9495,106.8328" target="_blank">Highlands Coffee Pegasus Plaza</a></td>
+                                  <td><a href="https://www.google.com/maps/search/?api=1&query=Highlands+Coffee+Pegasus+Plaza%2C+Dong+Nai" target="_blank">Highlands Coffee Pegasus Plaza</a></td>
                                   <td>USD 500 - 800</td>
                                   <td>Biên Hòa's premier high-street dining & lifestyle corridor. Highest concentration of upscale cafes, Korean restaurants, and premium local consumer spending. Best visibility for a flagship brand.</td>
                                   <td>Higher rental rates; parking can be highly constrained during evening dining peaks; slightly further from AMATA/Loteco industrial parks (10-12 mins) compared to gate-side options.</td>
@@ -336,7 +336,7 @@
                         </thead>
                         <tbody>
 <tr>
-                                <td><a href="https://www.google.com/maps/search/?api=1&query=Local+Vietnamese+Salons%2C+Dong+Nai" target="_blank"><strong>Local Vietnamese Salons</strong> (e.g., Toc Mai, Salon 18)</a></td>
+                                <td><a href="https://www.google.com/maps/search/?api=1&query=Local+Vietnamese+Salons+%28e.g.%2C+Toc+Mai%2C+Salon+18%29%2C+Dong+Nai" target="_blank">Local Vietnamese Salons (e.g., Toc Mai, Salon 18)</a></td>
                                 <td>Bien Hoa City / AMATA IP area</td>
                                 <td>Color $5–18; Cut $2–6</td>
                                 <td>Extremely affordable, abundant locations, high local volume</td>
@@ -344,7 +344,7 @@
                                 <td>Professional-grade bleach and bond-repair (K18); Korean/Japanese bilingual consultation; safe complex color for non-Asian hair types</td>
                             </tr>
 <tr>
-                                <td><a href="https://www.google.com/maps/search/?api=1&query=HCMC+Korean+Salon+Chains%2C+Dong+Nai" target="_blank"><strong>HCMC Korean Salon Chains</strong> (Aube Vietnam, Hallyuhair)</a></td>
+                                <td><a href="https://www.google.com/maps/search/?api=1&query=HCMC+Korean+Salon+Chains+%28Aube+Vietnam%2C+Hallyuhair%29%2C+Dong+Nai" target="_blank">HCMC Korean Salon Chains (Aube Vietnam, Hallyuhair)</a></td>
                                 <td>HCMC District 7 / Thu Duc (50–80 min drive)</td>
                                 <td>Color $30–80; Cut $15–25</td>
                                 <td>Professional Korean product and technique, trusted Korean expat community reputation</td>
@@ -352,7 +352,7 @@
                                 <td>On-site in Bien Hoa: same Korean product and technique quality, zero commute time for AMATA/Loteco zone Korean factory managers</td>
                             </tr>
 <tr>
-                                <td><a href="https://www.google.com/maps/search/?api=1&query=Concept+Coiffure+%2F+Vampire+Hair%2C+Dong+Nai" target="_blank"><strong>Concept Coiffure / Vampire Hair</strong> (HCMC)</a></td>
+                                <td><a href="https://www.google.com/maps/search/?api=1&query=Concept+Coiffure+%2F+Vampire+Hair+%28HCMC%29%2C+Dong+Nai" target="_blank">Concept Coiffure / Vampire Hair (HCMC)</a></td>
                                 <td>HCMC District 1–3 (60–90 min drive)</td>
                                 <td>Balayage $80–200; Cut $30–60</td>
                                 <td>Premium French/Western managed, HCMC's top expat color choice, highly professional</td>
@@ -811,13 +811,13 @@
 
         // Premium Expat Residential Zones
         const residential = [
-            { name: "Bien Hoa Expat Residential Core", lat: 10.954, lng: 106.838, radius: 450, estPop: 2000, employers: "Samsung, Hyosung, Changshin, Pou Chen, Nestlé", nationality: "Korean & Japanese Expats" }
+            { name: "Bien Hoa Expat Residential Core", lat: 10.954, lng: 106.838, radius: 450, estPop: 2000, nationality: "Korean & Japanese Expats" }
         ];
 
         residential.forEach(res => {
-            const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${res.lat},${res.lng}`;
+            const cityName = document.body.getAttribute('data-city') || '';
+            const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(res.name + ", " + cityName)}`;
             let natText = res.nationality ? `<p><strong>Nationalities:</strong> ${res.nationality}</p>` : "";
-            let empText = res.employers ? `<p><strong>Key Employers:</strong> ${res.employers}</p>` : "";
             L.circle([res.lat, res.lng], {
                 color: '#a133ff',
                 fillColor: '#a133ff',
@@ -829,7 +829,6 @@
                     <h3 style="color: #a133ff;">${res.name}</h3>
                     <p><strong>Expat Residential Hub</strong></p>
                     ${natText}
-                    ${empText}
                     <p><strong>Est. Population:</strong> ~${res.estPop.toLocaleString()} residents</p>
                     <p style="margin-top: 8px;"><a href="${mapsUrl}" target="_blank" style="color: #a133ff; text-decoration: underline; font-weight: bold;">📍 View on Google Maps</a></p>
                 </div>
@@ -842,7 +841,8 @@
         ];
 
         malls.forEach(loc => {
-            const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${loc.lat},${loc.lng}`;
+            const cityName = document.body.getAttribute('data-city') || '';
+            const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(loc.name + ", " + cityName)}`;
             L.circleMarker([loc.lat, loc.lng], {
                 radius: getRadius(loc.footfall),
                 fillColor: "#333",
@@ -866,7 +866,8 @@
         ];
 
         competitors.forEach(loc => {
-            const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${loc.lat},${loc.lng}`;
+            const cityName = document.body.getAttribute('data-city') || '';
+            const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(loc.name + ", " + cityName)}`;
             L.circleMarker([loc.lat, loc.lng], {
                 radius: getRadius(loc.footfall),
                 fillColor: "#ef4444",
@@ -923,7 +924,9 @@
             const underservedDemand = Math.max(0, targetDemand - loc.competitorCapacity);
             const underservedPct = Math.round((underservedDemand / targetDemand) * 100);
             const ratio = (underservedDemand / loc.rent).toFixed(2);
-            const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${loc.lat},${loc.lng}`;
+            const cityName = document.body.getAttribute('data-city') || '';
+            const cleanName = loc.name.replace(/^Candidate\s+[A-Z]:\s*/i, '');
+            const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(cleanName + ", " + cityName)}`;
 
             L.marker([loc.lat, loc.lng], { icon: starIcon }).addTo(map).bindPopup(`
                 <div class="popup-content" style="min-width: 240px; color: #333;">

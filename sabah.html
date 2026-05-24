@@ -300,21 +300,21 @@
                         </thead>
                         <tbody>
 <tr class="highlight-row">
-                                  <td><a href="https://www.google.com/maps/search/?api=1&query=5.993,116.079" target="_blank">Starbucks Jesselton Point</a></td>
+                                  <td><a href="https://www.google.com/maps/search/?api=1&query=Starbucks+Jesselton+Point%2C+Sabah" target="_blank">Starbucks Jesselton Point</a></td>
                                   <td>MYR 3,000 - 5,000</td>
                                   <td>KK's premier waterfront. Ground-floor retail facing Jesselton Point Ferry Terminal — maximum tourist and expat visibility. Oil &amp; gas executives from Menara TH and Sabah Energy cluster nearby. No premium colour studio in this corridor.</td>
                                   <td>Ferry terminal proximity means tourist-heavy crowd — need clear positioning to attract resident premium clients vs day-trippers</td>
                                   <td>4.8 / 5 (Recommended)</td>
                               </tr>
 <tr>
-                                  <td><a href="https://www.google.com/maps/search/?api=1&query=5.988,116.076" target="_blank">Starbucks Suria Sabah (Jalan Gaya)</a></td>
+                                  <td><a href="https://www.google.com/maps/search/?api=1&query=Starbucks+Suria+Sabah+%28Jalan+Gaya%29%2C+Sabah" target="_blank">Starbucks Suria Sabah (Jalan Gaya)</a></td>
                                   <td>MYR 2,500 - 4,000</td>
                                   <td>KK's main commercial street. Within walking distance of Suria Sabah and Oceanus Mall. Michael &amp; Guys nearby confirms premium hair demand. Best balance of rent vs established foot traffic.</td>
                                   <td>Michael &amp; Guys direct competition on same commercial strip; ground-floor availability limited</td>
                                   <td>4.4 / 5</td>
                               </tr>
 <tr>
-                                  <td><a href="https://www.google.com/maps/search/?api=1&query=5.969,116.059" target="_blank">Magellan Club Restaurant (Sutera Harbour)</a></td>
+                                  <td><a href="https://www.google.com/maps/search/?api=1&query=Magellan+Club+Restaurant+%28Sutera+Harbour%29%2C+Sabah" target="_blank">Magellan Club Restaurant (Sutera Harbour)</a></td>
                                   <td>MYR 5,000 - 9,000</td>
                                   <td>5-star resort corridor. Guaranteed HNWI clientele from Shell, Murphy Oil, resort management. Highest average ticket potential of three candidates.</td>
                                   <td>Very high rent; very low walk-in; appointment-only model requires strong advance booking system; limited Muslimah privacy options in resort-facing boutiques</td>
@@ -344,7 +344,7 @@
                         </thead>
                         <tbody>
 <tr>
-                                <td><a href="https://www.google.com/maps/search/?api=1&query=Amos+Hair+Studio%2C+Sabah" target="_blank"><strong>Amos Hair Studio</strong></a></td>
+                                <td><a href="https://www.google.com/maps/search/?api=1&query=Amos+Hair+Studio%2C+Sabah" target="_blank">Amos Hair Studio</a></td>
                                 <td>Riverson Lifestyle Centre, KK</td>
                                 <td>Balayage MYR 380–600 (~$82–$129)</td>
                                 <td>International-standard experience, professional atmosphere, highly rated for complex color corrections, English-friendly</td>
@@ -352,7 +352,7 @@
                                 <td>Central KK Gaya Street / Jesselton Point boutique — prime tourist and expat corridor; structured membership with priority slots</td>
                             </tr>
 <tr>
-                                <td><a href="https://www.google.com/maps/search/?api=1&query=Michael+and+Guys%2C+Sabah" target="_blank"><strong>Michael and Guys</strong></a></td>
+                                <td><a href="https://www.google.com/maps/search/?api=1&query=Michael+and+Guys%2C+Sabah" target="_blank">Michael and Guys</a></td>
                                 <td>Kota Kinabalu</td>
                                 <td>Balayage MYR 350–600 (~$75–$129); Kérastase rituals MYR 150+</td>
                                 <td>Detailed pricing transparency, Kérastase product range, professional consultations, pre-lightening expertise</td>
@@ -360,7 +360,7 @@
                                 <td>Boutique studio aesthetic + vivid color specialization + soft-water filtration for KK's tropical water challenges</td>
                             </tr>
 <tr>
-                                <td><a href="https://www.google.com/maps/search/?api=1&query=Your+Hair+Studio%2C+Sabah" target="_blank"><strong>Your Hair Studio</strong></a></td>
+                                <td><a href="https://www.google.com/maps/search/?api=1&query=Your+Hair+Studio%2C+Sabah" target="_blank">Your Hair Studio</a></td>
                                 <td>Kepayan, KK</td>
                                 <td>Balayage MYR 300–500 (~$65–$108); Air Touch MYR 400+</td>
                                 <td>Air Touch and European balayage techniques, length-specific transparent pricing, modern balayage methodology</td>
@@ -820,14 +820,14 @@
 
         // Premium Expat Residential Zones in Sabah
         const residential = [
-            { name: "Likas Bay Premium Residential", lat: 6.002, lng: 116.09, radius: 450, estPop: 1200, employers: "Shell Sabah, Petronas Carigali, Repsol, Federal Govt", nationality: "Korean, Japanese & Western Expats" },
-            { name: "Sutera Harbour Waterfront Enclave", lat: 5.968, lng: 116.058, radius: 400, estPop: 800, employers: "Tourism Developers, Maritime Operations, Oil & Gas", nationality: "Korean, Japanese & Western Expats" }
+            { name: "Likas Bay Premium Residential", lat: 6.002, lng: 116.09, radius: 450, estPop: 1200, nationality: "Korean, Japanese & Western Expats" },
+            { name: "Sutera Harbour Waterfront Enclave", lat: 5.968, lng: 116.058, radius: 400, estPop: 800, nationality: "Korean, Japanese & Western Expats" }
         ];
 
         residential.forEach(res => {
-            const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${res.lat},${res.lng}`;
+            const cityName = document.body.getAttribute('data-city') || '';
+            const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(res.name + ", " + cityName)}`;
             let natText = res.nationality ? `<p><strong>Nationalities:</strong> ${res.nationality}</p>` : "";
-            let empText = res.employers ? `<p><strong>Key Employers:</strong> ${res.employers}</p>` : "";
             L.circle([res.lat, res.lng], {
                 color: '#a133ff',
                 fillColor: '#a133ff',
@@ -839,7 +839,6 @@
                     <h3 style="color: #a133ff;">${res.name}</h3>
                     <p><strong>Expat Residential Hub</strong></p>
                     ${natText}
-                    ${empText}
                     <p><strong>Est. Population:</strong> ~${res.estPop.toLocaleString()} residents</p>
                     <p style="margin-top: 8px;"><a href="${mapsUrl}" target="_blank" style="color: #a133ff; text-decoration: underline; font-weight: bold;">📍 View on Google Maps</a></p>
                 </div>
@@ -853,7 +852,8 @@
         ];
 
         malls.forEach(loc => {
-            const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${loc.lat},${loc.lng}`;
+            const cityName = document.body.getAttribute('data-city') || '';
+            const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(loc.name + ", " + cityName)}`;
             L.circleMarker([loc.lat, loc.lng], {
                 radius: getRadius(loc.footfall),
                 fillColor: "#333",
@@ -878,7 +878,8 @@
         ];
 
         competitors.forEach(loc => {
-            const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${loc.lat},${loc.lng}`;
+            const cityName = document.body.getAttribute('data-city') || '';
+            const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(loc.name + ", " + cityName)}`;
             L.circleMarker([loc.lat, loc.lng], {
                 radius: getRadius(loc.footfall),
                 fillColor: "#ef4444",
@@ -935,7 +936,9 @@
             const underservedDemand = Math.max(0, targetDemand - loc.competitorCapacity);
             const underservedPct = Math.round((underservedDemand / targetDemand) * 100);
             const ratio = (underservedDemand / loc.rent).toFixed(2);
-            const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${loc.lat},${loc.lng}`;
+            const cityName = document.body.getAttribute('data-city') || '';
+            const cleanName = loc.name.replace(/^Candidate\s+[A-Z]:\s*/i, '');
+            const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(cleanName + ", " + cityName)}`;
 
             L.marker([loc.lat, loc.lng], { icon: starIcon }).addTo(map).bindPopup(`
                 <div class="popup-content" style="min-width: 240px; color: #333;">

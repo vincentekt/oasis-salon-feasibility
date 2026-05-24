@@ -298,21 +298,21 @@
                         </thead>
                         <tbody>
 <tr class="highlight-row">
-                                  <td><a href="https://www.google.com/maps/search/?api=1&query=-31.9465,115.8245" target="_blank">Woolworths Subiaco Square (Rokeby Rd)</a></td>
+                                  <td><a href="https://www.google.com/maps/search/?api=1&query=Woolworths+Subiaco+Square+%28Rokeby+Rd%29%2C+Perth" target="_blank">Woolworths Subiaco Square (Rokeby Rd)</a></td>
                                   <td>AUD 2,500 - 4,000</td>
                                   <td>Perth's premium inner-western suburb. High FIFO mining/resources executive family density (2-weeks-on/off rotation creates regular appointment windows). Ground-floor on Rokeby Rd retail strip. UV-protection angle strongest in Perth (UV 11+ summer). No premium colour boutique in zone.</td>
                                   <td>FIFO rotation cycles create appointment volatility; Rokeby Rd parking can be congested on market days</td>
                                   <td>4.8 / 5 (Recommended)</td>
                               </tr>
 <tr>
-                                  <td><a href="https://www.google.com/maps/search/?api=1&query=-31.981,115.782" target="_blank">Starbucks Claremont Quarter (St Quentin Ave)</a></td>
+                                  <td><a href="https://www.google.com/maps/search/?api=1&query=Starbucks+Claremont+Quarter+%28St+Quentin+Ave%29%2C+Perth" target="_blank">Starbucks Claremont Quarter (St Quentin Ave)</a></td>
                                   <td>AUD 2,200 - 3,800</td>
                                   <td>Old-money western suburbs. Highest household income in Perth metro. Premium boutique aesthetic fits heritage streetscape. HNWI appointment-only clientele — matches premium model.</td>
                                   <td>Small total catchment; very appointment-dependent model; limited organic foot traffic</td>
                                   <td>4.3 / 5</td>
                               </tr>
 <tr>
-                                  <td><a href="https://www.google.com/maps/search/?api=1&query=-31.996,115.751" target="_blank">Cottesloe Beach Hotel (Marine Pde)</a></td>
+                                  <td><a href="https://www.google.com/maps/search/?api=1&query=Cottesloe+Beach+Hotel+%28Marine+Pde%29%2C+Perth" target="_blank">Cottesloe Beach Hotel (Marine Pde)</a></td>
                                   <td>AUD 2,000 - 3,500</td>
                                   <td>Coastal boutique positioning. Beach lifestyle + UV damage angle strongest here. Summer tourist season (Oct–Apr) boosts volume significantly. Beach aesthetic aligns with UV-protect brand narrative.</td>
                                   <td>Significant seasonality risk (May–Sep winter slump); smaller permanent resident catchment; tourist clients rarely repeat</td>
@@ -821,15 +821,15 @@
 
         // High Income Residential Zones
         const residential = [
-            { name: "Subiaco High Income", lat: -31.947, lng: 115.826, radius: 400, estPop: 2200, employers: "Woodside Energy, Chevron, South32, Mining Consultancies", nationality: "British & European Expats" },
-            { name: "Cottesloe Coastal Hub", lat: -31.996, lng: 115.759, radius: 450, estPop: 1800, employers: "Rio Tinto, BHP, Medical Specialists", nationality: "British & European Expats" },
-            { name: "Dalkeith Premium", lat: -32.001, lng: 115.802, radius: 500, estPop: 1200, employers: "Corporate Law, Mining Founders, UWA Faculty", nationality: "British & European Expats" }
+            { name: "Subiaco High Income", lat: -31.947, lng: 115.826, radius: 400, estPop: 2200, nationality: "British & European Expats" },
+            { name: "Cottesloe Coastal Hub", lat: -31.996, lng: 115.759, radius: 450, estPop: 1800, nationality: "British & European Expats" },
+            { name: "Dalkeith Premium", lat: -32.001, lng: 115.802, radius: 500, estPop: 1200, nationality: "British & European Expats" }
         ];
 
         residential.forEach(res => {
-            const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${res.lat},${res.lng}`;
+            const cityName = document.body.getAttribute('data-city') || '';
+            const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(res.name + ", " + cityName)}`;
             let natText = res.nationality ? `<p><strong>Nationalities:</strong> ${res.nationality}</p>` : "";
-            let empText = res.employers ? `<p><strong>Key Employers:</strong> ${res.employers}</p>` : "";
             L.circle([res.lat, res.lng], {
                 color: '#a133ff',
                 fillColor: '#a133ff',
@@ -841,7 +841,6 @@
                     <h3 style="color: #a133ff;">${res.name}</h3>
                     <p><strong>Expat Residential Hub</strong></p>
                     ${natText}
-                    ${empText}
                     <p><strong>Est. Population:</strong> ~${res.estPop.toLocaleString()} residents</p>
                     <p style="margin-top: 8px;"><a href="${mapsUrl}" target="_blank" style="color: #a133ff; text-decoration: underline; font-weight: bold;">📍 View on Google Maps</a></p>
                 </div>
@@ -857,7 +856,8 @@
         ];
 
         malls.forEach(loc => {
-            const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${loc.lat},${loc.lng}`;
+            const cityName = document.body.getAttribute('data-city') || '';
+            const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(loc.name + ", " + cityName)}`;
             L.circleMarker([loc.lat, loc.lng], {
                 radius: getRadius(loc.footfall),
                 fillColor: "#333",
@@ -883,7 +883,8 @@
         ];
 
         competitors.forEach(loc => {
-            const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${loc.lat},${loc.lng}`;
+            const cityName = document.body.getAttribute('data-city') || '';
+            const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(loc.name + ", " + cityName)}`;
             L.circleMarker([loc.lat, loc.lng], {
                 radius: getRadius(loc.footfall),
                 fillColor: "#ef4444",
@@ -940,7 +941,9 @@
             const underservedDemand = Math.max(0, targetDemand - loc.competitorCapacity);
             const underservedPct = Math.round((underservedDemand / targetDemand) * 100);
             const ratio = (underservedDemand / loc.rent).toFixed(2);
-            const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${loc.lat},${loc.lng}`;
+            const cityName = document.body.getAttribute('data-city') || '';
+            const cleanName = loc.name.replace(/^Candidate\s+[A-Z]:\s*/i, '');
+            const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(cleanName + ", " + cityName)}`;
 
             L.marker([loc.lat, loc.lng], { icon: starIcon }).addTo(map).bindPopup(`
                 <div class="popup-content" style="min-width: 240px; color: #333;">

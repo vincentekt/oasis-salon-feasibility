@@ -287,21 +287,21 @@
                         </thead>
                         <tbody>
 <tr class="highlight-row">
-                                  <td><a href="https://www.google.com/maps/search/?api=1&query=25.205,55.245" target="_blank">Starbucks Safa Park (Jumeirah Rd)</a></td>
+                                  <td><a href="https://www.google.com/maps/search/?api=1&query=Starbucks+Safa+Park+%28Jumeirah+Rd%29%2C+Dubai" target="_blank">Starbucks Safa Park (Jumeirah Rd)</a></td>
                                   <td>AED 120,000 - 180,000 / yr</td>
                                   <td>Dubai's Western expat residential core. British, American, Australian expat families concentrated here. Ground-floor villa shopfront on Jumeirah Rd near Safa Park. Soft-water filtration is essential — Dubai tap water TDS 500–1200 ppm destroys colour. This is the most defensible USP in Dubai's overcrowded salon market.</td>
                                   <td>Villa shopfront leases are DEWA-metered — utility costs higher than commercial units; requires annual lease upfront per UAE commercial norms</td>
                                   <td>4.9 / 5 (Recommended)</td>
                               </tr>
 <tr>
-                                  <td><a href="https://www.google.com/maps/search/?api=1&query=25.0768,55.1312" target="_blank">Starbucks The Beach JBR</a></td>
+                                  <td><a href="https://www.google.com/maps/search/?api=1&query=Starbucks+The+Beach+JBR%2C+Dubai" target="_blank">Starbucks The Beach JBR</a></td>
                                   <td>AED 180,000 - 280,000 / yr</td>
                                   <td>High-density expat residential towers. Strong walk-in from JBR beach promenade. Diverse European, Russian, Indian expat community. Multiple salons present — validates premium demand in zone.</td>
                                   <td>Very high rent; Marina has 30+ premium salons — most saturated premium zone in Dubai; must have exceptional soft-water + balayage differentiation to compete</td>
                                   <td>4.2 / 5</td>
                               </tr>
 <tr>
-                                  <td><a href="https://www.google.com/maps/search/?api=1&query=25.1865,55.2248" target="_blank">Starbucks Boxpark (Al Wasl Rd)</a></td>
+                                  <td><a href="https://www.google.com/maps/search/?api=1&query=Starbucks+Boxpark+%28Al+Wasl+Rd%29%2C+Dubai" target="_blank">Starbucks Boxpark (Al Wasl Rd)</a></td>
                                   <td>AED 100,000 - 160,000 / yr</td>
                                   <td>Old-established expat zone. Lower rent, loyal long-term Dubai resident clientele. Best for word-of-mouth growth among established expat community vs tourist-heavy Marina zone.</td>
                                   <td>Lower foot traffic than Jumeirah Rd or Marina; requires stronger referral and loyalty marketing; less Instagram-visible than beachfront alternatives</td>
@@ -332,7 +332,7 @@
                         <tbody>
 <tr>
                                 <td>Luxury Styling & Color Salons</td>
-                                <td><a href="https://www.google.com/maps/search/?api=1&query=25.161,55.205" target="_blank">Rami Jabali Salon (Jumeirah)</a></td>
+                                <td><a href="https://www.google.com/maps/search/?api=1&query=Rami+Jabali+Salon+%28Jumeirah%29%2C+Dubai" target="_blank">Rami Jabali Salon (Jumeirah)</a></td>
                                 <td>$150 - $450</td>
                                 <td>Exceptional coloring and hair restoration, loyal premium clientele</td>
                                 <td>Premium pricing, long wait times</td>
@@ -340,7 +340,7 @@
                             </tr>
 <tr>
                                 <td>Premium Beauty & Wellness</td>
-                                <td><a href="https://www.google.com/maps/search/?api=1&query=25.078,55.135" target="_blank">Casa Aire Salon (Dubai Marina)</a></td>
+                                <td><a href="https://www.google.com/maps/search/?api=1&query=Casa+Aire+Salon+%28Dubai+Marina%29%2C+Dubai" target="_blank">Casa Aire Salon (Dubai Marina)</a></td>
                                 <td>$130 - $350</td>
                                 <td>Boutique aesthetic, strong Instagram presence, specializing in styling and blowouts</td>
                                 <td>Limited station capacity, high booking wait times</td>
@@ -348,7 +348,7 @@
                             </tr>
 <tr>
                                 <td>Standard Commercial Chains</td>
-                                <td><a href="https://www.google.com/maps/search/?api=1&query=Toni+%26+Guy%2C+Dubai" target="_blank">Toni & Guy (Dubai Marina)</a></td>
+                                <td><a href="https://www.google.com/maps/search/?api=1&query=Toni+%26+Guy+%28Dubai+Marina%29%2C+Dubai" target="_blank">Toni & Guy (Dubai Marina)</a></td>
                                 <td>$80 - $180</td>
                                 <td>Strong global brand name, multiple locations</td>
                                 <td>Lacks private styling areas, open and noisy floor plan</td>
@@ -802,15 +802,15 @@
 
         // Premium Residential Zones in Dubai
         const residential = [
-            { name: "Jumeirah Residential Enclave", lat: 25.2, lng: 55.25, radius: 450, estPop: 3000, employers: "HSBC, Emirates Group, Shell, Deloitte, PwC", nationality: "British, American & European Expats" },
-            { name: "Dubai Marina Expat Hub", lat: 25.078, lng: 55.135, radius: 350, estPop: 2000, employers: "Microsoft, Oracle, IBM, Financial Services", nationality: "European, British & Russian Expats" },
-            { name: "Palm Jumeirah Waterfront Hub", lat: 25.115, lng: 55.138, radius: 400, estPop: 1500, employers: "Luxury Hospitality Management, Family Offices", nationality: "British, American & European Expats" }
+            { name: "Jumeirah Residential Enclave", lat: 25.2, lng: 55.25, radius: 450, estPop: 3000, nationality: "British, American & European Expats" },
+            { name: "Dubai Marina Expat Hub", lat: 25.078, lng: 55.135, radius: 350, estPop: 2000, nationality: "European, British & Russian Expats" },
+            { name: "Palm Jumeirah Waterfront Hub", lat: 25.115, lng: 55.138, radius: 400, estPop: 1500, nationality: "British, American & European Expats" }
         ];
 
         residential.forEach(res => {
-            const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${res.lat},${res.lng}`;
+            const cityName = document.body.getAttribute('data-city') || '';
+            const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(res.name + ", " + cityName)}`;
             let natText = res.nationality ? `<p><strong>Nationalities:</strong> ${res.nationality}</p>` : "";
-            let empText = res.employers ? `<p><strong>Key Employers:</strong> ${res.employers}</p>` : "";
             L.circle([res.lat, res.lng], {
                 color: '#a133ff',
                 fillColor: '#a133ff',
@@ -822,7 +822,6 @@
                     <h3 style="color: #a133ff;">${res.name}</h3>
                     <p><strong>Expat Residential Hub</strong></p>
                     ${natText}
-                    ${empText}
                     <p><strong>Est. Population:</strong> ~${res.estPop.toLocaleString()} residents</p>
                     <p style="margin-top: 8px;"><a href="${mapsUrl}" target="_blank" style="color: #a133ff; text-decoration: underline; font-weight: bold;">📍 View on Google Maps</a></p>
                 </div>
@@ -837,7 +836,8 @@
         ];
 
         malls.forEach(loc => {
-            const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${loc.lat},${loc.lng}`;
+            const cityName = document.body.getAttribute('data-city') || '';
+            const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(loc.name + ", " + cityName)}`;
             L.circleMarker([loc.lat, loc.lng], {
                 radius: getRadius(loc.footfall),
                 fillColor: "#333",
@@ -861,7 +861,8 @@
         ];
  
          competitors.forEach(loc => {
-            const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${loc.lat},${loc.lng}`;
+            const cityName = document.body.getAttribute('data-city') || '';
+            const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(loc.name + ", " + cityName)}`;
             L.circleMarker([loc.lat, loc.lng], {
                 radius: getRadius(loc.footfall),
                 fillColor: "#ef4444",
@@ -918,7 +919,9 @@
             const underservedDemand = Math.max(0, targetDemand - loc.competitorCapacity);
             const underservedPct = Math.round((underservedDemand / targetDemand) * 100);
             const ratio = (underservedDemand / loc.rent).toFixed(2);
-            const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${loc.lat},${loc.lng}`;
+            const cityName = document.body.getAttribute('data-city') || '';
+            const cleanName = loc.name.replace(/^Candidate\s+[A-Z]:\s*/i, '');
+            const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(cleanName + ", " + cityName)}`;
 
             L.marker([loc.lat, loc.lng], { icon: starIcon }).addTo(map).bindPopup(`
                 <div class="popup-content" style="min-width: 240px; color: #333;">

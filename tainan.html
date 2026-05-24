@@ -300,21 +300,21 @@
                         </thead>
                         <tbody>
 <tr class="highlight-row">
-                                  <td><a href="https://www.google.com/maps/search/?api=1&query=23.0782,120.297" target="_blank">Starbucks Tainan Sinshih (Sinshih District)</a></td>
+                                  <td><a href="https://www.google.com/maps/search/?api=1&query=Starbucks+Tainan+Sinshih+%28Sinshih+District%29%2C+Tainan" target="_blank">Starbucks Tainan Sinshih (Sinshih District)</a></td>
                                   <td>NTD 40,000 - 60,000</td>
                                   <td>Adjacent to TSMC Fab 18 international staff housing. Japanese, US, European TSMC engineers live within 1km. Zero premium salon competition within 10km. Entirely captive high-income target market. Highest underserved % in Taiwan portfolio.</td>
                                   <td>New commercial zone — lower existing foot traffic; relies on TSMC expat community network discovery; requires proactive outreach to TSMC HR/community channels</td>
                                   <td>4.9 / 5 (Recommended)</td>
                               </tr>
 <tr>
-                                  <td><a href="https://www.google.com/maps/search/?api=1&query=22.9972,120.2185" target="_blank">Starbucks Tainan NCKU (East District)</a></td>
+                                  <td><a href="https://www.google.com/maps/search/?api=1&query=Starbucks+Tainan+NCKU+%28East+District%29%2C+Tainan" target="_blank">Starbucks Tainan NCKU (East District)</a></td>
                                   <td>NTD 32,000 - 48,000</td>
                                   <td>NCKU university zone with growing young professional catchment. More established commercial street. Better foot traffic than Sinshih. Captures younger, fashion-forward demographic.</td>
                                   <td>Lower TSMC expat density; less affluent demographic than Sinshih; more price-sensitive clientele</td>
                                   <td>4.1 / 5</td>
                               </tr>
 <tr>
-                                  <td><a href="https://www.google.com/maps/search/?api=1&query=22.9918,120.202" target="_blank">Hayashi Department Store (West Central)</a></td>
+                                  <td><a href="https://www.google.com/maps/search/?api=1&query=Hayashi+Department+Store+%28West+Central%29%2C+Tainan" target="_blank">Hayashi Department Store (West Central)</a></td>
                                   <td>NTD 35,000 - 52,000</td>
                                   <td>Historic Tainan city center. Higher general foot traffic. Best for capturing broader professional and tourist market as second phase.</td>
                                   <td>Lower premium density than Sinshih; higher local mid-tier salon competition; less TSMC-adjacent catchment</td>
@@ -344,7 +344,7 @@
                         </thead>
                         <tbody>
 <tr>
-                                <td><a href="https://www.google.com/maps/search/?api=1&query=Local+Mid-tier+Salons%2C+Tainan" target="_blank"><strong>Local Mid-tier Salons</strong> (e.g., Ciao Hair, Style Park)</a></td>
+                                <td><a href="https://www.google.com/maps/search/?api=1&query=Local+Mid-tier+Salons+%28e.g.%2C+Ciao+Hair%2C+Style+Park%29%2C+Tainan" target="_blank">Local Mid-tier Salons (e.g., Ciao Hair, Style Park)</a></td>
                                 <td>Tainan East / Anping</td>
                                 <td>Color TWD 1,500–3,500 (~$47–$109)</td>
                                 <td>Very price competitive, long-standing local reputation, high volume, convenient locations</td>
@@ -352,7 +352,7 @@
                                 <td>Premium balayage specialist team + English/Japanese bilingual + Olaplex/K18 product stack at TWD 4,500–8,000 aspirational pricing</td>
                             </tr>
 <tr>
-                                <td><a href="https://www.google.com/maps/search/?api=1&query=National+Chain+Outlets%2C+Tainan" target="_blank"><strong>National Chain Outlets</strong> (e.g., Juno, Uniclub)</a></td>
+                                <td><a href="https://www.google.com/maps/search/?api=1&query=National+Chain+Outlets+%28e.g.%2C+Juno%2C+Uniclub%29%2C+Tainan" target="_blank">National Chain Outlets (e.g., Juno, Uniclub)</a></td>
                                 <td>Malls and high streets, Tainan</td>
                                 <td>Color TWD 2,000–5,000 (~$63–$156)</td>
                                 <td>Consistent chain standards, professional environment, accessible pricing, Tainan-familiar brand</td>
@@ -821,14 +821,14 @@
 
         // Premium Residential Zones
         const residential = [
-            { name: "West Central High Wealth Core", lat: 22.991, lng: 120.203, radius: 400, estPop: 1200, employers: "TSMC Fab 18, ASML Taiwan, Applied Materials, NCKU", nationality: "Japanese & Western Expats" },
-            { name: "East District NCKU Faculty Hub", lat: 22.993, lng: 120.22, radius: 300, estPop: 800, employers: "NCKU Faculty, Tech Researchers, Medical Staff", nationality: "Japanese & Western Expats" }
+            { name: "West Central High Wealth Core", lat: 22.991, lng: 120.203, radius: 400, estPop: 1200, nationality: "Japanese & Western Expats" },
+            { name: "East District NCKU Faculty Hub", lat: 22.993, lng: 120.22, radius: 300, estPop: 800, nationality: "Japanese & Western Expats" }
         ];
 
         residential.forEach(res => {
-            const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${res.lat},${res.lng}`;
+            const cityName = document.body.getAttribute('data-city') || '';
+            const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(res.name + ", " + cityName)}`;
             let natText = res.nationality ? `<p><strong>Nationalities:</strong> ${res.nationality}</p>` : "";
-            let empText = res.employers ? `<p><strong>Key Employers:</strong> ${res.employers}</p>` : "";
             L.circle([res.lat, res.lng], {
                 color: '#a133ff',
                 fillColor: '#a133ff',
@@ -840,7 +840,6 @@
                     <h3 style="color: #a133ff;">${res.name}</h3>
                     <p><strong>Expat Residential Hub</strong></p>
                     ${natText}
-                    ${empText}
                     <p><strong>Est. Population:</strong> ~${res.estPop.toLocaleString()} residents</p>
                     <p style="margin-top: 8px;"><a href="${mapsUrl}" target="_blank" style="color: #a133ff; text-decoration: underline; font-weight: bold;">📍 View on Google Maps</a></p>
                 </div>
@@ -854,7 +853,8 @@
         ];
 
         malls.forEach(loc => {
-            const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${loc.lat},${loc.lng}`;
+            const cityName = document.body.getAttribute('data-city') || '';
+            const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(loc.name + ", " + cityName)}`;
             L.circleMarker([loc.lat, loc.lng], {
                 radius: getRadius(loc.footfall),
                 fillColor: "#333",
@@ -879,7 +879,8 @@
         ];
 
         competitors.forEach(loc => {
-            const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${loc.lat},${loc.lng}`;
+            const cityName = document.body.getAttribute('data-city') || '';
+            const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(loc.name + ", " + cityName)}`;
             L.circleMarker([loc.lat, loc.lng], {
                 radius: getRadius(loc.footfall),
                 fillColor: "#ef4444",
@@ -936,7 +937,9 @@
             const underservedDemand = Math.max(0, targetDemand - loc.competitorCapacity);
             const underservedPct = Math.round((underservedDemand / targetDemand) * 100);
             const ratio = (underservedDemand / loc.rent).toFixed(2);
-            const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${loc.lat},${loc.lng}`;
+            const cityName = document.body.getAttribute('data-city') || '';
+            const cleanName = loc.name.replace(/^Candidate\s+[A-Z]:\s*/i, '');
+            const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(cleanName + ", " + cityName)}`;
 
             L.marker([loc.lat, loc.lng], { icon: starIcon }).addTo(map).bindPopup(`
                 <div class="popup-content" style="min-width: 240px; color: #333;">

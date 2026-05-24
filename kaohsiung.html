@@ -300,21 +300,21 @@
                         </thead>
                         <tbody>
 <tr class="highlight-row">
-                                  <td><a href="https://www.google.com/maps/search/?api=1&query=22.6875,120.3015" target="_blank">Starbucks Shin Kong Mitsukoshi (Zuoying THSR)</a></td>
+                                  <td><a href="https://www.google.com/maps/search/?api=1&query=Starbucks+Shin+Kong+Mitsukoshi+%28Zuoying+THSR%29%2C+Kaohsiung" target="_blank">Starbucks Shin Kong Mitsukoshi (Zuoying THSR)</a></td>
                                   <td>NTD 60,000 - 80,000</td>
                                   <td>High-speed rail terminus. First-mover position — zero premium salon in zone. THSR commuters from Taipei book appointments around train schedule. Japanese Foxconn/Innolux corporate housing adjacent. Highest underserved score in Kaohsiung.</td>
                                   <td>Lower current foot traffic than Lingya; relies on THSR commuter booking behavior; requires appointment-heavy model</td>
                                   <td>4.9 / 5 (Recommended)</td>
                               </tr>
 <tr>
-                                  <td><a href="https://www.google.com/maps/search/?api=1&query=22.6145,120.3045" target="_blank">Starbucks Pacific SOGO (Sanduo Shopping)</a></td>
+                                  <td><a href="https://www.google.com/maps/search/?api=1&query=Starbucks+Pacific+SOGO+%28Sanduo+Shopping%29%2C+Kaohsiung" target="_blank">Starbucks Pacific SOGO (Sanduo Shopping)</a></td>
                                   <td>NTD 70,000 - 95,000</td>
                                   <td>Kaohsiung's premier shopping/lifestyle district. Round2 Hair Salon presence validates premium demand. Highest total catchment of three candidates. Best for fashion-forward creative class.</td>
                                   <td>Round2 is entrenched here; higher rent; must differentiate on Japanese-bilingual service and creative colour range</td>
                                   <td>4.3 / 5</td>
                               </tr>
 <tr>
-                                  <td><a href="https://www.google.com/maps/search/?api=1&query=22.6245,120.3025" target="_blank">Starbucks Central Park MRT (Xinxing District)</a></td>
+                                  <td><a href="https://www.google.com/maps/search/?api=1&query=Starbucks+Central+Park+MRT+%28Xinxing+District%29%2C+Kaohsiung" target="_blank">Starbucks Central Park MRT (Xinxing District)</a></td>
                                   <td>NTD 55,000 - 75,000</td>
                                   <td>Near Kaohsiung's Central Park and cultural institutions. Growing premium residential catchment. Lower competition than Lingya. Good for Japanese business community nearby.</td>
                                   <td>Less established premium retail environment than Lingya or Zuoying; lower total foot traffic</td>
@@ -344,7 +344,7 @@
                         </thead>
                         <tbody>
 <tr>
-                                <td><a href="https://www.google.com/maps/search/?api=1&query=22.661,120.302" target="_blank"><strong>Round2 Hair Salon</strong></a></td>
+                                <td><a href="https://www.google.com/maps/search/?api=1&query=Round2+Hair+Salon%2C+Kaohsiung" target="_blank">Round2 Hair Salon</a></td>
                                 <td>Multiple (Linsen, Minghua, Fumin)</td>
                                 <td>Color TWD 2,600–6,000 (~$81–$187); Balayage TWD 4,500–8,000</td>
                                 <td>Prominent Kaohsiung chain, refined modern techniques, consistent quality across outlets, professional reputation</td>
@@ -352,7 +352,7 @@
                                 <td>Independent boutique consistency; English + Japanese + Mandarin trilingual team; senior color specialist every appointment</td>
                             </tr>
 <tr>
-                                <td><a href="https://www.google.com/maps/search/?api=1&query=UCA+Salon%2C+Kaohsiung" target="_blank"><strong>UCA Salon</strong> (Unique Create Art)</a></td>
+                                <td><a href="https://www.google.com/maps/search/?api=1&query=UCA+Salon+%28Unique+Create+Art%29%2C+Kaohsiung" target="_blank">UCA Salon (Unique Create Art)</a></td>
                                 <td>Multiple Kaohsiung locations</td>
                                 <td>Color TWD 2,500–7,000 (~$78–$219); Senior designer premium tier</td>
                                 <td>Established Taiwan-wide brand, tiered pricing allows senior designer access, professional environment</td>
@@ -360,7 +360,7 @@
                                 <td>Boutique-only senior stylist delivery; private styling bays; Japanese product stack (Milbon, Demi) superior to UCA's standard professional line</td>
                             </tr>
 <tr>
-                                <td><a href="https://www.google.com/maps/search/?api=1&query=VS+Hair+Salon%2C+Kaohsiung" target="_blank"><strong>VS Hair Salon</strong></a></td>
+                                <td><a href="https://www.google.com/maps/search/?api=1&query=VS+Hair+Salon%2C+Kaohsiung" target="_blank">VS Hair Salon</a></td>
                                 <td>Kaohsiung</td>
                                 <td>Color TWD 2,000–5,500 (~$63–$172)</td>
                                 <td>Japanese product commitment (training + product quality), strong hair health focus, continuous training culture</td>
@@ -875,14 +875,14 @@
 
         // Premium Residential Zones
         const residential = [
-            { name: "Gushan Art District Residential", lat: 22.657, lng: 120.291, radius: 450, estPop: 5000, employers: "ASML, Tokyo Electron, Innolux, China Steel", nationality: "Japanese & Western Expats" },
-            { name: "Sanduo High-Rise Residential", lat: 22.615, lng: 120.305, radius: 350, estPop: 3500, employers: "Foxconn, ASE Group, Shipping Lines, Nanzih Tech", nationality: "Japanese & Western Expats" }
+            { name: "Gushan Art District Residential", lat: 22.657, lng: 120.291, radius: 450, estPop: 5000, nationality: "Japanese & Western Expats" },
+            { name: "Sanduo High-Rise Residential", lat: 22.615, lng: 120.305, radius: 350, estPop: 3500, nationality: "Japanese & Western Expats" }
         ];
 
         residential.forEach(res => {
-            const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${res.lat},${res.lng}`;
+            const cityName = document.body.getAttribute('data-city') || '';
+            const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(res.name + ", " + cityName)}`;
             let natText = res.nationality ? `<p><strong>Nationalities:</strong> ${res.nationality}</p>` : "";
-            let empText = res.employers ? `<p><strong>Key Employers:</strong> ${res.employers}</p>` : "";
             L.circle([res.lat, res.lng], {
                 color: '#a133ff',
                 fillColor: '#a133ff',
@@ -894,7 +894,6 @@
                     <h3 style="color: #a133ff;">${res.name}</h3>
                     <p><strong>Expat Residential Hub</strong></p>
                     ${natText}
-                    ${empText}
                     <p><strong>Est. Population:</strong> ~${res.estPop.toLocaleString()} residents</p>
                     <p style="margin-top: 8px;"><a href="${mapsUrl}" target="_blank" style="color: #a133ff; text-decoration: underline; font-weight: bold;">📍 View on Google Maps</a></p>
                 </div>
@@ -908,7 +907,8 @@
         ];
 
         malls.forEach(loc => {
-            const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${loc.lat},${loc.lng}`;
+            const cityName = document.body.getAttribute('data-city') || '';
+            const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(loc.name + ", " + cityName)}`;
             L.circleMarker([loc.lat, loc.lng], {
                 radius: getRadius(loc.footfall),
                 fillColor: "#333",
@@ -932,7 +932,8 @@
         ];
 
         competitors.forEach(loc => {
-            const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${loc.lat},${loc.lng}`;
+            const cityName = document.body.getAttribute('data-city') || '';
+            const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(loc.name + ", " + cityName)}`;
             L.circleMarker([loc.lat, loc.lng], {
                 radius: getRadius(loc.footfall),
                 fillColor: "#ef4444",
@@ -989,7 +990,9 @@
             const underservedDemand = Math.max(0, targetDemand - loc.competitorCapacity);
             const underservedPct = Math.round((underservedDemand / targetDemand) * 100);
             const ratio = (underservedDemand / loc.rent).toFixed(2);
-            const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${loc.lat},${loc.lng}`;
+            const cityName = document.body.getAttribute('data-city') || '';
+            const cleanName = loc.name.replace(/^Candidate\s+[A-Z]:\s*/i, '');
+            const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(cleanName + ", " + cityName)}`;
 
             L.marker([loc.lat, loc.lng], { icon: starIcon }).addTo(map).bindPopup(`
                 <div class="popup-content" style="min-width: 240px; color: #333;">

@@ -1,0 +1,128 @@
+=== COMPETITOR DATA PER PAGE ===
+
+--- bangkok.html ---
+  * MOGA Hair Salon (EmQuartier): Popular Japanese salon chain, premium Aveda products, open layout.
+  * Zahara Salon (Sukhumvit): Luxury salon focusing on expats/tourists, private styling suites.
+
+--- binhduong.html ---
+  * Toto Hair Studio: Trendy Chanh Nghia hair salon. Good modern styling and recovery services, but noisy open floor layout.
+  * Hair Salon Mr. D: Luxury hair styling salon. Good chemical services (perm/dye) but lacks private styling stations and scalp therapy.
+  * Trendy Hair: High-end salon with advanced styling services. Expensive, situated in busy residential area with limited parking.
+
+--- brisbane.html ---
+  * EdwardsAndCo Fortitude Valley: Influencer-favorite salon, high-end balayage, open noisy layout.
+  * Togninis Fortitude Valley: Heritage award-winning styling, traditional busy floor layout.
+  * Epic Hair Designs Fortitude Valley: High-volume salon chain, accessible premium, high staff turnover.
+
+--- busan.html ---
+  * Lee Kyungmin Foret Garden (Haeundae): Celebrity beauty brand. Large multi-floor layout with styling, makeup, and general care. Noisy open-concept environment.
+  * JUNO HAIR (Haeundae): Premium nationwide salon chain. High-quality standardization, crowded open styling stations.
+
+--- danang.html ---
+  * Quoc Anh Hair Salon: Established premium local salon. High-quality cuts & chemical work, but busy/loud layout.
+  * The Rose Hair: Popular with expat and tourist community. High-end styling & coloring, but limited capacity.
+  * Traky Hair Salon: Trendy boutique space. Professional coloring, but high staff turnover.
+
+--- dongnai.html ---
+  * June Hair Salon: Premium styling and color work. Noisy open floor during peak hours, limited private consultation.
+  * Salon Bắc Trần Tiến: Branch of prominent national salon chain. Fast turnaround, lacks integrated scalp therapies.
+
+--- dubai.html ---
+  * Rami Jabali Salon (Jumeirah): Premium styling and coloring specialist in Jumeirah. Loyal high-end clientele.
+  * Casa Aire Salon (Dubai Marina): Premium boutique styling and scalp health salon in Dubai Marina.
+
+--- fukuoka.html ---
+  * saco Japan (Daimyo): Elite boutique hair salon. Famous for technical cutting. hair salon and scalp treatments are secondary.
+  * MARCO (Imaizumi): High-end salon with English-speaking staff. Strong reputation for highlights and creative color work.
+  * TONI&GUY (Tenjin): Globally recognized brand with high traffic. Busy, commercial open-floor layout with limited privacy.
+
+--- haiphong.html ---
+  * HaLa Hair Salon: L'Oreal and Davines products, Tony & Guy trained staff, open layout.
+  * Hair Space (Jay Phong): Trendy style-focused styling, strong influencer presence, noisy.
+  * Nguyen Hung Hair Salon: Spacious luxury layout, lacks dedicated private styling consultation zones.
+
+--- hanoi.html ---
+  * Maika Hair Salon (Tay Ho): Top expat choice for balayage/highlights. Good English, premium products (Olaplex).
+  * Le Soleil Hair (Hoan Kiem): Luxurious European boutique aesthetic. Exceptional coloring and international trends.
+  * TERRE Hair Salon (Ba Dinh): Renowned premium local salon chain. High-volume luxury styling & curling treatments.
+
+--- hcmc.html ---
+  * J-First Tokyo (Premium Japanese Salon): Premium Japanese stylists, high-quality coloring, expat base. Located in D1/D3.
+  * Concept Coiffure (French Premium Salon): French & Western styling, premium color. Located in Thao Dien (D2).
+  * Vamp Hair Line (Premium Japanese-Trained Salon): Peek-A-Boo style training, strong color services. Loud, high-turnover environment. Located in D1.
+
+--- hongkong.html ---
+  * BRUNEBLONDE (Grand Hyatt): Traditional French-style luxury salon inside hotel. Strong brand equity, but open layout lacks privacy and specialized soft-water systems.
+  * Love Hair (SOHO): Boutique eco-friendly hair salon. High organic appeal for expat women, but limited styling capacity and no soft-water marketing.
+  * Kimrobinson (Chater House): Ultra-luxury salon chain. Outstanding prestige dry-cuts, but high commission rates and open styling floor.
+
+--- johor.html ---
+  * Luxe Studio (Komtar JBCC): Premium salon chain, high Singaporean traffic.
+  * REDS Hair Salon (City Square): Popular hair coloring salon right next to customs.
+  * Kindes Hair Salon (Zenith Mall): Boutique salon specializing in balayage and perms.
+
+--- kaohsiung.html ---
+  * Round2 Hair Salon (Zuoying): Popular fashion styling and coloring chain. Noisy open layout, high volume.
+  * Canmeng AVEDA Salon (Sanduo): Elite organic salon chain. Prestigious brand, but high prices and long wait times.
+
+--- kuala_lumpur.html ---
+  * Number76 (Bangsar / Mont Kiara): Trusted Japanese salon chain. Busy, open layout with high noise.
+  * Shawn Cutler (Bangsar): Luxury boutique salon. High-end styling but limited scalp integration.
+  * Miko Galere (KLCC): Premium mall salon. Corporate client heavy, loud open environment.
+
+--- macau.html ---
+  * Wynn Palace Salon: Extreme luxury hotel premium, casino guest focus, no specialized scalp care and hair therapy.
+  * L'Arc Salon (Macau Peninsula): High-end local salon, open floor layout, lacks private styling bays and scalp care integration.
+
+--- melbourne.html ---
+  * Joey Scandizzo Salon (South Yarra): Elite celebrity salon, very high volume, active Chapel St styling scene.
+  * Rakis on Collins (CBD): Historic luxury salon, premium corporate client base, high average ticket.
+
+--- okinawa.html ---
+  * atelier [es] (Omoromachi): Top premium salon focusing on hair health and personalized styling.
+  * GLOW OMOROMACHI: Highly popular salon for TOKIO treatments and hair styling packages.
+  * Private Hair Studio K (Kumoji): English-friendly private studio offering customized styling.
+
+--- penang.html ---
+  * Cuts Salon (Gurney Plaza): Major premium mall hair salon. High-volume, open-layout and noisy.
+  * Hairstory International (Gurney Walk): Scalp and styling clinic. High local reputation, but busy and rushed service.
+  * A-Saloon (Gurney Plaza): High-traffic salon chain. Mass market feel, limited premium customization.
+
+--- perth.html ---
+  * Tao of Hair (Perth CBD): Elite CBD salon. Open layout, noisy, high-energy environment.
+  * Circles of Hair (Subiaco): Premium Subiaco brand. Busy high-volume space, lacks privacy.
+
+--- sabah.html ---
+  * Toni & Guy (Jesselton Mall): International premium salon. Premium pricing, busy mall environment.
+  * Attitude Hair Studio (Imago Mall): High-end local salon. Good styling, noisy open floor layout.
+  * Groom Artistry (Damai / Luyang): Boutique salon. Strong local repeat base, limited scalp tools.
+
+--- sarawak.html ---
+  * Cutting Edge The Premium Salon (Jalan Abell): High-end brand. Expert cutting and coloring but loud, open layout with no acoustic privacy.
+  * Essential Hairdressing (Jalan Song): Popular local salon. Modern color work but lacks specialized scalp care and quiet rooms.
+  * Fur Essentials Hairdressing (Tabuan Heights): Premium local chain. Good styling but focuses on high volume and lacks diagnostic scalp care.
+
+--- singapore.html ---
+  * Walking on Sunshine (Orchard Central): Korean salon-cafe hybrid. High footfall, open layout, loud styling environment.
+  * Chez Vous: Hideaway (Orchard): Luxury private apartment concept salon. Relaxing vibe but operates as an ground-floor hidden suite, lacking street-front ground-floor exposure.
+  * Leekaja Beauty Salon (Orchard): Premium Korean styling hub. Large client base, prioritizes hair color & perms, open layout.
+
+--- sydney.html ---
+  * Que Colour (Darlinghurst): Elite color boutique. Renowned for balayage. Very busy and noisy.
+  * Edwards And Co (Surry Hills): Celebrity salon brand. High-volume open floor styling.
+  * Koda Cutters (CBD/QVB): Fashion-forward salon. High traffic, fast-paced environment.
+
+--- taichung.html ---
+  * ELF Salon (7th District): Luxury boutique salon, high-end styling. Very popular and crowded.
+  * HOCC Hair (West District): Prestige boutique salon. High quality coloring, limited parking.
+  * Canmeng AVEDA (Top City): Prestige organic hair care and scalp treatments inside Far Eastern Mall. Lacks privacy.
+
+--- tainan.html ---
+  * Milan Hair Salon (Chongxue): Major premium local chain branch. Highly accessible but busy, open-concept styling hall.
+  * SAVO HAIR SALON (Dongmen): Upscale boutique salon with experienced stylists. Dedicated clientele, limited privacy.
+  * In STYLE hair culture (Dongping): High-end design studio targeting affluent professionals and academic faculty.
+
+--- taipei.html ---
+  * Flux Reel (Da'an): Japanese-inspired luxury styling salon, very high reputation but busy and noisy.
+  * SeeFu Hair Salon (Da'an): Bilingual, foreigner-friendly, clear menu pricing but high staff turnover.
+  * Eros Hair Styling (Xinyi): Elite hair salon targeting celebrities and high wealth. Cuts and colors are premium.

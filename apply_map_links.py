@@ -292,7 +292,8 @@ def process_file(path):
         if fillColor_m: fillColor = fillColor_m.group(1)
         
         new_res_loop = f"""residential.forEach(res => {{
-            const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${{res.lat}},${{res.lng}}`;
+            const cityName = document.body.getAttribute('data-city') || '';
+            const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${{encodeURIComponent(res.name + ", " + cityName)}}`;
             let natText = res.nationality ? `<p><strong>Nationalities:</strong> ${{res.nationality}}</p>` : "";
             L.circle([res.lat, res.lng], {{
                 color: '{color}',
@@ -324,7 +325,8 @@ def process_file(path):
         if fillColor_m: fillColor = fillColor_m.group(1)
         
         new_malls_loop = f"""malls.forEach(loc => {{
-            const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${{loc.lat}},${{loc.lng}}`;
+            const cityName = document.body.getAttribute('data-city') || '';
+            const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${{encodeURIComponent(loc.name + ", " + cityName)}}`;
             L.circleMarker([loc.lat, loc.lng], {{
                 radius: getRadius(loc.footfall),
                 fillColor: "{fillColor}",
@@ -354,7 +356,8 @@ def process_file(path):
         if fillColor_m: fillColor = fillColor_m.group(1)
         
         new_comp_loop = f"""competitors.forEach(loc => {{
-            const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${{loc.lat}},${{loc.lng}}`;
+            const cityName = document.body.getAttribute('data-city') || '';
+            const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${{encodeURIComponent(loc.name + ", " + cityName)}}`;
             L.circleMarker([loc.lat, loc.lng], {{
                 radius: getRadius(loc.footfall),
                 fillColor: "{fillColor}",
@@ -382,7 +385,9 @@ def process_file(path):
             const underservedDemand = Math.max(0, targetDemand - loc.competitorCapacity);
             const underservedPct = Math.round((underservedDemand / targetDemand) * 100);
             const ratio = (underservedDemand / loc.rent).toFixed(2);
-            const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${loc.lat},${loc.lng}`;
+            const cityName = document.body.getAttribute('data-city') || '';
+            const cleanName = loc.name.replace(/^Candidate\\s+[A-Z]:\\s*/i, '');
+            const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(cleanName + ", " + cityName)}`;
 
             L.marker([loc.lat, loc.lng], { icon: starIcon }).addTo(map).bindPopup(`
                 <div class="popup-content" style="min-width: 240px; color: #333;">
@@ -421,7 +426,7 @@ def process_file(path):
                 <p><strong>Primary Transit Hub</strong></p>
                 <p><strong>Nationalities:</strong> Singaporean & Malaysian cross-border commuters</p>
                 <p>Over 10,000 hourly commuters expected upon RTS completion. High Singaporean day-tripper density.</p>
-                <p style="margin-top: 8px;"><a href="https://www.google.com/maps/search/?api=1&query=1.464,103.768" target="_blank" style="color: #c6a87c; text-decoration: underline; font-weight: bold;">📍 View on Google Maps</a></p>
+                <p style="margin-top: 8px;"><a href="https://www.google.com/maps/search/?api=1&query=RTS+Bukit+Chagar+Terminal+Area%2C+Johor+Bahru" target="_blank" style="color: #c6a87c; text-decoration: underline; font-weight: bold;">📍 View on Google Maps</a></p>
             </div>
         `);"""
         content = re.sub(johor_circle_pattern, new_johor_circle, content, flags=re.DOTALL)
@@ -441,11 +446,17 @@ def process_file(path):
                 td_attrs = td_match.group(1)
                 td_content = td_match.group(2)
                 
-                if "href=" not in td_content and "<a" not in td_content:
-                    lat, lng = cands[idx]["lat"], cands[idx]["lng"]
-                    link = f'<a href="https://www.google.com/maps/search/?api=1&query={lat},{lng}" target="_blank">{td_content}</a>'
-                    new_td = f'<td{td_attrs}>{link}</td>'
-                    r = r.replace(td_match.group(0), new_td, 1)
+                # Extract clean text from candidate name
+                raw_name = re.sub(r'<[^>]+>', '', td_content).strip()
+                raw_name = raw_name.replace("&amp;", "&")
+                
+                query_str = f"{raw_name}, {city}"
+                encoded_q = urllib.parse.quote_plus(query_str)
+                link_url = f"https://www.google.com/maps/search/?api=1&query={encoded_q}"
+                
+                new_link_html = f'<a href="{link_url}" target="_blank">{raw_name}</a>'
+                new_td = f'<td{td_attrs}>{new_link_html}</td>'
+                r = r.replace(td_match.group(0), new_td, 1)
             new_rows.append(r)
         
         new_tbody = "<tbody>\n" + "\n".join(new_rows) + "\n</tbody>"
@@ -477,24 +488,16 @@ def process_file(path):
                     td_attrs = td_match.group(1)
                     td_content = td_match.group(2)
                     
-                    if "href=" not in td_content and "<a" not in td_content:
-                        raw_name = re.sub(r'<[^>]+>', '', td_content).strip()
-                        raw_name = raw_name.replace("&amp;", "&")
-                        
-                        match = find_matching_competitor(raw_name, comps)
-                        if match:
-                            lat, lng = match["lat"], match["lng"]
-                            link = f'https://www.google.com/maps/search/?api=1&query={lat},{lng}'
-                        else:
-                            # Clean query string
-                            clean_q = re.sub(r'\(.*?\)', '', raw_name).strip()
-                            query_str = f"{clean_q}, {city}"
-                            encoded_q = urllib.parse.quote_plus(query_str)
-                            link = f'https://www.google.com/maps/search/?api=1&query={encoded_q}'
-                            
-                        new_link_html = f'<a href="{link}" target="_blank">{td_content}</a>'
-                        new_td = f'<td{td_attrs}>{new_link_html}</td>'
-                        r = r.replace(target_td, new_td, 1)
+                    raw_name = re.sub(r'<[^>]+>', '', td_content).strip()
+                    raw_name = raw_name.replace("&amp;", "&")
+                    
+                    query_str = f"{raw_name}, {city}"
+                    encoded_q = urllib.parse.quote_plus(query_str)
+                    link = f'https://www.google.com/maps/search/?api=1&query={encoded_q}'
+                    
+                    new_link_html = f'<a href="{link}" target="_blank">{raw_name}</a>'
+                    new_td = f'<td{td_attrs}>{new_link_html}</td>'
+                    r = r.replace(target_td, new_td, 1)
             new_rows.append(r)
             
         new_tbody = "<tbody>\n" + "\n".join(new_rows) + "\n</tbody>"

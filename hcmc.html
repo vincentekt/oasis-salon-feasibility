@@ -303,21 +303,21 @@
                         </thead>
                         <tbody>
 <tr class="highlight-row">
-                                  <td><a href="https://www.google.com/maps/search/?api=1&query=10.8045,106.7375" target="_blank">Concept Coiffure (Xuan Thuy St)</a></td>
+                                  <td><a href="https://www.google.com/maps/search/?api=1&query=Concept+Coiffure+%28Xuan+Thuy+St%29%2C+Ho+Chi+Minh" target="_blank">Concept Coiffure (Xuan Thuy St)</a></td>
                                   <td>USD 2,500 - 3,500</td>
                                   <td>Heart of Japanese/Korean/Western expat cluster. Concept Coiffure &amp; J-First within 500m confirm premium demand. Ground-floor shophouse on main expat street.</td>
                                   <td>High rent premium for Thao Dien address; weekday parking can be congested</td>
                                   <td>4.9 / 5 (Recommended)</td>
                               </tr>
 <tr>
-                                  <td><a href="https://www.google.com/maps/search/?api=1&query=10.804,106.745" target="_blank">Starbucks Masteri T5 (Quoc Huong St)</a></td>
+                                  <td><a href="https://www.google.com/maps/search/?api=1&query=Starbucks+Masteri+T5+%28Quoc+Huong+St%29%2C+Ho+Chi+Minh" target="_blank">Starbucks Masteri T5 (Quoc Huong St)</a></td>
                                   <td>USD 2,000 - 2,800</td>
                                   <td>Parallel street, quieter lane, lower rent. Same expat density. Better parking for school-run appointment timing.</td>
                                   <td>Slightly less main-road visibility; needs signage investment</td>
                                   <td>4.5 / 5</td>
                               </tr>
 <tr>
-                                  <td><a href="https://www.google.com/maps/search/?api=1&query=10.7745,106.7032" target="_blank">Sheraton Saigon Hotel (Le Thanh Ton St)</a></td>
+                                  <td><a href="https://www.google.com/maps/search/?api=1&query=Sheraton+Saigon+Hotel+%28Le+Thanh+Ton+St%29%2C+Ho+Chi+Minh" target="_blank">Sheraton Saigon Hotel (Le Thanh Ton St)</a></td>
                                   <td>USD 3,500 - 5,000</td>
                                   <td>Central D1 expat corridor. Vampire Hair (competitor) validates premium demand. Captures business-traveler and hotel-guest walk-in market.</td>
                                   <td>High D1 rent; lower residential density than Thao Dien; more tourist-mix than expat-resident</td>
@@ -348,7 +348,7 @@
                         <tbody>
 <tr>
                                 <td>Japanese Luxury Salons</td>
-                                <td><a href="https://www.google.com/maps/search/?api=1&query=10.774567,106.706176" target="_blank">J-First Tokyo (D1/D3)</a></td>
+                                <td><a href="https://www.google.com/maps/search/?api=1&query=J-First+Tokyo+%28D1%2FD3%29%2C+Ho+Chi+Minh" target="_blank">J-First Tokyo (D1/D3)</a></td>
                                 <td>$40 - $200</td>
                                 <td>Premium reputation, Japanese stylists, strong expat base</td>
                                 <td>Busy D1 street noise, long booking backlog, premium pricing</td>
@@ -356,7 +356,7 @@
                             </tr>
 <tr>
                                 <td>French Premium Salons</td>
-                                <td><a href="https://www.google.com/maps/search/?api=1&query=10.775317,106.704251" target="_blank">Concept Coiffure (Thao Dien)</a></td>
+                                <td><a href="https://www.google.com/maps/search/?api=1&query=Concept+Coiffure+%28Thao+Dien%29%2C+Ho+Chi+Minh" target="_blank">Concept Coiffure (Thao Dien)</a></td>
                                 <td>$35 - $180</td>
                                 <td>Established expat clientele, western-style styling</td>
                                 <td>High price point, lacks water filtration to prevent chlorine/mineral fade</td>
@@ -364,7 +364,7 @@
                             </tr>
 <tr>
                                 <td>Trendy Premium Salons</td>
-                                <td><a href="https://www.google.com/maps/search/?api=1&query=10.77653,106.69896" target="_blank">Vamp Hair Line (D1)</a></td>
+                                <td><a href="https://www.google.com/maps/search/?api=1&query=Vamp+Hair+Line+%28D1%29%2C+Ho+Chi+Minh" target="_blank">Vamp Hair Line (D1)</a></td>
                                 <td>$25 - $150</td>
                                 <td>Japanese Peek-A-Boo style training, excellent balayage and highlights</td>
                                 <td>Loud, high-turnover environment, lack of personalized styling stations comfort</td>
@@ -850,15 +850,15 @@
 
         // Japanese Expat Residential Areas
         const residential = [
-            { name: "Masteri Thao Dien Area", lat: 10.804, lng: 106.745, radius: 450, estPop: 3500, employers: "Unilever, Procter & Gamble, Shopee, BIS, ISHCMC", nationality: "Japanese, Korean & Western Expats" },
-            { name: "Japan Town (Le Thanh Ton / Thai Van Lung)", lat: 10.778, lng: 106.705, radius: 350, estPop: 2500, employers: "Mitsui, Mitsubishi, Sumitomo, JAL, JETRO", nationality: "Japanese Expats" },
-            { name: "Vinhomes Golden River", lat: 10.785, lng: 106.708, radius: 400, estPop: 2000, employers: "McKinsey, Vingroup Corporate, Multinational Banks", nationality: "Korean, Japanese & Western Expats" }
+            { name: "Masteri Thao Dien Area", lat: 10.804, lng: 106.745, radius: 450, estPop: 3500, nationality: "Japanese, Korean & Western Expats" },
+            { name: "Japan Town (Le Thanh Ton / Thai Van Lung)", lat: 10.778, lng: 106.705, radius: 350, estPop: 2500, nationality: "Japanese Expats" },
+            { name: "Vinhomes Golden River", lat: 10.785, lng: 106.708, radius: 400, estPop: 2000, nationality: "Korean, Japanese & Western Expats" }
         ];
 
         residential.forEach(res => {
-            const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${res.lat},${res.lng}`;
+            const cityName = document.body.getAttribute('data-city') || '';
+            const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(res.name + ", " + cityName)}`;
             let natText = res.nationality ? `<p><strong>Nationalities:</strong> ${res.nationality}</p>` : "";
-            let empText = res.employers ? `<p><strong>Key Employers:</strong> ${res.employers}</p>` : "";
             L.circle([res.lat, res.lng], {
                 color: '#c6a87c',
                 fillColor: '#c6a87c',
@@ -870,7 +870,6 @@
                     <h3 style="color: #c6a87c;">${res.name}</h3>
                     <p><strong>Expat Residential Hub</strong></p>
                     ${natText}
-                    ${empText}
                     <p><strong>Est. Population:</strong> ~${res.estPop.toLocaleString()} residents</p>
                     <p style="margin-top: 8px;"><a href="${mapsUrl}" target="_blank" style="color: #c6a87c; text-decoration: underline; font-weight: bold;">📍 View on Google Maps</a></p>
                 </div>
@@ -885,7 +884,8 @@
         ];
 
         malls.forEach(loc => {
-            const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${loc.lat},${loc.lng}`;
+            const cityName = document.body.getAttribute('data-city') || '';
+            const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(loc.name + ", " + cityName)}`;
             L.circleMarker([loc.lat, loc.lng], {
                 radius: getRadius(loc.footfall),
                 fillColor: "#fff",
@@ -910,7 +910,8 @@
         ];
 
         competitors.forEach(loc => {
-            const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${loc.lat},${loc.lng}`;
+            const cityName = document.body.getAttribute('data-city') || '';
+            const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(loc.name + ", " + cityName)}`;
             L.circleMarker([loc.lat, loc.lng], {
                 radius: getRadius(loc.footfall),
                 fillColor: "#ef4444",
@@ -967,7 +968,9 @@
             const underservedDemand = Math.max(0, targetDemand - loc.competitorCapacity);
             const underservedPct = Math.round((underservedDemand / targetDemand) * 100);
             const ratio = (underservedDemand / loc.rent).toFixed(2);
-            const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${loc.lat},${loc.lng}`;
+            const cityName = document.body.getAttribute('data-city') || '';
+            const cleanName = loc.name.replace(/^Candidate\s+[A-Z]:\s*/i, '');
+            const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(cleanName + ", " + cityName)}`;
 
             L.marker([loc.lat, loc.lng], { icon: starIcon }).addTo(map).bindPopup(`
                 <div class="popup-content" style="min-width: 240px; color: #333;">

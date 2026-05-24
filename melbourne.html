@@ -300,21 +300,21 @@
                         </thead>
                         <tbody>
 <tr class="highlight-row">
-                                  <td><a href="https://www.google.com/maps/search/?api=1&query=-37.8395,144.995" target="_blank">Starbucks Jam Factory (Chapel St)</a></td>
+                                  <td><a href="https://www.google.com/maps/search/?api=1&query=Starbucks+Jam+Factory+%28Chapel+St%29%2C+Melbourne" target="_blank">Starbucks Jam Factory (Chapel St)</a></td>
                                   <td>AUD 4,500 - 7,000</td>
                                   <td>Melbourne's premier lifestyle corridor. Highest per-capita luxury spend in Melbourne. Japanese expat community in surrounding Prahran/Toorak. Ground-floor boutique between Toorak Rd and Commercial Rd — maximum premium visibility.</td>
                                   <td>High Chapel St rent; competition from established premium salons (Rokk Ebony, Kerluxe) on same strip; DA/lease negotiations can be complex</td>
                                   <td>4.8 / 5 (Recommended)</td>
                               </tr>
 <tr>
-                                  <td><a href="https://www.google.com/maps/search/?api=1&query=-37.802,144.979" target="_blank">Industry Beans (Brunswick St, Fitzroy)</a></td>
+                                  <td><a href="https://www.google.com/maps/search/?api=1&query=Industry+Beans+%28Brunswick+St%2C+Fitzroy%29%2C+Melbourne" target="_blank">Industry Beans (Brunswick St, Fitzroy)</a></td>
                                   <td>AUD 3,200 - 5,500</td>
                                   <td>Creative professional zone. Fashion-forward demographic with high WTP for specialist creative colour. Growing Korean community in Carlton. Lower rent than Chapel St. Creative colour portfolio strongest competitive angle here.</td>
                                   <td>Less affluent than South Yarra; WTP ceiling lower for balayage vs vivid creative services; higher turnover retail environment</td>
                                   <td>4.3 / 5</td>
                               </tr>
 <tr>
-                                  <td><a href="https://www.google.com/maps/search/?api=1&query=-37.8138,144.9715" target="_blank">Laurent Bakery Collins Place (CBD)</a></td>
+                                  <td><a href="https://www.google.com/maps/search/?api=1&query=Laurent+Bakery+Collins+Place+%28CBD%29%2C+Melbourne" target="_blank">Laurent Bakery Collins Place (CBD)</a></td>
                                   <td>AUD 6,000 - 10,000</td>
                                   <td>Melbourne's corporate financial spine. After-work appointments from CBD professionals. Largest total catchment. Lunchtime/after-work appointment density best for corporate membership program.</td>
                                   <td>Highest rent; after-work only model limits daily capacity utilisation; CBD weekend foot traffic low</td>
@@ -345,7 +345,7 @@
                         <tbody>
 <tr>
                                 <td>High-End Celebrity Salons</td>
-                                <td><a href="https://www.google.com/maps/search/?api=1&query=-37.8386,144.9912" target="_blank">Joey Scandizzo Salon, Frankie Salon</a></td>
+                                <td><a href="https://www.google.com/maps/search/?api=1&query=Joey+Scandizzo+Salon%2C+Frankie+Salon%2C+Melbourne" target="_blank">Joey Scandizzo Salon, Frankie Salon</a></td>
                                 <td>$165 - $330</td>
                                 <td>Strong celebrity branding, highly active social presence, prime Toorak Rd locations</td>
                                 <td>Busy, loud open-floor setups, limited privacy for high-profile clients</td>
@@ -353,7 +353,7 @@
                             </tr>
 <tr>
                                 <td>Historic Luxury Salons</td>
-                                <td><a href="https://www.google.com/maps/search/?api=1&query=-37.8142,144.9698" target="_blank">Rakis on Collins</a></td>
+                                <td><a href="https://www.google.com/maps/search/?api=1&query=Rakis+on+Collins%2C+Melbourne" target="_blank">Rakis on Collins</a></td>
                                 <td>$180 - $360</td>
                                 <td>Decades of prestige reputation, premium corporate clients, excellent color masters</td>
                                 <td>Formal, corporate vibe, high CBD premium street rent, less lifestyle appeal for younger segments</td>
@@ -820,15 +820,15 @@
 
         // High Income Residential Zones
         const residential = [
-            { name: "South Yarra High Income", lat: -37.838, lng: 144.992, radius: 400, estPop: 3000, employers: "ANZ Bank, NAB, Telstra, CSL, Creative Agencies", nationality: "British, European & Asian Expats" },
-            { name: "Fitzroy Creative Sector", lat: -37.801, lng: 144.979, radius: 350, estPop: 2500, employers: "Tech Startups, RMIT, architectural firms", nationality: "British, European & Western Expats" },
-            { name: "East Melbourne Premium", lat: -37.814, lng: 144.985, radius: 400, estPop: 1800, employers: "State Government, Medical Specialists, Legal Firms", nationality: "British, European & Western Expats" }
+            { name: "South Yarra High Income", lat: -37.838, lng: 144.992, radius: 400, estPop: 3000, nationality: "British, European & Asian Expats" },
+            { name: "Fitzroy Creative Sector", lat: -37.801, lng: 144.979, radius: 350, estPop: 2500, nationality: "British, European & Western Expats" },
+            { name: "East Melbourne Premium", lat: -37.814, lng: 144.985, radius: 400, estPop: 1800, nationality: "British, European & Western Expats" }
         ];
 
         residential.forEach(res => {
-            const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${res.lat},${res.lng}`;
+            const cityName = document.body.getAttribute('data-city') || '';
+            const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(res.name + ", " + cityName)}`;
             let natText = res.nationality ? `<p><strong>Nationalities:</strong> ${res.nationality}</p>` : "";
-            let empText = res.employers ? `<p><strong>Key Employers:</strong> ${res.employers}</p>` : "";
             L.circle([res.lat, res.lng], {
                 color: '#a133ff',
                 fillColor: '#a133ff',
@@ -840,7 +840,6 @@
                     <h3 style="color: #a133ff;">${res.name}</h3>
                     <p><strong>Expat Residential Hub</strong></p>
                     ${natText}
-                    ${empText}
                     <p><strong>Est. Population:</strong> ~${res.estPop.toLocaleString()} residents</p>
                     <p style="margin-top: 8px;"><a href="${mapsUrl}" target="_blank" style="color: #a133ff; text-decoration: underline; font-weight: bold;">📍 View on Google Maps</a></p>
                 </div>
@@ -856,7 +855,8 @@
         ];
 
         malls.forEach(loc => {
-            const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${loc.lat},${loc.lng}`;
+            const cityName = document.body.getAttribute('data-city') || '';
+            const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(loc.name + ", " + cityName)}`;
             L.circleMarker([loc.lat, loc.lng], {
                 radius: getRadius(loc.footfall),
                 fillColor: "#333",
@@ -880,7 +880,8 @@
         ];
 
         competitors.forEach(loc => {
-            const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${loc.lat},${loc.lng}`;
+            const cityName = document.body.getAttribute('data-city') || '';
+            const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(loc.name + ", " + cityName)}`;
             L.circleMarker([loc.lat, loc.lng], {
                 radius: getRadius(loc.footfall),
                 fillColor: "#ef4444",
@@ -937,7 +938,9 @@
             const underservedDemand = Math.max(0, targetDemand - loc.competitorCapacity);
             const underservedPct = Math.round((underservedDemand / targetDemand) * 100);
             const ratio = (underservedDemand / loc.rent).toFixed(2);
-            const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${loc.lat},${loc.lng}`;
+            const cityName = document.body.getAttribute('data-city') || '';
+            const cleanName = loc.name.replace(/^Candidate\s+[A-Z]:\s*/i, '');
+            const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(cleanName + ", " + cityName)}`;
 
             L.marker([loc.lat, loc.lng], { icon: starIcon }).addTo(map).bindPopup(`
                 <div class="popup-content" style="min-width: 240px; color: #333;">

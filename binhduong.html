@@ -292,21 +292,21 @@
                         </thead>
 <tbody>
 <tr class="highlight-row">
-                                  <td><a href="https://www.google.com/maps/search/?api=1&query=10.9305,106.7115" target="_blank">Highlands Coffee Canary Plaza</a></td>
+                                  <td><a href="https://www.google.com/maps/search/?api=1&query=Highlands+Coffee+Canary+Plaza%2C+Binh+Duong" target="_blank">Highlands Coffee Canary Plaza</a></td>
                                   <td>USD 500 - 750</td>
                                   <td>Adjacent to VSIP I (50,000+ Korean/Japanese workers). Ground-floor unit within walking distance of factory bus stop. Zero premium competition within 10km. Anchor tenant positioning in a blank-slate market.</td>
                                   <td>Industrial area feel — boutique interior design critical to create contrasting premium atmosphere; logistics from HCMC needed for premium products</td>
                                   <td>4.9 / 5 (Recommended)</td>
                               </tr>
 <tr>
-                                  <td><a href="https://www.google.com/maps/search/?api=1&query=10.9332,106.6978" target="_blank">Starbucks Aeon Mall Binh Duong</a></td>
+                                  <td><a href="https://www.google.com/maps/search/?api=1&query=Starbucks+Aeon+Mall+Binh+Duong%2C+Binh+Duong" target="_blank">Starbucks Aeon Mall Binh Duong</a></td>
                                   <td>USD 750 - 1,100</td>
                                   <td>Guaranteed foot traffic from Korean family shopping trips. Multiple Korean restaurants confirm demand in zone. Higher mall rent but lower fit-out risk — established premium retail environment.</td>
                                   <td>Mall rent premium; mall hours constrain operating schedule; competitor risk from national chain anchors</td>
                                   <td>4.2 / 5</td>
                               </tr>
 <tr>
-                                  <td><a href="https://www.google.com/maps/search/?api=1&query=10.9778,106.6568" target="_blank">Highlands Coffee Becamex Tower</a></td>
+                                  <td><a href="https://www.google.com/maps/search/?api=1&query=Highlands+Coffee+Becamex+Tower%2C+Binh+Duong" target="_blank">Highlands Coffee Becamex Tower</a></td>
                                   <td>USD 400 - 650</td>
                                   <td>Provincial capital hub. Larger Vietnamese management-class catchment. Good for Phase 2 after industrial expat base is established.</td>
                                   <td>Lower Korean expat density; further from VSIP/AMATA zones; primarily serves Vietnamese professional rather than expat market</td>
@@ -336,7 +336,7 @@
                         </thead>
                         <tbody>
 <tr>
-                                <td><a href="https://www.google.com/maps/search/?api=1&query=Local+Vietnamese+Salons%2C+Binh+Duong" target="_blank"><strong>Local Vietnamese Salons</strong> (e.g., Toc Trinh, Toc Lam)</a></td>
+                                <td><a href="https://www.google.com/maps/search/?api=1&query=Local+Vietnamese+Salons+%28e.g.%2C+Toc+Trinh%2C+Toc+Lam%29%2C+Binh+Duong" target="_blank">Local Vietnamese Salons (e.g., Toc Trinh, Toc Lam)</a></td>
                                 <td>Thu Dau Mot City centre, DT750 corridor</td>
                                 <td>Color $8–20; Cut $3–8</td>
                                 <td>Extremely price competitive, high local client volume, abundant locations near factory zones</td>
@@ -344,7 +344,7 @@
                                 <td>Korean/Japanese product stack (Milbon, Schwarzkopf, K18); bilingual (English/Korean/Vietnamese); safe bleach-based creative color</td>
                             </tr>
 <tr>
-                                <td><a href="https://www.google.com/maps/search/?api=1&query=Korean+Salon+Chains%2C+Binh+Duong" target="_blank"><strong>Korean Salon Chains</strong> (Aube Vietnam, Hallyuhair)</a></td>
+                                <td><a href="https://www.google.com/maps/search/?api=1&query=Korean+Salon+Chains+%28Aube+Vietnam%2C+Hallyuhair%29%2C+Binh+Duong" target="_blank">Korean Salon Chains (Aube Vietnam, Hallyuhair)</a></td>
                                 <td>HCMC (expats commute 40–60 min)</td>
                                 <td>Color $30–80; Cut $15–25</td>
                                 <td>Professional Korean product stack, consistent color quality, trusted by Korean expat community</td>
@@ -352,7 +352,7 @@
                                 <td>On-site in Binh Duong (VSIP, My Phuoc zones) — same product quality, zero commute time for Korean factory managers</td>
                             </tr>
 <tr>
-                                <td><a href="https://www.google.com/maps/search/?api=1&query=Concept+Coiffure%2C+Binh+Duong" target="_blank"><strong>Concept Coiffure</strong> (HCMC Flagship)</a></td>
+                                <td><a href="https://www.google.com/maps/search/?api=1&query=Concept+Coiffure+%28HCMC+Flagship%29%2C+Binh+Duong" target="_blank">Concept Coiffure (HCMC Flagship)</a></td>
                                 <td>HCMC District 1</td>
                                 <td>Balayage $80–200; Cut $30–60</td>
                                 <td>Premium French-managed salon, top HCMC expat choice, bilingual French/English/Vietnamese</td>
@@ -819,14 +819,14 @@
 
         // Premium Expat Residential Zones
         const residential = [
-            { name: "Thuan An Expat Residential Core", lat: 10.932, lng: 106.698, radius: 450, estPop: 2500, employers: "Samsung, Unilever, P&G, Shiseido", nationality: "Korean & Japanese Expats" },
-            { name: "Thu Dau Mot Corporate Residential Area", lat: 10.98, lng: 106.655, radius: 400, estPop: 1800, employers: "Tokyu Group, Yazaki, LEGO Group", nationality: "Korean & Japanese Expats" }
+            { name: "Thuan An Expat Residential Core", lat: 10.932, lng: 106.698, radius: 450, estPop: 2500, nationality: "Korean & Japanese Expats" },
+            { name: "Thu Dau Mot Corporate Residential Area", lat: 10.98, lng: 106.655, radius: 400, estPop: 1800, nationality: "Korean & Japanese Expats" }
         ];
 
         residential.forEach(res => {
-            const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${res.lat},${res.lng}`;
+            const cityName = document.body.getAttribute('data-city') || '';
+            const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(res.name + ", " + cityName)}`;
             let natText = res.nationality ? `<p><strong>Nationalities:</strong> ${res.nationality}</p>` : "";
-            let empText = res.employers ? `<p><strong>Key Employers:</strong> ${res.employers}</p>` : "";
             L.circle([res.lat, res.lng], {
                 color: '#a133ff',
                 fillColor: '#a133ff',
@@ -838,7 +838,6 @@
                     <h3 style="color: #a133ff;">${res.name}</h3>
                     <p><strong>Expat Residential Hub</strong></p>
                     ${natText}
-                    ${empText}
                     <p><strong>Est. Population:</strong> ~${res.estPop.toLocaleString()} residents</p>
                     <p style="margin-top: 8px;"><a href="${mapsUrl}" target="_blank" style="color: #a133ff; text-decoration: underline; font-weight: bold;">📍 View on Google Maps</a></p>
                 </div>
@@ -852,7 +851,8 @@
         ];
 
         malls.forEach(loc => {
-            const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${loc.lat},${loc.lng}`;
+            const cityName = document.body.getAttribute('data-city') || '';
+            const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(loc.name + ", " + cityName)}`;
             L.circleMarker([loc.lat, loc.lng], {
                 radius: getRadius(loc.footfall),
                 fillColor: "#333",
@@ -877,7 +877,8 @@
         ];
 
         competitors.forEach(loc => {
-            const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${loc.lat},${loc.lng}`;
+            const cityName = document.body.getAttribute('data-city') || '';
+            const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(loc.name + ", " + cityName)}`;
             L.circleMarker([loc.lat, loc.lng], {
                 radius: getRadius(loc.footfall),
                 fillColor: "#ef4444",
@@ -934,7 +935,9 @@
             const underservedDemand = Math.max(0, targetDemand - loc.competitorCapacity);
             const underservedPct = Math.round((underservedDemand / targetDemand) * 100);
             const ratio = (underservedDemand / loc.rent).toFixed(2);
-            const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${loc.lat},${loc.lng}`;
+            const cityName = document.body.getAttribute('data-city') || '';
+            const cleanName = loc.name.replace(/^Candidate\s+[A-Z]:\s*/i, '');
+            const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(cleanName + ", " + cityName)}`;
 
             L.marker([loc.lat, loc.lng], { icon: starIcon }).addTo(map).bindPopup(`
                 <div class="popup-content" style="min-width: 240px; color: #333;">

@@ -619,8 +619,8 @@ CANDIDATES = {
             { 
                 name: "Candidate B: Starbucks The Centrium (Wyndham St)", 
                 lat: 22.281, lng: 114.1555, 
-                note: "Located at Starbucks The Centrium. HK's financial and expat social hub. Kimrobinson flagship nearby — validates ultra-premium demand. Ground-floor on Wyndham or Peel St. After-work and lunch appointments from IFC/Chater House financial professionals. Highest average ticket potential.", 
-                rent: 11000, catchment: 42000, premiumTargetPct: 45, competitorCapacity: 20000,
+                note: "Located at Starbucks The Centrium. HK's financial and expat social hub. SHHH salon nearby validates ultra-premium demand. Ground-floor on Wyndham or Peel St. After-work and lunch appointments from IFC/Wyndham St financial professionals. Highest average ticket potential.", 
+                rent: 11000, catchment: 42000, premiumTargetPct: 45, competitorCapacity: 15000,
                 airportTime: "40 mins from HKG"
             }
         ]""",

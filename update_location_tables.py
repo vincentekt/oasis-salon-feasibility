@@ -596,8 +596,8 @@ LOCATION_TABLES = {
                               <tr>
                                   <td>Starbucks The Centrium (Wyndham St)</td>
                                   <td>HKD 80,000 - 130,000</td>
-                                  <td>HK's financial and expat social hub. Kimrobinson flagship validates ultra-premium demand. Ground-floor on Wyndham or Peel St. After-work and lunch appointments from IFC/Chater House financial professionals. Highest average ticket potential in HK portfolio.</td>
-                                  <td>Ultra-high rent; Central after-hours quiet means evening appointments only; Kimrobinson is an entrenched luxury competitor requiring strong differentiation on product quality</td>
+                                  <td>HK's financial and expat social hub. SHHH salon validates ultra-premium demand. Ground-floor on Wyndham or Peel St. After-work and lunch appointments from IFC/Wyndham St financial professionals. Highest average ticket potential in HK portfolio.</td>
+                                  <td>Ultra-high rent; Central after-hours quiet means evening appointments only; SHHH is an entrenched luxury competitor requiring strong differentiation on product quality</td>
                                   <td>4.5 / 5</td>
                               </tr>
              </tbody>""",

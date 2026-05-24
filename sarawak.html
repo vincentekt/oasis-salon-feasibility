@@ -300,21 +300,21 @@
                         </thead>
                         <tbody>
 <tr class="highlight-row">
-                                  <td><a href="https://www.google.com/maps/search/?api=1&query=1.5285,110.355" target="_blank">Starbucks Vivacity Megamall (Tabuan Jaya)</a></td>
+                                  <td><a href="https://www.google.com/maps/search/?api=1&query=Starbucks+Vivacity+Megamall+%28Tabuan+Jaya%29%2C+Sarawak" target="_blank">Starbucks Vivacity Megamall (Tabuan Jaya)</a></td>
                                   <td>MYR 2,000 - 3,500</td>
                                   <td>Shell Sarawak / Petronas Carigali expat residential hub. Ground-floor shophouse 5-min drive from expatriate housing estates (Green Road, Stutong). Zero premium competition in zone. Captured Shell rotation-cycle clientele.</td>
                                   <td>Requires active corporate partnership with Shell/Petronas HR for staff awareness; less organic tourist walk-in</td>
                                   <td>4.9 / 5 (Recommended)</td>
                               </tr>
 <tr>
-                                  <td><a href="https://www.google.com/maps/search/?api=1&query=1.5275,110.364" target="_blank">Tealive Hikmah Exchange</a></td>
+                                  <td><a href="https://www.google.com/maps/search/?api=1&query=Tealive+Hikmah+Exchange%2C+Sarawak" target="_blank">Tealive Hikmah Exchange</a></td>
                                   <td>MYR 2,500 - 4,000</td>
                                   <td>Kuching's emerging premium lifestyle hub. Gene's Work Hair Studio present — validates premium market. Central location accessible to entire Kuching metro. Growing F&amp;B and retail ecosystem.</td>
                                   <td>Gene's Work is an entrenched competitor in this zone; higher rent than Tabuan Jaya</td>
                                   <td>4.3 / 5</td>
                               </tr>
 <tr>
-                                  <td><a href="https://www.google.com/maps/search/?api=1&query=1.5585,110.3465" target="_blank">Starbucks Northbank Drive-Thru</a></td>
+                                  <td><a href="https://www.google.com/maps/search/?api=1&query=Starbucks+Northbank+Drive-Thru%2C+Sarawak" target="_blank">Starbucks Northbank Drive-Thru</a></td>
                                   <td>MYR 1,800 - 3,000</td>
                                   <td>Kuching's revitalised waterfront. Mane Society confirms premium hair interest in zone. Heritage boutique aesthetic advantage. Tourist and professional cross-traffic.</td>
                                   <td>Mane Society direct competition; tourist-heavy waterfront lowers repeat-client residential density</td>
@@ -344,7 +344,7 @@
                         </thead>
                         <tbody>
 <tr>
-                                <td><a href="https://www.google.com/maps/search/?api=1&query=1.553,110.354" target="_blank"><strong>Cutting Edge The Premium Salon</strong></a></td>
+                                <td><a href="https://www.google.com/maps/search/?api=1&query=Cutting+Edge+The+Premium+Salon%2C+Sarawak" target="_blank">Cutting Edge The Premium Salon</a></td>
                                 <td>Kuching</td>
                                 <td>Balayage MYR 400–650 (~$86–$140)</td>
                                 <td>Premium brand positioning, professional atmosphere, reputable for quality color</td>
@@ -352,7 +352,7 @@
                                 <td>Private styling bays; dedicated vivid color specialist; structured membership with priority booking</td>
                             </tr>
 <tr>
-                                <td><a href="https://www.google.com/maps/search/?api=1&query=Gene%27s+Work+Hair+Studio%2C+Sarawak" target="_blank"><strong>Gene's Work Hair Studio</strong></a></td>
+                                <td><a href="https://www.google.com/maps/search/?api=1&query=Gene%27s+Work+Hair+Studio%2C+Sarawak" target="_blank">Gene's Work Hair Studio</a></td>
                                 <td>Multiple (Saradise, Trinity Hub, Gala City)</td>
                                 <td>Color MYR 250–500 (~$54–$108); Tokio Inkarami treatments</td>
                                 <td>Premium Japanese treatments (Tokio Inkarami), multi-outlet reach, professional product range, loyal Kuching following</td>
@@ -360,7 +360,7 @@
                                 <td>Single boutique with consistent senior stylist delivery; creative color alongside premium treatments in one visit</td>
                             </tr>
 <tr>
-                                <td><a href="https://www.google.com/maps/search/?api=1&query=Mane+Society%2C+Sarawak" target="_blank"><strong>Mane Society</strong></a></td>
+                                <td><a href="https://www.google.com/maps/search/?api=1&query=Mane+Society%2C+Sarawak" target="_blank">Mane Society</a></td>
                                 <td>The Northbank, Kuching</td>
                                 <td>Color MYR 200–450 (~$43–$97)</td>
                                 <td>Modern aesthetic, quality-focused environment, Northbank upscale location, contemporary positioning</td>
@@ -821,14 +821,14 @@
 
         // Premium Expat Residential Zones in Sarawak
         const residential = [
-            { name: "Waterfront Heritage Enclave", lat: 1.559, lng: 110.346, radius: 450, estPop: 1500, employers: "Sarawak Energy, Shipping Agents, Heritage NGOs", nationality: "British & European Expats" },
-            { name: "Jalan Song Expat Hub Area", lat: 1.528, lng: 110.366, radius: 400, estPop: 1200, employers: "Shell Sarawak, Petronas, Swinburne Faculty", nationality: "British & European Expats (Shell/Petronas)" }
+            { name: "Waterfront Heritage Enclave", lat: 1.559, lng: 110.346, radius: 450, estPop: 1500, nationality: "British & European Expats" },
+            { name: "Jalan Song Expat Hub Area", lat: 1.528, lng: 110.366, radius: 400, estPop: 1200, nationality: "British & European Expats (Shell/Petronas)" }
         ];
 
         residential.forEach(res => {
-            const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${res.lat},${res.lng}`;
+            const cityName = document.body.getAttribute('data-city') || '';
+            const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(res.name + ", " + cityName)}`;
             let natText = res.nationality ? `<p><strong>Nationalities:</strong> ${res.nationality}</p>` : "";
-            let empText = res.employers ? `<p><strong>Key Employers:</strong> ${res.employers}</p>` : "";
             L.circle([res.lat, res.lng], {
                 color: '#a133ff',
                 fillColor: '#a133ff',
@@ -840,7 +840,6 @@
                     <h3 style="color: #a133ff;">${res.name}</h3>
                     <p><strong>Expat Residential Hub</strong></p>
                     ${natText}
-                    ${empText}
                     <p><strong>Est. Population:</strong> ~${res.estPop.toLocaleString()} residents</p>
                     <p style="margin-top: 8px;"><a href="${mapsUrl}" target="_blank" style="color: #a133ff; text-decoration: underline; font-weight: bold;">📍 View on Google Maps</a></p>
                 </div>
@@ -854,7 +853,8 @@
         ];
 
         malls.forEach(loc => {
-            const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${loc.lat},${loc.lng}`;
+            const cityName = document.body.getAttribute('data-city') || '';
+            const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(loc.name + ", " + cityName)}`;
             L.circleMarker([loc.lat, loc.lng], {
                 radius: getRadius(loc.footfall),
                 fillColor: "#333",
@@ -879,7 +879,8 @@
         ];
 
         competitors.forEach(loc => {
-            const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${loc.lat},${loc.lng}`;
+            const cityName = document.body.getAttribute('data-city') || '';
+            const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(loc.name + ", " + cityName)}`;
             L.circleMarker([loc.lat, loc.lng], {
                 radius: getRadius(loc.footfall),
                 fillColor: "#ef4444",
@@ -936,7 +937,9 @@
             const underservedDemand = Math.max(0, targetDemand - loc.competitorCapacity);
             const underservedPct = Math.round((underservedDemand / targetDemand) * 100);
             const ratio = (underservedDemand / loc.rent).toFixed(2);
-            const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${loc.lat},${loc.lng}`;
+            const cityName = document.body.getAttribute('data-city') || '';
+            const cleanName = loc.name.replace(/^Candidate\s+[A-Z]:\s*/i, '');
+            const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(cleanName + ", " + cityName)}`;
 
             L.marker([loc.lat, loc.lng], { icon: starIcon }).addTo(map).bindPopup(`
                 <div class="popup-content" style="min-width: 240px; color: #333;">

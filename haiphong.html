@@ -292,21 +292,21 @@
                         </thead>
 <tbody>
 <tr class="highlight-row">
-                                  <td><a href="https://www.google.com/maps/search/?api=1&query=20.841,106.683" target="_blank">Highlands Coffee Museum Area (Minh Khai St)</a></td>
+                                  <td><a href="https://www.google.com/maps/search/?api=1&query=Highlands+Coffee+Museum+Area+%28Minh+Khai+St%29%2C+Hai+Phong" target="_blank">Highlands Coffee Museum Area (Minh Khai St)</a></td>
                                   <td>USD 500 - 800</td>
                                   <td>5-min drive from Deep C Industrial Zone gate (20,000+ Korean workers). Ground-floor shophouse with direct road access. Zero premium competition in entire corridor. Factory bus routes pass this street.</td>
                                   <td>Requires active marketing into industrial zone networks; no organic walk-in from general public</td>
                                   <td>4.9 / 5 (Recommended)</td>
                               </tr>
 <tr>
-                                  <td><a href="https://www.google.com/maps/search/?api=1&query=20.8625,106.6705" target="_blank">Starbucks Vincom Plaza Imperia</a></td>
+                                  <td><a href="https://www.google.com/maps/search/?api=1&query=Starbucks+Vincom+Plaza+Imperia%2C+Hai+Phong" target="_blank">Starbucks Vincom Plaza Imperia</a></td>
                                   <td>USD 650 - 950</td>
                                   <td>Captive resident market within premium gated community. Korean/Japanese families in compound. Guaranteed residential repeat clientele with very short travel time.</td>
                                   <td>Smaller total catchment; community lease terms may restrict external marketing</td>
                                   <td>4.4 / 5</td>
                               </tr>
 <tr>
-                                  <td><a href="https://www.google.com/maps/search/?api=1&query=20.8432,106.6965" target="_blank">Highlands Coffee Lach Tray St</a></td>
+                                  <td><a href="https://www.google.com/maps/search/?api=1&query=Highlands+Coffee+Lach+Tray+St%2C+Hai+Phong" target="_blank">Highlands Coffee Lach Tray St</a></td>
                                   <td>USD 600 - 900</td>
                                   <td>Central commercial zone. HaLa and Nguyen Hung competition validates premium demand. Broader Vietnamese professional catchment.</td>
                                   <td>More competitive environment; HaLa and Nguyen Hung already entrenched here; harder to differentiate</td>
@@ -336,7 +336,7 @@
                         </thead>
                         <tbody>
 <tr>
-                                <td><a href="https://www.google.com/maps/search/?api=1&query=20.858,106.682" target="_blank"><strong>HaLa Hair Salon</strong></a></td>
+                                <td><a href="https://www.google.com/maps/search/?api=1&query=HaLa+Hair+Salon%2C+Hai+Phong" target="_blank">HaLa Hair Salon</a></td>
                                 <td>Hai Phong City Centre</td>
                                 <td>Balayage $35–70; Color $15–35</td>
                                 <td>Est. 2010, TONI&amp;GUY Academy certified owner, L'Oréal Paris exclusive products, professional track record</td>
@@ -344,7 +344,7 @@
                                 <td>Premium Schwarzkopf + Milbon product stack; boutique luxury interior; bilingual (Korean/Vietnamese/English) team</td>
                             </tr>
 <tr>
-                                <td><a href="https://www.google.com/maps/search/?api=1&query=20.852,106.674" target="_blank"><strong>Nguyen Hung Hair Salon</strong></a></td>
+                                <td><a href="https://www.google.com/maps/search/?api=1&query=Nguyen+Hung+Hair+Salon%2C+Hai+Phong" target="_blank">Nguyen Hung Hair Salon</a></td>
                                 <td>Hai Phong</td>
                                 <td>Color $12–30; Balayage $30–60</td>
                                 <td>High-volume, well-equipped, imported product claims, modern facilities, large loyal local following</td>
@@ -352,7 +352,7 @@
                                 <td>Appointment-only senior stylist delivery; private bay atmosphere; pre-appointment English/Korean WhatsApp consultation</td>
                             </tr>
 <tr>
-                                <td><a href="https://www.google.com/maps/search/?api=1&query=L%27Amour+Hair+Salon%2C+Hai+Phong" target="_blank"><strong>L'Amour Hair Salon</strong></a></td>
+                                <td><a href="https://www.google.com/maps/search/?api=1&query=L%27Amour+Hair+Salon%2C+Hai+Phong" target="_blank">L'Amour Hair Salon</a></td>
                                 <td>Hai Phong</td>
                                 <td>Color $15–40; Cut $8–15</td>
                                 <td>Personalized consultations, professional environment, attention to detail</td>
@@ -818,14 +818,14 @@
 
         // Premium Expat Residential Zones
         const residential = [
-            { name: "Vinhomes Imperia Expat Enclave", lat: 20.864, lng: 106.668, radius: 450, estPop: 2000, employers: "LG Display, Pegatron, Regina Miracle", nationality: "Mixed Expats" },
-            { name: "Le Hong Phong Corporate Residential Area", lat: 20.845, lng: 106.698, radius: 400, estPop: 1500, employers: "Bridgestone, Chevron, Shipping & Logistics", nationality: "Mixed Expats" }
+            { name: "Vinhomes Imperia Expat Enclave", lat: 20.864, lng: 106.668, radius: 450, estPop: 2000, nationality: "Mixed Expats" },
+            { name: "Le Hong Phong Corporate Residential Area", lat: 20.845, lng: 106.698, radius: 400, estPop: 1500, nationality: "Mixed Expats" }
         ];
 
         residential.forEach(res => {
-            const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${res.lat},${res.lng}`;
+            const cityName = document.body.getAttribute('data-city') || '';
+            const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(res.name + ", " + cityName)}`;
             let natText = res.nationality ? `<p><strong>Nationalities:</strong> ${res.nationality}</p>` : "";
-            let empText = res.employers ? `<p><strong>Key Employers:</strong> ${res.employers}</p>` : "";
             L.circle([res.lat, res.lng], {
                 color: '#a133ff',
                 fillColor: '#a133ff',
@@ -837,7 +837,6 @@
                     <h3 style="color: #a133ff;">${res.name}</h3>
                     <p><strong>Expat Residential Hub</strong></p>
                     ${natText}
-                    ${empText}
                     <p><strong>Est. Population:</strong> ~${res.estPop.toLocaleString()} residents</p>
                     <p style="margin-top: 8px;"><a href="${mapsUrl}" target="_blank" style="color: #a133ff; text-decoration: underline; font-weight: bold;">📍 View on Google Maps</a></p>
                 </div>
@@ -850,7 +849,8 @@
         ];
 
         malls.forEach(loc => {
-            const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${loc.lat},${loc.lng}`;
+            const cityName = document.body.getAttribute('data-city') || '';
+            const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(loc.name + ", " + cityName)}`;
             L.circleMarker([loc.lat, loc.lng], {
                 radius: getRadius(loc.footfall),
                 fillColor: "#333",
@@ -875,7 +875,8 @@
         ];
 
         competitors.forEach(loc => {
-            const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${loc.lat},${loc.lng}`;
+            const cityName = document.body.getAttribute('data-city') || '';
+            const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(loc.name + ", " + cityName)}`;
             L.circleMarker([loc.lat, loc.lng], {
                 radius: getRadius(loc.footfall),
                 fillColor: "#ef4444",
@@ -932,7 +933,9 @@
             const underservedDemand = Math.max(0, targetDemand - loc.competitorCapacity);
             const underservedPct = Math.round((underservedDemand / targetDemand) * 100);
             const ratio = (underservedDemand / loc.rent).toFixed(2);
-            const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${loc.lat},${loc.lng}`;
+            const cityName = document.body.getAttribute('data-city') || '';
+            const cleanName = loc.name.replace(/^Candidate\s+[A-Z]:\s*/i, '');
+            const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(cleanName + ", " + cityName)}`;
 
             L.marker([loc.lat, loc.lng], { icon: starIcon }).addTo(map).bindPopup(`
                 <div class="popup-content" style="min-width: 240px; color: #333;">
