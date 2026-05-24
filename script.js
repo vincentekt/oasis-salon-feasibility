@@ -1697,49 +1697,57 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Expose filter functions globally so onclick events can trigger them
 window.filterTable = function(region, type) {
-    const tableId = type === 'overview' ? 'overview-table' : 'complexity';
-    const buttons = document.querySelectorAll(`#${tableId} .tab-btn`);
-    const clickedBtn = Array.from(buttons).find(btn => btn.dataset.region === region);
-    
-    if (!clickedBtn) return;
-    
-    if (region === 'All') {
-        buttons.forEach(btn => {
-            if (btn.dataset.region === 'All') {
-                btn.classList.add('active');
-            } else {
-                btn.classList.remove('active');
-            }
-        });
-    } else {
-        clickedBtn.classList.toggle('active');
-        const allBtn = Array.from(buttons).find(btn => btn.dataset.region === 'All');
-        if (allBtn) allBtn.classList.remove('active');
+    // Sync the tab controls for BOTH tables
+    const tableIds = ['overview-table', 'complexity'];
+    tableIds.forEach(tableId => {
+        const buttons = document.querySelectorAll(`#${tableId} .tab-btn`);
+        const clickedBtn = Array.from(buttons).find(btn => btn.dataset.region === region);
+        if (!clickedBtn) return;
         
-        const activeRegions = Array.from(buttons).filter(btn => btn.dataset.region !== 'All' && btn.classList.contains('active'));
-        if (activeRegions.length === 0 && allBtn) {
-            allBtn.classList.add('active');
+        if (region === 'All') {
+            buttons.forEach(btn => {
+                if (btn.dataset.region === 'All') {
+                    btn.classList.add('active');
+                } else {
+                    btn.classList.remove('active');
+                }
+            });
+        } else {
+            clickedBtn.classList.toggle('active');
+            const allBtn = Array.from(buttons).find(btn => btn.dataset.region === 'All');
+            if (allBtn) allBtn.classList.remove('active');
+            
+            const activeRegions = Array.from(buttons).filter(btn => btn.dataset.region !== 'All' && btn.classList.contains('active'));
+            if (activeRegions.length === 0 && allBtn) {
+                allBtn.classList.add('active');
+            }
         }
-    }
+    });
     
-    // Apply filters
-    applyFilters(type);
+    // Apply filters to BOTH tables
+    applyFilters('overview');
+    applyFilters('complexity');
 
-    // Update map markers when overview region changes
-    if (type === 'overview') {
-        const state = getActiveState();
-        renderMapMarkers(state.model);
-    }
+    // Update map markers
+    const state = getActiveState();
+    renderMapMarkers(state.model);
 };
 
 window.filterTableBySearch = function(type) {
-    applyFilters(type);
-
-    // Update map markers when overview search changes
-    if (type === 'overview') {
-        const state = getActiveState();
-        renderMapMarkers(state.model);
+    const fromInput = document.getElementById(type === 'overview' ? 'search-overview' : 'search-complexity');
+    const toInput = document.getElementById(type === 'overview' ? 'search-complexity' : 'search-overview');
+    
+    if (fromInput && toInput) {
+        toInput.value = fromInput.value;
     }
+    
+    // Apply filters to BOTH tables
+    applyFilters('overview');
+    applyFilters('complexity');
+
+    // Update map markers
+    const state = getActiveState();
+    renderMapMarkers(state.model);
 };
 
 window.filterByCapex = function(value) {
