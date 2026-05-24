@@ -1157,8 +1157,8 @@ document.addEventListener('DOMContentLoaded', () => {
             return minRad + ((pct - minPct) / (maxPct - minPct)) * (maxRad - minRad);
         };
 
-        const activeTabEl = document.querySelector('#overview-table .tab-btn.active');
-        const activeTab = activeTabEl ? activeTabEl.dataset.region : 'All';
+        const activeTabs = Array.from(document.querySelectorAll('#overview-table .tab-btn.active')).map(btn => btn.dataset.region);
+        if (activeTabs.length === 0) activeTabs.push('All');
         const queryEl = document.querySelector('#overview-table .search-input');
         const query = queryEl ? queryEl.value.toLowerCase() : '';
 
@@ -1168,7 +1168,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const cityName = city.name.toLowerCase();
             const capexVal = city.capexVal || 0;
 
-            const matchTab = (activeTab === 'All' || region === activeTab);
+            const matchTab = (activeTabs.includes('All') || activeTabs.includes(region));
             const matchQuery = cityName.includes(query);
             const matchCapex = (capexVal <= maxCapex);
 
@@ -1699,13 +1699,28 @@ document.addEventListener('DOMContentLoaded', () => {
 window.filterTable = function(region, type) {
     const tableId = type === 'overview' ? 'overview-table' : 'complexity';
     const buttons = document.querySelectorAll(`#${tableId} .tab-btn`);
-    buttons.forEach(btn => {
-        if (btn.dataset.region === region) {
-            btn.classList.add('active');
-        } else {
-            btn.classList.remove('active');
+    const clickedBtn = Array.from(buttons).find(btn => btn.dataset.region === region);
+    
+    if (!clickedBtn) return;
+    
+    if (region === 'All') {
+        buttons.forEach(btn => {
+            if (btn.dataset.region === 'All') {
+                btn.classList.add('active');
+            } else {
+                btn.classList.remove('active');
+            }
+        });
+    } else {
+        clickedBtn.classList.toggle('active');
+        const allBtn = Array.from(buttons).find(btn => btn.dataset.region === 'All');
+        if (allBtn) allBtn.classList.remove('active');
+        
+        const activeRegions = Array.from(buttons).filter(btn => btn.dataset.region !== 'All' && btn.classList.contains('active'));
+        if (activeRegions.length === 0 && allBtn) {
+            allBtn.classList.add('active');
         }
-    });
+    }
     
     // Apply filters
     applyFilters(type);
@@ -1746,7 +1761,8 @@ window.filterByCapex = function(value) {
 
 function applyFilters(type) {
     const tableId = type === 'overview' ? 'overview-table' : 'complexity';
-    const activeTab = document.querySelector(`#${tableId} .tab-btn.active`).dataset.region;
+    const activeTabs = Array.from(document.querySelectorAll(`#${tableId} .tab-btn.active`)).map(btn => btn.dataset.region);
+    if (activeTabs.length === 0) activeTabs.push('All');
     const query = document.querySelector(`#${tableId} .search-input`).value.toLowerCase();
     
     const capexSlider = document.getElementById('capex-range');
@@ -1758,7 +1774,7 @@ function applyFilters(type) {
         const city = row.dataset.city.toLowerCase();
         const capex = parseInt(row.getAttribute('data-capex')) || 0;
         
-        const matchTab = (activeTab === 'All' || region === activeTab);
+        const matchTab = (activeTabs.includes('All') || activeTabs.includes(region));
         const matchQuery = city.includes(query);
         const matchCapex = (capex <= maxCapex);
         
