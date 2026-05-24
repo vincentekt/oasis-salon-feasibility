@@ -1698,11 +1698,18 @@ document.addEventListener('DOMContentLoaded', () => {
                 anchor.innerHTML = ' 🔗';
                 anchor.title = 'Copy link to this section';
                 
+                // Prevent default navigation if they click the 🔗 directly so h2 click triggers cleanly
                 anchor.addEventListener('click', (e) => {
                     e.preventDefault();
+                    e.stopPropagation();
+                });
+
+                h2.appendChild(anchor);
+                h2.title = 'Click to copy link to this section';
+
+                h2.addEventListener('click', () => {
                     const url = window.location.origin + window.location.pathname + `#${id}`;
                     navigator.clipboard.writeText(url).then(() => {
-                        const originalText = anchor.innerHTML;
                         anchor.innerHTML = ' ✓';
                         anchor.style.color = '#10b981';
                         setTimeout(() => {
@@ -1715,8 +1722,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     });
                     window.location.hash = id;
                 });
-
-                h2.appendChild(anchor);
             }
         });
     }

@@ -1573,7 +1573,16 @@ details.city-group[open] summary {
     font-weight: 600;
 }
 
-/* Section Anchor Links */
+/* Section Anchor Links & Click-to-Copy Headings */
+section[id] h2 {
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+section[id] h2:hover {
+    color: var(--accent);
+}
+
 .section-anchor {
     font-size: 0.8em;
     color: var(--text-muted);
@@ -1585,7 +1594,7 @@ details.city-group[open] summary {
     vertical-align: middle;
 }
 
-h2:hover .section-anchor {
+section[id] h2:hover .section-anchor {
     opacity: 0.65;
 }
 
